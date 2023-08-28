@@ -1,0 +1,96 @@
+     marque      | pays 
+-----------------+------
+ Pepsi Cola      | DE
+ PEPSI           | DE
+ Coke            | DE
+ Dune            | DE
+ Orangina        | DE
+ Sprite          | DE
+ KOKE            | DE
+ Cortisol        | DE
+ Danone          | DE
+ ORACLE7         | DE
+ Drobsol         | DE
+ Lanvin          | DE
+ Coup de Coeur   | DE
+ Shalimar        | DE
+ ORACLE          | DE
+ Exorcyl         | DE
+ Coca Cola       | DE
+ Passion         | DE
+ Miss Dior       | DE
+ Coca Cola Light | DE
+ Dune            | DE
+ Passion         | FR
+ ORACLE          | FR
+ Dune            | FR
+ Miss Dior       | FR
+ Cortisol        | FR
+ Coca Cola       | FR
+ Coca Cola Light | FR
+ Coke            | FR
+ Sprite          | FR
+ Coup de Coeur   | FR
+ Drobsol         | FR
+ Cola            | FR
+ Exorcyl         | FR
+ Lanvin          | FR
+ Pepsi Cola      | FR
+ PEPSI           | FR
+ Schweepes       | FR
+ Orangina        | FR
+ Dune            | FR
+ Danone          | FR
+ ORACLE          | FR
+ Dune            | FR
+ Shalimar        | FR
+ ORACLE7         | FR
+ Coup de Coeur   | MX
+ Miss Dior       | MX
+ Dune            | MX
+ Exorcyl         | MX
+ Drobsol         | MX
+ Cortisol        | MX
+ Sprite          | UK
+ Exorcyl         | UK
+ ORACLE7         | UK
+ Coke            | UK
+ Shalimar        | UK
+ Coca Cola Light | UK
+ Drobsol         | UK
+ Cortislo        | UK
+ Pepsi Cola      | UK
+ PEPSI           | UK
+ Schweepes       | UK
+ Coca Cola       | UK
+ Orangina        | UK
+ Lanvin          | UK
+ Coup de Coeur   | UK
+ ORACLE          | UK
+ Danone          | UK
+ Passion         | UK
+ Miss Dior       | UK
+ Dune            | UK
+ Coke            | US
+ Drobsol         | US
+ Passion         | US
+ ORACLE          | US
+ Shalimar        | US
+ ORACLE7         | US
+ Danone          | US
+ Dune            | US
+ Orangina        | US
+ Schweepes       | US
+ Lanvin          | US
+ PEPSI           | US
+ Coca Cola       | US
+ Pepsi Cola      | US
+ Exorcyl         | US
+ Coca Cola Light | US
+ Cortisol        | US
+ Coup de Coeur   | US
+ Sprite          | US
+ Dune            | US
+ Miss Dior       | US
+(92 rows)
+

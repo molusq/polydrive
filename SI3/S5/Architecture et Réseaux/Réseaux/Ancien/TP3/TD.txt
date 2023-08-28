@@ -1,0 +1,6 @@
+TD3 AR
+
+telnet www.unice.fr 993
+
+1) b) sudo tcpdump -nnvvS src 134.59.204.9  and dst port 993
+c) sudo tcpdump -vS src 134.59.204.9

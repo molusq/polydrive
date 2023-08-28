@@ -1,0 +1,41 @@
+I)
+
+
+II) Récursivité
+
+1)
+
+create view volsavec1escale (d, N, a) as (
+with recursive volR (departure, Nbe, arrival) as
+(select departure, 0, arrival from vols
+union
+select v1.departure, 1+v2.Nbe, v2.arrival
+from vols as v1, volR as v2
+where v1.arrival = v2.departure)
+select * from volR where Nbe > 0)
+\g
+
+select * from volsavec1escale
+
+3)
+with recursive ascendant(aieul, enfant) as(
+select pere, enfant
+from parents
+union
+select mere, enfant
+from parents
+union
+select a.aieul, p.enfant
+from parents p, ascendant a
+where p.pere = a.enfant or p.mere = a.enfant)
+select * from ascendant
+where enfant = 'Julia'
+
+
+III) Jointure externe
+
+select *
+from client c
+full outer join telephone t using (cli_id)
+full outer join email e using (cli_id)
+full outer join adresse a using (cli_id)

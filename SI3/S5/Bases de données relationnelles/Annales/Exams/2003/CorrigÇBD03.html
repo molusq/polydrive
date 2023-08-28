@@ -1,0 +1,642 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.1  (Linux)">
+	<META NAME="CREATED" CONTENT="20050114;17443200">
+	<META NAME="CHANGED" CONTENT="20050114;17470700">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin-right: 2cm; margin-top: 1.8cm; margin-bottom: 1.9cm }
+		P { margin-bottom: 0.21cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="fr-FR" DIR="LTR">
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT FACE="Verdana, sans-serif"><FONT SIZE=5><B>Examen
+de Bases de Donn&eacute;es</B></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm; page-break-after: avoid"><FONT FACE="Verdana, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>ESSI
+2</B></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT FACE="Verdana, sans-serif"><FONT SIZE=3>Documents
+autoris&eacute;s: supports de cours, sujets et corrig&eacute;s de TD,
+documentation SQL</FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT FACE="Verdana, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">12
+d&eacute;cembre 2003</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">De
+	combien de mani&egrave;res diff&eacute;rentes peut-on repr&eacute;senter
+	une instance d'une relation de 3 attributs et 4 tuples?</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">(deux
+pr&eacute;sentations sont diff&eacute;rentes si l'ordre des tuples ou
+l'ordre des attributs change) </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse</I>:
+ </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">	Tuples
+ 4 ! = 24</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">	Colonnes
+3! = 6  		D'ou 144  possibilit&eacute;s</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<OL START=2>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Soit
+	R une relation avec les attributs A1, A2,.., An. Exprimer en
+	fonction de <I>n</I> le nombre de super-cl&eacute;s de R si A1 est
+	l'unique cl&eacute; de R.</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse</I>:
+ </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Tout
+sous-ensemble d'attributs qui contient A1 est une super cl&eacute;.
+Il y a donc 2<SUP>n-1 </SUP>super-cl&eacute;s</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<OL START=3>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Consid&eacute;rons
+	la relation R(A,B,C,D) avec les d&eacute;pendances fonctionnelles :</FONT></FONT></P>
+</OL>
+<P LANG="en-US" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="fr-FR">A
+B </SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">
+C,  C </SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">
+D et D </SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">
+A</SPAN></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Quelles
+			sont les d&eacute;pendances non-triviales qu'on peut d&eacute;duire
+			de ces 3 d&eacute;pendances ? </FONT></FONT>
+			</P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 3.49cm; margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i START=2>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Quelles
+			sont les cl&eacute;s de cette relation ?</FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 4.13cm; margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i START=3>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Quelles
+			sont les super cl&eacute;s qui ne sont pas des cl&eacute;s ?</FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.76cm; text-indent: 0.38cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponses</I>:</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.76cm; text-indent: 0.38cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-US" ALIGN=LEFT STYLE="margin-left: 1.14cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="fr-FR">C</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">A,
+AB</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">D,
+AC</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">D,
+BC</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">A,
+BC</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">D,
+BD</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">A,
+BD</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">C,
+CD</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">A,
+ABC</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">D,
+ABD</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">C
+et  BCD</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">A.</SPAN></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.63cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">AB,
+BC et BD car  les autres ensembles n'ont pas pour fermeture ABCD</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 4.13cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Une
+super cl&eacute; doit contenir B et plus que un des &eacute;l&eacute;ments
+de  {A,C,D}. Il y a donc 4 super : ABC, ABD, BCD et ABCD</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 4.13cm; text-indent: 0.11cm; margin-bottom: 0cm">
+<BR>
+</P>
+<OL START=4>
+	<LI><P LANG="en-US" ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="fr-FR">Donnez
+	un contre exemple qui montre que la d&eacute;pendance fonctionnelle
+	A</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">B
+	n'implique pas B</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">A</SPAN></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:</I></FONT></FONT></P>
+<CENTER>
+	<TABLE WIDTH=34 BORDER=0 CELLPADDING=1 CELLSPACING=0>
+		<COL WIDTH=16>
+		<COL WIDTH=15>
+		<TR>
+			<TD WIDTH=16>
+				<P ALIGN=CENTER><FONT SIZE=2 STYLE="font-size: 11pt"><B>A</B></FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P ALIGN=CENTER><FONT SIZE=2 STYLE="font-size: 11pt"><B>B</B></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=16>
+				<P LANG="en-US" ALIGN=LEFT><FONT SIZE=2 STYLE="font-size: 11pt">0</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P LANG="en-US" ALIGN=LEFT><FONT SIZE=2 STYLE="font-size: 11pt">2</FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=16>
+				<P LANG="en-US" ALIGN=LEFT><FONT SIZE=2 STYLE="font-size: 11pt">1</FONT></P>
+			</TD>
+			<TD WIDTH=15>
+				<P LANG="en-US" ALIGN=LEFT><FONT SIZE=2 STYLE="font-size: 11pt">2</FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<OL START=5>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Consid&eacute;rons
+	la relation R(A,B,C,D) avec les d&eacute;pendances fonctionnelles :</FONT></FONT></P>
+</OL>
+<P LANG="en-US" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="fr-FR">B
+</SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR"> C
+et C </SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR">
+D</SPAN></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Indiquer
+			quelles sont les violations de la 3NF</FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 3.49cm; margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i START=2>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Donner
+			une d&eacute;composition en 3NF de cette relation</FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="fr-FR"><FONT FACE="Arial, sans-serif"><I>R&eacute;ponse</I>:</FONT></SPAN></FONT></P>
+<P LANG="en-US" ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="fr-FR"><FONT FACE="Arial, sans-serif">La
+seule cl&eacute; est  AB. Donc , B</FONT></SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR"><FONT FACE="Arial, sans-serif">C
+et  C</FONT></SPAN><FONT FACE="Symbol, serif">&reg;</FONT><SPAN LANG="fr-FR"><FONT FACE="Arial, sans-serif">D
+sont les seules  violations de la 3NF. </FONT></SPAN></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Une
+possible d&eacute;composition en 3NF est :  AB et BC et CD.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL START=6>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Soit
+	le sch&eacute;ma suivant</FONT> :</FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">Product(maker,
+model, type)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">PC(model,
+speed, ram, hd, cd, price)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">&Eacute;crire
+la requ&ecirc;te SQL qui permet d'obtenir tous les fabricants (i.e.,
+maker) de PC dont la vitesse est au moins sup&eacute;rieure ou &eacute;gale
+&agrave; 1600  (donner deux versions: l'une avec  <FONT FACE="Courier New, monospace">WHERE
+… IN</FONT> et l'autre avec <FONT FACE="Courier New, monospace">WHERE
+EXISTS</FONT>)</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:</I></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">SELECT
+maker</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+Product</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+model IN</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+    <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">(SELECT
+model</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+     <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+PC</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+     <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+speed &gt;= 1600);</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">SELECT
+maker</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+Product</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+EXISTS</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+    <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">(SELECT
+*</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+     <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+PC</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+     <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+speed &gt;= 1600 AND</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">       
+   <FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Courier New, monospace">Product.model
+= model);</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL START=7>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Pour
+	le sch&eacute;ma:</FONT></FONT></P>
+</OL>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">MovieStar(name,
+address, gender, birthdate)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">MovieExec(name,
+address, cert#,networth)</FONT></FONT></P>
+<P LANG="en-US" ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="fr-FR"><FONT FACE="Arial, sans-serif">&Eacute;crire
+la requ&ecirc;te suivante sans utiliser l'op&eacute;ration</FONT>
+<FONT FACE="Courier New, monospace">INTERSECT</FONT>:</SPAN></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+ 
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">(SELECT
+name, address FROM MovieStar</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">		WHERE
+gender = 'F' )</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">INTERSECT
+ </FONT></FONT>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">(SELECT
+name, address	FROM MovieExec</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">		WHERE
+netWorth &gt; 10000000);</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:</I></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">SELECT
+name, address</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial Unicode MS, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Courier New, monospace">FROM
+MovieStar</FONT></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+gender = 'F' AND</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+      <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">(name,
+address) IN</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+          <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">(SELECT
+name, address</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+           <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+MovieExec</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+           <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+netWorth &gt; 10000000);</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<OL START=8>
+	<LI><P LANG="en-GB" ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Soit
+	le sch&eacute;ma suivant :</FONT></FONT></P>
+</OL>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">Product(maker,
+model, type)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">PC(model,
+speed, ram, hd, cd, price)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">Laptop(model,
+speed, ram, hd, screen, price)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">Printer(model,
+color, type, price)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">&Eacute;crire
+			une requ&ecirc;te qui affiche pour chaque fabricant (i.e., maker)
+			la taille moyenne des &eacute;crans de ses ordinateurs portables
+			(i.e., Laptop)</FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 3.49cm; margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i START=2>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">&Eacute;crire
+			une requ&ecirc;te qui affiche le prix  moyen pour chaque vitesse
+			de PC sup&eacute;rieure &agrave; 150.</FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:</I></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">SELECT
+maker, AVG(screen)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+Product, Laptop</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+Product.model = Laptop.model</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">GROUP
+BY maker;</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">SELECT
+speed, AVG(price)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+PC</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+speed &gt; 150</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">GROUP
+BY speed;</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 2.5cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">On
+remarquera que la propri&eacute;t&eacute; au sujet de &quot;speed &quot;
+n'est pas une propri&eacute;t&eacute; d'un groupe et il n'y a donc
+pas besoin de clause <FONT FACE="Arial Unicode MS, sans-serif"><FONT SIZE=2><SPAN LANG="fr-FR">HAVING</SPAN></FONT></FONT>.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<BR>
+</P>
+<OL START=9>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Soit
+	le sch&eacute;ma suivant :</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">Classes(classe,
+type, pays, nb_canons, type_canon, tonnage)</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">Navire(nom,
+classe, pays, date)</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">Bilan(nom_navire,
+bataille, r&eacute;sultat)</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">&Eacute;crire
+			les requ&ecirc;tes qui ins&egrave;rent les informations suivantes:
+			les navires de guerre britanniques,  de la classe 'Nelson' et de
+			type 'bb'  avec 9 canons de 16mm et un tonnage de 34000 tonnes ont
+			&eacute;t&eacute; fabriqu&eacute;s en 1927</FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 3.49cm; margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i START=2>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=3><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">&Eacute;crire
+			la requ&ecirc;te qui supprime de </FONT><FONT FACE="Courier New, monospace">Navire</FONT><FONT FACE="Arial, sans-serif">
+			tous les bateaux coul&eacute;s dans des batailles (i.e., </FONT><FONT FACE="Courier New, monospace">r&eacute;sultat</FONT></FONT><FONT FACE="Courier New, monospace">
+			<FONT SIZE=2 STYLE="font-size: 11pt">= 'sunk'</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">).</FONT></FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 3.49cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:</I></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">INSERT
+INTO Classes VALUES('Nelson', 'bb', 'Gt. Britain', 9, 16, 34000);</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial Unicode MS, sans-serif"><FONT SIZE=2><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Courier New, monospace"><SPAN LANG="en-GB">INSERT
+INTO Navire(</SPAN>classe, date)<SPAN LANG="en-GB"> VALUES ('Nelson',
+'GB', 1927);</SPAN></FONT></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial Unicode MS, sans-serif"><FONT SIZE=2><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Courier New, monospace"><SPAN LANG="en-GB">INSERT
+INTO Navire(</SPAN>classe, date)<SPAN LANG="en-GB">  VALUES('Rodney',
+'GB', 1927);</SPAN></FONT></FONT></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">DELETE
+FROM Navire</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">WHERE
+name IN</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">   
+<FONT FACE="Arial Unicode MS, sans-serif"><FONT SIZE=2><SPAN LANG="en-GB"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Courier New, monospace">(SELECT
+nom_navire </FONT></FONT>FROM Bilan  WHERE  </SPAN><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">r&eacute;sultat</FONT>
+<FONT SIZE=2 STYLE="font-size: 11pt">= 'sunk'</FONT></FONT><SPAN LANG="en-GB">);</SPAN></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL START=10>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">A
+	partir des tables suivantes</FONT> :</FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">MovieStar(name,
+address, gender, birthdate)</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">MovieExec(name,
+address, cert#, networth)</FONT></FONT></P>
+<P LANG="en-US" ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="fr-FR">StudioPres(name,
+address)	<I>% Coordonn&eacute;es des pr&eacute;sidents de studio</I></SPAN></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; text-indent: 0.61cm; margin-bottom: 0cm">
+<BR>
+</P>
+<OL>
+	<UL>
+		<OL TYPE=i>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Construire
+			une vue </FONT><FONT FACE="Courier New, monospace">RichExec</FONT><FONT FACE="Arial, sans-serif">
+			donnant le nom, l'adresse, le num&eacute;ro de certificat et la
+			valeur </FONT><FONT FACE="Courier New, monospace">networth</FONT><FONT FACE="Arial, sans-serif">
+			de tous les </FONT><FONT FACE="Courier New, monospace">MovieExec</FONT><FONT FACE="Arial, sans-serif">
+			 dont ladite valeur est sup&eacute;rieure &agrave; $100000</FONT></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif">Utiliser
+			cette vue pour &eacute;crire une requ&ecirc;te qui affiche les
+			noms des </FONT><FONT FACE="Courier New, monospace">MovieExec</FONT><FONT FACE="Arial, sans-serif">
+			 qui sont aussi pr&eacute;sidents de studio.</FONT></FONT></P>
+		</OL>
+	</UL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:</I></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">CREATE
+VIEW RichExec AS</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+    <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">SELECT
+*</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+    <FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+MovieExec</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+    <FONT FACE="Arial Unicode MS, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Courier New, monospace">WHERE
+netWorth &gt;= </FONT><FONT FACE="Arial, sans-serif">100000</FONT><FONT FACE="Courier New, monospace">;</FONT></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">SELECT
+RichExec.name</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 11pt">FROM
+RichExec, StudioPres</FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial Unicode MS, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Courier New, monospace">WHERE
+RichExec.name = StudioPres.name;</FONT></FONT></FONT></P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-GB" ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm">
+<BR>
+</P>
+<OL START=11>
+	<LI><P LANG="en-US" ALIGN=LEFT STYLE="margin-bottom: 0cm"> <FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Arial, sans-serif"><SPAN LANG="fr-FR">Expliquer
+	le r&ocirc;le exact du serveur </SPAN></FONT><SPAN LANG="fr-FR"><FONT FACE="Courier New, monospace">RESIN</FONT><FONT FACE="Arial, sans-serif">
+	lors du chargement d'un page </FONT><FONT FACE="Courier New, monospace">jsp</FONT><FONT FACE="Arial, sans-serif">
+	(e.g. la page </FONT><FONT FACE="Courier New, monospace">marques.jsp</FONT><FONT FACE="Arial, sans-serif">
+	dans le TP5) suite &agrave; une requ&ecirc;te d'un serveur Web</FONT></SPAN></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:</I></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Le
+serveur compile et ex&eacute;cute le code JAVA, envoie le cas &eacute;ch&eacute;ant
+au serveur de base de donn&eacute;es les requ&ecirc;tes g&eacute;n&eacute;r&eacute;es
+&agrave; partir  du code JDBC, g&eacute;n&egrave;re le code HTML
+correspondant aux affichages produits et retourne ce code au serveur
+Web. </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<OL START=12>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"> <FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Est-ce
+	qu'un index peut &ecirc;tre d&eacute;fini sur des attributs non-cl&eacute;s
+	?</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.64cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:
+</I>Oui.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<OL START=13>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Est-ce
+	qu'il est judicieux de cr&eacute;er un index pour un attribut dont
+	les instances sont tr&egrave;s souvent modifi&eacute;es ?</FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>R&eacute;ponse:
+</I></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Non,
+car le mise &agrave; jour des cl&eacute;s d'index risque d'&ecirc;tre
+plus importante que le b&eacute;n&eacute;fice lors des consultations</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.25cm; margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

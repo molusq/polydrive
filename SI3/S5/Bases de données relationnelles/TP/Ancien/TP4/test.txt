@@ -1,0 +1,2 @@
+Javac EdtRemplissage.java
+java -cp postgresql-9.3-1102.jdbc3.jar:. EdtRemplissage

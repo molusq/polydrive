@@ -1,0 +1,148 @@
+ASD 1	Algorithmique et Structure de Données	ESSI1	cours	2
+ASD 1	Algorithmique et Structure de Données	ESSI1	tp1	2
+ASD 1	Algorithmique et Structure de Données	ESSI1	tp2	2
+ASD 1	Algorithmique et Structure de Données	ESSI1	tp3	2
+ASD 1	Algorithmique et Structure de Données	ESSI1	tp4	2
+ASD 1	Algorithmique et Structure de Données	ESSI1	tp5	2
+ASD 2	Algorithmique et Structure de Données	ESSI1	cours	2
+ASD 2	Algorithmique et Structure de Données	ESSI1	tp1	2
+ASD 2	Algorithmique et Structure de Données	ESSI1	tp2	2
+ASD 2	Algorithmique et Structure de Données	ESSI1	tp3	2
+ASD 2	Algorithmique et Structure de Données	ESSI1	tp4	2
+LFA	Langages Formels et Automates	ESSI1	cours	2
+LFA	Langages Formels et Automates	ESSI1	1	2
+LFA	Langages Formels et Automates	ESSI1	2	2
+LFA	Langages Formels et Automates	ESSI1	3	2
+MD	Mathématiques Discrètes	ESSI1	cours	2
+MD	Mathématiques Discrètes	ESSI1	1	2
+MD	Mathématiques Discrètes	ESSI1	2	2
+MD	Mathématiques Discrètes	ESSI1	3	2
+PROG 1	Programmation	ESSI1	cours	2
+PROG 1	Programmation	ESSI1	1	2
+PROG 1	Programmation	ESSI1	2	2
+PROG 1	Programmation	ESSI1	3	2
+PROG 1	Programmation	ESSI1	4	2
+PROG 1	Programmation	ESSI1	5	2
+PROG 2	Programmation	ESSI1	cours	2
+PROG 2	Programmation	ESSI1	1	2
+PROG 2	Programmation	ESSI1	2	2
+PROG 2	Programmation	ESSI1	3	2
+PROG 2	Programmation	ESSI1	4	2
+PROG 2	Programmation	ESSI1	5	2
+SYSTEME	Programmation Systeme et Réseau	ESSI1	cours	2
+SYSTEME	Programmation Systeme et Réseau	ESSI1	TPGA	2
+SYSTEME	Programmation Systeme et Réseau	ESSI1	TPGB	2
+SYSTEME	Programmation Systeme et Réseau	ESSI1	TPGC	2
+S.S.I.	Systèmes et Signaux pour l'Informatique	ESSI1	cours	2
+ARCHI 1	Architecture des Ordinateurs et Assembleur	ESSI1	cours	2
+ELEC.	Electronique	ESSI1	cours	2
+TDO	Technique des ordinateurs	ESSI1	cours	2
+MATH 1	Mathématiques	ESSI1	cours	2
+MATH 1	Mathématiques	ESSI1	tp	2
+MATH 2	Mathématiques	ESSI1	cours	2
+MATH 2	Mathématiques	ESSI1	tp	2
+PROBA	Probabilité et Statistiques	ESSI1	cours	2
+ANGLAIS	English	ESSI1	Cours	1
+ANGLAIS 1	English	ESSI1	tp1	1
+ANGLAIS 1	English	ESSI1	tp2	1
+ENTREPRISE	Connaissance de l'entreprise	ESSI1	G1	1
+ENTREPRISE	Connaissance de l'entreprise	ESSI1	G2	1
+ENTREPRISE	Connaissance de l'entreprise	ESSI1	G3	1
+ENTREPRISE	Connaissance de l'entreprise	ESSI1	G4	1
+ENTREPRISE	Connaissance de l'entreprise	ESSI1	G5	1
+EXPRESS. 1	Techniques d'expression	ESSI1	G1	1
+EXPRESS. 1	Techniques d'expression	ESSI1	G2	1
+EXPRESS. 1	Techniques d'expression	ESSI1	G3	1
+EXPRESS. 1	Techniques d'expression	ESSI1	G4	1
+EXPRESS. 1	Techniques d'expression	ESSI1	G5	1
+EXO PROG 1	Exercices de Programmation	ESSI1	tp	1
+EXO PROG 2	Exercices de Programmation	ESSI1	tp	1
+ANGLAIS 3	English	ESSI2	tp	1
+ANGLAIS 4	English	ESSI2	tp	1
+ENTREPRISE 2	Connaissance de l'Entreprise	ESSI1	cours	1
+DROIT	Droit	ESSI1	cours	1
+DROIT	Droit	ESSI2	cours	1
+ANGLAIS 2	English	ESSI2	IM1	1
+ANGLAIS 2	English	ESSI2	IM2	1
+ANGLAIS 2	English	ESSI2	II1	1
+ANGLAIS 2	English	ESSI2	II2	1
+ANGLAIS 2	English	ESSI2	II3	1
+EXPRESSION 2	Technique d'Expression	ESSI2	ttp	1
+OUTILS GL	Outils GL	ESSI2	cours	2
+BD	Base de Données	ESSI2	ES2	2
+BD	Base de Données	ESSI2	ES2B	2
+BD	Base de Données	ESSI2	II1	2
+BD	Base de Données	ESSI2	II2	2
+BD	Base de Données	ESSI2	II3	2
+BD	Base de Données	ESSI2	IM1	2
+BD	Base de Données	ESSI2	IM2	2
+COO/C++	Conception par Objet / C++	ESSI2	ES2	2
+COO/C++	Conception par Objet / C++	ESSI2	IM1	2
+COO/C++	Conception par Objet / C++	ESSI2	IM2	2
+COO/C++	Conception par Objet / C++	ESSI2	II1	2
+COO/C++	Conception par Objet / C++	ESSI2	II2	2
+COO/C++	Conception par Objet / C++	ESSI2	II3	2
+INFOGRAPHIE	Infographie	ESSI2	ES2	2
+INFOGRAPHIE	Infographie	ESSI2	II1	2
+INFOGRAPHIE	Infographie	ESSI2	II2	2
+INFOGRAPHIE	Infographie	ESSI2	II3	2
+INFOGRAPHIE	Infographie	ESSI2	IM1	2
+INFOGRAPHIE	Infographie	ESSI2	IM2	2
+COMPILATION 1	Transformation et Compilation	ESSI2	ES2	2
+COMPILATION 1	Transformation et Compilation	ESSI2	II1	2
+COMPILATION 1	Transformation et Compilation	ESSI2	II2	2
+COMPILATION 1	Transformation et Compilation	ESSI2	II3	2
+ALGO COMPLEX	Algorithmique et Complexite	ESSI2	II	2
+ALGO COMPLEX	Algorithmique et Complexite	ESSI2	II1	2
+ALGO COMPLEX	Algorithmique et Complexite	ESSI2	II2	2
+ALGO COMPLEX	Algorithmique et Complexite	ESSI2	II3	2
+TRAIT. SIGNAL	Traitement du signal	ESSI2	IM	2
+TRAIT. SIGNAL	Traitement du signal	ESSI2	IM1	2
+TRAIT. SIGNAL	Traitement du signal	ESSI2	IM2	2
+SYSTÈME	Système, Programmation Système	ESSI2	3	2
+CALCULABILITÉ	Calculabilité et Algorithmique	ESSI2	cours	2
+CALCULABILITÉ	Calculabilité et Algorithmique	ESSI2	tp	2
+TRAIT. IMAGES	Traitement d'Images	ESSI2	cours	2
+TRAIT. IMAGES	Traitement d'Images	ESSI2	G1	2
+TRAIT. IMAGES	Traitement d'Images	ESSI2	G2	2
+RECONST. IMAGES	Reconstruction d'Images	ESSI2	cours	2
+RECONST. IMAGES	Reconstruction d'Images	ESSI2	TP	2
+LOGIQUE	Logique & Programmation Logique	ESSI2	cours	2
+LOGIQUE	Logique & Programmation Logique	ESSI2	td	2
+PROG. OBJET	Programmation Orientée Objet	ESSI2	cours	2
+PROG. OBJET	Programmation Orientée Objet	ESSI2	G1	2
+PROG. OBJET	Programmation Orientée Objet	ESSI2	G2	2
+PROG. OBJET	Programmation Orientée Objet	ESSI2	G3	2
+PROG. OBJET	Programmation Orientée Objet	ESSI2	G4	2
+PROG. OBJET	Programmation Orientée Objet	ESSI2	G5	2
+SYSTEME RÉSEAUX	Systeme et Reseau	ESSI2	II	2
+SYSTEME RÉSEAUX	Systeme et Reseau	ESSI2	II1	2
+SYSTEME RÉSEAUX	Systeme et Reseau	ESSI2	II2	2
+SYSTEME RÉSEAUX	Systeme et Reseau	ESSI2	II3	2
+COMM. ENTREPRISE	Communication d'Entreprise	ESSI2	ES2	2
+COMM. ENTREPRISE	Communication d'Entreprise	ESSI2	II1	2
+COMM. ENTREPRISE	Communication d'Entreprise	ESSI2	II2	2
+COMM. ENTREPRISE	Communication d'Entreprise	ESSI2	II3	2
+COMM. ENTREPRISE	Communication d'Entreprise	ESSI2	IM1	2
+COMM. ENTREPRISE	Communication d'Entreprise	ESSI2	IM2	2
+ARCHI MACHINE	Architectures de Machines	ESSI2	cours	2
+EDP	Equations Differentielles 	ESSI2	IM	2
+EDP	Equations Differentielles 	ESSI2	IM1	2
+EDP	Equations Differentielles 	ESSI2	IM2	2
+OPTIMISATION	Méthodes Numériques et Optimisation	ESSI2	cours	2
+OPTIMISATION	Méthodes Numériques et Optimisation	ESSI2	td	2
+AUTOM	Automatique	ESSI2	cours	2
+AUTOM	Automatique	ESSI2	tp	2
+COMPILATION 2	Compilation Avancée	ESSI2	II	2
+COMPILATION 2	Compilation Avancée	ESSI2	II1	2
+COMPILATION 2	Compilation Avancée	ESSI2	II2	2
+COMPILATION 2	Compilation Avancée	ESSI2	II3	2
+INFO INDUS	Informatique Industrielle et Interfaces S/H	ESSI2	cours	2
+INFO INDUS	Informatique Industrielle et Interfaces S/H	ESSI2	tp	2
+TELECOMS	Télécommunications	ESSI2	cours	2
+TRANS. NUM.	Transmissions numériques	ESSI2	cours	2
+PROCESSUS STOCH	Processus stochastiques	ESSI2	cours/td	2
+COURBE	Courbes et Surfaces	ESSI2	cours/td	2
+ELÉMENTS FINIS	Eléments finis	ESSI2	cours	2
+ELÉMENTS FINIS	Eléments finis	ESSI2	tp1	2
+ELÉMENTS FINIS	Eléments finis	ESSI2	tp2	2

@@ -1,0 +1,84 @@
+
+Installation "postgres a minima" pour les "nuls"
+
+Ci dessous :
+'mdppostgres' designe le mot de passe de l'utilisateur postgres
+'mdp' designe votre mot de passe
+'username' designe le nom de l'utilisateur que vous creez  pour
+utiliser la base et 'userpassword' designe son mot de passe.
+'$' est le prompt de l'utilisateur standard; '=#' celui de
+l'utilisateur postgres
+
+
+
+1) Commandes a executer pour finaliser l'installation (apres l' installation des packages de postgres)
+
+$ sudo -i -u postgres
+Password: saisir 'mdp'
+postgres=# psql
+
+Password: saisir 'mdppostgres'
+psql (9.4.5)
+Type "help" for help.
+
+postgres=# alter user postgres with encrypted password'postgres';
+ALTER ROLE
+postgres=# DROP DATABASE  IF EXISTS username ;
+NOTICE:  database "username" does not exist, skipping
+DROP DATABASE
+postgres=# DROP SCHEMA  IF EXISTS username ;
+NOTICE:  schema "username" does not exist, skipping
+DROP SCHEMA
+postgres=# DROP  ROLE  IF EXISTS username ;
+NOTICE:  role "username" does not exist, skipping
+DROP ROLE
+postgres=# create role username with CREATEDB LOGIN;
+CREATE ROLE
+postgres=# create database username with owner username;
+CREATE DATABASE
+postgres=# alter role username with password'userpassword';
+ALTER ROLE
+postgres=# alter role username WITH SUPERUSER CREATEDB CREATEROLE INHERIT;
+ALTER ROLE
+postgres=# alter user username set search_path to  public;
+ALTER ROLE
+postgres=# GRANT ALL ON SCHEMA public to username;
+GRANT
+postgres=# create database montp1 with owner username;
+CREATE DATABASE
+
+Quittez  psql et postgres (faire deux fois: Ctl D)
+
+Apres le chargement de l'ensemble des fichiers a l'adresse :
+http://www.i3s.unice.fr/~username/Cours/BD/Tables/
+
+Allez dans le repertoire Tables sur votre machine
+ username$cd Tables/
+ username$ psql -U username
+ Password for user username: saisir userpassword
+
+username=# \c montp1
+You are now connected to database "montp1" as user "username".
+montp1=# 
+username=# \i  script_tables.sql
+
+Vous pouvez maintenant executer toutes les requetes du TP1
+
+Pour le TP2, de maniere similaire :
+$ psql -U username
+Password for user username: 
+psql (9.4.5)
+Type "help" for help.
+
+username=# create database montp2 with owner username;
+CREATE DATABASE
+username=# \c montp2
+You are now connected to database "montp2" as user "username".
+montp2=# \i data_ascendants.sql
+montp2=# \i data_group_by.sql
+montp2=# \i data_outer_join.sql
+montp2=# \i data_vols.sql
+
+Vous pouvez maintenant executer toutes les requetes du TP2
+
+Pour faire vos tests, creer un fichier tpx.sql et charger le par \i tpx.sql

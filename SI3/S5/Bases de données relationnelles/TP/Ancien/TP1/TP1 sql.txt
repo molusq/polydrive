@@ -1,0 +1,149 @@
+I - Interrogation
+
+1) marques classées par pays puis par classe
+
+select nom, classe, pays
+from marque
+order by pays, classe
+\g
+
+
+2) marques de chaque prop
+
+select m.nom as Marque, s.nom as Societe
+from marque m
+join societe s
+on prop = s.id
+group by m.nom, s.nom
+order by s.nom
+\g
+
+
+3) sociétés sans marques
+
+select nom as Societe
+from societe
+where id not in (select prop from marque)
+\g
+
+
+4) marques vendues avant enr
+
+select e.marque as marque
+from enr e
+join vente v on e.marque = v.marque
+where v.date_vente < e.date_enr
+\g
+
+
+5) marque non enr par pays
+
+select m.nom as marque, m.pays
+from marque m
+where m.id not in (select marque from enr)
+order by m.pays
+\g
+
+
+6) prop avec leur nombre de marques
+
+select prop, count(marque)
+from marque
+group by prop
+\g
+
+select s.nom as NomSociete, s.pays, count(*) as Nb
+from marque m, societe s
+where m.prop = s.id
+group by s.id, s.nom, s.pays
+\g
+
+select s.nom, count(*)
+from societe s
+join marque on prop = s.id
+group by s.nom;
+
+/*
+select s.nom as NomSociete, s.pays, t.nb
+from societe s,
+(select m.prop, count(*) as nb from marque m) t
+where t.prop = s.id
+group by t.prop
+\g
+*/
+
+
+7) marques homonymes
+
+select m1.nom, m1.pays, m1.classe, m1.prop, m2.nom, m2.pays, m2.classe, m2.prop
+from marque m1, marque m2
+where m1.nom = m2.nom
+and m1.classe = m2.classe
+and m1.pays < m2.pays
+and m1.prop != m2.prop
+and m1.id != m2.id
+group by m1.nom, m1.pays, m1.classe, m1.prop, m1.id, m2.nom, m2.pays, m2.classe, m2.prop
+order by m1.nom, m1.pays
+\g
+
+8) prop des marques déposées
+
+select s.nom as nomsoc
+from marque m, societe s
+where m.prop = s.id
+and m.id not in (select e.marque from enr e)
+group by s.id, s.nom
+order by s.nom
+\g
+
+select distinct s.nom as nomsociete, s.pays
+from societe s
+where s.id in (select m.prop from marque m where m.id not in (select e.marque from enr e))
+\g
+
+where m.id <>all (...)
+
+9) prop toutes enr
+
+select distinct s.nom as nomsociete, s.pays
+from societe s, marque m
+where s.id = m.prop
+and s.id not in (select m.prop from marque m where m.id not in (select e.marque from enr e))
+\g
+
+except = where ... not in ...
+
+10) plus grand nombre de marques dans une classe
+
+select m.classe, s.nom, s.pays, count(*)
+from marque m, societe s
+where m.prop = s.id
+group by m.classe, s.nom, s.pays
+having count(*) >= all
+(select count(*) from marque m2 where m2.classe = m.classe
+group by m2.prop)
+order by m.classe
+\g
+
+
+II - Contraintes
+
+1) pays d'une marque est même qu'enr
+
+2) vendeur est dep ou acquéreur
+
+select v.vendeur, v.marque, v.date_vente
+from vente v
+where not exists (select * from vente v1
+	where v1.marque = v.marque and v1.date_vente < v.date_vente)
+and not exists (select * from enr e
+	where e.marque = v.marque and e.deposant = v.vendeur)
+union all
+select v1.vendeur, v1.marque, v1.date_vente from vente v1, vente v2
+where v1.marque = v2.marque
+and v1.date_vente < v2.date_vente
+and not exists (select * from vente v3 where v3.marque = v1.marque and v1.date_vente < v3.date_vente and v3.date_vente < v2.date_vente)
+and v1.vendeur != v2.acquereur
+\g
+
+3) Pays marque est même que proprio

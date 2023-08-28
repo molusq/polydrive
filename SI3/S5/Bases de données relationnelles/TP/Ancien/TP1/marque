@@ -1,0 +1,92 @@
+1	Coca Cola	4	US	1
+2	Coca Cola Light	4	US	1
+3	Coke	4	US	1
+4	Sprite	4	US	1
+5	Coca Cola	4	FR	1
+6	Coca Cola Light	4	FR	1
+7	Coke	4	FR	2
+8	Sprite	4	FR	2
+9	Coca Cola	4	UK	1
+10	Coca Cola Light	4	UK	1
+11	Coke	4	UK	1
+12	Sprite	4	UK	1
+13	Coca Cola	4	DE	3
+14	Coca Cola Light	4	DE	3
+15	Coke	4	DE	3
+16	Sprite	4	DE	3
+17	KOKE	4	DE	3
+18	Cola	4	FR	2
+19	Pepsi Cola	4	US	46
+20	PEPSI	4	US	46
+21	Schweepes	4	US	46
+22	Pepsi Cola	4	FR	48
+23	PEPSI	4	FR	48
+24	Schweepes	4	FR	46
+25	Pepsi Cola	4	DE	49
+26	PEPSI	4	DE	49
+27	Orangina	4	FR	48
+28	Orangina	4	US	48
+29	Orangina	4	DE	48
+30	Orangina	4	UK	48
+31	Danone	4	FR	47
+32	Danone	4	US	47
+33	Danone	4	DE	47
+34	Danone	4	UK	47
+35	Dune	4	FR	47
+36	Shalimar	1	FR	26
+37	Shalimar	1	US	26
+38	Shalimar	1	DE	26
+39	Shalimar	1	UK	26
+40	Passion	1	FR	26
+41	Passion	1	US	26
+42	Passion	1	DE	26
+43	Passion	1	UK	26
+44	Dune	1	FR	20
+45	Dune	1	US	20
+46	Dune	1	DE	20
+47	Miss Dior	1	FR	20
+48	Miss Dior	1	US	20
+49	Miss Dior	1	DE	20
+50	Miss Dior	1	UK	20
+51	Miss Dior	1	MX	50
+52	Dune	1	MX	50
+53	ORACLE	6	FR	10
+54	ORACLE	6	US	9
+55	ORACLE	6	DE	12
+56	ORACLE	6	UK	11
+57	ORACLE7	6	FR	9
+58	ORACLE7	6	US	9
+59	ORACLE7	6	DE	9
+60	ORACLE7	6	UK	9
+61	ORACLE	11	FR	26
+62	Dune	11	FR	20
+63	Dune	11	US	28
+64	Dune	11	DE	20
+65	Dune	11	UK	20
+66	Lanvin	11	FR	21
+67	Lanvin	11	US	21
+68	Lanvin	11	DE	21
+69	Lanvin	11	UK	21
+70	Coup de Coeur	11	MX	50
+71	Exorcyl	10	FR	27
+72	Exorcyl	10	US	27
+73	Exorcyl	10	DE	31
+74	Exorcyl	10	UK	27
+75	Exorcyl	10	MX	27
+76	Drobsol	10	FR	27
+77	Drobsol	10	US	27
+78	Drobsol	10	DE	31
+79	Drobsol	10	UK	27
+80	Drobsol	10	MX	27
+81	Pepsi Cola	4	UK	46
+82	PEPSI	4	UK	46
+83	Schweepes	4	UK	46
+84	Coup de Coeur	11	FR	21
+85	Coup de Coeur	11	US	21
+86	Coup de Coeur	11	DE	21
+87	Coup de Coeur	11	UK	21
+88	Cortisol	10	FR	31
+89	Cortisol	10	US	31
+90	Cortisol	10	DE	31
+91	Cortislo	10	UK	31
+92	Cortisol	10	MX	31

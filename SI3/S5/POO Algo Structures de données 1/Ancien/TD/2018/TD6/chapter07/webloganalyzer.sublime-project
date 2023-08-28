@@ -1,0 +1,28 @@
+{
+    "folders":
+    [
+        {
+            "path": "/Users/Florian/Dropbox/Polytech/3A/Cours/OOP/TD/TD6/chapter07"
+        }
+    ],
+    "SublimeLinter":
+    {
+        "linters":
+        {
+            "javac": {
+                "lint": "all",
+                "chdir": "${project}",
+                "args": [
+                    "-encoding", "UTF8",
+                    "-d", "build/classes",
+                    "-cp", "src/webloganalyzer/ src/webloganalyzer/*.java",
+                ]
+            }
+        }
+    },
+    "settings":
+    {
+        "tab_size": 4,
+        "translate_tabs_to_spaces": true
+    }
+}

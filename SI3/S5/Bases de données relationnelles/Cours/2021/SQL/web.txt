@@ -1,0 +1,11 @@
+https://www.postgresql.org/docs/current/
+https://www.w3schools.com/sql/default.asp
+https://openclassrooms.com/fr/courses/4449026-initiez-vous-a-lalgebre-relationnelle-avec-le-langage-sql?status=published
+https://www.sqltutorial.org/
+https://www.canal-u.tv/chaines/inria/execution-et-optimisation/execution-et-optimisation-introduction
+https://www.canal-u.tv/chaines/inria/execution-et-optimisation/reecriture-algebrique
+https://www.canal-u.tv/chaines/inria/execution-et-optimisation/operateurs
+https://www.canal-u.tv/chaines/inria/execution-et-optimisation/plans-d-execution
+https://www.canal-u.tv/chaines/inria/execution-et-optimisation/tri-et-hachage
+https://www.canal-u.tv/chaines/inria/execution-et-optimisation/optimisation
+http://sys.bdpedia.fr/optim.html
