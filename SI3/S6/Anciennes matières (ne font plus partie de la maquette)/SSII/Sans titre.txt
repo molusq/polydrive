@@ -1,0 +1,5 @@
+cluster_centers_
+
+bow = vecteur classifiant l'image après le 1er k-mean
+bow a même taille que k1
+-> compte le nombre de sift par k-mean

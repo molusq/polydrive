@@ -1,0 +1,26 @@
+Les fichiers .ipynb sont appelés "notebooks" et permettent l'exécution de code python sur un format semblable à celui d'un PDF.
+Très pratique pour ce qui est du visuel, il permet aussi de sauvegarder en cache.
+Cela facilite l'exécution de bouts de code afin d'éviter d'avoir à relancer l'entièreté du programme à chaque modification.
+Très pratique pour ce qui est du traitement massif de données.
+
+------
+
+- METHODE LOCALE :
+
+1. Installez Python, évidemment (3.10 est la version que je recommande as of Juin 2023 car la 3.11 n'est pas encore viable)
+
+2. Installez le package notebook avec la commande : pip install notebook
+
+3. Installer Visual Studio Code pour l'affichage local tout joli
+
+4. Installez l'extension Jupyter (celle-ci vous installera 4 autres extensions **NÉCESSAIRES**)
+
+5. GG! N'oubliez pas de sélectionner le Kernel en haut à gauche du notebook une fois ouvert (votre version Python locale)
+
+---
+
+- METHODE CLOUD (nulle) :
+
+1. Ouvrez le fichier dans Google Drive en double cliquant
+
+2. GG!

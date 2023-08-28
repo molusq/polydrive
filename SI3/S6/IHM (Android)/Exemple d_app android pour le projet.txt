@@ -1,0 +1,3 @@
+Voici un exemple d'application pour le projet d'ihm Android :
+
+https://github.com/marcpinet/poubelledroid

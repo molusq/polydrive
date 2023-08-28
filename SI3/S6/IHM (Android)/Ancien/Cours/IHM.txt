@@ -1,0 +1,18 @@
+Examen : définitions à connaître
+
+ACM : principale conférence logicielle en interface machine.
+
+Contexte d'usage /!\
+Ex : application de banque sur portable ou sur télé -> pas même usage
+
+Système interactif :
+Input, output, system, user
+
+Qualité d'une IHM :
+Utilisabilité :
+	Acceptabilité du système
+		-> Sociale
+		-> Pratique (utilité, coût, compatibilité, fiabilité, etc.)
+
+Standardisation : expérience utilisateur en cours de normalisation.
+

@@ -1,0 +1,16 @@
+TD Android
+
+Les différents types de ressources sont appelées avec un préfixe indiquant l'origine de l'attribut, puis le nom de l'attribut
+
+L'activité va charger la configuration d'activity_main avec
+setContentView(R.layout.activity_main);
+
+Vu du bouton appelé par :
+FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+SectionsPagerAdapter :
+Constructeur, getItem permet de récupérer les éléments selon la position, getCount() correspond au nombre de tab affichées.
+
+PlaceholderFragment :
+Le fragment sait quels éléments il doit afficher grâce à l'int sectionNumber
+

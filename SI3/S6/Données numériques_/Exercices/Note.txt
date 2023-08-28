@@ -1,0 +1,6 @@
+Il peut arriver que certaines cellules dans les fichiers notebook prennent un peu de temps à charger.
+C'est normal, c'est le principe de traitement (eh oui, c'est long de générer un k-NN de 3000 mp3)
+Par exemple, pour le TP9, y'a un gros bloc de code c'est du bruteforce qui tourne pendant 30 minutes
+Evidemment, c'est une cellule qui ne faisait pas partie du TP et que j'ai rajoutée pour le fun mdr (pour chopper les meilleurs params)
+Mais sinon, les cellules se chargent quasi toutes instantanément.
+Rares sont les cellules à dépasser les 2 minutes de chargement (y'en a aucune au-delà je crois, et peut-être 5 au dessus de 30 secondes sur les 9 TP)

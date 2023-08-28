@@ -1,0 +1,41 @@
+[s,fe,b]=wavread('running_feet_-Cam-942211296.wav');
+t=[0:length(s)-1]/feplot2d(t,s)xgrid
+xtitle('mandolin','t(s)','amplitude')
+
+
+Un seul canal : plot2d([0:length(s(1,:))]/fe,s(1,:)
+
+N=64
+Te=1/800
+t=[0:0.01:N-1]*Te
+s=0.5*cos(2*%pi*200*t)
+plot2d(t,s)
+xgrid
+playsnd(s,fe)
+
+[s,fe,b]=wavread('Skyrim_ Fus Ro Dah! Sound Effect (Download Link!) (152kbit_AAC).wav');
+
+t=[0:length(s)-1]/fe
+plot2d(t,s)
+xgrid
+xtitle('wav','t(s)','amplitude')
+playsnd(s,fe)
+
+[s,fe,b]=wavread('flexatone__05_forte_shaken.wav');
+N=length(s)
+se=s(1:500:N-1)
+Te=1/fe
+t=[0:length(se)-1]*Te
+
+plot2d3(t,se,style=0)
+xgrid
+xtitle('wav','t(s)','amplitude')
+playsnd(se,fe)
+
+
+function [s,E,Esignal,fe]=bancfiltres(M,R,fichier, play)
+M = nb de bandes
+N choisi de telle sorte à ce que H = 128
+
+fftshift : centrage sur 0
+ifft : fourier inverse

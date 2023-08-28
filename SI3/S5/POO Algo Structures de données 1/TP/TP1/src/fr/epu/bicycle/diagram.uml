@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-51.3585762135185" y="199.49069760748353">fr.epu.bicycle.Position</node>
+    <node x="240.60193099207822" y="53.61164935142608">fr.epu.bicycle.EBike</node>
+    <node x="-8.813286181397217" y="-14.255218001536477">fr.epu.bicycle.GPS</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="false" x="172.0" y="208.0" />
+  <SelectedNodes>
+    <node>fr.epu.bicycle.GPS</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,397 @@
+# serializer version: 1
+# name: test_declare_assign
+  '''
+  {
+    "instructions": [
+      {
+        "name": {
+          "identifiant": "a"
+        },
+        "type": "ENTIER",
+        "value": null
+      },
+      {
+        "name": {
+          "identifiant": "a"
+        },
+        "value": {
+          "entier": 1
+        }
+      },
+      {
+        "name": {
+          "identifiant": "b"
+        },
+        "type": "BOOLEEN",
+        "value": {
+          "identifiant": "vrai"
+        }
+      }
+    ]
+  }
+  '''
+# ---
+# name: test_function_call
+  '''
+  {
+    "instructions": [
+      {
+        "function_name": "fonction1",
+        "args": [
+          {
+            "identifiant": "a"
+          },
+          {
+            "identifiant": "b"
+          },
+          {
+            "identifiant": "c"
+          }
+        ]
+      }
+    ]
+  }
+  '''
+# ---
+# name: test_function_declare
+  '''
+  {
+    "instructions": [
+      {
+        "name": {
+          "identifiant": "fonction1"
+        },
+        "args": [
+          {
+            "name": {
+              "identifiant": "a"
+            },
+            "type": "ENTIER",
+            "value": null
+          },
+          {
+            "name": {
+              "identifiant": "b"
+            },
+            "type": "BOOLEEN",
+            "value": null
+          },
+          {
+            "name": {
+              "identifiant": "c"
+            },
+            "type": "BOOLEEN",
+            "value": null
+          }
+        ],
+        "body": {
+          "instructions": [
+            {
+              "function_name": "ecrire",
+              "args": [
+                {
+                  "op": "+",
+                  "lhs": {
+                    "identifiant": "a"
+                  },
+                  "rhs": {
+                    "op": "%",
+                    "lhs": {
+                      "identifiant": "b"
+                    },
+                    "rhs": {
+                      "identifiant": "c"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "return_value": {
+                "identifiant": "a"
+              }
+            }
+          ]
+        },
+        "return_type": "ENTIER",
+        "stack_size": 0
+      },
+      {
+        "name": {
+          "identifiant": "fonction2"
+        },
+        "args": [],
+        "body": {
+          "instructions": [
+            {
+              "return_value": {
+                "entier": 1
+              }
+            }
+          ]
+        },
+        "return_type": "BOOLEEN",
+        "stack_size": 0
+      },
+      {
+        "function_name": "fonction1",
+        "args": [
+          {
+            "identifiant": "a"
+          },
+          {
+            "identifiant": "b"
+          },
+          {
+            "identifiant": "c"
+          }
+        ]
+      },
+      {
+        "function_name": "fonction2",
+        "args": []
+      }
+    ]
+  }
+  '''
+# ---
+# name: test_parse_if
+  '''
+  {
+    "instructions": [
+      {
+        "condition": {
+          "identifiant": "a"
+        },
+        "body": {
+          "instructions": [
+            {
+              "function_name": "ecrire",
+              "args": [
+                {
+                  "identifiant": "a"
+                }
+              ]
+            }
+          ]
+        },
+        "orelse": {
+          "instructions": [
+            {
+              "condition": {
+                "identifiant": "b"
+              },
+              "body": {
+                "instructions": [
+                  {
+                    "function_name": "ecrire",
+                    "args": [
+                      {
+                        "identifiant": "b"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "orelse": {
+                "instructions": [
+                  {
+                    "condition": {
+                      "identifiant": "c"
+                    },
+                    "body": {
+                      "instructions": [
+                        {
+                          "function_name": "ecrire",
+                          "args": [
+                            {
+                              "identifiant": "c"
+                            }
+                          ]
+                        },
+                        {
+                          "function_name": "ecrire",
+                          "args": [
+                            {
+                              "identifiant": "d"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "orelse": {
+                      "instructions": []
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "function_name": "ecrire",
+              "args": [
+                {
+                  "identifiant": "c"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  '''
+# ---
+# name: test_parse_while
+  '''
+  {
+    "instructions": [
+      {
+        "condition": {
+          "identifiant": "a"
+        },
+        "body": {
+          "instructions": [
+            {
+              "function_name": "ecrire",
+              "args": [
+                {
+                  "identifiant": "a"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  '''
+# ---
+# name: test_return
+  '''
+  {
+    "instructions": [
+      {
+        "return_value": {
+          "entier": 1
+        }
+      }
+    ]
+  }
+  '''
+# ---
+# name: test_syntaxe
+  '''
+  {
+    "instructions": [
+      {
+        "function_name": "ecrire",
+        "args": [
+          {
+            "op": "%",
+            "lhs": {
+              "op": "/",
+              "lhs": {
+                "op": "*",
+                "lhs": {
+                  "op": "-",
+                  "exp": {
+                    "op": "-",
+                    "lhs": {
+                      "op": "+",
+                      "lhs": {
+                        "identifiant": "a"
+                      },
+                      "rhs": {
+                        "identifiant": "b"
+                      }
+                    },
+                    "rhs": {
+                      "identifiant": "c"
+                    }
+                  }
+                },
+                "rhs": {
+                  "identifiant": "d"
+                }
+              },
+              "rhs": {
+                "identifiant": "e"
+              }
+            },
+            "rhs": {
+              "identifiant": "f"
+            }
+          }
+        ]
+      },
+      {
+        "function_name": "fonction1",
+        "args": [
+          {
+            "op": "et",
+            "lhs": {
+              "identifiant": "a"
+            },
+            "rhs": {
+              "op": "non",
+              "exp": {
+                "op": "ou",
+                "lhs": {
+                  "identifiant": "b"
+                },
+                "rhs": {
+                  "identifiant": "c"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "function_name": "bonsoir",
+        "args": [
+          {
+            "op": "==",
+            "lhs": {
+              "identifiant": "a"
+            },
+            "rhs": {
+              "op": ">=",
+              "lhs": {
+                "op": ">",
+                "lhs": {
+                  "op": "<=",
+                  "lhs": {
+                    "op": "<",
+                    "lhs": {
+                      "op": "!=",
+                      "lhs": {
+                        "identifiant": "b"
+                      },
+                      "rhs": {
+                        "identifiant": "c"
+                      }
+                    },
+                    "rhs": {
+                      "identifiant": "d"
+                    }
+                  },
+                  "rhs": {
+                    "identifiant": "e"
+                  }
+                },
+                "rhs": {
+                  "identifiant": "f"
+                }
+              },
+              "rhs": {
+                "identifiant": "g"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  '''
+# ---

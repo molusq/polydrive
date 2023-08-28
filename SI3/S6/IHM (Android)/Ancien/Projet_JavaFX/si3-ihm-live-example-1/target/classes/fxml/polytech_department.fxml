@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.polytech.ihm.DepartmentController">
+   <children>
+      <Label fx:id="name" layoutX="261.0" layoutY="192.0" text="Label" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@images/logo_polytech.png" />
+         </image></ImageView>
+   </children>
+</AnchorPane>

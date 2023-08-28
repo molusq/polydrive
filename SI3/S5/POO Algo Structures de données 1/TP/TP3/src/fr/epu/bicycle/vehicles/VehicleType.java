@@ -1,0 +1,14 @@
+package fr.epu.bicycle.vehicles;
+
+public enum VehicleType {
+	BIKE,
+	EBIKE,
+	//BORROWABLE_ELECTRIC_VEHICLE,
+	//ELECTRIC_VEHICLE,
+	TRACKABLE,
+	//NON_ELECTRIC_VEHICLE,
+	//BORROWABLE_NON_ELECTRIC_VEHICLE,
+	//SCOOTER,
+	//UNICYCLE,
+	//VEHICLE
+}

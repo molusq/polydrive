@@ -1,0 +1,38 @@
+To get the musicorganizer package to run properly, your code structure must look like this:
+
+<run code from here>
+├── build
+│   └── classes
+│       ├── musicorganizer
+│       │   ├── MusicPlayer$1.class
+│       │   ├── MusicPlayer.class
+│       │   ├── v1
+│       │   │   ├── Main.class
+│       │   │   └── MusicOrganizer.class
+│       │   └── v2
+│       │       ├── Main.class
+│       │       └── MusicOrganizer.class
+├── etc
+│   ├── audio
+│   │   ├── BigBillBroonzy-BabyPleaseDontGo1.mp3
+│   │   ├── BlindBlake-EarlyMorningBlues.mp3
+│   │   ├── BlindLemonJefferson-matchBoxBlues.mp3
+│   │   └── BlindLemonJefferson-OneDimeBlues.mp3
+│   └── jl1.0.1.jar
+├── src
+│   ├── musicorganizer
+│   │   ├── MusicPlayer.java
+│   │   ├── v1
+│   │   │   ├── Main.java
+│   │   │   ├── MusicOrganizer.java
+│   │   ├── v2
+│   │   │   ├── Main.java
+│   │   │   ├── MusicOrganizer.java
+
+Packages musicorganizer.v[3|4|5] are omitted from the above.
+
+To compile your code:
+javac -d build/classes -cp build/classes:etc/jl1.0.1.jar src/musicorganizer/MusicPlayer.java src/musicorganizer/v1/*.java
+
+To run your code:
+java -cp build/classes:etc/jl1.0.1.jar musicorganizer.v1.Main
