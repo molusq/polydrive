@@ -1,0 +1,15 @@
+# This line is fo emacs                         -*- mode: conf-space -*-
+
+# fail-bool.toy
+#fail-break1.toy
+#fail-for.toy
+#fail-plusplus.toy
+#fail-power.toy
+#ok-break1.toy
+#ok-break2.toy
+ok-float.toy
+#ok-for.toy
+#ok-plusplus.toy
+#ok-power.toy
+#ok-string.toy
+

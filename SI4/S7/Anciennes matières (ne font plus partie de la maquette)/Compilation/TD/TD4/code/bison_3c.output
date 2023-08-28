@@ -1,0 +1,114 @@
+Grammar
+
+    0 $accept: gram $end
+
+    1 gram: gram s '\n'
+    2     | error '\n'
+    3     | %empty
+
+    4 s: s TOK_A
+    5  | TOK_X
+    6  | TOK_Y
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'\n' (10) 1 2
+error (256) 2
+TOK_A (258) 4
+TOK_X (259) 5
+TOK_Y (260) 6
+
+
+Nonterminals, with rules where they appear
+
+$accept (7)
+    on left: 0
+gram (8)
+    on left: 1 2 3, on right: 0 1
+s (9)
+    on left: 4 5 6, on right: 1 4
+
+
+State 0
+
+    0 $accept: . gram $end
+
+    error  shift, and go to state 1
+
+    $end   reduce using rule 3 (gram)
+    TOK_X  reduce using rule 3 (gram)
+    TOK_Y  reduce using rule 3 (gram)
+
+    gram  go to state 2
+
+
+State 1
+
+    2 gram: error . '\n'
+
+    '\n'  shift, and go to state 3
+
+
+State 2
+
+    0 $accept: gram . $end
+    1 gram: gram . s '\n'
+
+    $end   shift, and go to state 4
+    TOK_X  shift, and go to state 5
+    TOK_Y  shift, and go to state 6
+
+    s  go to state 7
+
+
+State 3
+
+    2 gram: error '\n' .
+
+    $default  reduce using rule 2 (gram)
+
+
+State 4
+
+    0 $accept: gram $end .
+
+    $default  accept
+
+
+State 5
+
+    5 s: TOK_X .
+
+    $default  reduce using rule 5 (s)
+
+
+State 6
+
+    6 s: TOK_Y .
+
+    $default  reduce using rule 6 (s)
+
+
+State 7
+
+    1 gram: gram s . '\n'
+    4 s: s . TOK_A
+
+    TOK_A  shift, and go to state 8
+    '\n'   shift, and go to state 9
+
+
+State 8
+
+    4 s: s TOK_A .
+
+    $default  reduce using rule 4 (s)
+
+
+State 9
+
+    1 gram: gram s '\n' .
+
+    $default  reduce using rule 1 (gram)

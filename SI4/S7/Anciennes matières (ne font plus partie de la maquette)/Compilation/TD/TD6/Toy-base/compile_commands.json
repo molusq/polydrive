@@ -1,0 +1,138 @@
+[
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/lib",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-std=gnu99",
+   "-c",
+   "-o",
+   "list.o",
+   "list.c"
+  ],
+  "file": "list.c"
+ },
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/lib",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-std=gnu99",
+   "-c",
+   "-o",
+   "hash.o",
+   "hash.c"
+  ],
+  "file": "hash.c"
+ },
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/src",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-std=gnu99",
+   "-I../lib",
+   "-g",
+   "-DDEBUG",
+   "-c",
+   "-o",
+   "utils.o",
+   "utils.c"
+  ],
+  "file": "utils.c"
+ },
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/src",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-std=gnu99",
+   "-I../lib",
+   "-g",
+   "-DDEBUG",
+   "-c",
+   "-o",
+   "analysis.o",
+   "analysis.c"
+  ],
+  "file": "analysis.c"
+ },
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/src",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-std=gnu99",
+   "-I../lib",
+   "-g",
+   "-DDEBUG",
+   "-c",
+   "-o",
+   "ast.o",
+   "ast.c"
+  ],
+  "file": "ast.c"
+ },
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/src",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-std=gnu99",
+   "-I../lib",
+   "-g",
+   "-DDEBUG",
+   "-c",
+   "-o",
+   "main.o",
+   "main.c"
+  ],
+  "file": "main.c"
+ },
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/src",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-std=gnu99",
+   "-I../lib",
+   "-g",
+   "-DDEBUG",
+   "-c",
+   "-o",
+   "prodcode.o",
+   "prodcode.c"
+  ],
+  "file": "prodcode.c"
+ },
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/src",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-std=gnu99",
+   "-I../lib",
+   "-g",
+   "-DDEBUG",
+   "-c",
+   "-o",
+   "symbols.o",
+   "symbols.c"
+  ],
+  "file": "symbols.c"
+ },
+ {
+  "directory": "/Users/Florian/Documents/Sync/Polytech/S7/Compilation/TD/TD6/Toy-base/runtime",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Wextra",
+   "-std=gnu99",
+   "-c",
+   "-o",
+   "toy-runtime.o",
+   "toy-runtime.c"
+  ],
+  "file": "toy-runtime.c"
+ }
+]

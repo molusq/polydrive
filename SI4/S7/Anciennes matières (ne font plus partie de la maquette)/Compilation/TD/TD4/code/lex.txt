@@ -1,0 +1,7 @@
+lex :
+
+[xX] return TOK_X;
+[aA] return TOK_A;
+[yY] return TOK_Y;
+\n return '\n';
+[' '\t] {}

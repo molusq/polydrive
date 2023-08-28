@@ -1,0 +1,28 @@
+TD7
+
+Exercice 1 :
+1) Le terminal est utilisé par le processus en xeyes
+2) Avec ctrl+z on obtient un message d'arrêt du processus xeyes, cependant les yeux sont toujours visibles mais ne suivent plus la souris
+3) bg permet de reprendre le programme, il suit à nouveau la souris. De plus avec le & le terminal est rendu à nouveau disponible
+4) ps -> pid = 4837
+5) Envoyer le signal kill -SIGSTOP 4837 donne le même résultat que ctrl+z
+6) kill -9 pid quitte le programme
+
+Exercice 4 :
+Avec sleep(50); pause();
+Le 1er signal est capté mais le programme n'est pas terminé (avec SIGINT), le 2ème signal est capté mais le programme est cette fois-ci stoppé.
+Le sleep est interrompu.
+
+Exercice 5 : 
+Uniquement le 1er signal est capté
+En rajoutant l'appel à signal dans le on_signal() on garde le fait de capter le signal à chaque fois qu'il est capté.
+En essayant de compiler tst_sigaction on a des erreurs de compilation (car primitive posix et pas ansi).
+
+Exercice 6 :
+Quand SIGINT est masqué ou ignoré, il ne se passe rien lors de l'appel, le signal n'est pas capturé.
+En démasquant SIGINT on le capture.
+En simplement capturant le signal sans rien en faire, on a juste l'affichage
+En capturant le signal sans handler, on arrête le programme car le comportement par défaut de SIGINT est utilisé.
+
+Exercice 7 :
+On ne peut pas connaître le pid du cadet dans l'aîné, donc on ne peut pas lui envoyer de signal.

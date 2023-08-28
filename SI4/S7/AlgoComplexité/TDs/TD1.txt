@@ -1,0 +1,280 @@
+NEW "TD1.1" 1
+START @I
+END @YES "YES"
+UNDEFINED @NO "NO"
+FROM @I
+'0|'1 R @V1
+FROM @V1
+'0|'1 R
+'= R @V2a
+FROM @V2a
+'0|'1 R @V2
+FROM @V2
+'0|'1 R
+'+ R @V3a
+FROM @V3a
+'0|'1 R @V3
+FROM @V3
+'0|'1 R
+'_ L @RA0
+FROM @RA0
+'X L
+'0 'X L @RTB0
+'1 'X L @RTB1
+'+ L @RB0
+FROM @RA1
+'X L
+'0 'X L @RTB1
+'1 'X L @RTB2
+'+ L @RB1
+FROM @RTB0
+'0|'1 L
+'+ L @RB0
+FROM @RTB1
+'0|'1 L
+'+ L @RB1
+FROM @RTB2
+'0|'1 L
+'+ L @RB2
+FROM @RB0
+'X L
+'0 'X L @RTC0
+'1 'X L @RTC1
+'= L @RC0
+FROM @RB1
+'X L
+'0 'X L @RTC1
+'1 'X L @RTC2
+'= L @RC1
+FROM @RB2
+'X L
+'0 'X L @RTC2
+'1 'X L @RTC3
+'= L @RC2
+FROM @RTC0
+'0|'1 L
+'= L @RC0
+FROM @RTC1
+'0|'1 L
+'= L @RC1
+FROM @RTC2
+'0|'1 L
+'= L @RC2
+FROM @RTC3
+'0|'1 L
+'= L @RC3
+FROM @RC0
+'X L
+'0 'X R @RD0
+'_ R @RF
+FROM @RC1
+'X L
+'1 'X R @RD0
+FROM @RC2
+'X L
+'0 'X R @RD1
+FROM @RC3
+'X L
+'1 'X R @RD1
+FROM @RD0
+'0|'1|'X|'=|'+ R
+'_ L @RA0
+FROM @RD1
+'0|'1|'X|'=|'+ R
+'_ L @RA1
+FROM @RF
+'0|'X|'=|'+ '_ R
+'_ S @YES
+
+NEW "TD1.2" 1
+START @VLEFT
+END @YES "YES"
+UNDEFINED @NO "NO"
+FROM @VLEFT
+'0|'1 'A|'B R @VaRIGHT
+'C|'D S @SAME
+FROM @VaRIGHT
+'0|'1 R
+'C|'D|'_ L @VRIGHT
+FROM @VRIGHT
+'0|'1 'C|'D L @VaLEFT
+FROM @VaLEFT
+'0|'1 L
+'A|'B R @VLEFT
+FROM @SAME
+'C 'X L @SAME_R_0
+'D 'X L @SAME_R_1
+'A|'B|'X R
+'_ S @YES
+FROM @SAME_R_0
+'X|'A|'B L
+'_ R @SAME_0
+FROM @SAME_R_1
+'X|'A|'B L
+'_ R @SAME_1
+FROM @SAME_0
+'A '_ R @SAME
+FROM @SAME_1
+'B '_ R @SAME
+
+#Another solution with less states but one more character
+NEW "TD1.2_ALT" 1
+START @VLEFT
+END @YES "YES"
+UNDEFINED @NO "NO"
+FROM @VLEFT
+'X|'Y '0|'1 L
+'A|'B R
+'0|'1 'A|'B R @VRIGHT
+'C|'D S @COMPARE
+FROM @VRIGHT
+'0|'1 'X|'Y R
+'C|'D|'_ L
+'X|'Y 'C|'D L @VLEFT
+FROM @COMPARE
+'C 'X L @SEARCH_0
+'D 'X L @SEARCH_1
+'0|'1|'X 'A|'B|'X R
+'_ S @YES
+FROM @SEARCH_0
+'X|'A|'B 'X|'0|'1 L
+'_ R 
+'0 '_ R @COMPARE
+FROM @SEARCH_1
+'X|'A|'B 'X|'0|'1 L
+'_ R 
+'1 '_ R @COMPARE
+
+
+
+NEW "TD1.3" 2
+START @COUNT
+END @YES "YES"
+UNDEFINED @NO "NO"
+FROM @COUNT
+'0|'1,'_ '0|'1,'0 R,S
+'0|'1,'0 '0|'1,'0 R,R
+'_,'_ L,L @COPY
+FROM @COPY
+'0|'1,'0 '_,'0|'1 L,L
+'0|'1,'_ L,S
+'_,'_ R,R @VERIF
+FROM @VERIF
+'0|'1,'0|'1 '_,'_ R,R
+'_,'_ S,S @YES
+
+NEW "TD1.4" 2
+START @RET
+END @YES "YES"
+UNDEFINED @NO "NO"
+FROM @VERIF
+'a,'a R,R
+'a,'_ 'a,'a S,L @RET
+'_,'_ S,S @YES
+FROM @RET
+'a,'a S,L
+'a,'_ 'a,'a R,R @VERIF
+
+NEW "TD1.5a" 2
+START @PLUS_ONE
+END @END "OK"
+FROM @PLUS_ONE
+'0|'1,'1 '0|'1,'0 S,L
+'0|'1,'0 '0|'1,'1 S,R @RET
+'0|'1,'_ '0|'1,'1 S,R @RET
+'_,'0|'1|'_ S,R @END
+FROM @RET
+'0|'1,'0 S,R
+'0|'1,'1 S,R
+'0|'1,'_ R,L @PLUS_ONE
+
+NEW "TD1.5b" 1
+START @READ_ONE
+END @END "OK"
+FROM @READ_ONE
+'0|'1 'X L @ADD_ONE
+'X R
+'_ L @ERASE
+FROM @ADD_ONE
+'X L
+'_|'0 '1 R @RET
+'1 '0 L 
+FROM @RET
+'0|'1 R @RET
+'X R @READ_ONE
+FROM @ERASE
+'X '_ L
+'0|'1|'_ R @END
+
+NEW "TD1.5c" 1
+START @READ_ONE
+END @END "OK"
+FROM @READ_ONE
+'0|'1 'X L @ADD_ONE
+'_ S @END
+FROM @ADD_ONE
+'X L
+'_|'0 '1 L @GO_LEFT
+'1 '0 L 
+FROM @GO_LEFT
+'1|'0 L
+'_ R @COPY
+FROM @COPY
+'0 '_ R @COPY0
+'1 '_ R @COPY1
+FROM @COPY0
+'0 '0 R
+'1 '0 R @COPY1
+'X '0 R @READ_ONE
+FROM @COPY1
+'0 '1 R @COPY0
+'1 '1 R
+'X '1 R @READ_ONE
+
+NEW "TD1.6a" 2
+START @COPY0
+END @YES "YES"
+UNDEFINED @NO "NO"
+FROM @COPY0
+'0,'_ '_,'0 R,R
+'1,'_ S,L @VERIF1
+FROM @VERIF1
+'1,'0 '_,'_ R,L
+'_,'_ S,S @YES
+
+# Optimized for speed
+NEW "TD1.7" 1
+START @START
+END @YES "YES"
+UNDEFINED @NO "NO"
+FROM @START # This state is optional but I like it as it shortens the input
+'0 'X R @R10
+'1 'X R @R01
+'X '_ R
+'_ S @YES # Only on the empty word
+FROM @R00
+'0 'X R @R10
+'1 'X R @R01
+'X R
+'_ L @RET
+FROM @R10
+'0 R @R00
+'1 'X R @R11
+'X R
+FROM @R01
+'0 'X R @R11
+'1 R @R00
+'X R
+FROM @R11
+'0 R @R01
+'1 R @R10
+'X R
+'_ L @RET
+FROM @RET
+'X '_ L 
+'_ S @YES
+'0|'1 L @CONT
+FROM @CONT
+'X|'0|'1 L
+'_ R @START
+

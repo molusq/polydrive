@@ -1,0 +1,7 @@
+Inspection = audit (subjectif)
+Test utilisateur = objectif
+
+/o\ règles ergonomiques
+Menus dans l'ordre alphabétique
+
+Description - severity - heuristic rule violated

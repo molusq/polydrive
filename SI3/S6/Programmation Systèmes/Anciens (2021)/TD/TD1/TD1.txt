@@ -1,0 +1,49 @@
+TD n°1
+
+Exercice 1 :
+argc = 2 car on a l'argument de l'executable, et l'argument rentré
+argv[0] = / car cela correspond au 1er caractère du chemin du programme
+47 correspond au code ascii du caractère /
+
+Exercice 2 :
+prog = ".../TD1/debugSimple"
+arg = 4, qui correspond au 1er caractère de l'argument donné lors de l'exécution
+
+Exercice 3 :
+&w = l'adresse du pointeur w
+*&w = la valeur de w, c'est-à-dire l'adresse de z (car *w = &z)
+**&w = la valeur de l'adresse pointée par *w, c'est-dire la valeur de z
+
+Exercice 4 :
+La sortie du terminal affiche le print
+
+Exercice 5 :
+On s'arrête bien
+
+Exercice 6 :
+argv[0] = chemin de debugSimple
+argv[1] = argument passé dans la ligne de commande (= 456 ici)
+argv[2] = pointe vers une zone mémoire vide
+
+Exercice 7 :
+On obtient la liste des registres utilisés par le programme
+
+Exercice 8 :
+Avec 8 7 3 2 9, le tri nous sort 0 2 3 7 8
+Avec 4 3 2 1, le tri nous sort 0 1 2 3
+
+Exercice 9 :
+L'algorithme est le shellsort, on a un gap variable
+
+Exercice 10 :
+On remarque avec un espion que le tri va un indice trop loin et va chercher une adresse mémoire non allouée
+
+Exercice 11 :
+En passant "argc - 1" plutôt que "argc" on corrige le problème
+En effet argc a la même taille que le tableau a mais l'indice a[argc] n'est pas alloué
+
+Exercice 12 :
+En utilisant ltrace on voit que le tri fait appel aux fonctions malloc, atoi, printf, putchar et free de la bibliothèque libc
+
+Exercice 13 :
+On accède depuis /etc/ld.so à la bibliothèque libc située à l'adresse /lib/x86 64-linux-gnu/libc.so.6

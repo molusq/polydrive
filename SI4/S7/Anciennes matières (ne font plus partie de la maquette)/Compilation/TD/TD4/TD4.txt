@@ -1,0 +1,28 @@
+TD4
+
+Ex 1:
+bison -o bison_1.c bison_1.y; gcc -std=gnu99 -o bison_1 bison_1.c;
+
+Ex 2:
+bison -g bison_1.y;
+dot -Tpdf bison_1.dot > bison_1.pdf;
+
+Ex 3:
+bison -o bison_2.c bison_2.y; gcc -std=gnu99 -o bison_2 bison_2.c;
+
+Ex 4:
+bison -o bison_3.c bison_3.y; gcc -std=gnu99 -o bison_3 bison_3.c;
+
+Ex 7:
+bison -g -v -d -o bison_3.c bison_3.y;
+flex -o bison_3.lex.c bison_3.l;
+gcc -o bison_3 bison_3.c bison_3.lex.c;
+./bison_3
+
+2)
+
+Ex 1:
+bison -g -v -d -o bison_4.c bison_4.y;
+flex -o bison_4.lex.c bison_4.l;
+gcc -o bison_4 bison_4.c bison_4.lex.c;
+./bison_4

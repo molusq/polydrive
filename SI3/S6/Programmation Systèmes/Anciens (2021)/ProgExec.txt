@@ -1,0 +1,17 @@
+ProgExec
+
+
+Libraries :
+ar -> .a sur windows, .lib sur linux
+
+-fPIC : bibliothèques peuvent être à d'autres endroits (position-independent code)
+
+Soit lib statique, soit lib partagées.
+Partagées : soit chargement chargé par le prog à l'execution, soit chargé à la compilation
+
+Système d'exploitation :
+Ensemble de bazar qui permet de partager les resources entre les différents programmes -> couche commune qui permet d'éviter la duplication de code
+
+Temps réel : exemple abs dans voiture
+
+ldd = otool -L

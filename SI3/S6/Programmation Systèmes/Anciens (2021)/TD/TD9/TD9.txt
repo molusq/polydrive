@@ -1,0 +1,17 @@
+TD9
+
+Exercice 1 :
+Pour compiler sous osx :
+javac *.java; Javah HelloWorld; g++ -c -fpic -Wall HelloWorld.cpp -I /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/include -I /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/include/darwin; g++ -dynamiclib -o libHelloWorld.dylib HelloWorld.o;
+
+Exercice 2 : 
+On utilise un scanner
+
+Exercice 3 : 
+On affiche bien "Chaîne en C"
+
+Exercice 4 : 
+On affiche bien "Ceci est un paramètre créé en C/C++"
+
+Exercice 5 :
+On a bien notre valeur incrémentée

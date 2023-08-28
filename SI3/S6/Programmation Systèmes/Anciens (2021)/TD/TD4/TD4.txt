@@ -1,0 +1,34 @@
+TD4
+
+Exercice 3 :
+En mettant un exit() dans le main, on quitte le processus, donc les threads en sleep également.
+En mettant un exit() dans la fonction appelée par les threads, dès que l'un des treads arrive au exit(), le processus complet s'arrête.
+
+Un processus peut faire tourner plusieurs threads en même temps, et dès qu'un processus est arrêté, tous ses threads sont stoppés.
+
+
+Exercice 4 :
+On peut créer 10 000 threads, mais si l'on essaie d'en créer 100 000, on obtient les erreurs :
+fork: Resource temporarily unavailable
+Abandon (core dumped)
+Par expérimentation, la limite est autour de 12050 threads
+
+
+Exercice 5 :
+En utilisant taskset -c 0 pour exécuter multiple_fork et multiple_thread, on constate qu'on a un facteur 2 entre le temps pour créer des forks par rapport aux threads.
+
+taskset -c 0 ./multiple_threads.exe 5000
+Time taken for creating 5000 threads (nanoseconds): 136069240
+Time taken for creating 5000 threads (milliseconds): 136
+
+taskset -c 0 ./multiple_fork.exe 5000
+Time taken for creating 5000 processus (nanoseconds): 255634983
+Time taken for creating 5000 processus (milliseconds): 255
+
+
+Exercice 7 : 
+En passant l'adresse on récupère une valeur qui peut être modifiée dans le main, on corrige ça en ne passant que la valeur de i.
+
+
+Exercice 8 :
+

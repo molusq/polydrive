@@ -1,0 +1,18 @@
+TD10
+
+Sous macOS :
+javac *.java; javah Main; g++ -c -fpic -Wall Mac.cpp -I /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/include -I /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/include/darwin; g++ -dynamiclib -o libMac.dylib Mac.o;
+
+java Main
+
+Sous Linux :
+javac *.java; javah Main; g++ -c -fpic -Wall Linux.cpp -I /usr/lib/jvm/java-8-openjdk-amd64/include -I /usr/lib/jvm/java-8-openjdk-amd64/include/linux; g++ -Wl,-soname,libLinux.so -shared -o libLinux.so Linux.o;
+
+java -Djava.library.path="/media/sf_Cours/S6/ProgSys/TD/TD10" Main
+
+Sous windows : - ABANDONNÉ (pas java ni g++, et déjà testé sous linux et macos)
+javac *.java; javah Main; g++ -c -fpic -Wall Windows.cpp -I C:\Program Files\Java\jdk1.8.0_171\include -I C:\Program Files\Java\jdk1.8.0_171\include\win32; g++ -Wl,-soname,libWindows.so -shared -o libWindows.so Windows.o;
+
+Exercice 3 :
+Sous macos : les processus ne sont pas tués à cause d'une protection de la jvm
+Sous linux : tout va bien

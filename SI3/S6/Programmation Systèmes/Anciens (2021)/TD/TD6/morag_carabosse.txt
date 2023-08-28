@@ -1,0 +1,2 @@
+scp ecrivain.c Makefile sf709422@morag.polytech.unice.fr:
+scp lecteur.c Makefile sf709422@carabosse.polytech.unice.fr:

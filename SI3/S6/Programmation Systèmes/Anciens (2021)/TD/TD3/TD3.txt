@@ -1,0 +1,18 @@
+TD3
+
+Exercice 1 : 
+En comptant le nombre de lignes, on obtient 100 lignes, ce qui correspond bien au nombre de lignes que l'on voulait print (10 forks * 10 print)
+
+
+Exercice 2 :
+ps aux renvoie les pid des 10 fils et du père. On constate qu'ils se suivent tous puisque peu de programmes sont lancés en même temps que le programme.
+
+
+Exercice 3 :
+Sans utiliser de wait, on met un sleep dans le cas default du switch et le fils se termine avant le père.
+
+
+Exercice 4 :
+En utilisant le mode non graphique, on obtient un parent de l'enfant avec le pid 1 lorsqu'il est orphelin.
+
+Exercice 5 : 

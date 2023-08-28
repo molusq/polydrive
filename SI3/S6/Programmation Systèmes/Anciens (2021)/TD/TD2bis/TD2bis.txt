@@ -1,0 +1,21 @@
+TD2bis
+
+Exercice 1 :
+Le dossier debug est créé automatiquement avec la bibliothèque contenant printStop
+
+
+Exercice 2 :
+En supprimant la bibliothèque, le programme fonctionne toujours puisque le contenu de la bibliothèque a été inclus dedans.
+
+
+Exercice 3 :
+Le programme fonctionne tant que l'on garde la bibliothèque .dll et le programme en lui-même. Il ne fonctionne plus sans la bibliothèque.
+
+
+Exercice 4 : 
+Le message s'affiche comme dans le programme avec le lien de bibliothèque dynamique.
+
+
+Exercice 5 :
+Au niveau des bibliothèques, on retrouve les mêmes concepts sur Linux et Windows, c'est-à-dire bibliothèques dynamiques, bibliothèques à chargement dynamique, ou bibliothèques statiques.
+La différence entre les deux systèmes se retrouve dans les bibliothèques spécifiques. Dans Exe_DynLoad on utilise Windows.h qui appelle des fonctions présentes uniquement sur windows. Sur Linux la façon de créer les liens vers les bibliothèques dans les programmes est différente.

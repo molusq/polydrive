@@ -1,0 +1,11 @@
+#define NUMBER 258
+#define IDENT 259
+#define PLUS 260
+#define MINUS 261
+#define MULT 262
+#define DIV 263
+#define OPEN 264
+#define CLOSE 265
+#define EOL 266
+#define EQUAL 267
+#define UMINUS 268

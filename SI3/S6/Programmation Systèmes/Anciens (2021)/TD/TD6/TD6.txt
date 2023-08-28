@@ -1,0 +1,4 @@
+Exercice 5 : 
+1) Il faudrait que chacun des processus ouvrent et ferment le pipe à tour de rôle en écrivain / lisant ce qu'il y a dedans.
+
+2) Les lecteurs récupèreront chacun une partie de l'information stockée dans le pipe. Une fois lue l'information n'est plus dans le pipe.

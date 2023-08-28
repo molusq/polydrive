@@ -1,0 +1,44 @@
+TD2
+
+Exercice 1 :
+On commence par créer un tableau d'int et à le peupler de nombres aléatoires entre 0 et 999.
+On execute ensuite l'algorithme de tri sur ce tableau qui range les int par ordre croissant.
+Avec l'argument -h, on obtient une liste des options possibles pour l'argument du programme.
+Avec l'argument -v, on a un affichage détaillé du tableau avant et après tri, ainsi qu'un calcul tu temps d'exécution de l'algorithme.
+Avec l'argument -s on peut rentrer nous même la taille du tableau à trier.
+
+
+Exercice 2 :
+Avec ldd on constate que les bibliothèques suivantes sont utilisées :
+linux-vdso.so.1
+libc.so.6
+ld-linux-x86-64.so.2
+
+
+Exercice 3 :
+En utilisant la compilation statique et en cherchant les bibliothèques avec ldd, on obtient que le programme n'est pas un executable dynamique
+
+
+Exercice 4 :
+Ci-dessous les tailles pour le tri bubble
+17104 tri_bubble.exec
+16512 tri_bubble.slibexec
+921936 tri_bubble.staticexec
+On constate que le programme avec la bibliothèque statique est le plus léger, suivi par le programme normal, et enfin suivi par le programme statique.
+
+En utilisant la commande size on constate que la taille prise par les variables initialisées ou non ainsi que les instructions sont bien plus conséquentes dans le programme statique.
+Ils sont similaires pour le programme normal et le programme avec la bibliothèque statique
+
+foo et bar ne sont pas présentes dans le programme compilé avec la bibliothèque statique.
+
+
+Exercice 5 :
+En rajoutant le library path, on peut charger correctement les bibliothèques dynamiques
+
+
+Exercice 6 :
+En passant en paramètre différentes bibliothèques, on modifie l'algorithme de tri grâce au chargement dynamique.
+
+
+Exercice 7 :
+L'executable tri.exe a environ la même taille que chaque programme d'algorithme indépendant (hors programme avec bibliothèque statique), on économise donc de la mémoire

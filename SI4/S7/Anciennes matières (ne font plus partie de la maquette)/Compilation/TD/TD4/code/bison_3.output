@@ -1,0 +1,114 @@
+Grammar
+
+    0 $accept: G $end
+
+    1 G: G S '\n'
+    2  | error '\n'
+    3  | %empty
+
+    4 S: S TOK_A
+    5  | TOK_X
+    6  | TOK_Y
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'\n' (10) 1 2
+error (256) 2
+TOK_A (258) 4
+TOK_X (259) 5
+TOK_Y (260) 6
+
+
+Nonterminals, with rules where they appear
+
+$accept (7)
+    on left: 0
+G (8)
+    on left: 1 2 3, on right: 0 1
+S (9)
+    on left: 4 5 6, on right: 1 4
+
+
+State 0
+
+    0 $accept: . G $end
+
+    error  shift, and go to state 1
+
+    $end   reduce using rule 3 (G)
+    TOK_X  reduce using rule 3 (G)
+    TOK_Y  reduce using rule 3 (G)
+
+    G  go to state 2
+
+
+State 1
+
+    2 G: error . '\n'
+
+    '\n'  shift, and go to state 3
+
+
+State 2
+
+    0 $accept: G . $end
+    1 G: G . S '\n'
+
+    $end   shift, and go to state 4
+    TOK_X  shift, and go to state 5
+    TOK_Y  shift, and go to state 6
+
+    S  go to state 7
+
+
+State 3
+
+    2 G: error '\n' .
+
+    $default  reduce using rule 2 (G)
+
+
+State 4
+
+    0 $accept: G $end .
+
+    $default  accept
+
+
+State 5
+
+    5 S: TOK_X .
+
+    $default  reduce using rule 5 (S)
+
+
+State 6
+
+    6 S: TOK_Y .
+
+    $default  reduce using rule 6 (S)
+
+
+State 7
+
+    1 G: G S . '\n'
+    4 S: S . TOK_A
+
+    TOK_A  shift, and go to state 8
+    '\n'   shift, and go to state 9
+
+
+State 8
+
+    4 S: S TOK_A .
+
+    $default  reduce using rule 4 (S)
+
+
+State 9
+
+    1 G: G S '\n' .
+
+    $default  reduce using rule 1 (G)
