@@ -1,0 +1,4 @@
+TD3 : 
+
+Un noeud n’est pas responsable de la création / destruction de ses fils. Qu’est-ce que cela signifie ? Quel est l’impact ?
+Les noeuds ne sont pas liés structurellement, ce qui évite une fuite de mémoire dans un noeud qui en créérait d'autre, etc.

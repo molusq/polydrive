@@ -1,0 +1,40 @@
+md5
+sha
+sha-256
+
+openssl dgst -md5 test.txt
+	48ccb4368d13b2152168a021196849fd
+
+openssl dgst -sha test.txt
+	d3ae84137066fd4cd42e36f7773ed7ff8e57bd0e
+
+openssl dgst -sha256 test.txt
+	261e99d6f7ab584195dbc3f203e0fa7b3bfa290eb78612f9c8da02b4a2ddb0ca
+
+openssl dgst -sha512 test.txt
+	34907d002bef304bbd4325771fb44cfe3491a4bf05ed17dc60d99f48acb6dd4990b8956703b40281d75f7d8f89a9dbe75f4d63d706c32abbde184e0938c30274
+
+keyed hash :
+openssl dgst -md5 -hmac "abcdefg" test.txt
+	02a321ec676566178cefbc0fa4ce33aa
+
+openssl dgst -sha1 -hmac "abcdefg" test.txt
+	feb7a1690f2fbbde557a56d3d11909975bdc5bb2
+
+openssl dgst -sha256 -hmac "abcdefg" test.txt
+	9e2b053b70490f11304fc92666220751e8a80a3fa03a0fc753a45e562eb68d93
+
+La clé peut être de taille variable, le hash aura une taille dépendante de l'algorithm de hash.
+"The key should be the same size as the hash output. if you are using SHA-256 so you should use a 256-bit key (which equals 32-bytes).
+The HMAC algorithm is really quite flexible, so you could use a key of any size. However, if you only use a 128-bit key then there is no point using a 256-bit hash; you might as well use a 128-bit hash like MD5."
+
+
+Randomness of one-way Hash
+
+norm md5: 48ccb4368d13b2152168a021196849fd
+flip md5: cadd6383b11f12508291d96afb827358
+
+norm sha256: 261e99d6f7ab584195dbc3f203e0fa7b3bfa290eb78612f9c8da02b4a2ddb0ca
+flip sha256: e75d7dcf7db490c5b36e97b255c61c30a5e9ed771740d02727eb1cfef4c1d043
+
+Les hash générés sont complètement différents

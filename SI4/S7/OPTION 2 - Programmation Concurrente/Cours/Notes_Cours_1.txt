@@ -1,0 +1,22 @@
+Prog concurrente -> sur plusieurs threads, pas forcément en parallèle sur la machine
+->Slide 6
+
+Prog parallèle -> bah là c'est en parallèle
+->Slide 6 aussi
+
+Accélérer le temps d'exécution d'un programme
+
+Entre les trois modèles : horloge et mémoire !=
+
+Un seul coeur exécute un seul thread a un instant donné
+
+Résoudre la famine si saturation du système.
+->12
+
+Wikipedia EN > Wikipedia FR
+->12/13
+
+Biblio "thread" et biblio "multiprocessing" -> Python
+
+Comment le compilateur standard exécute le flow d'exécution
+Comment les bibliothèques pyhton fonctionnent -> simultanément ou pas

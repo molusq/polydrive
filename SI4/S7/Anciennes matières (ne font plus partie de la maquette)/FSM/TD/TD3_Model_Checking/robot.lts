@@ -1,0 +1,17 @@
+/** Mutex simple example 
+ *  Julien Deantoni
+ */
+
+
+User1 = (bombRight -> bombLeft -> User1
+	|bombLeft -> bombRight -> User1).
+//User2 = (bombLeft -> MoveCloser2).
+
+CheckBombDistance = (bombLeft -> STOP | bombRight -> STOP).
+
+/** Mutex	= (acquire1 -> release1 -> Mutex
+	*	  |acquire2 -> release2 -> Mutex).
+*/
+assert Prop = [] ( bombLeft -> (<> bombRight))
+
+//||ComposedSystem = (Mutex || User2 || User1).

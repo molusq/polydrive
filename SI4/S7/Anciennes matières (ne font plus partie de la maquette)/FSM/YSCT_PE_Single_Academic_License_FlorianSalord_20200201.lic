@@ -1,0 +1,25 @@
+FEATURE com_yakindu_sct_standard
+{
+VENDOR=ITEMIS VERSION=20.1 START=2019-01-03 END=2020-02-01 ISSUED=2019-01-03
+LICENSEE="Florian Salord, florian.salord@etu.unice.fr"
+COMMENT="YAKINDU SCT Standard Edition (Academic) for Florian Salord" SN="4C6E-F835-FE6F-450B"
+KEY=XRZSQOI3OTygh6GN7Am[UCoyLd[8hijICigVHkV8YFohnd1eie3ivnX3X8N3JRkR6Guir9Y7b5]kzx]Oxct]aUmP0Eae9vvgLXAt \
+	7Xrpk]rv1CTkrsvzv0meDtNeEWvGzXlvf]yR0ldcJFZoFlWycbfeHhqrBvQZgsZDncc5m0CS8x7l1YbYRMhB83]VQi0A]YpZeYyc \
+	9ORQ7FRDzZeTKzE0Pr7cm80c[5Iz79h31cTsn9k3BvIRUUedBT25Z8]W7w][QpGmRUJciT7Ujgc9SS9R0NU02xTfhZHds0ZfYska \
+	90qdI0aQIFCiXK9[Way8k7fv34uWuPWdxm1yO2AXbXVHG6trAmGA0lzR6gCoYINRkaS0qv70fCqaHbM8uTMJuyAumf0oYIWBjYIN \
+	fXHidJu8uguKso95sTxh4d[IX5MKTdHruKKZbGEjUl[G49BSVm]0N4cLLXrIRL4tGFpzMQSZROlio9sMTy6ywdqLOp7FnrufC39X \
+	p1J*
+}
+
+FEATURE com_yakindu_sct_professional
+{
+VENDOR=ITEMIS VERSION=20.1 START=2019-01-03 END=2020-02-01 ISSUED=2019-01-03
+LICENSEE="Florian Salord, florian.salord@etu.unice.fr"
+COMMENT="YAKINDU SCT Professional Edition (Academic) for Florian Salord" SN="D9ED-9610-D03B-FB25"
+KEY=QpV18W[ytYEDbqH4uElNUQtSPRM2lV8j7Ow35UfPZ6]9UMN9C0i0jTPURguruR]XZYyq8xP9XCdL4iEwyvpxsW[vrton1MdPXiL7 \
+	Umfd902IpWhs5F6FDpWn3XnQkiGESmouxAttK[BQUUxQLXpu0tQgO]ZaRtJDGgJwrMhjgjRXaXkKtSJUyMeZEpWiahN18rh6Qpta \
+	nVLh9F5A5E]S7ZqWftemWGx1uEpoQ3G0wgqxsqfeVuMxYseLqMT4Lzc41T5WMzg3qoyJwUftczOaZ2ZNdTssas5CG5Y3UFEMfYHD \
+	Tq76J1w4isvQ5avRceY3S9jQPqwv8riXl0t7aFYFDgJ7aa0PBCZT37e9s1IDvt7eJ2SylnVZHSTMHDajo[R]hKj13gvW9ncoUhN6 \
+	X9NyMvZpclrwgtCf[MDVMz7f8OhV4gLXrPLAt6eR76wgGEx2KXSv9BX1GNh5QmbqgHUm7ILc49yZRj9C0TBzoWkjY]bBnEk01hZc \
+	33qZ
+}

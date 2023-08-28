@@ -1,0 +1,8 @@
+A
+b
+C
+aa
+BB
+cc
+ABC
+a

@@ -1,0 +1,13 @@
+/** Mutex simple example 
+ *  Julien Deantoni
+ */
+
+User1 = (try1 -> acquire1-> release1 -> User1).
+User2 = (try2 -> acquire2-> release2 -> User2).
+
+Mutex	= (acquire1 -> release1 -> Mutex
+		  |acquire2 -> release2 -> Mutex).
+
+assert Prop = [] ( try1 -> (<> acquire1))
+
+||ComposedSystem = (Mutex || User2 || User1).

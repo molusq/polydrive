@@ -1,0 +1,20 @@
+GeneratorModel for yakindu::deantoni::java {
+
+	statechart default {
+
+		feature Outlet {
+			targetProject = "StopWatch_v4"
+			targetFolder = "src-gen"
+			libraryTargetFolder = "src"
+		}
+		
+		feature GeneralFeatures {
+			InterfaceObserverSupport = false
+			RuntimeService = true
+			TimerService = true
+			UseJavaIntForInteger = false
+		}
+	}
+	
+	
+}

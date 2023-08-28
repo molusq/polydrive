@@ -1,0 +1,7 @@
+TD7
+
+Ex 2.2:
+
+On lance bel et bien une console zsh avec
+gcc -z execstack -o call_shellcode call_shellcode.c
+

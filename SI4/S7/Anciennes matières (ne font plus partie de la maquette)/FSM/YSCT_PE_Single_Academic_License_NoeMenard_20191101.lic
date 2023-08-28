@@ -1,0 +1,25 @@
+FEATURE com_yakindu_sct_standard
+{
+VENDOR=ITEMIS VERSION=19.10 START=2018-10-26 END=2019-11-01 ISSUED=2018-10-26
+LICENSEE="Noe Menard, noe.menard@etu.unice.fr"
+COMMENT="YAKINDU SCT Standard Edition (Academic) for Noe Menard" SN="0CA0-CEC6-991F-3034"
+KEY=D71jR[VMOOmmV]sCe9qPbjPrqLB8VjfPazVzfcS82or2Qt2rZZMl0mfu7xBd0J6diSxPZ5apBR8c158jYDTh9z7zaAwfst6hGDKC \
+	sxib[iEvGznfbG1YMck8KoMuMbpsFGozPCqO495dfZ3KXrollWJfjXrklEeNhi2I9sLahxtcugftPwtGvV[21dc5PS3IFlaCmUPb \
+	Etss1M10r[Xzim1[wv1cNKFbcM776VY8ZKqMUAX2Xfcfz6MSvxbv4kPzusDv0j]XyBmA[ET2hSXFB9xNYGxlFnw09ebd]ZZafVXy \
+	SxMJNqsN52]znYGxkTVQK[]ZHuDfDntTJ4M8MfOw0hH1sg]ftPddhCCVGNxplZdQL1iuYo8WkP[uoqRqcK6WXSDIV4oPHgtkJroe \
+	oRHCZU[uc1f6aihalI2s70lPtTLr4FAQ0xnK5RHR6WYvPYg8gGQvmSMx3nC4iQndYpBUYaQ8Np9fLtGx6p3h[knruG31qKmIStVr \
+	UJe*
+}
+
+FEATURE com_yakindu_sct_professional
+{
+VENDOR=ITEMIS VERSION=19.10 START=2018-10-26 END=2019-11-01 ISSUED=2018-10-26
+LICENSEE="Noe Menard, noe.menard@etu.unice.fr"
+COMMENT="YAKINDU SCT Professional Edition (Academic) for Noe Menard" SN="8937-723E-DAE7-DFC1"
+KEY=kGajDEGFbj]qb1qtV9PO16rSaP9Hc[BFINPD9eAwV9bBoT1dpg7vyxZMEyIcaUcbvUXeXEFclXigVfgBncBRavtXCqSKvN5FrxVj \
+	MHxjMc][EkvfB1cTVEWj[gBUBhzIOxTXZBQElTvp0[GlOihHi]hcJwQfr0RlZ00y8IsbUKCOSqg7FYSZtRfhbKcGnuMw9OnFdvM5 \
+	3aiD79auoysUFtMNEFbFYQNbV5Bubqx8nlksY51Sdc0zIAk0hmPkCFAZHTxUrJfw7tO[oBUJxENALD6eBKTataZdwY[lF7]uMe1n \
+	Ah3Bj46rOHfbloJFXcKqVG4GE9B9Lxwinv]jhJSYzs6yZiYEL2wLMEYbcz7ekQzUIX9DWfogZE0pLnpoFmWxPkLWr2MDXKH7Mcks \
+	W03Wl0Sy9YjTOnWv3qBGTb4SKVsU5MNj0lIGTsWZoTVTE6Jn]i93JXdU1fS6iwkDliPDESZoDurk]5Z3pKQZIh5rud33akldYOky \
+	]5D*
+}

@@ -1,0 +1,94 @@
+# Projets LetsGoBiking anciens étudiants
+
+Source : [PNS-SI4-S7_MwSOC_LetsGoBiking - FlorianLatapie's GitHub Stars](https://github.com/stars/FlorianLatapie/lists/pns-si4-s7-mwsoc-letsgobiking)
+
+- [Yael Tramier](https://github.com/yael-tramier) & [Jeremy Graffan](https://github.com/JeremyGraffan)
+  - [mwsoc-biking](https://github.com/PolytechAled/mwsoc-biking)
+- [Antony Martin](https://github.com/antonymrtn) & [Yannick Ascari](https://github.com/yannickascari)
+  - Pas trouvé
+- [Tobias Bonifay](https://github.com/TobiasBonifay) & [Igor
+ Melnyk](https://github.com/IgorMelnykSI)
+  - [LetsGoBiking](https://github.com/TobiasBonifay/LetsGoBiking)
+- [Kilian Bonnet](https://github.com/KilianBonnet)
+  - [lets-go-biking](https://github.com/KilianBonnet/lets-go-biking)
+- [Quentin Dubois](https://github.com/QuentinDubois-Polytech) & [Ambre Correia](https://github.com/AmbreCorreia)
+  - [ProjetWebService](https://github.com/QuentinDubois-Polytech/ProjetWebService)
+- [Corentin Ruiz](https://github.com/CorentinRuiz) & [Cyril Vrousos](https://github.com/cyrilvrousos)
+  - [CarlosGPSClient](https://github.com/CorentinRuiz/CarlosGPSClient) (Partie Java - Heavy Client)
+  - [CarlosGPSFinal](https://github.com/CorentinRuiz/CarlosGPSFinal) (Tout)
+- [Michael Mc Carthy](https://github.com/Themccarthy) & [Jules Jehanno](https://github.com/J-JHNO)
+  - Pas trouvé
+- [Louis Hattiger](https://github.com/Louishattiger) & [Jordan Benavent](https://github.com/jordanbenavent)
+  - Pas trouvé
+- [Zoubair Hamza](https://github.com/HamzaZoubair) & [Youssef El Garmit](https://github.com/Youssef-El-Garmit)
+  - Pas trouvé
+- [Weel Ben Aissa](https://github.com/weelBenAissa) & [Ali Haitam](https://github.com/alihaitam)
+  - [letsGoBiking](https://github.com/weelBenAissa/letsGoBiking)
+- [Morgane Lorcery](https://github.com/MorganeLorcery) & [Emma Deal](https://github.com/emmadeal)
+  - [LetsGoBiking](https://github.com/MorganeLorcery/LetsGoBiking)
+- [Vinh Faucher](https://github.com/Supervinh) & [Quentin Bourdeau](https://github.com/QuentinBourdeau/)
+  - [middleware](https://github.com/QuentinBourdeau/middleware)
+- [Imene Yahiaoui](https://github.com/ImeneYAHIAOUI123) & [Sourour Gazzeh](https://github.com/sourour9)
+  - [middleware_homework](https://github.com/ImeneYAHIAOUI/middleware_homework)
+- [Elisa Roux](https://github.com/Elisa-Roux/) & [Yana Ragozina](https://github.com/83-99)
+  - [projet-middlSoc-roux-ragozina](https://github.com/Elisa-Roux/projet-middlSoc-roux-ragozina)
+- [Florian Latapie](https://github.com/FlorianLatapie)
+  - [PNS-SI4-S7_LetsGoBiking](https://github.com/FlorianLatapie/PNS-SI4-S7_LetsGoBiking)
+- [Nolwenn Peyratout](https://github.com/NolwennPeyratout) & [Nicolas Audoux](https://github.com/Nicolas13210)
+  - Pas trouvé
+- [Thomas Farineau](https://github.com/ThomasFarineau) & [Léo Kitabdjian](https://github.com/LeoKitabdjian)
+  - [polytech-mwsoc-letsgobiking](https://github.com/ThomasFarineau/polytech-mwsoc-letsgobiking)  
+- [Benoit Gaudet](https://github.com/BenoitGAUDET38)
+  - [GoBiking](https://github.com/BenoitGAUDET38/GoBiking)
+- [Ayoub Imami](https://github.com/AyoubIMAMI)
+  - Pas trouvé
+- [Marouane Boubia](https://github.com/BoubiaMarouane) & [Nadim Ben Aissa](https://github.com/benaissanadim)
+  - Pas trouvé
+- [Robin Viollet](https://github.com/robin-viollet) & [Thomas Guiot](https://github.com/Thomas-GUIOT)
+  - [letsgobiking](https://github.com/robin-viollet/letsgobiking)
+- [Aurélia Chabanier](https://github.com/AureliaChabanier) & [Sami El Kateb](https://github.com/SamiElkateb)
+  - Pas trouvé
+- [Mourad Karrakchou](https://github.com/MouradKarrakchou) & [Léo Le Bihan](https://github.com/LeBihanLeo/Bike)
+  - [BikeClient](https://github.com/LeBihanLeo/BikeClient) - Java Heavy Client
+  - [BikeProxy](https://github.com/LeBihanLeo/BikeProxy) - Proxy Server
+  - [Bike](https://github.com/LeBihanLeo/Bike) - Routing Server
+- [Thomas Billequin](https://github.com/Thobil)
+  - [Biking](https://github.com/Thobil/Biking)
+- Ivan Apedo
+  - Pas trouvé
+- [Ludovic Bailet](https://github.com/Ludovic-BAILET)
+  - [Projet_Lez_go_biking](https://github.com/Ludovic-BAILET/Projet_Lez_go_biking)
+- [Habib Belmokhtar](https://github.com/Belmokhtarhabib) & [Emile Derain](https://github.com/EmileDerain)
+  - Pas trouvé
+- [Loïc Le Bris](https://github.com/LoicLeBris) & [Thomas PAUL](https://github.com/tom3883)
+  - [lets-go-biking](https://github.com/LoicLeBris/lets-go-biking)
+[Samuel Goletto](https://github.com/samuelgoletto)
+  - [LetsGoBiking](https://github.com/samuelgoletto/LetsGoBiking)
+- [Tricot Thomas](https://github.com/ThomasTricot) & [Tom Bevan](https://github.com/TomBevanIUT)
+  - Pas trouvé
+- [Zinedine Chelgham](https://github.com/Chelgham-Zinedine) & [Aymane Elfiguigui](https://github.com/Aymaneelfiguigui)
+  - Pas trouvé
+- [Emilien Perraudeau](https://github.com/Emilien-Perraudeau) & [Aurélien ARNAULT](https://github.com/AurelienARNAULT)
+  - Pas trouvé
+- [Maxime Oliva](https://github.com/MaximeOLIVA) & [Chatelain Baptiste](https://github.com/Baptiste-Chatelain)
+  - Pas trouvé
+- [Benjamin Bernigaud](https://github.com/bernigaud-lecoq) & [Valentin Podda](https://github.com/ValentinPodda)
+  - Pas trouvé
+- [Badr Al Achkar](https://github.com/badr-ach) & [Louis Calas](https://github.com/LouisKls)
+  - [LetsGoBiking](https://github.com/LouisKls/LetsGoBiking)
+- [Claire Marini](https://github.com/claire06390) & [Khadidja Mehdi](https://github.com/khad-mdi)
+  - [LETS-GO-BIKING](https://github.com/claire06390/LETS-GO-BIKING)
+- [Pauline Devictor](https://github.com/Pauline-Devictor) & [Floriane Paris](https://github.com/Pauline-Devictor/BikeLetsGo)
+  - [BikeLetsGo](https://github.com/Pauline-Devictor/BikeLetsGo)
+- [Omar SAISSI](https://github.com/SAISSIOMAR) & [Anass El ayachi](https://github.com/Anasselayachi)
+  - [BikingApp](https://github.com/SAISSIOMAR/BikingApp)
+- [Jules Prince](https://github.com/Jules-Prince) & [Théophile Yvars](https://github.com/Theophile-Yvars?tab=repositories)
+  - [VeloVert](https://github.com/Jules-Prince/VeloVert)
+- Tobias Erpen
+  - Pas trouvé
+- [Matthieu Gris](https://github.com/SkepticalMatt)
+  - Pas trouvé
+- [Robin GEORGI](https://github.com/robin-grgi) & [Bastien Bezes](https://github.com/Authen15)
+  - Pas trouvé
+- [Ayman Bassy](https://github.com/BassyAyman)
+  - [MiddleWare-Project](https://github.com/BassyAyman/MiddleWare-Project)

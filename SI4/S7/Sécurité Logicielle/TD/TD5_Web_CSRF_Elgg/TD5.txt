@@ -1,0 +1,20 @@
+TD5 CSRF
+
+3.1
+Le nom d'utilisateur et le mdp sont envoyés en brut dans une requête POST
+
+3.2
+http://www.csrflabelgg.com/action/friends/add?friend=44&__elgg_ts=1539765536&__elgg_token=rF9FzV5k_8D1IREr6FsTdg
+
+Sans ts et token :
+http://www.csrflabelgg.com/action/friends/add?friend=43
+
+En faisant un post blog avec en pièce jointe une image avec l'url contenant la requête d'ami, Boby est automatiquement ajouté en ami lorsque quelqu'un voit le post.
+
+3.3
+http://www.csrflabelgg.com/action/blog/save
+Q1 : le guid correspond à celui de son profil (ajout d'ami).
+Q2 : container_guid doit correspondre à la personne ciblée.
+
+3.4
+Message d'erreur missing_token et ts.

@@ -1,0 +1,16 @@
+TD1
+
+Image encodée avec : 
+- ECB : les formes sont visibles mais les couleurs sont cryptées
+- CBC : les pixels sont complètement brouillés
+
+Texte corrompu décrypté avec 
+- ECB : Le début du document est corrompu, la fin est correctement décryptée.
+- CBC : Une partie des caractères est correctement récupéré mais certains ont leur information changée et le début du fichier est complètement corrompu.
+- CFB : Le début du document est correct, la fin est corrompue.
+- OFB : Uniquement la zone modifiée est corrompue.
+
+Padding utilisé sur des blocs de taille fixe. Pour CBC et ECB, le texte est lu avant, donc il y a du paddign, tandis que CFB et OFB, le texte est lu après l'encryptage, donc pas de padding.
+
+head -c 16 /dev/random | hexdump
+head -c 16 /dev/urandom | hexdump

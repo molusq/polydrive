@@ -1,0 +1,21 @@
+#timeText{
+	-fx-font: 100px Tahoma;
+	-fx-fill: linear-gradient(from 0% 0% to 100% 100%, repeat, red 40%, white 80%);
+	-fx-stroke: black;
+	-fx-stroke-width: 2;
+}
+
+.button{
+	-fx-background-color: #4CAF50;
+	-fx-border: none;
+	-fx-text-fill: white;
+	-fx-padding: 10px 10px;
+	-fx-text-align: center;
+	-fx-text-decoration: none;
+	-fx-display: inline-block;
+	-fx-font-size: 22px;
+}
+
+.button:hover{
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 1, 0);
+}
