@@ -1,0 +1,83 @@
+TD_1 :
+
+OpenCV code
+Now you are going to analyze what the first code cell in "assignment_1.ipynb"
+does.
+
+1. Explain what commands #1 to #4 do in this code.
+
+Command #1
+    gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    on crée une image en noir et blanc
+    c'est plus simple de travailler sur des niveaux
+    de gris pour reconnaitre des formes
+
+Command #2
+    ret c'est un integer
+    corners : input array : position des 4 coins
+    on crée les coins, on place les points, on touche juste aux corners
+
+Command #3
+    place les points plus précisément
+
+Command #4
+    on dessine l'image
+    place les points sur le dessin
+
+
+2. Plot 3D points from the coordinates given by the columns of array
+objp. What do these points represent?
+
+# Object coordinates
+    objp = np.zeros((6*7,3), np.float32)
+    #ici on a une matrice de 0
+    objp[:,:2] = np.mgrid[0:7,0:6].T.reshape(-1,2)
+    #et là on a des coordonnées dans l'espace
+    mgrid renvoie les coordonnées dans la grid, et le reshape
+    grille générée avec un pas de 1
+
+objp = np.zeros((6*7,3), np.float32)
+#print("step0\n",objp.shape)
+#objp[:,:2] = np.mgrid[0:7,0:6].T.reshape(-1,2)
+tmp = np.mgrid[0:7,0:6]
+#print("step1\n",tmp.shape)
+tmp = tmp.T
+#print("step2\n",tmp.shape)
+objp[:,:2] = tmp.reshape(-1,2)
+#print("step3\n",objp.shape)
+il va combiner les 2 derniers / les x et les y
+
+
+3. Can you give a suggestion on why obtaining the colored points on
+the image is important? If yes, what is your suggestion?
+
+Vérifier qu'ils sont au bon endroit
+
+
+
+pyOpenGL code
+
+Now you are going to focus on the second cell of the code. The "main"
+function works similarly as in C language. Note that "main" calls other
+functions defined above it.
+
+1. How do you change the following parameters : the background
+color to cyan? The window size to 400x400 pixels? The name of
+the window?
+
+Changer la couleur :
+Dans def InitGL(Width, Height):
+    glClearColor(0.0, 0.0, 1.0, 0.0)  # Background color
+Changer le titre :
+      window = glutCreateWindow(b"Assignment 1 - pyOpenGL")
+Changer la taille :
+    # Window size
+    glutInitWindowSize(400, 400)
+
+
+2. After changing the name of the window to "Test 1", the color of the
+background to cyan and the size of the window to 400 x 400 pixels,
+uncomment the lines in the middle of the draw function. If you run
+the cell, what do you see?
+
+We see a triangle !!

@@ -1,0 +1,6 @@
+OWASP => Facile
+IEEE Security & Privacy, accepted papers (web) => difficile
+Envoyer un message sur Slack
+Faire une implémentation de l'attaque, une défense, et expliquer
+durée de présentation inconnue
+30 Janvier

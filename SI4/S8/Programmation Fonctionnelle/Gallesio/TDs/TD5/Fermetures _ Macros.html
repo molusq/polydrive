@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="author" content="Erick Gallesio">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="robots" content="none">
+    <meta name="generator" content="Gomd 3.1-beta / Erick Gallesio">
+
+     <!-- W3css  "https://www.w3schools.com/lib/w3.css" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}dfn{font-style:italic}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}button,input,select,textarea{font:inherit;margin:0}optgroup{font-weight:bold}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:0.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide{font-family:"Segoe UI",Arial,sans-serif}h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}.w3-serif{font-family:"Times New Roman",Times,serif}h1,h2,h3,h4,h5,h6{font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}hr{border:0;border-top:1px solid #eee;margin:20px 0}img{margin-bottom:-5px}a{color:inherit}.w3-image{max-width:100%;height:auto}.w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}.w3-bordered tr,.w3-table-all tr{border-bottom:1px solid #ddd}.w3-striped tbody tr:nth-child(even){background-color:#f1f1f1}.w3-table-all tr:nth-child(odd){background-color:#fff}.w3-table-all tr:nth-child(even){background-color:#f1f1f1}.w3-hoverable tbody tr:hover,.w3-ul.w3-hoverable li:hover{background-color:#ccc}.w3-centered tr th,.w3-centered tr td{text-align:center}.w3-table td,.w3-table th,.w3-table-all td,.w3-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}.w3-table th:first-child,.w3-table td:first-child,.w3-table-all th:first-child,.w3-table-all td:first-child{padding-left:16px}.w3-btn,.w3-btn-block,.w3-button{border:none;display:inline-block;outline:0;padding:6px 16px;vertical-align:middle;overflow:hidden;text-decoration:none!important;color:#fff;background-color:#000;text-align:center;cursor:pointer;white-space:nowrap}.w3-btn:hover,.w3-btn-block:hover,.w3-btn-floating:hover,.w3-btn-floating-large:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}.w3-button{color:#000;background-color:#f1f1f1;padding:8px 16px}.w3-button:hover{color:#000!important;background-color:#ccc!important}.w3-btn,.w3-btn-floating,.w3-btn-floating-large,.w3-closenav,.w3-opennav,.w3-btn-block,.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none} .w3-btn-floating,.w3-btn-floating-large{display:inline-block;text-align:center;color:#fff;background-color:#000;position:relative;overflow:hidden;z-index:1;padding:0;border-radius:50%;cursor:pointer;font-size:24px}.w3-btn-floating{width:40px;height:40px;line-height:40px}.w3-btn-floating-large{width:56px;height:56px;line-height:56px}.w3-disabled,.w3-btn:disabled,.w3-button:disabled,.w3-btn-floating:disabled,.w3-btn-floating-large:disabled{cursor:not-allowed;opacity:0.3}.w3-disabled *,:disabled *{pointer-events:none}.w3-btn.w3-disabled:hover,.w3-btn-block.w3-disabled:hover,.w3-btn:disabled:hover,.w3-btn-floating.w3-disabled:hover,.w3-btn-floating:disabled:hover,.w3-btn-floating-large.w3-disabled:hover,.w3-btn-floating-large:disabled:hover{box-shadow:none}.w3-btn-group .w3-btn{float:left}.w3-btn-block{width:100%}.w3-btn-bar .w3-btn{box-shadow:none;background-color:inherit;color:inherit;float:left}.w3-btn-bar .w3-btn:hover{background-color:#ccc}.w3-badge,.w3-tag,.w3-sign{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}.w3-badge{border-radius:50%}ul.w3-ul{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px 16px;border-bottom:1px solid #ddd}ul.w3-ul li:last-child{border-bottom:none}.w3-tooltip,.w3-display-container{position:relative}.w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{display:inline-block}.w3-navbar{list-style-type:none;margin:0;padding:0;overflow:hidden}.w3-navbar li{float:left}.w3-navbar li a,.w3-navitem,.w3-navbar li .w3-btn,.w3-navbar li .w3-input{display:block;padding:8px 16px}.w3-navbar li .w3-btn,.w3-navbar li .w3-input{border:none;outline:none;width:100%}.w3-navbar li a:hover{color:#000;background-color:#ccc}.w3-navbar .w3-dropdown-hover,.w3-navbar .w3-dropdown-click{position:static}.w3-navbar .w3-dropdown-hover:hover,.w3-navbar .w3-dropdown-hover:first-child,.w3-navbar .w3-dropdown-click:hover{background-color:#ccc;color:#000}.w3-navbar a,.w3-topnav a,.w3-sidenav a,.w3-dropdown-content a,.w3-accordion-content a,.w3-dropnav a,.w3-navblock a{text-decoration:none!important}.w3-navbar .w3-opennav.w3-right{float:right!important}.w3-topnav{padding:8px 8px}.w3-navblock .w3-dropdown-hover:hover,.w3-navblock .w3-dropdown-hover:first-child,.w3-navblock .w3-dropdown-click:hover{background-color:#ccc;color:#000}.w3-navblock .w3-dropdown-hover,.w3-navblock .w3-dropdown-click{width:100%}.w3-navblock .w3-dropdown-hover .w3-dropdown-content,.w3-navblock .w3-dropdown-click .w3-dropdown-content{min-width:100%}.w3-topnav a{padding:0 8px;border-bottom:3px solid transparent;-webkit-transition:border-bottom .25s;transition:border-bottom .25s}.w3-topnav a:hover{border-bottom:3px solid #fff}.w3-topnav .w3-dropdown-hover a{border-bottom:0}.w3-opennav,.w3-closenav{color:inherit}.w3-opennav:hover,.w3-closenav:hover{cursor:pointer;opacity:0.8}.w3-btn,.w3-btn-floating,.w3-dropnav a,.w3-btn-floating-large,.w3-btn-block, .w3-navbar a,.w3-navblock a,.w3-sidenav a,.w3-pagination li a,.w3-hoverable tbody tr,.w3-hoverable li,.w3-accordion-content a,.w3-dropdown-content a,.w3-dropdown-click:hover,.w3-dropdown-hover:hover,.w3-opennav,.w3-closenav,.w3-closebtn,*[class*="w3-hover-"]{-webkit-transition:background-color .25s,color .15s,box-shadow .25s,opacity 0.25s,filter 0.25s,border 0.15s;transition:background-color .25s,color .15s,box-shadow .15s,opacity .25s,filter .25s,border .15s}.w3-ripple:active{opacity:0.5}.w3-ripple{-webkit-transition:opacity 0s;transition:opacity 0s}.w3-sidenav,.w3-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}.w3-sidenav a,.w3-navblock a{padding:4px 2px 4px 16px}.w3-sidenav a:hover,.w3-navblock a:hover{background-color:#ccc;color:#000}.w3-sidenav a,.w3-dropnav a,.w3-navblock a{display:block}.w3-sidenav .w3-dropdown-hover:hover,.w3-sidenav .w3-dropdown-hover:first-child,.w3-sidenav .w3-dropdown-click:hover,.w3-dropnav a:hover{background-color:#ccc;color:#000}.w3-sidenav .w3-dropdown-hover,.w3-sidenav .w3-dropdown-click,.w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}.w3-sidenav .w3-dropdown-hover .w3-dropdown-content,.w3-sidenav .w3-dropdown-click .w3-dropdown-content,.w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{min-width:100%}.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;background-color:inherit;color:inherit;padding:6px 2px 6px 16px}.w3-main,#main{transition:margin-left .4s}.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}.w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}.w3-closebtn{text-decoration:none;float:right;font-size:24px;font-weight:bold;color:inherit}.w3-closebtn:hover,.w3-closebtn:focus{color:#000;text-decoration:none;cursor:pointer}.w3-pagination{display:inline-block;padding:0;margin:0}.w3-pagination li{display:inline}.w3-pagination li a{text-decoration:none;color:#000;float:left;padding:8px 16px}.w3-pagination li a:hover{background-color:#ccc}.w3-input-group,.w3-group{margin-top:24px;margin-bottom:24px}.w3-input{padding:8px;display:block;border:none;border-bottom:1px solid #808080;width:100%}.w3-label{color:#009688}.w3-input:not(:valid)~.w3-validate{color:#f44336}.w3-select{padding:9px 0;width:100%;color:#000;border:1px solid transparent;border-bottom:1px solid #009688}.w3-select select:focus{color:#000;border:1px solid #009688}.w3-select option[disabled]{color:#009688}.w3-dropdown-click,.w3-dropdown-hover{position:relative;display:inline-block;cursor:pointer}.w3-dropdown-hover:hover .w3-dropdown-content{display:block;z-index:1}.w3-dropdown-hover:first-child,.w3-dropdown-click:hover{background-color:#ccc;color:#000}.w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:#ccc;color:#000}.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0}.w3-dropdown-content a{padding:6px 16px;display:block}.w3-dropdown-content a:hover{background-color:#ccc}.w3-accordion{width:100%;cursor:pointer}.w3-accordion-content{cursor:auto;display:none;position:relative;width:100%;margin:0;padding:0}.w3-accordion-content a{padding:6px 16px;display:block}.w3-accordion-content a:hover{background-color:#ccc}.w3-progress-container{width:100%;height:1.5em;position:relative;background-color:#f1f1f1}.w3-progressbar{background-color:#757575;height:100%;position:absolute;line-height:inherit}input[type=checkbox].w3-check,input[type=radio].w3-radio{width:24px;height:24px;position:relative;top:6px}input[type=checkbox].w3-check:checked+.w3-validate,input[type=radio].w3-radio:checked+.w3-validate{color:#009688} input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:disabled+.w3-validate{color:#aaa}.w3-bar{width:100%;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}.w3-bar .w3-bar-item{padding:8px 16px;float:left;background-color:inherit;color:inherit;width:auto;border:none;outline:none;display:block}.w3-bar .w3-dropdown-hover,.w3-bar .w3-dropdown-click{position:static;float:left}.w3-bar .w3-button{background-color:inherit;color:inherit;white-space:normal}.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;background-color:inherit;color:inherit;border:none;outline:none;white-space:normal}.w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}.w3-responsive{overflow-x:auto}.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,.w3-cell-row:before,.w3-cell-row:after,.w3-topnav:after,.w3-topnav:before,.w3-clear:after,.w3-clear:before,.w3-btn-group:before,.w3-btn-group:after,.w3-btn-bar:before,.w3-btn-bar:after,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}.w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{float:left;width:100%}.w3-col.s1{width:8.33333%}.w3-col.s2{width:16.66666%}.w3-col.s3{width:24.99999%}.w3-col.s4{width:33.33333%}.w3-col.s5{width:41.66666%}.w3-col.s6{width:49.99999%}.w3-col.s7{width:58.33333%}.w3-col.s8{width:66.66666%}.w3-col.s9{width:74.99999%}.w3-col.s10{width:83.33333%}.w3-col.s11{width:91.66666%}.w3-col.s12,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{width:99.99999%}@media (min-width:601px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}.w3-col.m5{width:41.66666%}.w3-col.m6,.w3-half{width:49.99999%}.w3-col.m7{width:58.33333%}.w3-col.m8,.w3-twothird{width:66.66666%}.w3-col.m9,.w3-threequarter{width:74.99999%}.w3-col.m10{width:83.33333%}.w3-col.m11{width:91.66666%}.w3-col.m12{width:99.99999%}}@media (min-width:993px){.w3-col.l1{width:8.33333%}.w3-col.l2{width:16.66666%}.w3-col.l3,.w3-quarter{width:24.99999%}.w3-col.l4,.w3-third{width:33.33333%}.w3-col.l5{width:41.66666%}.w3-col.l6,.w3-half{width:49.99999%}.w3-col.l7{width:58.33333%}.w3-col.l8,.w3-twothird{width:66.66666%}.w3-col.l9,.w3-threequarter{width:74.99999%}.w3-col.l10{width:83.33333%}.w3-col.l11{width:91.66666%}.w3-col.l12{width:99.99999%}}.w3-content{max-width:980px;margin:auto}.w3-rest{overflow:hidden}.w3-layout-container,.w3-cell-row{display:table;width:100%}.w3-layout-row{display:table-row}.w3-layout-cell,.w3-layout-col,.w3-cell{display:table-cell}.w3-layout-top,.w3-cell-top{vertical-align:top}.w3-layout-middle,.w3-cell-middle{vertical-align:middle}.w3-layout-bottom,.w3-cell-bottom{vertical-align:bottom}.w3-hide{display:none!important}.w3-show-block,.w3-show{display:block!important}.w3-show-inline-block{display:inline-block!important}@media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}.w3-modal{padding-top:30px}.w3-topnav a{display:block}.w3-navbar li:not(.w3-opennav){float:none;width:100%!important}.w3-navbar li.w3-right{float:none!important}.w3-topnav .w3-dropdown-hover .w3-dropdown-content,.w3-navbar .w3-dropdown-click .w3-dropdown-content,.w3-navbar .w3-dropdown-hover .w3-dropdown-content,.w3-dropdown-hover.w3-mobile .w3-dropdown-content,.w3-dropdown-click.w3-mobile .w3-dropdown-content{position:relative}    .w3-topnav,.w3-navbar{text-align:center}.w3-hide-small{display:none!important}.w3-layout-col,.w3-mobile{display:block;width:100%!important}.w3-bar-item.w3-mobile,.w3-dropdown-hover.w3-mobile,.w3-dropdown-click.w3-mobile{text-align:center}.w3-dropdown-hover.w3-mobile,.w3-dropdown-hover.w3-mobile .w3-btn,.w3-dropdown-hover.w3-mobile .w3-button,.w3-dropdown-click.w3-mobile,.w3-dropdown-click.w3-mobile .w3-btn,.w3-dropdown-click.w3-mobile .w3-button{width:100%}}@media (max-width:768px){.w3-modal-content{width:500px}.w3-modal{padding-top:50px}}@media (min-width:993px){.w3-modal-content{width:900px}.w3-hide-large{display:none!important}.w3-sidenav.w3-collapse,.w3-sidebar.w3-collapse{display:block!important}}@media (max-width:992px) and (min-width:601px){.w3-hide-medium{display:none!important}}@media (max-width:992px){.w3-sidenav.w3-collapse,.w3-sidebar.w3-collapse{display:none}.w3-main{margin-left:0!important;margin-right:0!important}}.w3-top,.w3-bottom{position:fixed;width:100%;z-index:1}.w3-top{top:0}.w3-bottom{bottom:0}.w3-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}.w3-left{float:left!important}.w3-right{float:right!important}.w3-tiny{font-size:10px!important}.w3-small{font-size:12px!important}.w3-medium{font-size:15px!important}.w3-large{font-size:18px!important}.w3-xlarge{font-size:24px!important}.w3-xxlarge{font-size:36px!important}.w3-xxxlarge{font-size:48px!important}.w3-jumbo{font-size:64px!important}.w3-vertical{word-break:break-all;line-height:1;text-align:center;width:0.6em}.w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}.w3-justify{text-align:justify!important}.w3-center{text-align:center!important}.w3-display-topleft{position:absolute;left:0;top:0}.w3-display-topright{position:absolute;right:0;top:0}.w3-display-bottomleft{position:absolute;left:0;bottom:0}.w3-display-bottomright{position:absolute;right:0;bottom:0}.w3-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}.w3-display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}.w3-display-right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}.w3-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}.w3-display-bottommiddle{position:absolute;left:50%;bottom:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}.w3-display-container:hover .w3-display-hover{display:block}.w3-display-container:hover span.w3-display-hover{display:inline-block}.w3-display-hover{display:none}.w3-display-position{position:absolute}.w3-circle{border-radius:50%!important}.w3-round-small{border-radius:2px!important}.w3-round,.w3-round-medium{border-radius:4px!important}.w3-round-large{border-radius:8px!important}.w3-round-xlarge{border-radius:16px!important}.w3-round-xxlarge{border-radius:32px!important}.w3-round-jumbo{border-radius:64px!important}.w3-border-0{border:0!important}.w3-border{border:1px solid #ccc!important}.w3-border-top{border-top:1px solid #ccc!important}.w3-border-bottom{border-bottom:1px solid #ccc!important}.w3-border-left{border-left:1px solid #ccc!important}.w3-border-right{border-right:1px solid #ccc!important}.w3-margin{margin:16px!important}.w3-margin-0{margin:0!important}.w3-margin-top{margin-top:16px!important}.w3-margin-bottom{margin-bottom:16px!important}.w3-margin-left{margin-left:16px!important}.w3-margin-right{margin-right:16px!important}.w3-section{margin-top:16px!important;margin-bottom:16px!important}.w3-padding-tiny{padding:2px 4px!important}.w3-padding-small{padding:4px 8px!important}.w3-padding-medium,.w3-padding,.w3-form{padding:8px 16px!important}.w3-padding-large{padding:12px 24px!important}.w3-padding-xlarge{padding:16px 32px!important}.w3-padding-xxlarge{padding:24px 48px!important}.w3-padding-jumbo{padding:32px 64px!important}.w3-padding-4{padding-top:4px!important;padding-bottom:4px!important}.w3-padding-8{padding-top:8px!important;padding-bottom:8px!important}.w3-padding-12{padding-top:12px!important;padding-bottom:12px!important}.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}.w3-padding-24{padding-top:24px!important;padding-bottom:24px!important}.w3-padding-32{padding-top:32px!important;padding-bottom:32px!important}.w3-padding-48{padding-top:48px!important;padding-bottom:48px!important}.w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}.w3-padding-128{padding-top:128px!important;padding-bottom:128px!important}.w3-padding-0{padding:0!important}.w3-padding-top{padding-top:8px!important}.w3-padding-bottom{padding-bottom:8px!important}.w3-padding-left{padding-left:16px!important}.w3-padding-right{padding-right:16px!important}.w3-topbar{border-top:6px solid #ccc!important}.w3-bottombar{border-bottom:6px solid #ccc!important}.w3-leftbar{border-left:6px solid #ccc!important}.w3-rightbar{border-right:6px solid #ccc!important}.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 8px}.w3-spin{animation:w3-spin 2s infinite linear;-webkit-animation:w3-spin 2s infinite linear}@-webkit-keyframes w3-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes w3-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}.w3-container{padding:0.01em 16px}.w3-panel{padding:0.01em 16px;margin-top:16px!important;margin-bottom:16px!important}.w3-example{background-color:#f1f1f1;padding:0.01em 16px}.w3-code,.w3-codespan{font-family:Consolas,"courier new";font-size:16px}.w3-code{line-height:1.4;width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #4CAF50;word-wrap:break-word}.w3-codespan{color:crimson;background-color:#f1f1f1;padding-left:4px;padding-right:4px;font-size:110%}.w3-example,.w3-code{margin:20px 0}.w3-card{border:1px solid #ccc}.w3-card-2,.w3-example{box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important}.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important}.w3-card-8{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important}.w3-card-12{box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)!important}.w3-card-16{box-shadow:0 16px 24px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21)!important}.w3-card-24{box-shadow:0 24px 24px 0 rgba(0,0,0,0.2),0 40px 77px 0 rgba(0,0,0,0.22)!important}.w3-animate-fading{-webkit-animation:fading 10s infinite;animation:fading 10s infinite}@-webkit-keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}.w3-animate-opacity{-webkit-animation:opac 0.8s;animation:opac 0.8s}@-webkit-keyframes opac{from{opacity:0} to{opacity:1}}@keyframes opac{from{opacity:0} to{opacity:1}}.w3-animate-top{position:relative;-webkit-animation:animatetop 0.4s;animation:animatetop 0.4s}@-webkit-keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}.w3-animate-left{position:relative;-webkit-animation:animateleft 0.4s;animation:animateleft 0.4s}@-webkit-keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}.w3-animate-right{position:relative;-webkit-animation:animateright 0.4s;animation:animateright 0.4s}@-webkit-keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}.w3-animate-bottom{position:relative;-webkit-animation:animatebottom 0.4s;animation:animatebottom 0.4s}@-webkit-keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0px;opacity:1}}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}.w3-animate-zoom {-webkit-animation:animatezoom 0.6s;animation:animatezoom 0.6s}@-webkit-keyframes animatezoom{from{-webkit-transform:scale(0)} to{-webkit-transform:scale(1)}}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}.w3-animate-input{-webkit-transition:width 0.4s ease-in-out;transition:width 0.4s ease-in-out}.w3-animate-input:focus{width:100%!important}.w3-opacity,.w3-hover-opacity:hover{opacity:0.60;-webkit-backface-visibility:hidden}.w3-opacity-off,.w3-hover-opacity-off:hover{opacity:1;-webkit-backface-visibility:hidden}.w3-opacity-max{opacity:0.25;-webkit-backface-visibility:hidden}.w3-opacity-min{opacity:0.75;-webkit-backface-visibility:hidden}.w3-greyscale-max,.w3-grayscale-max,.w3-hover-greyscale:hover,.w3-hover-grayscale:hover{-webkit-filter:grayscale(100%);filter:grayscale(100%)}.w3-greyscale,.w3-grayscale{-webkit-filter:grayscale(75%);filter:grayscale(75%)}.w3-greyscale-min,.w3-grayscale-min{-webkit-filter:grayscale(50%);filter:grayscale(50%)}.w3-sepia{-webkit-filter:sepia(75%);filter:sepia(75%)}.w3-sepia-max,.w3-hover-sepia:hover{-webkit-filter:sepia(100%);filter:sepia(100%)}.w3-sepia-min{-webkit-filter:sepia(50%);filter:sepia(50%)}.w3-text-shadow{text-shadow:1px 1px 0 #444}.w3-text-shadow-white{text-shadow:1px 1px 0 #ddd}.w3-transparent{background-color:transparent!important}.w3-hover-none:hover{box-shadow:none!important;background-color:transparent!important}.w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}.w3-aqua,.w3-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}.w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}.w3-light-blue,.w3-hover-light-blue:hover{color:#000!important;background-color:#87CEEB!important}.w3-brown,.w3-hover-brown:hover{color:#fff!important;background-color:#795548!important}.w3-cyan,.w3-hover-cyan:hover{color:#000!important;background-color:#00bcd4!important}.w3-blue-grey,.w3-hover-blue-grey:hover,.w3-blue-gray,.w3-hover-blue-gray:hover{color:#fff!important;background-color:#607d8b!important}.w3-green,.w3-hover-green:hover{color:#fff!important;background-color:#4CAF50!important}.w3-light-green,.w3-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}.w3-indigo,.w3-hover-indigo:hover{color:#fff!important;background-color:#3f51b5!important}.w3-khaki,.w3-hover-khaki:hover{color:#000!important;background-color:#f0e68c!important}.w3-lime,.w3-hover-lime:hover{color:#000!important;background-color:#cddc39!important}.w3-orange,.w3-hover-orange:hover{color:#000!important;background-color:#ff9800!important}.w3-deep-orange,.w3-hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}.w3-pink,.w3-hover-pink:hover{color:#fff!important;background-color:#e91e63!important}.w3-purple,.w3-hover-purple:hover{color:#fff!important;background-color:#9c27b0!important}.w3-deep-purple,.w3-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}.w3-red,.w3-hover-red:hover{color:#fff!important;background-color:#f44336!important}.w3-sand,.w3-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}.w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#fff!important}.w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}.w3-grey,.w3-hover-grey:hover,.w3-gray,.w3-hover-gray:hover{color:#000!important;background-color:#9e9e9e!important}.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}.w3-dark-grey,.w3-hover-dark-grey:hover,.w3-dark-gray,.w3-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}.w3-pale-red,.w3-hover-pale-red:hover{color:#000!important;background-color:#ffdddd!important}.w3-pale-green,.w3-hover-pale-green:hover{color:#000!important;background-color:#ddffdd!important}.w3-pale-yellow,.w3-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}.w3-pale-blue,.w3-hover-pale-blue:hover{color:#000!important;background-color:#ddffff!important}.w3-text-amber,.w3-hover-text-amber:hover{color:#ffc107!important}.w3-text-aqua,.w3-hover-text-aqua:hover{color:#00ffff!important}.w3-text-blue,.w3-hover-text-blue:hover{color:#2196F3!important}.w3-text-light-blue,.w3-hover-text-light-blue:hover{color:#87CEEB!important}.w3-text-brown,.w3-hover-text-brown:hover{color:#795548!important}.w3-text-cyan,.w3-hover-text-cyan:hover{color:#00bcd4!important}.w3-text-blue-grey,.w3-hover-text-blue-grey:hover,.w3-text-blue-gray,.w3-hover-text-blue-gray:hover{color:#607d8b!important}.w3-text-green,.w3-hover-text-green:hover{color:#4CAF50!important}.w3-text-light-green,.w3-hover-text-light-green:hover{color:#8bc34a!important}.w3-text-indigo,.w3-hover-text-indigo:hover{color:#3f51b5!important}.w3-text-khaki,.w3-hover-text-khaki:hover{color:#b4aa50!important}.w3-text-lime,.w3-hover-text-lime:hover{color:#cddc39!important}.w3-text-orange,.w3-hover-text-orange:hover{color:#ff9800!important}.w3-text-deep-orange,.w3-hover-text-deep-orange:hover{color:#ff5722!important}.w3-text-pink,.w3-hover-text-pink:hover{color:#e91e63!important}.w3-text-purple,.w3-hover-text-purple:hover{color:#9c27b0!important}.w3-text-deep-purple,.w3-hover-text-deep-purple:hover{color:#673ab7!important}.w3-text-red,.w3-hover-text-red:hover{color:#f44336!important}.w3-text-sand,.w3-hover-text-sand:hover{color:#fdf5e6!important}.w3-text-teal,.w3-hover-text-teal:hover{color:#009688!important}.w3-text-yellow,.w3-hover-text-yellow:hover{color:#d2be0e!important}.w3-text-white,.w3-hover-text-white:hover{color:#fff!important}.w3-text-black,.w3-hover-text-black:hover{color:#000!important}.w3-text-grey,.w3-hover-text-grey:hover,.w3-text-gray,.w3-hover-text-gray:hover{color:#757575!important}.w3-text-light-grey,.w3-hover-text-light-grey:hover,.w3-text-light-gray,.w3-hover-text-light-gray:hover{color:#f1f1f1!important}.w3-text-dark-grey,.w3-hover-text-dark-grey:hover,.w3-text-dark-gray,.w3-hover-text-dark-gray:hover{color:#3a3a3a!important}.w3-border-amber,.w3-hover-border-amber:hover{border-color:#ffc107!important}.w3-border-aqua,.w3-hover-border-aqua:hover{border-color:#00ffff!important}.w3-border-blue,.w3-hover-border-blue:hover{border-color:#2196F3!important}.w3-border-light-blue,.w3-hover-border-light-blue:hover{border-color:#87CEEB!important}.w3-border-brown,.w3-hover-border-brown:hover{border-color:#795548!important}.w3-border-cyan,.w3-hover-border-cyan:hover{border-color:#00bcd4!important}.w3-border-blue-grey,.w3-hover-border-blue-grey:hover,.w3-border-blue-gray,.w3-hover-border-blue-gray:hover{border-color:#607d8b!important}.w3-border-green,.w3-hover-border-green:hover{border-color:#4CAF50!important}.w3-border-light-green,.w3-hover-border-light-green:hover{border-color:#8bc34a!important}.w3-border-indigo,.w3-hover-border-indigo:hover{border-color:#3f51b5!important}.w3-border-khaki,.w3-hover-border-khaki:hover{border-color:#f0e68c!important}.w3-border-lime,.w3-hover-border-lime:hover{border-color:#cddc39!important}.w3-border-orange,.w3-hover-border-orange:hover{border-color:#ff9800!important}.w3-border-deep-orange,.w3-hover-border-deep-orange:hover{border-color:#ff5722!important}.w3-border-pink,.w3-hover-border-pink:hover{border-color:#e91e63!important}.w3-border-purple,.w3-hover-border-purple:hover{border-color:#9c27b0!important}.w3-border-deep-purple,.w3-hover-border-deep-purple:hover{border-color:#673ab7!important}.w3-border-red,.w3-hover-border-red:hover{border-color:#f44336!important}.w3-border-sand,.w3-hover-border-sand:hover{border-color:#fdf5e6!important}.w3-border-teal,.w3-hover-border-teal:hover{border-color:#009688!important}.w3-border-yellow,.w3-hover-border-yellow:hover{border-color:#ffeb3b!important}.w3-border-white,.w3-hover-border-white:hover{border-color:#fff!important}.w3-border-black,.w3-hover-border-black:hover{border-color:#000!important}.w3-border-grey,.w3-hover-border-grey:hover,.w3-border-gray,.w3-hover-border-gray:hover{border-color:#9e9e9e!important}.w3-border-light-grey,.w3-hover-border-light-grey:hover,.w3-border-light-gray,.w3-hover-border-light-gray:hover{border-color:#f1f1f1!important}.w3-border-dark-grey,.w3-hover-border-dark-grey:hover,.w3-border-dark-gray,.w3-hover-border-dark-gray:hover{border-color:#616161!important}.w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}.w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}</style>
+
+        <!-- katex -->
+    <script src="./Fermetures &amp; Macros_files/katex.min.js.téléchargement" data-external="1"></script>
+    <script src="./Fermetures &amp; Macros_files/auto-render.min.js.téléchargement" data-external="1"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body);
+      });
+    </script>
+    <link rel="stylesheet" href="./Fermetures &amp; Macros_files/katex.min.css" data-external="1">
+    
+        
+    <!-- CSS -->
+        <link rel="stylesheet" href="./Fermetures &amp; Macros_files/font-awesome.min.css" data-external="1">
+            <!-- highllighting CSS -->
+    <style type="text/css">
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          color: #aaaaaa;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+      div.sourceCode
+        {  background-color: #f8f8f8; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span.al { color: #ef2929; } /* Alert */
+      code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+      code span.at { color: #c4a000; } /* Attribute */
+      code span.bn { color: #0000cf; } /* BaseN */
+      code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #4e9a06; } /* Char */
+      code span.cn { color: #000000; } /* Constant */
+      code span.co { color: #8f5902; font-style: italic; } /* Comment */
+      code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+      code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+      code span.dt { color: #204a87; } /* DataType */
+      code span.dv { color: #0000cf; } /* DecVal */
+      code span.er { color: #a40000; font-weight: bold; } /* Error */
+      code span.ex { } /* Extension */
+      code span.fl { color: #0000cf; } /* Float */
+      code span.fu { color: #000000; } /* Function */
+      code span.im { } /* Import */
+      code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+      code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+      code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+      code span.ot { color: #8f5902; } /* Other */
+      code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+      code span.sc { color: #000000; } /* SpecialChar */
+      code span.ss { color: #4e9a06; } /* SpecialString */
+      code span.st { color: #4e9a06; } /* String */
+      code span.va { color: #000000; } /* Variable */
+      code span.vs { color: #4e9a06; } /* VerbatimString */
+      code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+    
+    <!-- local CSS -->
+    <style>
+h2:before,h3:before,h4:before,h5:before{margin-right:1em}.footnotes:before,.scaps{font-variant:small-caps}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;background-color:#f2f2f2;color:#444;counter-reset:h2}pre{margin:1em 0;padding:0}code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;border-radius:4px}code.sourceCode{padding:5px;display:block;border-radius:8px;background-color:transparent;color:#333}div.sourceCode{border-radius:8px;box-shadow:0 2px 4px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)!important}blockquote{border-left:4px solid #ddd;padding:0 5px;font-style:italic;font-size:95%}ul{list-style-type:"- "}a{color:#3F51B5;text-decoration:none}a:hover{border-bottom:1px solid #ccc}h2{counter-reset:h3;border-bottom:3px solid #ccc}h3{counter-reset:h4}h4{counter-reset:h5}h2:before{counter-increment:h2;content:counter(h2)}h3:before{counter-increment:h3;content:counter(h2) "." counter(h3)}h4:before{counter-increment:h4;content:counter(h2) "." counter(h3) "." counter(h4)}h5:before{counter-increment:h5;content:counter(h2) "." counter(h3) "." counter(h4) "." counter(h5)}h6:before{counter-increment:h6;content:counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " "}h2.nocount:before,h3.nocount:before,h4.nocount:before,h5.nocount:before,h6.nocount:before{content:"";counter-increment:none;margin:0}.page-header{padding:8px 0}.page-footer{background:#fafafa;padding:5px 0 0 10px;position:fixed;margin:0;bottom:0;left:0;width:100%}td,th{padding:0 1em}table{border-collapse:collapse}th{background:#ddd}table,td,th{border:1px solid #000}.main-content{min-width:20em;max-width:750px;margin:auto}.center{text-align:center;margin:0 auto}#TOC li,#TOC ul{margin:0;padding:0}#TOC li{font-size:12px}#TOC li li{margin-left:1em}#TOC a{color:#333}.footnotes{margin-top:5px;border-top:2px solid grey;font-size:80%}.footnotes:before{content:"Notes";font-weight:700}.footnotes hr{display:none}@page{size:A4;@bottom-center {
+        content: counter(page) "/" counter(pages);
+        font-style: italic
+    }}@media print{body{font-family:serif,"Palatino Linotype","Book Antiqua",Palatino,serif;margin:0;font-size:9pt;background-color:#fff!important;color:#000!important}h1,h2,h3,h4{page-break-after:avoid}code{page-break-inside:avoid}li,p{orphans:2;widows:2}.noprint,footer,header{display:none}.print{width:100%}}
+    </style>
+
+        <link rel="stylesheet" href="data:text/css,%2Enotions%7Bbackground%3A%23e8f3db%3Bfont%2Dsize%3A80%25%3Bpadding%3A5px%201em%3Bmargin%3A0%205em%3Bborder%2Dradius%3A8px%7D%2Enotions%20h3%2C%2Enotions%20h4%7Bcolor%3A%23008578%7D%2Enotions%20code%7Bbackground%2Dcolor%3A%23e8f3db%7D%2Enotions%20th%2C%2Enotions%20td%7Bborder%3A1px%20solid%20%23000%3Bpadding%3A5px%7D%2Eerror%2Dbox%7Bbackground%3A%23fdd%3Bfont%2Dsize%3A120%25%3Bpadding%3A5px%201em%3Bmargin%3A0%205em%3Bborder%2Dradius%3A8px%3Bcolor%3A%23e91e63%3Btext%2Dalgn%3Acenter%7D">
+    
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    <title>Fermetures &amp; Macros</title>
+  </head>
+  <body>
+    <!-- top navpar -->
+    <header>
+      <div class="w3-container w3-bar w3-black page-header" style="font-size: 18px">
+
+        <a class="w3-bar-item w3-button w3-hover-red w3-text-grey" style="margin-left: 0.2em" href="http://users.polytech.unice.fr/~eg/ProgFonc/index.html">
+          Programmation Fonctionnelle
+        </a>
+                        <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td1</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td01/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td01/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td2</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td02/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td02/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td3</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td03/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td03/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td4</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td04/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td04/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td5</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td6</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td06/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td06/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td7</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td07/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td07/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td8</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td08/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td08/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td9</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td09/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td09/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+                <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red w3-text-grey">Td10</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td10/sujet.html" class="w3-bar-item w3-button w3-hover-red">Sujet</a>
+            <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td10/corrige.html" class="w3-bar-item w3-button w3-hover-red">Corrigé</a>
+          </div>
+        </div>
+              </div>
+    </header>
+
+    <div class="w3-row-padding">
+
+      <!-- Left margin -->
+      <div class="w3-quarter noprint">
+        <!-- Informations -->
+                <!-- Resources -->
+                <ul class="w3-ul w3-card-2 w3-border" style="margin-top: 16px">
+          <li class="w3-indigo">
+            <i class="fa fa-file"></i> &nbsp;&nbsp;<b>Ressources</b></li>
+          <li style="font-size: 12px;"><p><strong>Cours</strong><br>
+1.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours01.html">Introduction</a><br>
+2.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours02.html">Listes</a><br>
+3.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours03.html">Functions</a><br>
+4.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours04.html">Fermetures &amp; ADT</a><br>
+5.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html">Macros</a><br>
+6.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours06.html">Langage à objets</a><br>
+7.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours07.html">Flots</a><br>
+8.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours08.html">Continuations</a><br>
+9.&nbsp;&nbsp;&nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html">Scheme en Scheme</a><br>
+10.&nbsp; &nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html">Outils de logique</a><br>
+11.&nbsp; &nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours11.html">Intro Programmation logique</a><br>
+12.&nbsp; &nbsp;<a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/ARM-POLYTECH2019.pdf">Verification formelle (ARM)</a><br>
+</p>
+          </li>
+        </ul>
+                <!-- Links -->
+                <ul class="w3-ul w3-card-2 w3-border" style="margin-top: 16px">
+          <li class="w3-indigo">
+            <i class="fa fa-external-link"></i> &nbsp;&nbsp;<b>Sites externes</b></li>
+          <li style="font-size: 12px;"><p>&gt; <a href="http://schemers.org/">Schemers.org</a> <br> &gt; <a href="http://community.schemewiki.org/?scheme-faq-standards#implementations">Implementations</a></p>
+          </li>
+        </ul>
+        
+                        <!-- Toc -->
+        <ul class="w3-ul w3-card-2 w3-border" style="margin-top: 16px">
+          <li class="w3-gray">
+            <i class="fa fa-list"></i> &nbsp;&nbsp;<b>Index</b>
+          </li>
+          <li id="TOC">
+            <ul>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-1-accumulateur">Exercice 1: accumulateur</a></li>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-2-variante-daccumulateur">Exercice 2: Variante d’accumulateur</a></li>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-3-m%C3%A9mo-fonction">Exercice 3: mémo-fonction</a></li>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-4-forme-sp%C3%A9ciale-prog1">Exercice 4: forme spéciale prog1</a></li>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-5-macros-push-et-pop">Exercice 5: macros push! et pop!</a></li>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-6-forme-sp%C3%A9ciale-for-all">Exercice 6: forme spéciale for-all</a></li>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-7-forme-sp%C3%A9ciale-while">Exercice 7: forme spéciale while</a></li>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-8-forme-case">Exercice 8: forme case</a></li>
+            <li><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#exercice-9-boucle-for">Exercice 9: boucle for</a></li>
+            </ul>
+          </li>
+        </ul>
+                      </div>
+
+      <div class="w3-threequarter print main-content">
+
+                <div class="sc" style="margin-top: 2em; line-spacing: 1.1; font-size: 11px">
+          <div>
+            <big><b>Polytech Nice Sophia</b></big>
+            <span class="pull-right">Programmation Fonctionnelle</span>
+          </div>
+          SI4 / 2020-2021<br>
+          Erick Gallesio
+        </div>
+        
+        <div class="w3-center" style="margin:32px 16px;">
+                    <h1>Feuille 5</h1>
+                    <h1>Fermetures &amp; Macros</h1>
+                  </div>
+<h2 class="nocount" id="exercice-1-accumulateur">Exercice 1: accumulateur</h2>
+<p>Un <em>accumulateur</em> est une procédure à un seul argument numérique. Son rôle consiste à mémoriser la somme cumulée de ses arguments successifs. A chaque appel, il retourne cette somme cumulée. Écrire la procédure <code>create-accumulator</code> (le paramètre de cette procédure correspond à la valeur initiale de l’accumulateur).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> a </span>(create-accumulator <span class="dv">100</span>)) <span class="co">; 100 = valeur initiale acc.</span></span>
+<span id="cb1-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> b </span>(create-accumulator <span class="dv">0</span>))    <span class="co">; 0 = valeur initiale acc.</span></span>
+<span id="cb1-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (a <span class="dv">10</span>)</span>
+<span id="cb1-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dv">110</span></span>
+<span id="cb1-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (a <span class="dv">20</span>)</span>
+<span id="cb1-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dv">130</span></span>
+<span id="cb1-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (a <span class="dv">30</span>)</span>
+<span id="cb1-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dv">160</span></span>
+<span id="cb1-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (b <span class="dv">1</span>)</span>
+<span id="cb1-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb1-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (b <span class="dv">1</span>)</span>
+<span id="cb1-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span></code></pre></div>
+<div class="w3-card-8 w3-pale-red" style="margin: 0 2em; padding:10px; font-size: 80%;">
+<header class="w3-red">
+&nbsp; <span class="fa fa-info-circle"></span>&nbsp;&nbsp;&nbsp;<strong>Indications</strong>
+</header>
+<p><strong>Pas de macro ici</strong></p>
+<p>Pour cette fonction on va utiliser le mécanisme de capture vu en cours. Le résultat de la fonction <code>create-accumulator</code> est une fonction (un accumulateur). La fonction que l’on doit créer à a donc la forme suivante:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb2-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu">  </span>(create-accumulator k)</span>
+<span id="cb2-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((accu k))</span>
+<span id="cb2-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb2-3" aria-hidden="true" tabindex="-1"></a>     (λ (x)</span>
+<span id="cb2-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb2-4" aria-hidden="true" tabindex="-1"></a>        .....)))</span></code></pre></div>
+<p>Ainsi, la fonction renvoyée par <code>create-accumulator</code> «voit» la valeur initiale de l’accumulateur <code>k</code> et la valeur courante de l’accumulateur.</p>
+<p>Vous pouvez vérifier aussi que cela ne marcherait pas si le <code>let</code> était placé à l’intérieur de la lambda (puisque, dans ce cas, <code>accu</code> serait réinitialisé à la valeur de départ <code>k</code>, à chaque appel de l’accumulateur).</p>
+<p>Une fois n’est pas coutume: Vous pouvez/devez utiliser une affectation ici.</p>
+</div>
+<p></p>
+<h2 class="nocount" id="exercice-2-variante-daccumulateur">Exercice 2: Variante d’accumulateur</h2>
+<p>On reprend les accumulateurs de la question précédente et on leur permet maintenant d’être réinitialisés à leur valeur de départ. Pour cela, lorsqu’un accumulateur reçoit le symbole ’init` en paramètre, sa valeur courante sera remise à la valeur initiale qui lui avait été passé au moment de sa création.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>(<span class="ex">define</span><span class="fu"> a </span>(create-accumulator <span class="dv">100</span>))</span>
+<span id="cb3-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (a <span class="dv">10</span>)</span>
+<span id="cb3-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dv">110</span></span>
+<span id="cb3-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (a <span class="dv">20</span>)</span>
+<span id="cb3-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dv">130</span></span>
+<span id="cb3-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (a 'init)</span>
+<span id="cb3-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span></span>
+<span id="cb3-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (a <span class="dv">10</span>)</span>
+<span id="cb3-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="dv">110</span></span>
+<span id="cb3-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (a <span class="dv">20</span>)</span>
+<span id="cb3-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="dv">130</span></span></code></pre></div>
+<div class="w3-card-8 w3-pale-red" style="margin: 0 2em; padding:10px; font-size: 80%;">
+<header class="w3-red">
+&nbsp; <span class="fa fa-info-circle"></span>&nbsp;&nbsp;&nbsp;<strong>Indications</strong>
+</header>
+<p><strong>Pas de macro pour cet exercice</strong></p>
+<p>C’est une simple modification du code de la question précédente.</p>
+</div>
+<p></p>
+<h2 class="nocount" id="exercice-3-mémo-fonction">Exercice 3: mémo-fonction</h2>
+<p>On désire pouvoir construire des fonctions à <em>mémoire</em> qui conservent <strong>tous</strong> les résultats correspondant à des appels antérieurs. Plus précisément, si <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="mord mathdefault" style="margin-right: 0.10764em;">f</span></span></span></span></span> est une fonction à mémoire à un argument, chaque appel <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathdefault" style="margin-right: 0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.311664em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> est conservé sous la forme du couple <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x_i, f(x_i))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.311664em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault" style="margin-right: 0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.311664em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span>. Ainsi, lors de l’évaluation de <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathdefault" style="margin-right: 0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mclose">)</span></span></span></span></span>, la fonction à mémoire regarde si le couple <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>f</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a, f(a))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault" style="margin-right: 0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span> existe déjà.</p>
+<ul>
+<li>Si ce couple existe déjà, la fonction renvoie la valeur <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathdefault" style="margin-right: 0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mclose">)</span></span></span></span></span> déjà calculée,</li>
+<li>sinon la fonction calcule effectivement <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathdefault" style="margin-right: 0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mclose">)</span></span></span></span></span> et, avant de retourner cette valeur, ajoute le couple <span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>f</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a, f(a))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault" style="margin-right: 0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span> à la liste des couples existants.</li>
+</ul>
+<p>Ecrivez la fonction <code>memo</code> qui, étant donnée une fonction à un argument, renvoie une nouvelle fonction (qui, pour des entrées identiques, produit les mêmes valeurs en sortie). Bien sûr, la nouvelle fonction mémorisera le valeurs renvoyées. Testez la fonction <code>memo</code> avec des fonctions lentes, comme par exemple la fonction <code>fib</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb4-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> </span>(fib n) (<span class="kw">if</span> (<span class="op">&lt;</span> n <span class="dv">2</span>) n (<span class="op">+</span> (fib (<span class="op">-</span> n <span class="dv">1</span>)) (fib (<span class="op">-</span> n <span class="dv">2</span>)))))</span>
+<span id="cb4-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> mfib </span>(memo fib))</span>
+<span id="cb4-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (mfib <span class="dv">34</span>) <span class="co">; réponse longue</span></span>
+<span id="cb4-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dv">5702887</span></span>
+<span id="cb4-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (mfib <span class="dv">34</span>) <span class="co">; réponse immediate</span></span>
+<span id="cb4-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5702887</span></span></code></pre></div>
+<p>Vous pouvez utilisez des <em>listes d’association</em>, ou <em>A-listes</em> de Scheme. Utilisez pour cela la fonction <code>asssoc</code>. Elle permet de chercher une clé dans une liste de couples <code>(clé&nbsp;.&nbsp;valeur)</code>. Ainsi,</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb5-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> lst </span>'((<span class="dv">1</span> <span class="op">.</span> a) (<span class="dv">2</span> <span class="op">.</span> b) (<span class="dv">3</span> <span class="op">.</span> c)))</span>
+<span id="cb5-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">assoc</span> <span class="dv">1</span> lst)</span>
+<span id="cb5-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb5-3" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="op">.</span> a)</span>
+<span id="cb5-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">assoc</span> <span class="dv">3</span> lst)</span>
+<span id="cb5-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb5-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span> <span class="op">.</span> c)</span>
+<span id="cb5-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">assoc</span> <span class="dv">4</span> lst)</span>
+<span id="cb5-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dv">#f</span></span></code></pre></div>
+<p>Que se passe-t-il si on remplace les appels à <code>mfib</code> par:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb6-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> ((memo fib) <span class="dv">34</span>) <span class="co">; réponse longue</span></span>
+<span id="cb6-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5702887</span></span>
+<span id="cb6-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> ((memo fib) <span class="dv">32</span>) <span class="co">; longue ou rapide?</span></span>
+<span id="cb6-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dv">5702887</span></span></code></pre></div>
+<p>Que constatez vous sur le second appel? Essayez d’expliquer pourquoi.</p>
+<div class="w3-card-8 w3-pale-red" style="margin: 0 2em; padding:10px; font-size: 80%;">
+<header class="w3-red">
+&nbsp; <span class="fa fa-info-circle"></span>&nbsp;&nbsp;&nbsp;<strong>Indications</strong>
+</header>
+<p><strong>Toujours pas de macro ici</strong></p>
+<p>Pour simplifier, on suppose ici que la fonction sur lesquelles on fait de la <a href="https://fr.wikipedia.org/wiki/M%C3%A9mo%C3%AFsation"><em>memoïsation</em></a> sont unaires. En gros, l’algorithme est:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb7-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(memo f)</span>
+<span id="cb7-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((a-list '()))    <span class="co">;; la liste des résultats déjà connus</span></span>
+<span id="cb7-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-3" aria-hidden="true" tabindex="-1"></a>    (λ (x)</span>
+<span id="cb7-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-4" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">let</span> ((previous «chercher x dans a-list»))</span>
+<span id="cb7-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-5" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">if</span> previous</span>
+<span id="cb7-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-6" aria-hidden="true" tabindex="-1"></a>            «renvoyer le résultat calculé précédemment»</span>
+<span id="cb7-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-7" aria-hidden="true" tabindex="-1"></a>            (<span class="kw">let</span> ((res (f x)))</span>
+<span id="cb7-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-8" aria-hidden="true" tabindex="-1"></a>              «stocker le nouveau couple <span class="op">{</span>x, res} dans a-list»</span>
+<span id="cb7-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-9" aria-hidden="true" tabindex="-1"></a>              <span class="co">;; On peut maintenant renvoyerres à l'utilisateur</span></span>
+<span id="cb7-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb7-10" aria-hidden="true" tabindex="-1"></a>              res))))))</span></code></pre></div>
+<p>Il ne vous reste plus qu’à trouver le code pour</p>
+<ul>
+<li>«chercher x dans a-list»</li>
+<li>renvoyer le résultat calculé précédemment»</li>
+<li>«stocker le nouveau couple {x, res} dans a-list» (ça utilise encore <span class="emoji" data-emoji="grimacing">😬</span> une affectation)</li>
+</ul>
+</div>
+<dl>
+<dt><strong>Pour le fun</strong>:</dt>
+<dd>Faites l’affectation suivante: <code class="sourceCode scheme" style="padding-left:2em; border-left: 3px solid #ccc; border-radius: 0;">(set!&nbsp;fib&nbsp;(memo&nbsp;fib))</code> et essayez maintenant de calculer <code class="sourceCode scheme" style="padding-left:2em; border-left: 3px solid #ccc; border-radius: 0;">(fib <span class="dv">1000</span>)</code> Expliquez pourquoi le résultat est maintenant <strong>instantané</strong>.
+</dd>
+</dl>
+<p>Notez au passage que la fonction <code>fib</code> de l’utilisateur n’a jamais été modifiée. Ce qui a changé ici, en quelque sorte, c’est la façon dont cette fonction est évaluée.</p>
+<p></p>
+<div class="w3-card-8 w3-pale-blue" style="margin: 0 2em; padding:10px; font-size: 80%;">
+<center>
+<h4 class="nocount" id="macros-non-hygiéniques-en-racket"><strong>Macros (non hygiéniques) en Racket</strong></h4>
+</center>
+<p>Par défaut, les macros de <em>Racket</em> sont hygiéniques. Aussi, pour accéder à la forme des macros que l’on a vues en cours, il suffit d’<strong>insérer les définitions suivantes en tête de votre fichier source</strong>:</p>
+<div class="sourceCode" id="cb8" style="background: #99eeee; margin: 0 2em;"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb8-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">;; Spécificités DrScheme (plus nécessaire dans les versions récentes)</span></span>
+<span id="cb8-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-2" aria-hidden="true" tabindex="-1"></a>(require mzlib/defmacro)</span>
+<span id="cb8-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">;; Un macro-expand qui correspond à celui du cours</span></span>
+<span id="cb8-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-5" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(macro-expand m)</span>
+<span id="cb8-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  `(syntax-object-&gt;datum (expand-once ,m)))</span>
+<span id="cb8-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">;; Un macro-expand "récursif"</span></span>
+<span id="cb8-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-9" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(macro-expand* m)</span>
+<span id="cb8-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-10" aria-hidden="true" tabindex="-1"></a>  `(syntax-object-&gt;datum (expand-to-top-form ,m)))</span>
+<span id="cb8-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">;; Une fonction pretty-print (avec largeur optionnelle)</span></span>
+<span id="cb8-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-13" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(pp form <span class="op">.</span> width)</span>
+<span id="cb8-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-14" aria-hidden="true" tabindex="-1"></a>  (pretty-print-columns (<span class="kw">if</span> (<span class="kw">null?</span> width) <span class="dv">30</span> (<span class="kw">car</span> width)))</span>
+<span id="cb8-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb8-15" aria-hidden="true" tabindex="-1"></a>  (pretty-print form))</span></code></pre></div>
+<p>Une fois que ces définitions sont entrées, on peut définir la macro <code>when</code> du cours:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb9-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(when <span class="kw">cond</span> <span class="op">.</span> body)</span>
+<span id="cb9-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  `(<span class="kw">if</span> ,cond (<span class="kw">begin</span> ,@body)))</span></code></pre></div>
+<p>et tester une macro-expansion particulière:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb10-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb10-1" aria-hidden="true" tabindex="-1"></a>(macro-expand '(when (<span class="op">=</span> a b) (foo a) (bar b))) <span class="co">; ne pas oublier la quote</span></span>
+<span id="cb10-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">;; Résultat:</span></span>
+<span id="cb10-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">if</span> (<span class="op">=</span> a b) (<span class="kw">begin</span> (foo a) (bar b)))</span></code></pre></div>
+<p>Si l’expansion est complexe, il peut être utile de <em>pretty-printer</em> le résultat. Vous pouvez pour cela utiliser la fonction <code>pp</code> qui prend en paramètres:</p>
+<ul>
+<li>la forme à expanser, et</li>
+<li>un entier (<em>optionnel</em>) qui est la longueur max d’une ligne (souvent utile pour indenter proprement le résultat):</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb11-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb11-1" aria-hidden="true" tabindex="-1"></a>(pp (macro-expand '(when (<span class="op">=</span> a b) (foo a) (bar b))))</span>
+<span id="cb11-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">;;Résultat:</span></span>
+<span id="cb11-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">if</span> (<span class="op">=</span> a b)</span>
+<span id="cb11-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb11-5" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">begin</span> (foo a) (bar b)))</span></code></pre></div>
+<p>Pour les curieux (vous ne devriez pas en avoir besoin), la fonction <code>macro-expand*</code> permet d’appliquer <code>macro-expand</code> autant de fois que possible. Si on définit <code>unless</code> de la façon suivante (la définition est différente de celle du cours):</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb12-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb12-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(unless <span class="kw">cond</span> <span class="op">.</span> body)</span>
+<span id="cb12-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  `(when (<span class="kw">not</span> ,cond) ,@body))</span></code></pre></div>
+<p>Alors, on a:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb13-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb13-1" aria-hidden="true" tabindex="-1"></a>(pp (macro-expand '(unless(<span class="op">=</span> a b) (foo a) (bar b))))</span>
+<span id="cb13-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">;; Résultat:</span></span>
+<span id="cb13-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb13-4" aria-hidden="true" tabindex="-1"></a>    (when (<span class="kw">not</span> (<span class="op">=</span> a b))</span>
+<span id="cb13-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb13-5" aria-hidden="true" tabindex="-1"></a>      (foo a)</span>
+<span id="cb13-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb13-6" aria-hidden="true" tabindex="-1"></a>      (bar b))</span></code></pre></div>
+<p>et</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb14-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb14-1" aria-hidden="true" tabindex="-1"></a>(pp (macro-expand* '(unless(<span class="op">=</span> a b) (foo a) (bar b))))</span>
+<span id="cb14-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">;; Résultat</span></span>
+<span id="cb14-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb14-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">if</span> (<span class="kw">not</span> (<span class="op">=</span> a b))</span>
+<span id="cb14-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb14-5" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">begin</span> (foo a) (bar b))</span>
+<span id="cb14-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb14-6" aria-hidden="true" tabindex="-1"></a>      (void))</span></code></pre></div>
+<p>On voit ici, que la <code>macro-expand</code> renvoie un <code>when</code> alors que <code>macro-expand*</code> poursuit la macro-expansion de ce <code>when</code> en un <code>if</code> (et accessoirement qu’un <code>if</code> sans partie <code>else</code> renvoit la valeur <strong>void</strong>).</p>
+<p>Voilà vous êtes armés pour construire vos propres macros.</p>
+</div>
+<p></p>
+<h2 class="nocount" id="exercice-4-forme-spéciale-prog1">Exercice 4: forme spéciale prog1</h2>
+<p>Définir la forme <code class="sourceCode scheme" style="padding-left:2em; border-left: 3px solid #ccc; border-radius: 0;">(prog1&nbsp;e1&nbsp;e2&nbsp;...&nbsp;en)</code> Cette forme est une forme classique en Lisp. Elle fournit comme résultat la valeur de l’évaluation de <code>e1</code>. Par exemple:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb15-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> l </span>'(a b c))</span>
+<span id="cb15-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (prog1 (<span class="kw">car</span> l) (<span class="kw">set!</span> l (<span class="kw">cdr</span> l)))  <span class="co">;; équivalent à pop</span></span>
+<span id="cb15-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb15-3" aria-hidden="true" tabindex="-1"></a>a</span>
+<span id="cb15-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> l</span>
+<span id="cb15-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb15-5" aria-hidden="true" tabindex="-1"></a>(b c)</span></code></pre></div>
+<div class="w3-card-8 w3-pale-red" style="margin: 0 2em; padding:10px; font-size: 80%;">
+<header class="w3-red">
+&nbsp; <span class="fa fa-info-circle"></span>&nbsp;&nbsp;&nbsp;<strong>Indications</strong>
+</header>
+<p>Quand on construit une macro, il est important d’avoir clairement en tête le shéma de transformation du code de l’utilisateur vers le code Scheme de base.</p>
+<p>Par exemple, si l’utilisateur de la macro entre</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb16-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb16-1" aria-hidden="true" tabindex="-1"></a>(prog1 (<span class="kw">car</span> l) (<span class="kw">set!</span> l (<span class="kw">cdr</span> l)))</span></code></pre></div>
+<p>nous devons trouver l’expression Scheme équivalente qui renvoie la valeur de <code>(car l)</code> avant que l’on ne fasse l’affectation <code>(set! l (cdr l))</code>.</p>
+<p>La forme Scheme suivante permet bien de renvoyer le premier élément de la liste <code>l</code> avant qu’on ne la modifie.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb17-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb17-1" aria-hidden="true" tabindex="-1"></a> (<span class="kw">let</span> ((first (<span class="kw">car</span> l)))</span>
+<span id="cb17-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb17-2" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">set!</span> l (<span class="kw">cdr</span> l))</span>
+<span id="cb17-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; on renvoie first</span></span>
+<span id="cb17-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb17-4" aria-hidden="true" tabindex="-1"></a>    first)</span></code></pre></div>
+<p>Et plus généralement, l’appel</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb18-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb18-1" aria-hidden="true" tabindex="-1"></a>(prog1 e1 e2 … en)</span></code></pre></div>
+<p>doit se réécrire en la forme Scheme équivalente</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb19-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((first e1))</span>
+<span id="cb19-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb19-2" aria-hidden="true" tabindex="-1"></a>   e2 e3 … en</span>
+<span id="cb19-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb19-3" aria-hidden="true" tabindex="-1"></a>   first)</span></code></pre></div>
+</div>
+<p></p>
+<h2 class="nocount" id="exercice-5-macros-push-et-pop">Exercice 5: macros push! et pop!</h2>
+<p>En vous inspirant de l’exemple ci-dessus, écrire les macros <code>push!</code> et <code>pop!</code> permettant d’utiliser une liste comme un pile:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb20-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> p </span>'())</span>
+<span id="cb20-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (push! p <span class="dv">1</span>)</span>
+<span id="cb20-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (push! p <span class="dv">2</span>)</span>
+<span id="cb20-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (pop! p)</span>
+<span id="cb20-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span>
+<span id="cb20-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (pop! p)</span>
+<span id="cb20-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span></code></pre></div>
+<div class="w3-card-8 w3-pale-red" style="margin: 0 2em; padding:10px; font-size: 80%;">
+<header class="w3-red">
+&nbsp; <span class="fa fa-info-circle"></span>&nbsp;&nbsp;&nbsp;<strong>Indications</strong>
+</header>
+<p>Bien sûr, <code>push!</code> et <code>pop!</code> ne peuvent elles pas être écrites avec des fonctions, car elle modifient leur premier paramètre (et les paramètres sont passés par valeur en Scheme). Il faut donc avoir les schémas de traductions suivants en tête (on ne se préoccupe pas ici de tester si la pile est vide)</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb21-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb21-1" aria-hidden="true" tabindex="-1"></a>(push! p <span class="dv">1</span>)    ⟹ (<span class="kw">set!</span> p (<span class="kw">cons</span> <span class="dv">1</span> p))</span>
+<span id="cb21-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb21-2" aria-hidden="true" tabindex="-1"></a>(pop! p)       ⟹ (<span class="kw">let</span> ((first (<span class="kw">car</span> p))) (<span class="kw">set!</span> p (<span class="kw">cdr</span> p)))</span>
+<span id="cb21-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb21-3" aria-hidden="true" tabindex="-1"></a>               ⟹ (prog1 (<span class="kw">car</span> p) (<span class="kw">set!</span> p (<span class="kw">cdr</span> p)))      <span class="co">;; variante avec prog1</span></span></code></pre></div>
+</div>
+<p></p>
+<p></p>
+<h2 class="nocount" id="exercice-6-forme-spéciale-for-all">Exercice 6: forme spéciale for-all</h2>
+<p>On désire construire la for spéciale <code>for-all</code> qui permet d’exécuter une liste d’instructions pour chaque élément d’une liste. Deux exemples d’utilisation de cette forme sont donnés ci-dessous:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb22-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (for-all x in '(<span class="dv">10</span> <span class="dv">20</span> -<span class="dv">17</span>)</span>
+<span id="cb22-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-2" aria-hidden="true" tabindex="-1"></a>     (printf <span class="st">"carré de ~s = ~s</span><span class="ch">\n</span><span class="st">"</span> x (<span class="op">*</span> x x)))</span>
+<span id="cb22-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-3" aria-hidden="true" tabindex="-1"></a>carré de <span class="dv">10</span> <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb22-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-4" aria-hidden="true" tabindex="-1"></a>carré de <span class="dv">20</span> <span class="op">=</span> <span class="dv">400</span></span>
+<span id="cb22-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-5" aria-hidden="true" tabindex="-1"></a>carré de -<span class="dv">17</span> <span class="op">=</span> <span class="dv">289</span></span>
+<span id="cb22-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (for-all item in '((x <span class="op">.</span> <span class="dv">10</span>) (y <span class="op">.</span> <span class="dv">20</span>) (z <span class="op">.</span> <span class="dv">30</span>))</span>
+<span id="cb22-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-8" aria-hidden="true" tabindex="-1"></a>     (printf <span class="st">"item = ~s</span><span class="ch">\n</span><span class="st">"</span> item)</span>
+<span id="cb22-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-9" aria-hidden="true" tabindex="-1"></a>     (print (<span class="kw">car</span> item))</span>
+<span id="cb22-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-10" aria-hidden="true" tabindex="-1"></a>     (print (<span class="kw">cdr</span> item)))</span>
+<span id="cb22-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-11" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> (x <span class="op">.</span> <span class="dv">10</span>)</span>
+<span id="cb22-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-12" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb22-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span></span>
+<span id="cb22-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-14" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> (y <span class="op">.</span> <span class="dv">20</span>)</span>
+<span id="cb22-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-15" aria-hidden="true" tabindex="-1"></a>y</span>
+<span id="cb22-16"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span></span>
+<span id="cb22-17"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-17" aria-hidden="true" tabindex="-1"></a>item <span class="op">=</span> (z <span class="op">.</span> <span class="dv">30</span>)</span>
+<span id="cb22-18"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-18" aria-hidden="true" tabindex="-1"></a>z</span>
+<span id="cb22-19"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span></span></code></pre></div>
+<div class="w3-card-8 w3-pale-red" style="margin: 0 2em; padding:10px; font-size: 80%;">
+<header class="w3-red">
+&nbsp; <span class="fa fa-info-circle"></span>&nbsp;&nbsp;&nbsp;<strong>Indications</strong>
+</header>
+<p>L’implémentation est très simple; elle passe par l’utilisation de la forme <code>for-each</code> vue en cours. La macro elle-même est de la forme</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb23-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(for-all var in lst <span class="op">.</span> body)</span>
+<span id="cb23-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb23-2" aria-hidden="true" tabindex="-1"></a>   <span class="op">...</span>)</span></code></pre></div>
+<p>Noter que le deuxième paramètre (<code>in</code>) est juste là à titre décoratif. Vous pouvez ne pas vous en occuper dans une premier temps. Si votre macro marche, vous pouvez vérifier ensuite que le paramètre <code>in</code> est bien égal au symbole <code>'in</code>.</p>
+</div>
+<p></p>
+<h2 class="nocount" id="exercice-7-forme-spéciale-while">Exercice 7: forme spéciale while</h2>
+<p>Définir la forme spéciale <code class="sourceCode scheme" style="padding-left:2em; border-left: 3px solid #ccc; border-radius: 0;">(while&nbsp;expr&nbsp;corps)</code> correspondant à la structure de contrôle <code>while</code> des langages impératifs. Vous utiliserez un <code>letrec</code> pour implémenter cette forme spéciale.</p>
+<p>Un exemple d’utilisation de cette forme est donné ci-dessous:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb24-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">let</span> ((i <span class="dv">0</span>))</span>
+<span id="cb24-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-2" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">while</span> (<span class="op">&lt;</span> i <span class="dv">5</span>)</span>
+<span id="cb24-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-3" aria-hidden="true" tabindex="-1"></a>       (print i)</span>
+<span id="cb24-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-4" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">set!</span> i (<span class="op">+</span> i <span class="dv">1</span>))))</span>
+<span id="cb24-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
+<span id="cb24-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb24-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span>
+<span id="cb24-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span>
+<span id="cb24-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span></code></pre></div>
+<dl>
+<dt><strong>Remarque:</strong></dt>
+<dd><p>Cet exemple montre pourquoi on aime pas les boucles classiques des langages impératifs(<code>for</code>, <code>while</code>, <code>do</code>): elles imposent quasi systématiquement l’utilisation d’une affectation et on aime pas trop avoir des affectations dans nos programmes.</p>
+</dd>
+</dl>
+<p></p>
+<h2 class="nocount" id="exercice-8-forme-case">Exercice 8: forme case</h2>
+<p>Définir la forme spéciale <code class="sourceCode scheme" style="padding-left:2em; border-left: 3px solid #ccc; border-radius: 0;">(<span class="kw">case</span> clé clause_1 <span class="op">...</span> clause_n)</code> de Scheme à l’aide d’une macro. Cette forme Scheme peut être implémentée à l’aide de <code>cond</code> et <code>memv</code>:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb25-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb25-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">case</span> (<span class="op">+</span> <span class="dv">2</span> <span class="dv">3</span>)</span>
+<span id="cb25-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  ((<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>) 'petit)</span>
+<span id="cb25-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  ((<span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span>) 'moyen)</span>
+<span id="cb25-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb25-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">else</span>      'grand))     <span class="co">;;  ⟹ moyen</span></span></code></pre></div>
+<p></p>
+<h2 class="nocount" id="exercice-9-boucle-for">Exercice 9: boucle for</h2>
+<p>Pour les nostalgiques des langages de programmation impératifs, écrire la forme spéciale <code class="sourceCode scheme" style="padding-left:2em; border-left: 3px solid #ccc; border-radius: 0;">(for (var départ fin pas) …)</code></p>
+<p>Un exemple d’utilisation de cette forme est présenté ci dessous :</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb26-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (for (i <span class="dv">5</span> <span class="dv">0</span> -<span class="dv">1</span>) (<span class="kw">display</span> i) (<span class="kw">newline</span>))</span>
+<span id="cb26-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span>
+<span id="cb26-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span>
+<span id="cb26-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span>
+<span id="cb26-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span>
+<span id="cb26-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Tds/Td05/sujet.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span></code></pre></div>
+      </div>
+    </div>
+    <footer>
+      <div class="w3-container"> &nbsp;</div>
+      <div class="page-footer">
+        <small>
+          <b>Programmation Fonctionnelle</b> — Erick Gallesio
+          <span class="pull-right">10-Mar-2021 19:22 (eg)&nbsp;&nbsp;</span>
+        </small>
+      </div>
+    </footer>
+  
+
+</body></html>

@@ -1,0 +1,1 @@
+Certaines matières sont communes à toutes les matières, d'autres ne sont communes qu'à certaines spé. Quoiqu'il arrive, au moins 2 spé possèdent l'une des matières dans le dossier "Matières en commun" (pour éviter les doublons).

@@ -1,0 +1,28 @@
+@prefix :     <http://polytech.fr/humans/schema#> . 
+@prefix d:     <http://polytech.fr/humans/data#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+d:T122 a :Task .
+
+d:T153 a :Task .
+
+d:T19 a :Task .
+
+d:T47 a :Task .
+
+d:P175 a :Process ;
+    :consistof (d:T19 d:T47) .
+
+d:P23 a :Process ;
+    :consistof (d:T122 d:T153 d:P175) .
+
+d:AliceDuncan a :Agent ;
+    :agentof [ a rdf:Bag ; rdf:li d:T122, d:T153 ] ;
+    :managerof d:JohnTiwac .
+
+d:JohnTiwac a :Agent ; 
+    :agentof [ a rdf:Bag ; rdf:li d:T122 , d:T153 ] .
+
+d:HAL9000 a :SoftwareAgent ;
+    :participatesto [ a rdf:Bag ; rdf:li d:T122 , d:T19 ] .

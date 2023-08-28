@@ -1,0 +1,290 @@
+;;;;                                                  -*- coding: utf-8 -*-
+;;;;
+;;;; e v a l . s t k             -- A simple Scheme Interpreter
+;;;;
+;;;;
+;;;;           Author: Erick Gallesio [eg@unice.fr]
+;;;;    Creation date:  2-Apr-2019 16:24 (eg)
+;;;; Last file update: 21-Apr-2021 19:10 (eg)
+
+(load "environment.ss")
+
+;; ======================================================================
+;;
+;;                       Closures Management
+;;
+;; A closure is implemented using a list such as
+;;               (*closure* args body env)
+;; ======================================================================
+(define (make-closure args body env)
+  (list '*closure* args body env))
+
+(define (closure? obj)
+  (and (pair? obj)
+       (eq? (car obj) '*closure*)))
+
+(define closure-args cadr)
+(define closure-body caddr)
+(define closure-env  cadddr)
+
+;;========================================================================
+;;
+;;                       Macros Management
+;;
+;; A macro is implemented using a list such as
+;;          (*macro* args body env)
+;; ========================================================================
+(define (make-macro args body env)
+  (list '*macro* args body env))
+
+(define (macro? obj)
+  (and (pair? obj)
+       (eq? (car obj) '*macro*)))
+
+(define macro-args cadr)
+(define macro-body caddr)
+(define macro-env  cadddr)
+
+(define (macro-expand macro args)
+  (evaluate-compound (macro-body macro)
+                     (extend-env (macro-args macro)
+                                 args
+                                 (macro-env macro))))
+
+;; ======================================================================
+;
+;                       Evaluate
+;
+;; ======================================================================
+(define (evaluate-compound l env)
+  ;; Evaluate in environment env the expressions of l
+  (if (null? (cdr l))
+      (evaluate (car l) env)
+      (begin
+        (evaluate (car l) env)
+        (evaluate-compound (cdr l) env))))
+
+(define (evaluate-list lst env)
+  (map (λ (x) (evaluate x env)) lst))
+
+
+(define (funcall func args env)
+  (if (closure? func)
+      (evaluate-compound (closure-body func)
+                         (extend-env (closure-args func)
+                                     args
+                                     (closure-env func)))
+      (if (number? func)
+          (ms-list-ref func (car args))
+          ;; primitive call (+, -, car â€¦)
+          (apply func args))))
+
+(define (evaluate expr env)
+  (cond
+    ((symbol? expr)
+             (find-binding expr env))
+    ((pair?   expr)
+             (case (car expr)
+               ((quote)       (cadr expr))
+               ((begin)       (evaluate-compound (cdr expr) env))
+               ((set!)        (set-binding! (cadr expr)
+                                            (evaluate (caddr expr) env) env #t))
+               ((define)      (set-binding! (cadr expr)
+                                            (evaluate (caddr expr) env) env #f))
+               ((if)          (if (evaluate (cadr expr) env)
+                                  (evaluate (caddr expr) env)
+                                  (let ((the-else (cdddr expr)))
+                                    (if (null? the-else)
+                                        (void)  ;; ou #f ou 'undefined .....
+                                        (evaluate (car the-else) env)))))    
+               ((break)       (ms-break env))
+               ((λ)           (make-closure (cadr expr) (cddr expr) env))
+               ((lambda)      (make-closure (cadr expr) (cddr expr) env))
+               ((macro)       (make-macro   (cadr expr) (cddr expr) env))
+               (else          (let ((select (evaluate (car expr) env)))
+                                (if (macro? select)
+                                    (evaluate (macro-expand select (cdr expr))
+                                              env)
+                                    (funcall select
+                                             (evaluate-list (cdr expr) env)
+                                             env))))))
+             (else     expr)))
+
+;; ======================================================================
+;;
+;;                         Interpreter
+;;
+;; ======================================================================
+(define backToInit #f)
+(define jeMeBarre #f)
+
+(define (print-intermediaire args)
+  (cond
+    ((null? args) '())
+    ((pair? args) (begin
+                    (begin
+                      (display (car args))
+                      (display " "))
+                    (print-intermediaire (cdr args))))
+    (else error "AAAAAAAAAAH\n")))
+
+(define (ms-error . args)
+  (display "*** ERROR in Mini-Scheme: ")
+  (print-intermediaire args)
+  (newline)
+  (backToInit 'grrr)) ;;grrr is only there for biwa --> it doesn't output the right thing on racket screw that
+
+(define (ms-exit)
+  (display "Exiting ...\n")
+  (jeMeBarre))
+
+(define (ms-break env)
+  (let LoopBreak ()
+    (display "debug> ")
+    (let ((expr (read)))
+      (unless (eof-object? expr)
+        (let ((res (evaluate expr env)))
+          (unless (eq? res (void))
+            (write res)
+            (newline)))
+        (LoopBreak)))))
+
+(define (ms-list-ref number lst)
+  (if (not (list? lst))
+      (ms-error "integer selector argument must be a list")
+      (if (or (>= number (length lst)) (>= (* -1 number) (length lst)))
+          (ms-error "selector is out of bounds")
+          (if (>= number 0)
+              (list-ref lst number)
+              (list-ref (reverse lst) (- (* -1 number) 1))))))
+
+(define (init-interpreter)
+  (begin
+    ;; Print banner
+    (printf ";; Mini-Scheme Interpreter (SI4)\n")
+    (set-binding! 'error ms-error *global-env* #f)
+    (set-binding! 'exit ms-exit *global-env* #f)
+    (call/cc (λ (c) (set! backToInit c)))))
+
+
+(define (interp)
+  (init-interpreter)
+
+  (call/cc (λ (truc)
+             (set! jeMeBarre truc)
+             (let Loop ()
+               (display "Mini-Scheme> ")
+               (let ((expr (read)))
+                 (unless (eof-object? expr)
+                   (let ((res (evaluate expr *global-env*)))
+                     (unless (eq? res (void))
+                       (write res)
+                       (newline)))
+                   (Loop))))))
+  
+  (display "Bye\n"))
+
+;;EXO1
+(display "===============EXO1===============\n")
+;;TEST1
+(init-interpreter)
+
+(print (evaluate '(+ 1 2) *global-env*))
+(newline)
+;;TES2
+(define expr2 '(begin 
+               (define x 10)
+                (* x x)))
+
+(print (evaluate expr2 *global-env*))
+(newline)
+;;TEST3
+(evaluate 'no *global-env*)
+(evaluate '(define no 1) *global-env*)
+(evaluate '(print "Valeur de no = " no) *global-env*)
+(newline)
+;;TEST4
+(evaluate '(error "First error") *global-env*)
+(evaluate '(error "Second error") *global-env*)
+(evaluate '(error "Third error") *global-env*)
+(newline)
+;;TEST5
+(evaluate '(begin undef (print "NO")) *global-env*)
+(evaluate '(begin (define undef 42) (print "YES" undef)) *global-env*)
+
+;;EXO2
+(display "===============EXO2===============\n")
+;;(interp)
+;;INPUTS TEST1
+;;(print (+ 1 2))
+;;(print "Hello")
+;;"*EOF*"
+;;INPUTS TEST2
+;;(define fact (λ (n) (if (< n 2) 1 (* n (fact (- n 1))))))
+;;(fact 12)
+;;"*EOF*"
+;;EXO3
+(display "===============EXO3===============\n")
+;;(interp)
+;;INPUTS TEST
+;;(define fct
+;;   (lambda (a b)
+;;      (print "A l'entrée de fct a=" a " b=" b)
+;;      (break)
+;;      (print "A la sortie de fct a=" a " b=" b)
+;;      (cons a b)))
+;;(fct 1 2)
+;;(+ a b)
+;;(set! a 10)
+;;(set! b 0)
+;;EOF
+;;EXO4
+(display "===============EXO4===============\n")
+;;TEST1
+(init-interpreter)
+(evaluate
+    '(begin 
+       (define lst '(a b c d e f))
+       (print (2 lst))
+       (print (0 lst))
+       (print (-3 lst)))
+    *global-env*)
+;;TEST2
+(init-interpreter)
+(evaluate
+    '(begin 
+       (define lst '(a b c d e f))
+       (define idx 2)
+       (print (idx lst))
+       (print ((- idx) lst)))
+    *global-env*)
+;;TEST3
+(init-interpreter)
+(evaluate
+    '(begin 
+       (define foo 10)
+       (0 foo))
+    *global-env*)
+;;TEST4
+(init-interpreter)
+(evaluate
+    '(begin 
+       (define lst  '(a b c d e f))
+       (print (5 lst))
+       (print (6 lst)))
+    *global-env*)
+;;TEST5
+(init-interpreter)
+(evaluate
+    '(begin 
+       (define lst  '(a b c d e f))
+       (print (-3 lst))
+       (print (-7 lst)))
+    *global-env*)
+
+;;EXO5
+(display "===============EXO5===============\n")
+;;Jl'ai pas fait lol
+
+;;EXO6
+(display "===============EXO6===============\n")

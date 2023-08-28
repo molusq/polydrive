@@ -1,0 +1,235 @@
+;;TD7
+
+(load "stream-lib.ss")
+
+;; Spécificités DrScheme (plus nécessaire dans les versions récentes)
+(require mzlib/defmacro)
+
+;; Un macro-expand qui correspond à celui du cours
+(define-macro (macro-expand m)
+  `(syntax-object->datum (expand-once ,m)))
+
+;; Un macro-expand "récursif"
+(define-macro (macro-expand* m)
+  `(syntax-object->datum (expand-to-top-form ,m)))
+
+;; Une fonction pretty-print (avec largeur optionnelle)
+(define (pp form . width)
+  (pretty-print-columns (if (null? width) 30 (car width)))
+  (pretty-print form))
+
+;;EXO1
+(display "===============EXO1===============\n")
+(define p (delay (begin (display "Value: ") (+ 10 20))))
+(force p)
+(force p)
+
+(define-macro (my-delay code)
+  `(let ((dejaLance #f) (res #f))
+     (lambda()
+       (if (equal? dejaLance #f)
+           (begin
+             (set! res ,code)
+             (set! dejaLance #t)))
+       res)))
+
+(define (my-force promise)
+   (promise))
+
+
+(define p (my-delay (begin (display "Value: ") (+ 10 20))))
+(my-force p)
+(my-force p)
+
+;;EXO2
+(display "===============EXO2===============\n")
+(define-macro (my-delay code)
+  `(let ((dejaLance #f) (res #f))
+     (cons "ceci a été fait par my-promise" (lambda()
+       (if (equal? dejaLance #f)
+           (begin
+             (set! res ,code)
+             (set! dejaLance #t)))
+       res))))
+
+(define my-promise? 
+  (lambda (arg)
+    (if (pair? arg)
+        (if (equal? (car arg) "ceci a été fait par my-promise")
+            #t)
+        #f)))
+  
+(define (my-force promise)
+   (if (my-promise? promise)
+       ((cdr promise))
+       promise))
+
+(define p (my-delay (+ 1 2)))
+(my-promise? p)
+
+(my-promise? 'NON)
+
+;;EXO3
+(display "===============EXO3===============\n")
+(define copy-list
+  (lambda (l)
+    (if (null? l)
+        '()
+        (if (list? l)
+            (cons (car l) (copy-list (cdr l)))))))
+    
+
+(define (stream->list stream)
+  (cond
+    ((stream-null? stream) stream)
+    ((stream? stream) (cons (head stream) (stream->list (tail stream))))
+    (else (error "bad stream"))))
+
+(define strm (stream-interval 2 10))
+
+strm
+
+(stream->list strm)
+
+;;EXO4
+(display "===============EXO4===============\n")
+
+(define (stream-map f stream)
+  (cond
+    ((stream-null? stream) stream)
+    ((stream? stream) (cons-stream (f (head stream))
+                     (stream-map f (tail stream))))
+    (else      (error "bad stream"))))
+  
+
+(define (show x)
+  (display x)
+  (newline)
+  x)
+
+(define strm (stream-interval 2 10))
+strm
+(stream-map (λ (x) (* x x)) strm)
+(stream-map (λ (x) (* x x)) (integers-from 10))
+
+;;Qu’affichent les expressions suivantes (sur Racket)?
+;;(define s (stream-map show (integers-from 0))) ;;--> 0
+;(stream-ref s 1) ;;--> 0\n 1\n 1\n 
+;;(stream-ref s 5) ;;--> 0\n 1\n 2\n 3\n 4\n 5\n 5\n 
+;;(stream-ref s 8) ;;--> 0\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 8\n
+;;s ;;--> (0 . #<promise:...Fonc/TDs/TD7/td7.rkt:100:22>)
+
+;;EXO5
+(display "===============EXO5===============\n")
+(define (list->stream lst)
+  (cond
+    ((null? lst) lst)
+    ((pair? lst) (cons-stream (car lst) (list->stream (cdr lst))))
+    (else (error "bad list"))))
+
+(define (stream . args)
+  (list->stream args))
+  
+(define s (stream 1 2 10 20 17 19 14))
+(stream->list s)
+
+(stream)
+
+(stream->list (list->stream '(1 10 17)))
+
+(define strm (list->stream '(1 2 3 4)))
+(print (stream->list strm))
+(newline)
+
+;;EXO6
+(display "===============EXO6===============\n")
+(define (stream-append s1 s2)
+  (cond
+    ((stream-null? s1) s2)
+    ((stream? s1) (cons-stream (head s1) (stream-append (tail s1) s2)))
+    (else (error "bad stream"))))
+
+(define stm1 (stream-interval 0 5))       ;; ⟹ {0 1 2 3 4 5}
+(define stm2 (stream-interval 6 9))       ;; ⟹ {6 7 8 9}
+(define s (stream-append stm1 stm2))      ;; ⟹ {0 1 2 3 4 5 6 7 8 9}
+(stream->list s)
+
+;;EXO7
+(display "===============EXO7===============\n")
+(define (stream-firsts n s)
+  (cond
+    ((stream-null? s) s)
+    ((stream? s)
+     (if (> n 0)
+         (cons-stream (head s) (stream-firsts (- n 1) (tail s)))
+         '()))
+    (else (error "bad stream"))))
+
+(define s (stream-firsts 3 (stream  1 3 5 7 9)))
+(stream->list s)
+(stream->list (stream-firsts 100 (stream  1 3 5 7 9)))
+(stream-firsts 5 (integers-from 42))
+
+(define (stream-firsts-as-list n s)
+  (cond
+    ((stream-null? s) s)
+    ((stream? s)
+     (if (> n 0)
+         (cons (head s) (stream-firsts-as-list (- n 1) (tail s)))
+         '()))
+    (else (error "bad stream"))))
+
+(stream-firsts-as-list 3 (stream  1 3 5 7 9))
+(stream-firsts-as-list 100 (stream  1 3 5 7 9))
+(stream-firsts-as-list 5 (integers-from 42))
+
+;;EXO8
+(display "===============EXO8===============\n")
+(define (stream-merge s1 s2)
+  (cond
+    ((stream-null? s1) s2)
+    ((stream-null? s2) s1)
+    ((and (stream? s1) (stream? s2))
+     (if (< (head s1) (head s2))
+         (cons-stream (head s1) (stream-merge (tail s1) s2))
+         (cons-stream (head s2) (stream-merge s1 (tail s2)))))
+    (else (error "bad stream"))))
+
+(define s (stream-merge (stream 1 3 8 9 10)
+                        (stream 2 5 8 9)))
+(stream->list s)
+
+(stream->list (stream-merge (stream 1 3 18 20 100)
+                              (stream-merge (stream -7 -4 3 9 11 20 110)
+                                            (stream 5 8 200 210))))
+
+;;EXO9
+(display "===============EXO9===============\n")
+
+(define (stream-map2 f . streams)
+  (cond
+    ((or (null? streams) (member '() streams)) '())
+    ((pair? streams) (cons-stream (apply f (map head streams))
+                                  (apply stream-map2 f (map tail streams))))
+    (else      (error "bad stream"))))
+
+(define s (stream-map2 cons (stream 'a 'b 'c) (stream 1 2 3)))
+(head s)
+
+(stream->list s)
+
+(define t (stream-map2 + (stream 10 20 30 40)
+                       (stream 1 2)))
+
+(stream->list t)
+
+(define s (stream-map2 + (integers-from 0) (integers-from 0)))
+(stream->list (stream-firsts 10 s))
+(stream-add  (tail (stream-firsts 10 s)) (tail (tail (stream-firsts 10 s))))
+
+;;EXO10
+(display "===============EXO10===============\n")
+(define fib-stream (cons-stream 0 (cons-stream 1 (stream-add fib-stream (tail fib-stream)))))
+
+(print (stream-ref fib-stream 35))
+(print (stream->list (stream-firsts 10 fib-stream)))

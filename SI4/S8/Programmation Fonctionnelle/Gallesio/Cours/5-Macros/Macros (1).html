@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(1) -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="author" content="Erick Gallesio">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="robots" content="none">
+    <meta name="generator" content="Gomd 3.1-beta / Erick Gallesio">
+
+    <!-- Slidy stuff -->
+    <meta name="copyright" content="Programmation Fonctionnelle — 2020-2021   (Erick Gallesio)">
+    
+    <meta name="font-size-adjustment" content="-1">
+    <style type="text/css">
+      body{margin:0;padding:0;width:1e2%;height:1e2%;color:#000;background-color:#fff;font-family:gill sans mt,gill sans,gillsans,sans-serif;font-size:14pt}div.toolbar{position:fixed;z-index:200;top:auto;bottom:0;left:0;right:0;height:1.2em;text-align:right;padding-left:1em;padding-right:1em;font-size:60%;color:red;background-color:#f0f0f0;border-top:solid 1px #b4b4b4}div.toolbar span.copyright{color:#000;margin-left:.5em}div.initial_prompt{position:absolute;z-index:1000;bottom:1.2em;width:1e2%;background-color:rgb(2e2,2e2,2e2);opacity:.35;background-color:rgb(2e2,2e2,2e2,.35);cursor:pointer}div.initial_prompt p.help{text-align:center}div.initial_prompt p.close{text-align:right;font-style:italic}div.slidy_toc{position:absolute;z-index:300;width:60%;max-width:30em;height:30em;overflow:auto;top:auto;right:auto;left:4em;bottom:4em;padding:1em;background:#f0f0f0;border-style:solid;border-width:2px;font-size:60%}div.slidy_toc .toc_heading{text-align:center;width:1e2%;margin:0;margin-bottom:1em;border-bottom-style:solid;border-bottom-color:#b4b4b4;border-bottom-width:1px}div.slide{z-index:20;margin:0;padding-top:0;padding-bottom:0;padding-left:20px;padding-right:20px;border-width:0;clear:both;top:0;bottom:0;left:0;right:0;line-height:120%;background-color:transparent}div.background{display:none}div.handout{margin-left:20px;margin-right:20px}div.slide.titlepage{text-align:center}div.slide.titlepage h1{padding-top:10%;margin-right:0;background:red}div.slide h1{padding-left:0;padding-right:20pt;padding-top:4pt;padding-bottom:4pt;margin-top:0;margin-left:0;margin-right:60pt;margin-bottom:.5em;display:block;font-size:160%;line-height:1.2em;background:transparent}@media screen and (max-device-width:1024px){div.slide{font-size:1e2%}}@media screen and (max-device-width:800px){div.slide{font-size:2e2%}div.slidy_toc{top:1em;left:1em;right:auto;width:80%;font-size:180%}}div.toc-heading{width:1e2%;border-bottom:solid 1px #b4b4b4;margin-bottom:1em;text-align:center}img{image-rendering:optimize-quality}pre{font-size:80%;font-weight:7e2;line-height:120%}li pre{margin-left:0}blockquote{font-style:italic}img{background-color:transparent}p.copyright{font-size:smaller}.center{text-align:center}.footnote{font-size:smaller;margin-left:2em}a img{border-width:0;border-style:none}a:visited{color:navy}a:link{color:navy}a:hover{color:red;text-decoration:underline}a:active{color:red;text-decoration:underline}a{text-decoration:none}.toolbar a:link{color:blue}.toolbar a:visited{color:blue}.toolbar a:active{color:red}.toolbar a:hover{color:red}ul{list-style-type:square}ul ul{list-style-type:disc}ul ul ul{list-style-type:circle}ul ul ul ul{list-style-type:disc}li{margin-left:.5em;margin-top:.5em}li li{font-size:85%;font-style:italic}li li li{font-size:85%;font-style:normal}div dt{margin-left:0;margin-top:1em;margin-bottom:.5em;font-weight:7e2}div dd{margin-left:2em;margin-bottom:.5em}p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table{margin-left:1em;margin-right:1em}p.subhead{font-weight:7e2;margin-top:2em}.smaller{font-size:smaller}.bigger{font-size:130%}td,th{padding:.2em}ul{margin:.5em 1.5em;padding:0}ol{margin:.5em 1.5em;padding:0}ul{list-style-type:square}ul ul{list-style-type:disc}ul ul ul{list-style-type:circle}ul ul ul ul{list-style-type:disc}ul li{list-style:square;margin:.1em 0 .6em;padding:0;line-height:140%}ol li{margin:.1em 0 .6em 1.5em;padding:0;line-height:140%;list-style-type:decimal}li ul li{font-size:85%;font-style:italic;list-style-type:disc;background:transparent;padding:0}li li ul li{font-size:85%;font-style:normal;list-style-type:circle;background:transparent;padding:0}li li li ul li{list-style-type:disc;background:transparent;padding:0}li ol li{list-style-type:decimal}li li ol li{list-style-type:decimal}ol.outline li:hover{cursor:pointer}ol.outline li.nofold:hover{cursor:default}ul.outline li:hover{cursor:pointer}ul.outline li.nofold:hover{cursor:default}ol.outline{list-style:decimal}ol.outline ol{list-style-type:lower-alpha}ol.outline li.nofold{padding:0 0 0 20px;background:transparent url(../graphics/nofold-dim.gif) no-repeat 0 .5em}ol.outline li.unfolded{padding:0 0 0 20px;background:transparent url(../graphics/fold-dim.gif) no-repeat 0 .5em}ol.outline li.folded{padding:0 0 0 20px;background:transparent url(../graphics/unfold-dim.gif) no-repeat 0 .5em}ol.outline li.unfolded:hover{padding:0 0 0 20px;background:transparent url(../graphics/fold.gif) no-repeat 0 .5em}ol.outline li.folded:hover{padding:0 0 0 20px;background:transparent url(../graphics/unfold.gif) no-repeat 0 .5em}ul.outline li.nofold{padding:0 0 0 20px;background:transparent url(../graphics/nofold-dim.gif) no-repeat 0 .5em}ul.outline li.unfolded{padding:0 0 0 20px;background:transparent url(../graphics/fold-dim.gif) no-repeat 0 .5em}ul.outline li.folded{padding:0 0 0 20px;background:transparent url(../graphics/unfold-dim.gif) no-repeat 0 .5em}ul.outline li.unfolded:hover{padding:0 0 0 20px;background:transparent url(../graphics/fold.gif) no-repeat 0 .5em}ul.outline li.folded:hover{padding:0 0 0 20px;background:transparent url(../graphics/unfold.gif) no-repeat 0 .5em}a.titleslide{font-weight:7e2;font-style:italic}img.hidden{display:none;visibility:hidden}div.initial_prompt{display:none;visibility:hidden}div.slide{visibility:visible;position:inherit}div.handout{border-top-style:solid;border-top-width:thin;border-top-color:#000}@media screen{.hidden{display:none;visibility:visible}div.slide.hidden{display:block;visibility:visible}div.handout.hidden{display:block;visibility:visible}div.background{display:none;visibility:hidden}body.single_slide div.initial_prompt{display:block;visibility:visible}body.single_slide div.background{display:block;visibility:visible}body.single_slide div.background.hidden{display:none;visibility:hidden}body.single_slide .invisible{visibility:hidden}body.single_slide .hidden{display:none;visibility:hidden}body.single_slide div.slide{position:absolute}body.single_slide div.handout{display:none;visibility:hidden}}@media print{.hidden{display:block;visibility:visible}div.slide pre{font-size:60%;padding-left:.5em}div.toolbar{display:none;visibility:hidden}div.slidy_toc{display:none;visibility:hidden}div.background{display:none;visibility:hidden}div.slide{page-break-before:always}div.slide.first-slide{page-break-before:avoid}}    </style>
+    <script>
+      var w3c_slidy={ns_pos:(typeof window.pageYOffset!='undefined'),khtml:((navigator.userAgent).indexOf("KHTML")>=0?true:false),opera:((navigator.userAgent).indexOf("Opera")>=0?true:false),ipad:((navigator.userAgent).indexOf("iPad")>=0?true:false),iphone:((navigator.userAgent).indexOf("iPhone")>=0?true:false),android:((navigator.userAgent).indexOf("Android")>=0?true:false),ie:(typeof document.all!="undefined"&&!this.opera),ie6:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 6")!=-1),ie7:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 7")!=-1),ie8:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 8")!=-1),ie9:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 9")!=-1),last_tap:0,prev_tap:0,start_x:0,start_y:0,delta_x:0,delta_y:0,is_xhtml:/xml/.test(document.contentType),slide_number:0,slide_number_element:null,slides:[],notes:[],backgrounds:[],observers:[],toolbar:null,title:null,last_shown:null,eos:null,toc:null,outline:null,selected_text_len:0,view_all:0,want_toolbar:true,mouse_click_enabled:false,scroll_hack:0,disable_slide_click:false,lang:"en",help_anchor:null,help_page:"http://www.w3.org/Talks/Tools/Slidy2/help/help.html",help_text:"Navigate with mouse click, space bar, Cursor Left/Right, "+"or Pg Up and Pg Dn. Use S and B to change font size.",size_index:0,size_adjustment:0,sizes:new Array("10pt","12pt","14pt","16pt","18pt","20pt","22pt","24pt","26pt","28pt","30pt","32pt"),last_width:0,last_height:0,objects:[],set_up:function(){var init=function(){w3c_slidy.init();};if(typeof window.addEventListener!="undefined")
+window.addEventListener("load",init,false);else
+window.attachEvent("onload",init);},hide_slides:function(){if(document.body&&!w3c_slidy.initialized)
+document.body.style.visibility="hidden";else
+setTimeout(w3c_slidy.hide_slides,50);},ie_hack:function(){window.resizeBy(0,-1);window.resizeBy(0,1);},init:function(){document.body.style.visibility="visible";this.init_localization();this.add_toolbar();this.wrap_implicit_slides();this.collect_slides();this.collect_notes();this.collect_backgrounds();this.objects=document.body.getElementsByTagName("object");this.patch_anchors();this.slide_number=this.find_slide_number(location.href);window.offscreenbuffering=true;this.size_adjustment=this.find_size_adjust();this.time_left=this.find_duration();this.hide_image_toolbar();this.init_outliner();this.title=document.title;this.keyboardless=(this.ipad||this.iphone||this.android);if(this.keyboardless)
+{w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden")
+this.want_toolbar=0;}
+this.is_xhtml=(document.body.tagName=="BODY"?false:true);if(this.slides.length>0)
+{var slide=this.slides[this.slide_number];if(this.slide_number>0)
+{this.set_visibility_all_incremental("visible");this.last_shown=this.previous_incremental_item(null);this.set_eos_status(true);}
+else
+{this.last_shown=null;this.set_visibility_all_incremental("hidden");this.set_eos_status(!this.next_incremental_item(this.last_shown));}
+this.set_location();this.add_class(this.slides[0],"first-slide");w3c_slidy.show_slide(slide);}
+this.toc=this.table_of_contents();if(!this.keyboardless)
+{this.add_listener(document.body,"click",this.mouse_button_click);this.add_listener(document.body,"mousedown",this.mouse_button_down);}
+this.add_listener(document,"keydown",this.key_down);this.add_listener(document,"keypress",this.key_press);this.add_listener(window,"resize",this.resized);this.add_listener(window,"scroll",this.scrolled);this.add_listener(window,"unload",this.unloaded);this.add_listener(document,"gesturechange",function()
+{return false;});this.attach_touch_handers(this.slides);this.single_slide_view();this.resized();if(this.ie7)
+setTimeout(w3c_slidy.ie_hack,100);this.show_toolbar();setInterval(function(){w3c_slidy.check_location();},200);w3c_slidy.initialized=true;},table_of_contents:function(){var toc=this.create_element("div");this.add_class(toc,"slidy_toc hidden");var heading=this.create_element("div");this.add_class(heading,"toc-heading");heading.innerHTML=this.localize("Table of Contents");toc.appendChild(heading);var previous=null;for(var i=0;i<this.slides.length;++i)
+{var title=this.has_class(this.slides[i],"title");var num=document.createTextNode((i+1)+". ");toc.appendChild(num);var a=this.create_element("a");a.setAttribute("href","#("+(i+1)+")");if(title)
+this.add_class(a,"titleslide");var name=document.createTextNode(this.slide_name(i));a.appendChild(name);a.onclick=w3c_slidy.toc_click;a.onkeydown=w3c_slidy.toc_key_down;a.previous=previous;if(previous)
+previous.next=a;toc.appendChild(a);if(i==0)
+toc.first=a;if(i<this.slides.length-1)
+{var br=this.create_element("br");toc.appendChild(br);}
+previous=a;}
+toc.focus=function(){if(this.first)
+this.first.focus();}
+toc.onmouseup=w3c_slidy.mouse_button_up;toc.onclick=function(e){e||(e=window.event);if(w3c_slidy.selected_text_len<=0)
+w3c_slidy.hide_table_of_contents(true);w3c_slidy.stop_propagation(e);if(e.cancel!=undefined)
+e.cancel=true;if(e.returnValue!=undefined)
+e.returnValue=false;return false;};document.body.insertBefore(toc,document.body.firstChild);return toc;},is_shown_toc:function(){return!w3c_slidy.has_class(w3c_slidy.toc,"hidden");},show_table_of_contents:function(){w3c_slidy.remove_class(w3c_slidy.toc,"hidden");var toc=w3c_slidy.toc;toc.focus();if(w3c_slidy.ie7&&w3c_slidy.slide_number==0)
+setTimeout(w3c_slidy.ie_hack,100);},hide_table_of_contents:function(focus){w3c_slidy.add_class(w3c_slidy.toc,"hidden");if(focus&&!w3c_slidy.opera&&!w3c_slidy.has_class(w3c_slidy.toc,"hidden"))
+w3c_slidy.set_focus();},toggle_table_of_contents:function(){if(w3c_slidy.is_shown_toc())
+w3c_slidy.hide_table_of_contents(true);else
+w3c_slidy.show_table_of_contents();},toc_click:function(e){if(!e)
+e=window.event;var target=w3c_slidy.get_target(e);if(target&&target.nodeType==1)
+{var uri=target.getAttribute("href");if(uri)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.find_slide_number(uri);slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_location();w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.show_slide(slide);try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}}}
+w3c_slidy.hide_table_of_contents(true);if(w3c_slidy.ie7)w3c_slidy.ie_hack();w3c_slidy.stop_propagation(e);return w3c_slidy.cancel(e);},toc_key_down:function(event){var key;if(!event)
+var event=window.event;if(window.event)
+key=window.event.keyCode;else if(event.which)
+key=event.which;else
+return true;if(!key)
+return true;if(event.ctrlKey||event.altKey)
+return true;if(key==13)
+{var uri=this.getAttribute("href");if(uri)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.find_slide_number(uri);slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_location();w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.show_slide(slide);try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}}
+w3c_slidy.hide_table_of_contents(true);if(self.ie7)
+w3c_slidy.ie_hack();return w3c_slidy.cancel(event);}
+if(key==40&&this.next)
+{this.next.focus();return w3c_slidy.cancel(event);}
+if(key==38&&this.previous)
+{this.previous.focus();return w3c_slidy.cancel(event);}
+return true;},touchstart:function(e)
+{this.prev_tap=this.last_tap;this.last_tap=(new Date).getTime();var tap_delay=this.last_tap-this.prev_tap;if(tap_delay<=200)
+{}
+var touch=e.touches[0];this.pageX=touch.pageX;this.pageY=touch.pageY;this.screenX=touch.screenX;this.screenY=touch.screenY;this.clientX=touch.clientX;this.clientY=touch.clientY;this.delta_x=this.delta_y=0;},touchmove:function(e)
+{if(e.touches.length>1)
+return;e.preventDefault();var touch=e.touches[0];this.delta_x=touch.pageX-this.pageX;this.delta_y=touch.pageY-this.pageY;},touchend:function(e)
+{if(e.touches.length>1)
+return;var delay=(new Date).getTime()-this.last_tap;var dx=this.delta_x;var dy=this.delta_y;var abs_dx=Math.abs(dx);var abs_dy=Math.abs(dy);if(delay<500&&(abs_dx>100||abs_dy>100))
+{if(abs_dx>0.5*abs_dy)
+{e.preventDefault();if(dx<0)
+w3c_slidy.next_slide(true);else
+w3c_slidy.previous_slide(true);}
+else if(abs_dy>2*abs_dx)
+{e.preventDefault();w3c_slidy.toggle_table_of_contents();}}},before_print:function(){this.show_all_slides();this.hide_toolbar();alert("before print");},after_print:function(){if(!this.view_all)
+{this.single_slide_view();this.show_toolbar();}
+alert("after print");},print_slides:function(){this.before_print();window.print();this.after_print();},toggle_view:function(){if(this.view_all)
+{this.single_slide_view();this.show_toolbar();this.view_all=0;}
+else
+{this.show_all_slides();this.hide_toolbar();this.view_all=1;}},show_all_slides:function(){this.remove_class(document.body,"single_slide");this.set_visibility_all_incremental("visible");},single_slide_view:function(){this.add_class(document.body,"single_slide");this.set_visibility_all_incremental("visible");this.last_shown=this.previous_incremental_item(null);},hide_image_toolbar:function(){if(!this.ns_pos)
+{var images=document.getElementsByTagName("IMG");for(var i=0;i<images.length;++i)
+images[i].setAttribute("galleryimg","no");}},unloaded:function(e){},is_KHTML:function(){var agent=navigator.userAgent;return(agent.indexOf("KHTML")>=0?true:false);},slide_name:function(index){var name=null;var slide=this.slides[index];var heading=this.find_heading(slide);if(heading)
+name=this.extract_text(heading);if(!name)
+name=this.title+"("+(index+1)+")";name.replace(/&/g,"&amp;");name.replace(/</g,"&lt;");name.replace(/>/g,"&gt;");return name;},find_heading:function(node){if(!node||node.nodeType!=1)
+return null;if(node.nodeName=="H1"||node.nodeName=="h1")
+return node;var child=node.firstChild;while(child)
+{node=this.find_heading(child);if(node)
+return node;child=child.nextSibling;}
+return null;},extract_text:function(node){if(!node)
+return"";if(node.nodeType==3)
+return node.nodeValue;if(node.nodeType==1)
+{node=node.firstChild;var text="";while(node)
+{text=text+this.extract_text(node);node=node.nextSibling;}
+return text;}
+return"";},find_copyright:function(){var name,content;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="copyright")
+return content;}
+return null;},find_size_adjust:function(){var name,content,offset;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="font-size-adjustment")
+return 1*content;}
+return 1;},find_duration:function(){var name,content,offset;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="duration")
+return 60000*content;}
+return null;},replace_by_non_breaking_space:function(str){for(var i=0;i<str.length;++i)
+str[i]=160;},init_outliner:function(){var items=document.getElementsByTagName("li");for(var i=0;i<items.length;++i)
+{var target=items[i];if(!this.has_class(target.parentNode,"outline"))
+continue;target.onclick=this.outline_click;if(this.foldable(target))
+{target.foldable=true;target.onfocus=function(){w3c_slidy.outline=this;};target.onblur=function(){w3c_slidy.outline=null;};if(!target.getAttribute("tabindex"))
+target.setAttribute("tabindex","0");if(this.has_class(target,"expand"))
+this.unfold(target);else
+this.fold(target);}
+else
+{this.add_class(target,"nofold");target.visible=true;target.foldable=false;}}},foldable:function(item){if(!item||item.nodeType!=1)
+return false;var node=item.firstChild;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+return true;node=node.nextSibling;}
+return false;},fold:function(item){if(item)
+{this.remove_class(item,"unfolded");this.add_class(item,"folded");}
+var node=item?item.firstChild:null;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+{w3c_slidy.add_class(node,"hidden");}
+node=node.nextSibling;}
+item.visible=false;},unfold:function(item){if(item)
+{this.add_class(item,"unfolded");this.remove_class(item,"folded");}
+var node=item?item.firstChild:null;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+{w3c_slidy.remove_class(node,"hidden");}
+node=node.nextSibling;}
+item.visible=true;},outline_click:function(e){if(!e)
+e=window.event;var rightclick=false;var target=w3c_slidy.get_target(e);while(target&&target.visible==undefined)
+target=target.parentNode;if(!target)
+return true;if(e.which)
+rightclick=(e.which==3);else if(e.button)
+rightclick=(e.button==2);if(!rightclick&&target.visible!=undefined)
+{if(target.foldable)
+{if(target.visible)
+w3c_slidy.fold(target);else
+w3c_slidy.unfold(target);}
+w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;}
+return false;},add_toolbar:function(){var counter,page;this.toolbar=this.create_element("div");this.toolbar.setAttribute("class","toolbar");if(this.ns_pos||!this.ie6)
+{var right=this.create_element("div");right.setAttribute("style","float: right; text-align: right");counter=this.create_element("span")
+counter.innerHTML=this.localize("slide")+" n/m";right.appendChild(counter);this.toolbar.appendChild(right);var left=this.create_element("div");left.setAttribute("style","text-align: left");this.eos=this.create_element("span");this.eos.innerHTML="* ";left.appendChild(this.eos);var copyright=this.find_copyright();if(copyright)
+{var span=this.create_element("span");span.className="copyright";span.innerHTML=copyright;left.appendChild(span);}
+this.toolbar.setAttribute("tabindex","0");this.toolbar.appendChild(left);}
+else
+{this.toolbar.style.position=(this.ie7?"fixed":"absolute");this.toolbar.style.zIndex="200";this.toolbar.style.width="99.9%";this.toolbar.style.height="1.2em";this.toolbar.style.top="auto";this.toolbar.style.bottom="0";this.toolbar.style.left="0";this.toolbar.style.right="0";this.toolbar.style.textAlign="left";this.toolbar.style.fontSize="60%";this.toolbar.style.color="red";this.toolbar.borderWidth=0;this.toolbar.className="toolbar";this.toolbar.style.background="rgb(240,240,240)";var sp=this.create_element("span");sp.innerHTML="&nbsp;&nbsp;*&nbsp;";this.toolbar.appendChild(sp);this.eos=sp;var help=this.create_element("a");help.setAttribute("href",this.help_page);help.setAttribute("title",this.localize(this.help_text));help.innerHTML=this.localize("help?");this.toolbar.appendChild(help);this.help_anchor=help;var gap1=document.createTextNode(" ");this.toolbar.appendChild(gap1);var contents=this.create_element("a");contents.setAttribute("href","javascript:toggleTableOfContents()");contents.setAttribute("title",this.localize("table of contents".localize));contents.innerHTML=this.localize("contents?");this.toolbar.appendChild(contents);var gap2=document.createTextNode(" ");this.toolbar.appendChild(gap2);var copyright=this.find_copyright();if(copyright)
+{var span=this.create_element("span");span.innerHTML=copyright;span.style.color="black";span.style.marginLeft="0.5em";this.toolbar.appendChild(span);}
+counter=this.create_element("div")
+counter.style.position="absolute";counter.style.width="auto";counter.style.height="1.2em";counter.style.top="auto";counter.style.bottom=0;counter.style.right="0";counter.style.textAlign="right";counter.style.color="red";counter.style.background="rgb(240,240,240)";counter.innerHTML=this.localize("slide")+" n/m";this.toolbar.appendChild(counter);}
+this.toolbar.onclick=function(e){if(!e)
+e=window.event;var target=e.target;if(!target&&e.srcElement)
+target=e.srcElement;if(target&&target.nodeType==3)
+target=target.parentNode;w3c_slidy.stop_propagation(e);if(target&&target.nodeName.toLowerCase()!="a")
+w3c_slidy.mouse_button_click(e);};this.slide_number_element=counter;this.set_eos_status(false);document.body.appendChild(this.toolbar);},wrap_implicit_slides:function(){var i,heading,node,next,div;var headings=document.getElementsByTagName("h1");if(!headings)
+return;for(i=0;i<headings.length;++i)
+{heading=headings[i];if(heading.parentNode!=document.body)
+continue;node=heading.nextSibling;div=document.createElement("div");this.add_class(div,"slide");document.body.replaceChild(div,heading);div.appendChild(heading);while(node)
+{if(node.nodeType==1)
+{if(node.nodeName=="H1"||node.nodeName=="h1")
+break;if(node.nodeName=="DIV"||node.nodeName=="div")
+{if(this.has_class(node,"slide"))
+break;if(this.has_class(node,"handout"))
+break;}}
+next=node.nextSibling;node=document.body.removeChild(node);div.appendChild(node);node=next;}}},attach_touch_handers:function(slides)
+{var i,slide;for(i=0;i<slides.length;++i)
+{slide=slides[i];this.add_listener(slide,"touchstart",this.touchstart);this.add_listener(slide,"touchmove",this.touchmove);this.add_listener(slide,"touchend",this.touchend);}},collect_slides:function(){var slides=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"slide"))
+{slides[slides.length]=div;this.add_class(div,"hidden");var node1=document.createElement("br");div.appendChild(node1);var node2=document.createElement("br");div.appendChild(node2);}
+else if(this.has_class(div,"background"))
+{div.style.display="block";}}
+this.slides=slides;},collect_notes:function(){var notes=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"handout"))
+{notes[notes.length]=div;this.add_class(div,"hidden");}}
+this.notes=notes;},collect_backgrounds:function(){var backgrounds=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"background"))
+{backgrounds[backgrounds.length]=div;this.add_class(div,"hidden");}}
+this.backgrounds=backgrounds;},patch_anchors:function(){var self=w3c_slidy;var handler=function(event){if(self.page_address(this.href)==self.page_address(location.href))
+{var newslidenum=self.find_slide_number(this.href);if(newslidenum!=self.slide_number)
+{var slide=self.slides[self.slide_number];self.hide_slide(slide);self.slide_number=newslidenum;slide=self.slides[self.slide_number];self.show_slide(slide);self.set_location();}}
+else
+w3c_slidy.stop_propagation(event);this.blur();self.disable_slide_click=true;};var anchors=document.body.getElementsByTagName("a");for(var i=0;i<anchors.length;++i)
+{if(window.addEventListener)
+anchors[i].addEventListener("click",handler,false);else
+anchors[i].attachEvent("onclick",handler);}},show_slide_number:function(){var timer=w3c_slidy.get_timer();w3c_slidy.slide_number_element.innerHTML=timer+w3c_slidy.localize("slide")+" "+
+(w3c_slidy.slide_number+1)+"/"+w3c_slidy.slides.length;},check_location:function(){var hash=location.hash;if(w3c_slidy.slide_number>0&&(hash==""||hash=="#"))
+w3c_slidy.goto_slide(0);else if(hash.length>2&&hash!="#("+(w3c_slidy.slide_number+1)+")")
+{var num=parseInt(location.hash.substr(2));if(!isNaN(num))
+w3c_slidy.goto_slide(num-1);}
+if(w3c_slidy.time_left&&w3c_slidy.slide_number>0)
+{w3c_slidy.show_slide_number();if(w3c_slidy.time_left>0)
+w3c_slidy.time_left-=200;}},get_timer:function(){var timer="";if(w3c_slidy.time_left)
+{var mins,secs;secs=Math.floor(w3c_slidy.time_left/1000);mins=Math.floor(secs/60);secs=secs%60;timer=(mins?mins+"m":"")+secs+"s ";}
+return timer;},set_location:function(){var uri=w3c_slidy.page_address(location.href);var hash="#("+(w3c_slidy.slide_number+1)+")";if(w3c_slidy.slide_number>=0)
+uri=uri+hash;if(typeof(history.pushState)!="undefined")
+{document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";history.pushState(0,document.title,hash);w3c_slidy.show_slide_number();w3c_slidy.notify_observers();return;}
+if(uri!=location.href)
+location.href=uri;if(this.khtml)
+hash="("+(w3c_slidy.slide_number+1)+")";if(!this.ie&&location.hash!=hash&&location.hash!="")
+location.hash=hash;document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";w3c_slidy.show_slide_number();w3c_slidy.notify_observers();},notify_observers:function()
+{var slide=this.slides[this.slide_number];for(var i=0;i<this.observers.length;++i)
+this.observers[i](this.slide_number+1,this.find_heading(slide).innerText,location.href);},add_observer:function(observer)
+{for(var i=0;i<this.observers.length;++i)
+{if(observer==this.observers[i])
+return;}
+this.observers.push(observer);},remove_observer:function(o)
+{for(var i=0;i<this.observers.length;++i)
+{if(observer==this.observers[i])
+{this.observers.splice(i,1);break;}}},page_address:function(uri){var i=uri.indexOf("#");if(i<0)
+i=uri.indexOf("%23");if(i<0)
+return uri;return uri.substr(0,i);},on_frame_loaded:function(hash){location.hash=hash;var uri=w3c_slidy.page_address(location.href);location.href=uri+hash;},push_hash:function(hash){},find_slide_number:function(uri){var i=uri.indexOf("#");if(i<0)
+return 0;var anchor=unescape(uri.substr(i+1));var target=document.getElementById(anchor);if(!target)
+{var re=/((d)+)/;if(anchor.match(re))
+{var num=parseInt(anchor.substring(1,anchor.length-1));if(num>this.slides.length)
+num=1;if(--num<0)
+num=0;return num;}
+re=/[(d)+]/;if(anchor.match(re))
+{var num=parseInt(anchor.substring(1,anchor.length-1));if(num>this.slides.length)
+num=1;if(--num<0)
+num=0;return num;}
+return 0;}
+while(true)
+{if(target.nodeName.toLowerCase()=="div"&&this.has_class(target,"slide"))
+{break;}
+target=target.parentNode;if(!target)
+{return 0;}};for(i=0;i<slides.length;++i)
+{if(slides[i]==target)
+return i;}
+return 0;},previous_slide:function(incremental){if(!w3c_slidy.view_all)
+{var slide;if((incremental||w3c_slidy.slide_number==0)&&w3c_slidy.last_shown!=null)
+{w3c_slidy.last_shown=w3c_slidy.hide_previous_item(w3c_slidy.last_shown);w3c_slidy.set_eos_status(false);}
+else if(w3c_slidy.slide_number>0)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slide_number-1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);w3c_slidy.set_eos_status(true);w3c_slidy.show_slide(slide);}
+w3c_slidy.set_location();if(!w3c_slidy.ns_pos)
+w3c_slidy.refresh_toolbar(200);}},next_slide:function(incremental){if(!w3c_slidy.view_all)
+{var slide,last=w3c_slidy.last_shown;if(incremental||w3c_slidy.slide_number==w3c_slidy.slides.length-1)
+w3c_slidy.last_shown=w3c_slidy.reveal_next_item(w3c_slidy.last_shown);if((!incremental||w3c_slidy.last_shown==null)&&w3c_slidy.slide_number<w3c_slidy.slides.length-1)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slide_number+1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.show_slide(slide);}
+else if(!w3c_slidy.last_shown)
+{if(last&&incremental)
+w3c_slidy.last_shown=last;}
+w3c_slidy.set_location();w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));if(!w3c_slidy.ns_pos)
+w3c_slidy.refresh_toolbar(200);}},first_slide:function(){if(!w3c_slidy.view_all)
+{var slide;if(w3c_slidy.slide_number!=0)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=0;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.show_slide(slide);}
+w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.set_location();}},last_slide:function(){if(!w3c_slidy.view_all)
+{var slide;w3c_slidy.last_shown=null;if(w3c_slidy.last_shown==null&&w3c_slidy.slide_number<w3c_slidy.slides.length-1)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slides.length-1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);w3c_slidy.show_slide(slide);}
+else
+{w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);}
+w3c_slidy.set_eos_status(true);w3c_slidy.set_location();}},set_eos_status:function(state){if(this.eos)
+this.eos.style.color=(state?"rgb(240,240,240)":"red");},goto_slide:function(num){var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=num;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";w3c_slidy.show_slide(slide);w3c_slidy.show_slide_number();},show_slide:function(slide){this.sync_background(slide);this.remove_class(slide,"hidden");setTimeout("window.scrollTo(0,0);",1);},hide_slide:function(slide){this.add_class(slide,"hidden");},set_focus:function(element)
+{if(element)
+element.focus();else
+{w3c_slidy.help_anchor.focus();setTimeout(function(){w3c_slidy.help_anchor.blur();},1);}},sync_background:function(slide){var background;var bgColor;if(slide.currentStyle)
+bgColor=slide.currentStyle["backgroundColor"];else if(document.defaultView)
+{var styles=document.defaultView.getComputedStyle(slide,null);if(styles)
+bgColor=styles.getPropertyValue("background-color");else
+{bgColor="transparent";}}
+else
+bgColor=="transparent";if(bgColor=="transparent"||bgColor.indexOf("rgba")>=0||bgColor.indexOf("opacity")>=0)
+{var slideClass=this.get_class_list(slide);for(var i=0;i<this.backgrounds.length;i++)
+{background=this.backgrounds[i];var bgClass=this.get_class_list(background);if(this.matching_background(slideClass,bgClass))
+this.remove_class(background,"hidden");else
+this.add_class(background,"hidden");}}
+else
+this.hide_backgrounds();},hide_backgrounds:function(){for(var i=0;i<this.backgrounds.length;i++)
+{background=this.backgrounds[i];this.add_class(background,"hidden");}},matching_background:function(slideClass,bgClass){var i,count,pattern,result;pattern=/w+/g;result=bgClass.match(pattern);for(i=count=0;i<result.length;i++)
+{if(result[i]=="hidden")
+continue;if(result[i]=="background")
+continue;++count;}
+if(count==0)
+return true;result=slideClass.match(pattern);for(i=count=0;i<result.length;i++)
+{if(result[i]=="hidden")
+continue;if(this.has_token(bgClass,result[i]))
+return true;}
+return false;},resized:function(){var width=0;if(typeof(window.innerWidth)=='number')
+width=window.innerWidth;else if(document.documentElement&&document.documentElement.clientWidth)
+width=document.documentElement.clientWidth;else if(document.body&&document.body.clientWidth)
+width=document.body.clientWidth;var height=0;if(typeof(window.innerHeight)=='number')
+height=window.innerHeight;else if(document.documentElement&&document.documentElement.clientHeight)
+height=document.documentElement.clientHeight;else if(document.body&&document.body.clientHeight)
+height=document.body.clientHeight;if(height&&(width/height>1.05*1024/768))
+{width=height*1024.0/768;}
+if(width!=w3c_slidy.last_width||height!=w3c_slidy.last_height)
+{if(width>=1100)
+w3c_slidy.size_index=5;else if(width>=1000)
+w3c_slidy.size_index=4;else if(width>=800)
+w3c_slidy.size_index=3;else if(width>=600)
+w3c_slidy.size_index=2;else if(width)
+w3c_slidy.size_index=0;if(0<=w3c_slidy.size_index+w3c_slidy.size_adjustment&&w3c_slidy.size_index+w3c_slidy.size_adjustment<w3c_slidy.sizes.length)
+w3c_slidy.size_index=w3c_slidy.size_index+w3c_slidy.size_adjustment;w3c_slidy.adjust_object_dimensions(width,height);if(document.body.style.fontSize!=w3c_slidy.sizes[w3c_slidy.size_index])
+{document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];}
+w3c_slidy.last_width=width;w3c_slidy.last_height=height;if(w3c_slidy.ns_pos)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);}
+w3c_slidy.refresh_toolbar(200);}},scrolled:function(){if(w3c_slidy.toolbar&&!w3c_slidy.ns_pos&&!w3c_slidy.ie7)
+{w3c_slidy.hack_offset=w3c_slidy.scroll_x_offset();w3c_slidy.toolbar.style.display="none";if(w3c_slidy.scrollhack==0&&!w3c_slidy.view_all)
+{setTimeout(function(){w3c_slidy.show_toolbar();},1000);w3c_slidy.scrollhack=1;}}},hide_toolbar:function(){w3c_slidy.add_class(w3c_slidy.toolbar,"hidden");window.focus();},refresh_toolbar:function(interval){if(!w3c_slidy.ns_pos&&!w3c_slidy.ie7)
+{w3c_slidy.hide_toolbar();setTimeout(function(){w3c_slidy.show_toolbar();},interval);}},show_toolbar:function(){if(w3c_slidy.want_toolbar)
+{w3c_slidy.toolbar.style.display="block";if(!w3c_slidy.ns_pos)
+{var xoffset=w3c_slidy.scroll_x_offset();w3c_slidy.toolbar.style.left=xoffset;w3c_slidy.toolbar.style.right=xoffset;w3c_slidy.toolbar.style.bottom=0;}
+w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden");}
+w3c_slidy.scrollhack=0;try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}},toggle_toolbar:function(){if(!w3c_slidy.view_all)
+{if(w3c_slidy.has_class(w3c_slidy.toolbar,"hidden"))
+{w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden")
+w3c_slidy.want_toolbar=1;}
+else
+{w3c_slidy.add_class(w3c_slidy.toolbar,"hidden")
+w3c_slidy.want_toolbar=0;}}},scroll_x_offset:function(){if(window.pageXOffset)
+return self.pageXOffset;if(document.documentElement&&document.documentElement.scrollLeft)
+return document.documentElement.scrollLeft;if(document.body)
+return document.body.scrollLeft;return 0;},scroll_y_offset:function(){if(window.pageYOffset)
+return self.pageYOffset;if(document.documentElement&&document.documentElement.scrollTop)
+return document.documentElement.scrollTop;if(document.body)
+return document.body.scrollTop;return 0;},optimize_font_size:function(){var slide=w3c_slidy.slides[w3c_slidy.slide_number];var dh=slide.scrollHeight;var wh=getWindowHeight();var u=100*dh/wh;alert("window utilization = "+u+"% (doc "
++dh+" win "+wh+")");},get_doc_height:function(doc){if(!doc)
+doc=document;if(doc&&doc.body&&doc.body.offsetHeight)
+return doc.body.offsetHeight;if(doc&&doc.body&&doc.body.scrollHeight)
+return doc.body.scrollHeight;alert("couldn't determine document height");},get_window_height:function(){if(typeof(window.innerHeight)=='number')
+return window.innerHeight;if(document.documentElement&&document.documentElement.clientHeight)
+return document.documentElement.clientHeight;if(document.body&&document.body.clientHeight)
+return document.body.clientHeight;},document_height:function(){var sh,oh;sh=document.body.scrollHeight;oh=document.body.offsetHeight;if(sh&&oh)
+{return(sh>oh?sh:oh);}
+return 0;},smaller:function(){if(w3c_slidy.size_index>0)
+{--w3c_slidy.size_index;}
+w3c_slidy.toolbar.style.display="none";document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);setTimeout(function(){w3c_slidy.show_toolbar();},50);},bigger:function(){if(w3c_slidy.size_index<w3c_slidy.sizes.length-1)
+{++w3c_slidy.size_index;}
+w3c_slidy.toolbar.style.display="none";document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);setTimeout(function(){w3c_slidy.show_toolbar();},50);},adjust_object_dimensions:function(width,height){for(var i=0;i<w3c_slidy.objects.length;i++)
+{var obj=this.objects[i];var mimeType=obj.getAttribute("type");if(mimeType=="image/svg+xml"||mimeType=="application/x-shockwave-flash")
+{if(!obj.initialWidth)
+obj.initialWidth=obj.getAttribute("width");if(!obj.initialHeight)
+obj.initialHeight=obj.getAttribute("height");if(obj.initialWidth&&obj.initialWidth.charAt(obj.initialWidth.length-1)=="%")
+{var w=parseInt(obj.initialWidth.slice(0,obj.initialWidth.length-1));var newW=width*(w/100.0);obj.setAttribute("width",newW);}
+if(obj.initialHeight&&obj.initialHeight.charAt(obj.initialHeight.length-1)=="%")
+{var h=parseInt(obj.initialHeight.slice(0,obj.initialHeight.length-1));var newH=height*(h/100.0);obj.setAttribute("height",newH);}}}},key_press:function(event){if(!event)
+event=window.event;if(!w3c_slidy.key_wanted)
+return w3c_slidy.cancel(event);return true;},key_down:function(event){var key,target,tag;w3c_slidy.key_wanted=true;if(!event)
+event=window.event;if(window.event)
+{key=window.event.keyCode;target=window.event.srcElement;}
+else if(event.which)
+{key=event.which;target=event.target;}
+else
+return true;if(!key)
+return true;if(!w3c_slidy.slidy_chrome(target)&&w3c_slidy.special_element(target))
+return true;if(event.ctrlKey||event.altKey||event.metaKey)
+return true;if(w3c_slidy.is_shown_toc()&&key!=9&&key!=16&&key!=38&&key!=40)
+{w3c_slidy.hide_table_of_contents(true);if(key==27||key==84||key==67)
+return w3c_slidy.cancel(event);}
+if(key==34)
+{if(w3c_slidy.view_all)
+return true;w3c_slidy.next_slide(false);return w3c_slidy.cancel(event);}
+else if(key==33)
+{if(w3c_slidy.view_all)
+return true;w3c_slidy.previous_slide(false);return w3c_slidy.cancel(event);}
+else if(key==32)
+{w3c_slidy.next_slide(true);return w3c_slidy.cancel(event);}
+else if(key==37)
+{w3c_slidy.previous_slide(!event.shiftKey);return w3c_slidy.cancel(event);}
+else if(key==36)
+{w3c_slidy.first_slide();return w3c_slidy.cancel(event);}
+else if(key==35)
+{w3c_slidy.last_slide();return w3c_slidy.cancel(event);}
+else if(key==39)
+{w3c_slidy.next_slide(!event.shiftKey);return w3c_slidy.cancel(event);}
+else if(key==13)
+{if(w3c_slidy.outline)
+{if(w3c_slidy.outline.visible)
+w3c_slidy.fold(w3c_slidy.outline);else
+w3c_slidy.unfold(w3c_slidy.outline);return w3c_slidy.cancel(event);}}
+else if(key==188)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==190)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==189||key==109)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==187||key==191||key==107)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==83)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==66)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==90)
+{w3c_slidy.last_slide();return w3c_slidy.cancel(event);}
+else if(key==70)
+{w3c_slidy.toggle_toolbar();return w3c_slidy.cancel(event);}
+else if(key==65)
+{w3c_slidy.toggle_view();return w3c_slidy.cancel(event);}
+else if(key==75)
+{w3c_slidy.mouse_click_enabled=!w3c_slidy.mouse_click_enabled;var alert_msg=(w3c_slidy.mouse_click_enabled?"enabled":"disabled")+" mouse click advance";alert(w3c_slidy.localize(alert_msg));return w3c_slidy.cancel(event);}
+else if(key==84||key==67)
+{if(w3c_slidy.toc)
+w3c_slidy.toggle_table_of_contents();return w3c_slidy.cancel(event);}
+else if(key==72)
+{window.location=w3c_slidy.help_page;return w3c_slidy.cancel(event);}
+return true;},create_element:function(name){if(this.xhtml&&(typeof document.createElementNS!='undefined'))
+return document.createElementNS("http://www.w3.org/1999/xhtml",name)
+return document.createElement(name);},get_element_style:function(elem,IEStyleProp,CSSStyleProp){if(elem.currentStyle)
+{return elem.currentStyle[IEStyleProp];}
+else if(window.getComputedStyle)
+{var compStyle=window.getComputedStyle(elem,"");return compStyle.getPropertyValue(CSSStyleProp);}
+return"";},has_token:function(str,token){if(str)
+{var pattern=/w+/g;var result=str.match(pattern);for(var i=0;i<result.length;i++)
+{if(result[i]==token)
+return true;}}
+return false;},get_class_list:function(element){if(typeof element.className!='undefined')
+return element.className;return element.getAttribute("class");},has_class:function(element,name){if(element.nodeType!=1)
+return false;var regexp=new RegExp("(^| )"+name+"W*");if(typeof element.className!='undefined')
+return regexp.test(element.className);return regexp.test(element.getAttribute("class"));},remove_class:function(element,name){var regexp=new RegExp("(^| )"+name+"W*");var clsval="";if(typeof element.className!='undefined')
+{clsval=element.className;if(clsval)
+{clsval=clsval.replace(regexp,"");element.className=clsval;}}
+else
+{clsval=element.getAttribute("class");if(clsval)
+{clsval=clsval.replace(regexp,"");element.setAttribute("class",clsval);}}},add_class:function(element,name){if(!this.has_class(element,name))
+{if(typeof element.className!='undefined')
+element.className+=" "+name;else
+{var clsval=element.getAttribute("class");clsval=clsval?clsval+" "+name:name;element.setAttribute("class",clsval);}}},incremental_elements:null,okay_for_incremental:function(name){if(!this.incremental_elements)
+{var inclist=new Array();inclist["p"]=true;inclist["pre"]=true;inclist["li"]=true;inclist["blockquote"]=true;inclist["dt"]=true;inclist["dd"]=true;inclist["h2"]=true;inclist["h3"]=true;inclist["h4"]=true;inclist["h5"]=true;inclist["h6"]=true;inclist["span"]=true;inclist["address"]=true;inclist["table"]=true;inclist["tr"]=true;inclist["th"]=true;inclist["td"]=true;inclist["img"]=true;inclist["object"]=true;this.incremental_elements=inclist;}
+return this.incremental_elements[name.toLowerCase()];},next_incremental_item:function(node){var br=this.is_xhtml?"br":"BR";var slide=w3c_slidy.slides[w3c_slidy.slide_number];for(;;)
+{node=w3c_slidy.next_node(slide,node);if(node==null||node.parentNode==null)
+break;if(node.nodeType==1)
+{if(node.nodeName==br)
+continue;if(w3c_slidy.has_class(node,"incremental")&&w3c_slidy.okay_for_incremental(node.nodeName))
+return node;if(w3c_slidy.has_class(node.parentNode,"incremental")&&!w3c_slidy.has_class(node,"non-incremental"))
+return node;}}
+return node;},previous_incremental_item:function(node){var br=this.is_xhtml?"br":"BR";var slide=w3c_slidy.slides[w3c_slidy.slide_number];for(;;)
+{node=w3c_slidy.previous_node(slide,node);if(node==null||node.parentNode==null)
+break;if(node.nodeType==1)
+{if(node.nodeName==br)
+continue;if(w3c_slidy.has_class(node,"incremental")&&w3c_slidy.okay_for_incremental(node.nodeName))
+return node;if(w3c_slidy.has_class(node.parentNode,"incremental")&&!w3c_slidy.has_class(node,"non-incremental"))
+return node;}}
+return node;},set_visibility_all_incremental:function(value){var node=this.next_incremental_item(null);if(value=="hidden")
+{while(node)
+{w3c_slidy.add_class(node,"invisible");node=w3c_slidy.next_incremental_item(node);}}
+else
+{while(node)
+{w3c_slidy.remove_class(node,"invisible");node=w3c_slidy.next_incremental_item(node);}}},reveal_next_item:function(node){node=w3c_slidy.next_incremental_item(node);if(node&&node.nodeType==1)
+w3c_slidy.remove_class(node,"invisible");return node;},hide_previous_item:function(node){if(node&&node.nodeType==1)
+w3c_slidy.add_class(node,"invisible");return this.previous_incremental_item(node);},next_node:function(root,node){if(node==null)
+return root.firstChild;if(node.firstChild)
+return node.firstChild;if(node.nextSibling)
+return node.nextSibling;for(;;)
+{node=node.parentNode;if(!node||node==root)
+break;if(node&&node.nextSibling)
+return node.nextSibling;}
+return null;},previous_node:function(root,node){if(node==null)
+{node=root.lastChild;if(node)
+{while(node.lastChild)
+node=node.lastChild;}
+return node;}
+if(node.previousSibling)
+{node=node.previousSibling;while(node.lastChild)
+node=node.lastChild;return node;}
+if(node.parentNode!=root)
+return node.parentNode;return null;},previous_sibling_element:function(el){el=el.previousSibling;while(el&&el.nodeType!=1)
+el=el.previousSibling;return el;},next_sibling_element:function(el){el=el.nextSibling;while(el&&el.nodeType!=1)
+el=el.nextSibling;return el;},first_child_element:function(el){var node;for(node=el.firstChild;node;node=node.nextSibling)
+{if(node.nodeType==1)
+break;}
+return node;},first_tag:function(element,tag){var node;if(!this.is_xhtml)
+tag=tag.toUpperCase();for(node=element.firstChild;node;node=node.nextSibling)
+{if(node.nodeType==1&&node.nodeName==tag)
+break;}
+return node;},hide_selection:function(){if(window.getSelection)
+{var selection=window.getSelection();if(selection.rangeCount>0)
+{var range=selection.getRangeAt(0);range.collapse(false);}}
+else
+{var textRange=document.selection.createRange();textRange.collapse(false);}},get_selected_text:function(){try
+{if(window.getSelection)
+return window.getSelection().toString();if(document.getSelection)
+return document.getSelection().toString();if(document.selection)
+return document.selection.createRange().text;}
+catch(e)
+{}
+return"";},mouse_button_up:function(e){w3c_slidy.selected_text_len=w3c_slidy.get_selected_text().length;},mouse_button_down:function(e){w3c_slidy.selected_text_len=w3c_slidy.get_selected_text().length;w3c_slidy.mouse_x=e.clientX;w3c_slidy.mouse_y=e.clientY;},mouse_button_click:function(e){if(!e)
+var e=window.event;if(Math.abs(e.clientX-w3c_slidy.mouse_x)+
+Math.abs(e.clientY-w3c_slidy.mouse_y)>10)
+return true;if(w3c_slidy.selected_text_len>0)
+return true;var rightclick=false;var leftclick=false;var middleclick=false;var target;if(!e)
+var e=window.event;if(e.target)
+target=e.target;else if(e.srcElement)
+target=e.srcElement;if(target.nodeType==3)
+target=target.parentNode;if(e.which)
+{leftclick=(e.which==1);middleclick=(e.which==2);rightclick=(e.which==3);}
+else if(e.button)
+{if(e.button==4)
+middleclick=true;rightclick=(e.button==2);}
+else
+leftclick=true;if(w3c_slidy.selected_text_len>0)
+{w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;return false;}
+w3c_slidy.hide_table_of_contents(false);var tag=target.nodeName.toLowerCase();if(w3c_slidy.mouse_click_enabled&&leftclick&&!w3c_slidy.special_element(target)&&!target.onclick)
+{w3c_slidy.next_slide(true);w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;return false;}
+return true;},special_element:function(element){if(this.has_class(element,"non-interactive"))
+return false;var tag=element.nodeName.toLowerCase();return element.onkeydown||element.onclick||tag=="a"||tag=="embed"||tag=="object"||tag=="video"||tag=="audio"||tag=="svg"||tag=="canvas"||tag=="input"||tag=="textarea"||tag=="select"||tag=="option";},slidy_chrome:function(el){while(el)
+{if(el==w3c_slidy.toc||el==w3c_slidy.toolbar||w3c_slidy.has_class(el,"outline"))
+return true;el=el.parentNode;}
+return false;},get_key:function(e)
+{var key;if(typeof window.event!="undefined")
+key=window.event.keyCode;else if(e.which)
+key=e.which;return key;},get_target:function(e){var target;if(!e)
+e=window.event;if(e.target)
+target=e.target;else if(e.srcElement)
+target=e.srcElement;if(target.nodeType!=1)
+target=target.parentNode;return target;},is_block:function(elem){var tag=elem.nodeName.toLowerCase();return tag=="ol"||tag=="ul"||tag=="p"||tag=="dl"||tag=="li"||tag=="table"||tag=="pre"||tag=="h1"||tag=="h2"||tag=="h3"||tag=="h4"||tag=="h5"||tag=="h6"||tag=="blockquote"||tag=="address";},add_listener:function(element,event,handler){if(window.addEventListener)
+element.addEventListener(event,handler,false);else
+element.attachEvent("on"+event,handler);},stop_propagation:function(event){event=event?event:window.event;event.cancelBubble=true;if(event.stopPropagation)
+event.stopPropagation();return true;},cancel:function(event){if(event)
+{event.cancel=true;event.returnValue=false;if(event.preventDefault)
+event.preventDefault();}
+w3c_slidy.key_wanted=false;return false;},strings_es:{"slide":"pág.","help?":"Ayuda","contents?":"Índice","table of contents":"tabla de contenidos","Table of Contents":"Tabla de Contenidos","restart presentation":"Reiniciar presentación","restart?":"Inicio"},help_es:"Utilice el ratón, barra espaciadora, teclas Izda/Dcha, "+"o Re pág y Av pág. Use S y B para cambiar el tamaño de fuente.",strings_ca:{"slide":"pàg..","help?":"Ajuda","contents?":"Índex","table of contents":"taula de continguts","Table of Contents":"Taula de Continguts","restart presentation":"Reiniciar presentació","restart?":"Inici"},help_ca:"Utilitzi el ratolí, barra espaiadora, tecles Esq./Dta. "+"o Re pàg y Av pàg. Usi S i B per canviar grandària de font.",strings_cs:{"slide":"snímek","help?":"nápověda","contents?":"obsah","table of contents":"obsah prezentace","Table of Contents":"Obsah prezentace","restart presentation":"znovu spustit prezentaci","restart?":"restart"},help_cs:"Prezentaci můžete procházet pomocí kliknutí myši, mezerníku, "+"šipek vlevo a vpravo nebo kláves PageUp a PageDown. Písmo se "+"dá zvětšit a zmenšit pomocí kláves B a S.",strings_nl:{"slide":"pagina","help?":"Help?","contents?":"Inhoud?","table of contents":"inhoudsopgave","Table of Contents":"Inhoudsopgave","restart presentation":"herstart presentatie","restart?":"Herstart?"},help_nl:"Navigeer d.m.v. het muis, spatiebar, Links/Rechts toetsen, "+"of PgUp en PgDn. Gebruik S en B om de karaktergrootte te veranderen.",strings_de:{"slide":"Seite","help?":"Hilfe","contents?":"Übersicht","table of contents":"Inhaltsverzeichnis","Table of Contents":"Inhaltsverzeichnis","restart presentation":"Präsentation neu starten","restart?":"Neustart"},help_de:"Benutzen Sie die Maus, Leerschlag, die Cursortasten links/rechts oder "+"Page up/Page Down zum Wechseln der Seiten und S und B für die Schriftgrösse.",strings_pl:{"slide":"slajd","help?":"pomoc?","contents?":"spis treści?","table of contents":"spis treści","Table of Contents":"Spis Treści","restart presentation":"Restartuj prezentację","restart?":"restart?"},help_pl:"Zmieniaj slajdy klikając myszą, naciskając spację, strzałki lewo/prawo"+"lub PgUp / PgDn. Użyj klawiszy S i B, aby zmienić rozmiar czczionki.",strings_fr:{"slide":"page","help?":"Aide","contents?":"Index","table of contents":"table des matières","Table of Contents":"Table des matières","restart presentation":"Recommencer l'exposé","restart?":"Début"},help_fr:"Naviguez avec la souris, la barre d'espace, les flèches "+"gauche/droite ou les touches Pg Up, Pg Dn. Utilisez "+"les touches S et B pour modifier la taille de la police.",strings_hu:{"slide":"oldal","help?":"segítség","contents?":"tartalom","table of contents":"tartalomjegyzék","Table of Contents":"Tartalomjegyzék","restart presentation":"bemutató újraindítása","restart?":"újraindítás"},help_hu:"Az oldalak közti lépkedéshez kattintson az egérrel, vagy "+"használja a szóköz, a bal, vagy a jobb nyíl, illetve a Page Down, "+"Page Up billentyűket. Az S és a B billentyűkkel változtathatja "+"a szöveg méretét.",strings_it:{"slide":"pag.","help?":"Aiuto","contents?":"Indice","table of contents":"indice","Table of Contents":"Indice","restart presentation":"Ricominciare la presentazione","restart?":"Inizio"},help_it:"Navigare con mouse, barra spazio, frecce sinistra/destra o "+"PgUp e PgDn. Usare S e B per cambiare la dimensione dei caratteri.",strings_el:{"slide":"σελίδα","help?":"βοήθεια;","contents?":"περιεχόμενα;","table of contents":"πίνακας περιεχομένων","Table of Contents":"Πίνακας Περιεχομένων","restart presentation":"επανεκκίνηση παρουσίασης","restart?":"επανεκκίνηση;"},help_el:"Πλοηγηθείτε με το κλίκ του ποντικιού, το space, τα βέλη αριστερά/δεξιά, "+"ή Page Up και Page Down. Χρησιμοποιήστε τα πλήκτρα S και B για να αλλάξετε "+"το μέγεθος της γραμματοσειράς.",strings_ja:{"slide":"スライド","help?":"ヘルプ","contents?":"目次","table of contents":"目次を表示","Table of Contents":"目次","restart presentation":"最初から再生","restart?":"最初から"},help_ja:"マウス左クリック ・ スペース ・ 左右キー "+"または Page Up ・ Page Downで操作， S ・ Bでフォントサイズ変更",strings_zh:{"slide":"幻灯片","help?":"帮助?","contents?":"内容?","table of contents":"目录","Table of Contents":"目录","restart presentation":"重新启动展示","restart?":"重新启动?"},help_zh:"用鼠标点击, 空格条, 左右箭头, Pg Up 和 Pg Dn 导航. "+"用 S, B 改变字体大小.",strings_ru:{"slide":"слайд","help?":"помощь?","contents?":"содержание?","table of contents":"оглавление","Table of Contents":"Оглавление","restart presentation":"перезапустить презентацию","restart?":"перезапуск?"},help_ru:"Перемещайтесь кликая мышкой, используя клавишу пробел, стрелки"+"влево/вправо или Pg Up и Pg Dn. Клавиши S и B меняют размер шрифта.",strings_sv:{"slide":"sida","help?":"hjälp","contents?":"innehåll","table of contents":"innehållsförteckning","Table of Contents":"Innehållsförteckning","restart presentation":"visa presentationen från början","restart?":"börja om"},help_sv:"Bläddra med ett klick med vänstra musknappen, mellanslagstangenten, "+"vänster- och högerpiltangenterna eller tangenterna Pg Up, Pg Dn. "+"Använd tangenterna S och B för att ändra textens storlek.",strings:{},localize:function(src){if(src=="")
+return src;var s,lookup=w3c_slidy.strings[w3c_slidy.lang];if(lookup)
+{s=lookup[src];if(s)
+return s;}
+var lg=w3c_slidy.lang.split("-");if(lg.length>1)
+{lookup=w3c_slidy.strings[lg[0]];if(lookup)
+{s=lookup[src];if(s)
+return s;}}
+return src;},init_localization:function(){var i18n=w3c_slidy;var help_text=w3c_slidy.help_text;this.strings={"es":this.strings_es,"ca":this.strings_ca,"cs":this.strings_cs,"nl":this.strings_nl,"de":this.strings_de,"pl":this.strings_pl,"fr":this.strings_fr,"hu":this.strings_hu,"it":this.strings_it,"el":this.strings_el,"jp":this.strings_ja,"zh":this.strings_zh,"ru":this.strings_ru,"sv":this.strings_sv},i18n.strings_es[help_text]=i18n.help_es;i18n.strings_ca[help_text]=i18n.help_ca;i18n.strings_cs[help_text]=i18n.help_cs;i18n.strings_nl[help_text]=i18n.help_nl;i18n.strings_de[help_text]=i18n.help_de;i18n.strings_pl[help_text]=i18n.help_pl;i18n.strings_fr[help_text]=i18n.help_fr;i18n.strings_hu[help_text]=i18n.help_hu;i18n.strings_it[help_text]=i18n.help_it;i18n.strings_el[help_text]=i18n.help_el;i18n.strings_ja[help_text]=i18n.help_ja;i18n.strings_zh[help_text]=i18n.help_zh;i18n.strings_ru[help_text]=i18n.help_ru;i18n.strings_sv[help_text]=i18n.help_sv;w3c_slidy.lang=document.body.parentNode.getAttribute("lang");if(!w3c_slidy.lang)
+w3c_slidy.lang=document.body.parentNode.getAttribute("xml:lang");if(!w3c_slidy.lang)
+w3c_slidy.lang="en";}};w3c_slidy.set_up();setTimeout(w3c_slidy.hide_slides,50);    </script>
+
+    
+    <!-- CSS -->
+        <link rel="stylesheet" href="./Macros (1)_files/font-awesome.min.css" data-external="1">
+            <style type="text/css">
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          color: #aaaaaa;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+      div.sourceCode
+        {  background-color: #f8f8f8; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span.al { color: #ef2929; } /* Alert */
+      code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+      code span.at { color: #c4a000; } /* Attribute */
+      code span.bn { color: #0000cf; } /* BaseN */
+      code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #4e9a06; } /* Char */
+      code span.cn { color: #000000; } /* Constant */
+      code span.co { color: #8f5902; font-style: italic; } /* Comment */
+      code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+      code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+      code span.dt { color: #204a87; } /* DataType */
+      code span.dv { color: #0000cf; } /* DecVal */
+      code span.er { color: #a40000; font-weight: bold; } /* Error */
+      code span.ex { } /* Extension */
+      code span.fl { color: #0000cf; } /* Float */
+      code span.fu { color: #000000; } /* Function */
+      code span.im { } /* Import */
+      code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+      code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+      code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+      code span.ot { color: #8f5902; } /* Other */
+      code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+      code span.sc { color: #000000; } /* SpecialChar */
+      code span.ss { color: #4e9a06; } /* SpecialString */
+      code span.st { color: #4e9a06; } /* String */
+      code span.va { color: #000000; } /* Variable */
+      code span.vs { color: #4e9a06; } /* VerbatimString */
+      code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <!-- Local CSS -->
+    <style type="text/css">
+body{color:#444}div.slide h1{color:#333;font-size:220%;font-family:helvetica,sans-serif;border-bottom:5px solid #ddd}div.slide h2{color:#333;font-size:180%;font-family:helvetica,sans-serif}div.slide.title{background:#0071b5;color:#fff}div.slide.title h1,div.slide.title h2,div.slide.title h3{color:#fff;margin-left:0}div.slide.title h1{padding-top:20%;border:0}div.slide.title h2{}div.slide.title h3{font-size:90%}ul,ol{padding-left:2em}ul ul{padding-left:1em}p{padding-left:0}code{font:droid sans mono,monaco,monospace;background-color:#ddd}pre code{border-radius:8px;box-shadow:8px 8px 12px #ddd;padding:10px;display:block}.Cblue{color:#5af}.center{text-align:center;margin:0 auto}@media print{body{font-size:16pt}div.handout{visibility:none}div.slide.title{background:#fff}div.slide.title h1,div.slide.title h2,div.slide.title h3{color:#ba0d20;margin-left:0}pre{font-size:1e2%;font-weight:400;line-height:120%}}    </style>
+
+        <link rel="stylesheet" href="data:text/css,%2Emybox%7Bmargin%3A0%205%25%3Bbox%2Dshadow%3A8px%208px%2012px%20%23aaa%3Bborder%2Dradius%3A8px%3Bbackground%3A%23ccc%7Dtable%7Bborder%2Dcollapse%3Acollapse%7D%2Eborderedtable%20th%2C%2Eborderedtable%20td%7Bborder%3A2px%20solid%20%23000%3Bpadding%3A1px%2030px%7D%2Eborderedtable%20th%7Bbackground%3A%23b5d6e9%7D%2Ered%7Bcolor%3Ared%3Bfont%2Dsize%3A120%25%7Dfigcaption%7Bcolor%3A%23999%3Bfont%2Dsize%3A80%25%7Ddiv%2EsourceCode%7Bmargin%3A1em%7D%2Euser%20code%7Bbackground%3A%23f9ff9a%7D%2Einternal%20code%7Bbackground%3A%23aff%7D">
+    
+
+    <title>Macros (1)</title>
+  </head>
+
+  <!-- ====================================================================== -->
+
+  <body class=" single_slide" style="visibility: visible; font-size: 18pt;"><div class=" slidy_toc hidden"><div class=" toc-heading">Table des matières</div>1. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(1)" class=" titleslide">Programmation Fonctionnelle</a><br>2. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(2)">Appel de fonction: Évaluation (1)</a><br>3. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(3)">Appel de fonction: Évaluation (2)</a><br>4. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(4)">Macros: Mécanisme de base</a><br>5. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(5)">Macros: Définition</a><br>6. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(6)">La macro when</a><br>7. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(7)">Macro-expansion</a><br>8. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(8)">La macro unless (1)</a><br>9. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(9)">La macro unless (2)</a><br>10. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(10)">Quasiquote (1)</a><br>11. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(11)">Quasiquote (2)</a><br>12. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(12)">Quasiquote (3)</a><br>13. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(13)">Quasiquote (4)</a><br>14. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(14)">Quasiquote (5)</a><br>15. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(15)">Macros Scheme / Macros C (1)</a><br>16. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(16)">Macros Scheme / Macros C (2)</a><br>17. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(17)">La macro ++ (1)</a><br>18. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(18)">La macro ++ (2)</a><br>19. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(19)">La macro ++ (3)</a><br>20. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(20)">Hygiène (1)</a><br>21. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(21)">Hygiène (2)</a><br>22. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(22)">Hygiène (3)</a><br>23. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(23)">Let (1)</a><br>24. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(24)">Let (2)</a><br>25. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(25)">Let*</a><br>26. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(26)">Letrec (1)</a><br>27. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#(27)">Letrec (2)</a></div>
+    <!-- Powerpoint like headers  -->
+    <!--
+    <div class="background">
+      <img id="head-icon" alt="Polytech logo"
+           src="http://www.polytechnice.fr/jahia/webdav/site/polytech/shared/PUBLIC/charte_graphique/LOGOTYPE_POLYTECH/POLYTECH_RVB.jpg"
+           width="100px"/>
+      <object id="head-logo" title="W3C logo" type="image/svg+xml"
+              data="http://www.w3.org/Talks/Tools/Slidy2/graphics/w3c-logo-white.svg">
+        <img src="http://www.w3.org/Talks/Tools/Slidy2/graphics/w3c-logo-white.gif"
+             alt="W3C logo" id="head-logo-fallback" />
+      </object>
+    </div>
+    -->
+
+
+    <!-- First slide -->
+    <div class="slide title first-slide">
+      <h1>Programmation Fonctionnelle</h1>
+      <h2>Macros</h2>
+      
+      <h3>SI4 — 2020-2021</h3>
+      <br><br>Erick Gallesio
+    <br><br></div>
+
+<div class=" slide hidden"><h1 id="appel-de-fonction-évaluation-1">Appel de fonction: Évaluation (1)</h1>
+<p>On veut définir une nouvelle forme de test:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb1-1" aria-hidden="true" tabindex="-1"></a>(when (<span class="op">&lt;</span> a <span class="dv">0</span>)</span>
+<span id="cb1-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">display</span> <span class="st">"a est negatif"</span>)</span>
+<span id="cb1-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  (fact (<span class="op">-</span> a)))</span></code></pre></div>
+<p>Cette forme</p>
+<ul>
+<li>permet de construire un «if» (sans «else») avec plusieurs actions;</li>
+<li>peut être simulée facilement en Scheme <strong>«pur»</strong>.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb2-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">if</span> (<span class="op">&lt;</span> a <span class="dv">0</span>)</span>
+<span id="cb2-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb2-2" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">begin</span> (<span class="kw">display</span> <span class="st">"a est negatif"</span>)</span>
+<span id="cb2-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb2-3" aria-hidden="true" tabindex="-1"></a>           (fact (<span class="op">-</span> a))))</span></code></pre></div>
+<p>Essayons de construire <strong>«when»</strong> à l’aide d’une fonction…</p>
+<br><br></div><div class=" slide hidden"><h1 id="appel-de-fonction-évaluation-2">Appel de fonction: Évaluation (2)</h1>
+<p>Pour simplifier, on suppose ici qu’il y a toujours 2 expressions dans le corps d’un <strong>«when»</strong>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(when <span class="kw">cond</span> a1 a2)</span>
+<span id="cb3-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb3-2" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">if</span> <span class="kw">cond</span></span>
+<span id="cb3-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb3-3" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">begin</span> a1 a2)))</span></code></pre></div>
+<p>Reprenons l’utilisation précédente de cette forme:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb4-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb4-1" aria-hidden="true" tabindex="-1"></a>(when (<span class="op">&lt;</span> a <span class="dv">0</span>)</span>
+<span id="cb4-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">display</span> <span class="st">"a est negatif"</span>)</span>
+<span id="cb4-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  (fact (<span class="op">-</span> a)))</span></code></pre></div>
+<p>⟹</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb5-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb5-1" aria-hidden="true" tabindex="-1"></a>( (λ (<span class="kw">cond</span> a1 a2) (<span class="kw">if</span> <span class="kw">cond</span> (<span class="kw">begin</span> a1 a2)))</span>
+<span id="cb5-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  (<span class="op">&lt;</span> a <span class="dv">0</span>)</span>
+<span id="cb5-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">display</span> <span class="st">"a est negatif"</span>)</span>
+<span id="cb5-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  (fact (<span class="op">-</span> a)))</span></code></pre></div>
+<p><strong>MAIS</strong></p>
+<ul>
+<li>Les appels à <code>display</code> et à <code>fact</code> sont réalisés avant le test de la condition</li>
+<li>On exécute toujours le corps du <strong>when</strong> quelle que soit la valeur de <strong>«a»</strong>.</li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="macros-mécanisme-de-base">Macros: Mécanisme de base</h1>
+<p>On a besoin d’un nouveau mécanisme qui permette:</p>
+<ul>
+<li>de remplacer le code de l’utilisateur par un code équivalent exprimé en Scheme «pur»:
+<ul>
+<li><code>(when ...)</code> ⟶ <code>(if ....)</code></li>
+</ul></li>
+<li>d’évaluer ensuite le code en Scheme «pur» pour obtenir le résultat.</li>
+</ul>
+<p>Donc, on veut que:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb6-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb6-1" aria-hidden="true" tabindex="-1"></a>(when (<span class="op">&lt;</span> a <span class="dv">0</span>) (<span class="kw">display</span> <span class="op">...</span>) (fact <span class="op">...</span>))</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>soit transformé en (<em>macro-expansion</em>)</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb7-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">if</span> (<span class="op">&lt;</span> a <span class="dv">0</span>)</span>
+<span id="cb7-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb7-2" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">begin</span> (<span class="kw">display</span> <span class="op">...</span>)</span>
+<span id="cb7-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb7-3" aria-hidden="true" tabindex="-1"></a>           (fact <span class="op">...</span>)))</span></code></pre></div></li>
+<li><p>puis évalué</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb8-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb8-1" aria-hidden="true" tabindex="-1"></a>a est negatif <span class="dv">1234</span>.....                  (si a est négatif bien-sûr)</span></code></pre></div></li>
+</ol>
+<br><br></div><div class=" slide hidden"><h1 id="macros-définition">Macros: Définition</h1>
+<p>Une <strong>macro</strong> peut être définie avec la forme spéciale <strong>define-macro</strong>. Cette forme</p>
+<ul>
+<li>prend en arguments le code de l’utilisateur (et <strong>non pas des valeurs</strong>);</li>
+<li>doit retourner le code qui doit être évalué sous forme de liste.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb9-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(when <span class="kw">cond</span> a1 a2)</span>
+<span id="cb9-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">list</span> 'if <span class="kw">cond</span></span>
+<span id="cb9-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb9-3" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">list</span> 'begin a1 a2)))</span></code></pre></div>
+<p>Lors de l’appel</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb10-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb10-1" aria-hidden="true" tabindex="-1"></a>(when (<span class="op">&lt;</span> a <span class="dv">0</span>) (<span class="kw">display</span> <span class="op">...</span>) (fact <span class="op">...</span>))</span></code></pre></div>
+<p>on a les associations suivantes <em>dans</em> la macro</p>
+<ul>
+<li><code>cond</code>&nbsp;⟶ <code>(&lt; a 0)</code></li>
+<li><code>a1</code> &nbsp;&nbsp; ⟶ <code>(display ...)</code></li>
+<li><code>a2</code> &nbsp;&nbsp; ⟶ <code>(fact ...)</code></li>
+</ul>
+<p>Macro-expansion de cette utilisation de la macro: <strong>la liste</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb11-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb11-1" aria-hidden="true" tabindex="-1"></a> (<span class="kw">if</span> (<span class="op">&lt;</span> a <span class="dv">0</span>) (<span class="kw">begin</span> (<span class="kw">display</span> …) (fact …)))    <span class="co">;; cette liste sera ensuite évaluée</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="la-macro-when">La macro when</h1>
+<p>La version précédente de «when» n’admet que 2 paramètres.</p>
+<p>Essayons de la généraliser: au lieu de prendre explicitement 2 paramètres, on les collecte dans une liste</p>
+<p>Utilisation de la notation <strong>«<span class="red">.</span>»</strong> comme pour les fonctions</p>
+<div class="sourceCode" id="cb12" style="font-size:130%;"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb12-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb12-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(when <span class="kw">cond</span> <span class="op">.</span> args)</span>
+<span id="cb12-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">list</span> 'if <span class="kw">cond</span></span>
+<span id="cb12-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb12-3" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">cons</span> 'begin args)))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="macro-expansion">Macro-expansion</h1>
+<p>La fonction <span class="red"><strong>macro-expand</strong></span></p>
+<ul>
+<li>permet d’obtenir la forme «macro-expansée» d’une utilisation de macro</li>
+<li>est très utile pour tester/debugger une macro.</li>
+</ul>
+<div class="sourceCode" id="cb13" style="font-size:130%;"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb13-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>(macro-expand '(when C (foo <span class="dv">1</span>) (bar <span class="dv">2</span>)))</span>
+<span id="cb13-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb13-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">if</span> C</span>
+<span id="cb13-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb13-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">begin</span> (foo <span class="dv">1</span>)</span>
+<span id="cb13-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb13-5" aria-hidden="true" tabindex="-1"></a>           (bar  <span class="dv">200</span>)))</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb14" style="font-size:130%;"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb14-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(when (<span class="kw">not</span> (f)) (f (g h))))</span>
+<span id="cb14-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb14-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">if</span> (<span class="kw">not</span> (f))</span>
+<span id="cb14-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb14-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">begin</span> (f (g h))))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="la-macro-unless-1">La macro unless (1)</h1>
+<p>La forme <span class="red"><strong>«unless»</strong></span></p>
+<ul>
+<li>joue un rôle similaire à la forme <strong>«when»</strong>.</li>
+<li>l’exécution du corps n’a lieu que si l’expression est fausse (vraie avec when).</li>
+</ul>
+<div class="sourceCode" id="cb15" style="font-size:130%;"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb15-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb15-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(unless <span class="kw">cond</span> <span class="op">.</span> args)</span>
+<span id="cb15-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">list</span> 'if (<span class="kw">list</span> 'not <span class="kw">cond</span>)</span>
+<span id="cb15-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb15-3" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">cons</span> 'begin args)))</span></code></pre></div>
+<p>Cela donne:</p>
+<div class="sourceCode" id="cb16" style="font-size:130%;"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb16-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(unless (<span class="op">&gt;</span> n <span class="dv">100</span>) (foo <span class="dv">1</span>) (bar <span class="dv">200</span>)))</span>
+<span id="cb16-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb16-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">if</span> (<span class="kw">not</span> (<span class="op">&gt;</span> n <span class="dv">100</span>))</span>
+<span id="cb16-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb16-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">begin</span> (foo <span class="dv">1</span>)</span>
+<span id="cb16-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb16-5" aria-hidden="true" tabindex="-1"></a>           (bar <span class="dv">200</span>)))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="la-macro-unless-2">La macro unless (2)</h1>
+<p><strong>When</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb17-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(when <span class="kw">cond</span> <span class="op">.</span> args)        <span class="co">;; (when A B C ...)</span></span>
+<span id="cb17-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">list</span> 'if <span class="kw">cond</span>                        <span class="co">;; ⟶ (if A (begin B C ...))</span></span>
+<span id="cb17-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb17-3" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">cons</span> 'begin args)))</span></code></pre></div>
+<p><strong>Unless</strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb18-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb18-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(unless <span class="kw">cond</span> <span class="op">.</span> args)      <span class="co">;; (unless A B C ...)</span></span>
+<span id="cb18-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb18-2" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">list</span> 'if (<span class="kw">list</span> 'not <span class="kw">cond</span>)           <span class="co">;; ⟶ (if (not A) (begin B C ...))</span></span>
+<span id="cb18-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb18-3" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">cons</span> 'begin args)))</span></code></pre></div>
+<p><strong>Problèmes</strong>:</p>
+<ul>
+<li>Les macro-expansions sont assez proches mais le code qui les produit est assez différent;</li>
+<li>Beaucoup de quotes;</li>
+<li>Difficile à lire/écrire.</li>
+</ul>
+<p>Le mécanisme de «<span class="red">quasiquote</span>» va nous aider pour définir des macros.</p>
+<br><br></div><div class=" slide hidden"><h1 id="quasiquote-1">Quasiquote (1)</h1>
+<p>Ce mécanisme</p>
+<ul>
+<li>est <strong>indépendant des macros</strong>;</li>
+<li>mais, souvent utilisé pour exprimer le corps d’une macro;</li>
+<li>permet de construire une liste dont les composants sont (quasi) systématiquement «quotés»;</li>
+<li>permet (éventuellement) d’évaluer certains composants de la liste.</li>
+</ul>
+<p><strong>Conventions</strong></p>
+<ul>
+<li><code>quasiquote</code> se dénote aussi avec le symbole <strong>«<span class="red">`</span>»</strong></li>
+<li><code>unquote</code> (qui permet d’évaluer) se dénote aussi avec le symbole <strong>«<span class="red">,</span>»</strong></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="quasiquote-2">Quasiquote (2)</h1>
+<p>Exemples d’utilisations de <code>quasiquote</code> et de <code>unquote</code></p>
+<div class="sourceCode" id="cb19" style="font-size: 120%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb19-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">let</span> ((a <span class="dv">100</span>))</span>
+<span id="cb19-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-2" aria-hidden="true" tabindex="-1"></a>   `(liste avec beaucoup de constantes <span class="op">...</span> a <span class="op">=</span> ,a))</span>
+<span id="cb19-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-4" aria-hidden="true" tabindex="-1"></a>(liste avec beaucoup de constantes <span class="op">...</span> a <span class="op">=</span> <span class="dv">100</span>)</span>
+<span id="cb19-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">;; sans quasiquote, il faudrait écrire (dernier «a» non quoté)</span></span>
+<span id="cb19-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">list</span> 'liste 'avec 'beaucoup 'de 'constantes '... 'a '= a)</span>
+<span id="cb19-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb19-10" aria-hidden="true" tabindex="-1"></a>(liste avec beaucoup de constantes <span class="op">...</span> a <span class="op">=</span> <span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20" style="font-size: 120%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb20-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">let</span> ((n <span class="dv">1</span>))</span>
+<span id="cb20-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb20-2" aria-hidden="true" tabindex="-1"></a>      `(n <span class="op">=</span> ,n et n+1 <span class="op">=</span> ,(<span class="op">+</span> n <span class="dv">1</span>)))</span></code></pre></div>
+<p>Le résultat est la liste:</p>
+<div class="sourceCode" id="cb21" style="font-size: 120%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb21-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb21-1" aria-hidden="true" tabindex="-1"></a>(n <span class="op">=</span> <span class="dv">1</span> et n+1 <span class="op">=</span> <span class="dv">2</span>)</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="quasiquote-3">Quasiquote (3)</h1>
+<p>Réécrivons la macro <strong>«when»</strong> avec quasiquote:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb22-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb22-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(when <span class="kw">cond</span> <span class="op">.</span> args)</span>
+<span id="cb22-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  `(<span class="kw">if</span> ,cond (<span class="kw">begin</span> ,args)))</span></code></pre></div>
+<p>et essayons la</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb23-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(when (<span class="op">&gt;</span> n <span class="dv">0</span>) (foo <span class="dv">1</span>) (bar <span class="dv">2</span>)))</span>
+<span id="cb23-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb23-3" aria-hidden="true" tabindex="-1"></a>(<span class="kw">if</span> (<span class="op">&gt;</span> n <span class="dv">0</span>)</span>
+<span id="cb23-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb23-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">begin</span> ( (foo <span class="dv">1</span>)</span>
+<span id="cb23-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb23-5" aria-hidden="true" tabindex="-1"></a>             (bar <span class="dv">2</span>))))</span></code></pre></div>
+<p>Mais ce code est <strong>incorrect!!!</strong></p>
+<ul>
+<li>la forme <strong>,args</strong> «ramène» des parenthèses en trop</li>
+<li>on peut utiliser <strong>«<span class="red">unquote-splicing</span>»</strong> dans une expression quasiquote pour construire une liste et “<em>oublier</em>” les parenthèses de cette liste</li>
+<li><code>unquote-splicing</code> est dénoté par <strong>«<span class="red">,@</span>»</strong></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="quasiquote-4">Quasiquote (4)</h1>
+<p>La macro «when» (version correcte)</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb24-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define-macro</span><span class="fu"> </span>(when <span class="kw">cond</span> <span class="op">.</span> args)</span>
+<span id="cb24-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-2" aria-hidden="true" tabindex="-1"></a>    `(<span class="kw">if</span> ,cond</span>
+<span id="cb24-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-3" aria-hidden="true" tabindex="-1"></a>         (<span class="kw">begin</span> ,@args)))</span>
+<span id="cb24-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(when (<span class="op">&gt;</span> n <span class="dv">0</span>) (foo <span class="dv">1</span>) (bar <span class="dv">2</span>)))</span>
+<span id="cb24-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-7" aria-hidden="true" tabindex="-1"></a>(<span class="kw">if</span> (<span class="op">&gt;</span> n <span class="dv">0</span>)</span>
+<span id="cb24-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-8" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">begin</span> (foo <span class="dv">1</span>)</span>
+<span id="cb24-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb24-9" aria-hidden="true" tabindex="-1"></a>           (bar <span class="dv">2</span>)))</span></code></pre></div>
+<p>La macro «unless»</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb25-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define-macro</span><span class="fu"> </span>(unless <span class="kw">cond</span> <span class="op">.</span> args)</span>
+<span id="cb25-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-2" aria-hidden="true" tabindex="-1"></a>    `(<span class="kw">if</span> (<span class="kw">not</span> ,cond)</span>
+<span id="cb25-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-3" aria-hidden="true" tabindex="-1"></a>         (<span class="kw">begin</span> ,@args)))</span>
+<span id="cb25-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(unless (<span class="op">&gt;</span> n <span class="dv">0</span>) (foo <span class="dv">1</span>) (bar <span class="dv">2</span>)))</span>
+<span id="cb25-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-7" aria-hidden="true" tabindex="-1"></a>(<span class="kw">if</span> (<span class="kw">not</span> (<span class="op">&gt;</span> n <span class="dv">0</span>))</span>
+<span id="cb25-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-8" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">begin</span> (foo <span class="dv">1</span>)</span>
+<span id="cb25-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb25-9" aria-hidden="true" tabindex="-1"></a>           (bar <span class="dv">2</span>)))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="quasiquote-5">Quasiquote (5)</h1>
+<p>Si on compare le code de <strong>when</strong> et de <strong>unless</strong>, c’est mieux car:</p>
+<ul>
+<li><p>Les macro-expansions sont semblables et le code qui les produit l’est aussi</p></li>
+<li><p>Les quotes ont disparu</p></li>
+<li><p>Plus facile à lire / écrire</p></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="macros-scheme-macros-c-1">Macros Scheme / Macros C (1)</h1>
+<p>Même si les macros de Scheme sont plus puissantes que les macros de C, leur traitement est assez semblable:</p>
+<p><strong>macro C</strong>:</p>
+<ul>
+<li><p>expansée par le pré-processeur</p></li>
+<li><p>le code produit est traduit par le compilateur</p></li>
+</ul>
+<p><img src="data:image/png;base64,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" style="width:98.0%"></p>
+<br><br></div><div class=" slide hidden"><h1 id="macros-scheme-macros-c-2">Macros Scheme / Macros C (2)</h1>
+<p><strong>macro Scheme</strong>:</p>
+<ul>
+<li><p>macro-expansion</p></li>
+<li><p>évaluation (Interprétation / Compilation)</p></li>
+</ul>
+<p><img src="data:image/png;base64,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99WJZRLUpYsXrdwQoruhdkgIAAgemiuYJKGK9BsixXbuCHfT87GLu8rlOW2taNY87vNTr/ilo0wOaphT9cse9o55Mnpl72rzNyRfc5j2kHOtZbHPtqzJVzcx9itJ1Yl9uofkxi9P8xBRdSa5ZM/5ICX7ba/lh8t1cY+ijr4qufnL9moAMCZrrqbLvt5lvavKkOPtFk13cn4+/ukanY8S0T2Ao6R0T+FISSW5l0ZK4g66vvSmw/lMoYYkOZo6P5b09INGB14oVM0w9ivJvRT7VGXkxi/nkhJRzebTJfnTLsnWbgURUQ3HE/dEREREZGVMSYmIiIjIypiSEhEREZGVMSUlIiIiIitjSkpEREREVsaUlIiIiIisjCkpEREREVkZU1IiIiIisjKmpERERERkZUxJiYiIiMjKmJISERERkZUxJSUiIiIiK2NKSkRERERWxpSUiIiIiKyMKSkRERERWRlTUiIiIiKyMqakRERERGRlTEmJiIiIyMqYkhIRERGRlTElJSIiIiIrY0pKRERERFbGlJSIiIiIrIwpKRERERFZGVNSIiIiIrIypqREREREZGVMSYmIiIjIypiSEhEREZGVMSUlIiIiIitjSkpEREREVsaUlIiIiIisjCkpEREREVkZU1IiIiIisjKmpERERERkZUxJiYiIiMjKmJISERERkZUxJSUiIiIiK2NKSkRERERWxpSUiIiIiKxMY/knOtq67SCiaof9BlHNxNiniiAJa7eA6O4T/LuuYJJk7RYQFYexX9EY+1Rh/g8WWXYZ/b/EqgAAAABJRU5ErkJggg==" style="width:98.0%"></p>
+<p>Donc, le code</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb26-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb26-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(foo n) <span class="op">...</span> (when (<span class="op">&lt;</span> a b) <span class="op">...</span>) <span class="op">...</span>)</span></code></pre></div>
+<p>sera transformé avant compilation / interprétation en</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb27-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb27-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(foo n) <span class="op">...</span> (<span class="kw">if</span> (<span class="op">&lt;</span> a b) (<span class="kw">begin</span> ....) <span class="op">...</span>)</span></code></pre></div>
+<p>⟹ Il sera donc aussi <em>efficace</em></p>
+<br><br></div><div class=" slide hidden"><h1 id="la-macro-1">La macro ++ (1)</h1>
+<ul>
+<li><p>La transmission des paramètres se fait par valeur en Scheme. On ne peut pas écrire une fonction qui incrémente une variable.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb28-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> </span>(++ var pas)</span>
+<span id="cb28-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb28-2" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">set!</span> var (<span class="op">+</span> var pas)))</span>
+<span id="cb28-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> v </span><span class="dv">10</span>)</span>
+<span id="cb28-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (++ v <span class="dv">1</span>)</span>
+<span id="cb28-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> v</span>
+<span id="cb28-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span></span></code></pre></div></li>
+<li><p>Par contre, avec une macro, on peut simuler le code d’une affectation:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb29-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define-macro</span><span class="fu"> </span>(++ var pas)</span>
+<span id="cb29-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-2" aria-hidden="true" tabindex="-1"></a>    `(<span class="kw">set!</span> ,var (<span class="op">+</span> ,var ,pas)))</span>
+<span id="cb29-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> v </span><span class="dv">10</span>)</span>
+<span id="cb29-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(++ v <span class="dv">1</span>)) <span class="co">;; Voyons la macro-expansion</span></span>
+<span id="cb29-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-6" aria-hidden="true" tabindex="-1"></a>(<span class="kw">set!</span> v (<span class="op">+</span> v <span class="dv">1</span>))</span>
+<span id="cb29-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (++ v <span class="dv">1</span>)</span>
+<span id="cb29-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> v</span>
+<span id="cb29-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span></span></code></pre></div></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="la-macro-2">La macro ++ (2)</h1>
+<p><strong>Version avec un pas facultatif</strong>:</p>
+<div class="sourceCode" id="cb30" style="font-size:130%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb30-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb30-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(++ var <span class="op">.</span> pas)</span>
+<span id="cb30-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb30-2" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">if</span> (<span class="kw">null?</span> pas)</span>
+<span id="cb30-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb30-3" aria-hidden="true" tabindex="-1"></a>     `(<span class="kw">set!</span> ,var (<span class="op">+</span> ,var <span class="dv">1</span>))</span>
+<span id="cb30-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb30-4" aria-hidden="true" tabindex="-1"></a>     `(<span class="kw">set!</span> ,var (<span class="op">+</span> ,var (<span class="kw">car</span> ',pas)))))</span></code></pre></div>
+<p>Essayons cette version de <code>++</code>:</p>
+<div class="sourceCode" id="cb31" style="font-size:130%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb31-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(++ v))</span>
+<span id="cb31-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb31-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">set!</span> v (<span class="op">+</span> v <span class="dv">1</span>))</span>
+<span id="cb31-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(++ v <span class="dv">20</span>))</span>
+<span id="cb31-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb31-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">set!</span> v (<span class="op">+</span> v (<span class="kw">car</span> '(<span class="dv">20</span>))))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="la-macro-3">La macro ++ (3)</h1>
+<p>On voit sur l’expansion que notre écriture de la macro n’est pas très judicieuse (même si correcte):</p>
+<ul>
+<li><p>Évaluation systématique de <code>(car ’(20))</code> qui est constant</p></li>
+<li><p>Nouvelle écriture</p>
+<div class="sourceCode" id="cb32" style="font-size:120%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb32-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb32-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(++ var <span class="op">.</span> pas)</span>
+<span id="cb32-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb32-2" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">if</span> (<span class="kw">null?</span> pas)</span>
+<span id="cb32-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb32-3" aria-hidden="true" tabindex="-1"></a>     `(<span class="kw">set!</span> ,var (<span class="op">+</span> ,var <span class="dv">1</span>))</span>
+<span id="cb32-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb32-4" aria-hidden="true" tabindex="-1"></a>     `(<span class="kw">set!</span> ,var (<span class="op">+</span> ,var ,(<span class="kw">car</span> pas)))))</span></code></pre></div></li>
+</ul>
+<p><strong>Maintenant</strong>:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb33-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(++ v <span class="dv">20</span>))</span>
+<span id="cb33-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb33-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">set!</span> v (<span class="op">+</span> v <span class="dv">20</span>))</span></code></pre></div>
+<p>au lieu de</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb34-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb34-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">set!</span> v (<span class="op">+</span> v (<span class="kw">car</span> '(<span class="dv">20</span>))))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="hygiène-1">Hygiène (1)</h1>
+<p>On désire réaliser la macro <strong>«echanger!»</strong> permettant d’échanger les valeurs de 2 variables</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb35-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb35-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(echanger! x y)</span>
+<span id="cb35-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb35-2" aria-hidden="true" tabindex="-1"></a>   `(<span class="kw">let</span> ((tmp ,x))</span>
+<span id="cb35-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb35-3" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">set!</span> ,x ,y)</span>
+<span id="cb35-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb35-4" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">set!</span> ,y tmp)))</span></code></pre></div>
+<p>Essayons de l’utiliser</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb36-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> a </span><span class="dv">1</span>)</span>
+<span id="cb36-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> b </span><span class="dv">2</span>)</span>
+<span id="cb36-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (echanger! a b)</span>
+<span id="cb36-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">list</span> a b)</span>
+<span id="cb36-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-6" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span> <span class="dv">1</span>)</span>
+<span id="cb36-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(echanger! a b))</span>
+<span id="cb36-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-9" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((tmp a))</span>
+<span id="cb36-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-10" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">set!</span> a b)</span>
+<span id="cb36-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb36-11" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">set!</span> b tmp))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="hygiène-2">Hygiène (2)</h1>
+<p>Cette définition de la macro semble correcte. Essayons une autre utilisation:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb37-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> a   </span><span class="dv">1</span>)</span>
+<span id="cb37-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> tmp </span><span class="dv">2</span>)</span>
+<span id="cb37-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (echanger! a tmp)</span>
+<span id="cb37-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">list</span> a tmp)</span>
+<span id="cb37-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-6" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="dv">1</span>)                      <span class="co">;; étonnant !!!!!</span></span>
+<span id="cb37-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(echanger! a tmp))</span>
+<span id="cb37-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-9" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((tmp a))</span>
+<span id="cb37-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-10" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">set!</span> a tmp)</span>
+<span id="cb37-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb37-11" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">set!</span> tmp tmp))</span></code></pre></div>
+<ul>
+<li>la macro dépend de son environnement d’utilisation.</li>
+<li><code>echanger!</code> ne peut pas être utilisée avec une variable de nom <strong>«tmp»</strong></li>
+<li>On dit que cette macro est non <strong>hygiénique</strong>.</li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="hygiène-3">Hygiène (3)</h1>
+<ul>
+<li>Scheme (à partir de R<sup>5</sup>RS) propose des macros hygiéniques.
+<ul>
+<li>mécanisme puissant</li>
+<li>très «scheme-oriented»</li>
+</ul></li>
+<li>Ce système est différent du système présenté ici.</li>
+<li>Pour régler les problèmes d’hygiène, nous utiliserons la fonction <strong>«gensym»</strong></li>
+</ul>
+<p>La fonction <strong>«gensym»</strong> renvoie un symbole qui n’existe (et n’existera) pas</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb38-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(echanger! x y)</span>
+<span id="cb38-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((tmp (gensym)))</span>
+<span id="cb38-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-3" aria-hidden="true" tabindex="-1"></a>    `(<span class="kw">let</span> ((,tmp ,x))</span>
+<span id="cb38-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-4" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">set!</span> ,x ,y)</span>
+<span id="cb38-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-5" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">set!</span> ,y ,tmp))))</span>
+<span id="cb38-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(echanger! a tmp))</span>
+<span id="cb38-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-8" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((|G122| a))                              <span class="co">; |G122| choisi par gensym</span></span>
+<span id="cb38-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-9" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">set!</span> a tmp)</span>
+<span id="cb38-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb38-10" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">set!</span> tmp |G122|))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="let-1">Let (1)</h1>
+<p>Nous avons vu que</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb39-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb39-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((x <span class="dv">1</span>) (y <span class="dv">2</span>))</span>
+<span id="cb39-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cons</span> x y))</span></code></pre></div>
+<p>était équivalent à</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb40-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb40-1" aria-hidden="true" tabindex="-1"></a>( (λ(x y) (<span class="kw">cons</span> x y))</span>
+<span id="cb40-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>On peut constuire <strong>«let»</strong> avec une macro:</p>
+<div class="sourceCode" id="cb41" style="font-size:120%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb41-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb41-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(<span class="kw">let</span> bindings <span class="op">.</span> body)</span>
+<span id="cb41-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  `( (λ ,(extraire-vars  bindings) ,@body)</span>
+<span id="cb41-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb41-3" aria-hidden="true" tabindex="-1"></a>     ,@(extraire-valeurs bindings)))</span></code></pre></div>
+<p>Avec</p>
+<ul>
+<li><p><code>extraire-vars</code> ⇒ <code>(map car bindings)</code></p></li>
+<li><p><code>extraire-valeurs</code> ⇒ <code>(map cadr bindings)</code></p></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="let-2">Let (2)</h1>
+<p>On peut donc écrire</p>
+<div class="sourceCode" id="cb42" style="font-size:130%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb42-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb42-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(extraire-vars bindings)    (map <span class="kw">car</span> bindings))</span>
+<span id="cb42-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb42-2" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(extraire-valeurs bindings) (map <span class="kw">cdr</span> bindings))</span>
+<span id="cb42-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb42-4" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(<span class="kw">let</span> bindings <span class="op">.</span> body)</span>
+<span id="cb42-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb42-5" aria-hidden="true" tabindex="-1"></a>  `( (λ ,(extraire-vars  bindings) ,@body)</span>
+<span id="cb42-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb42-6" aria-hidden="true" tabindex="-1"></a>     ,@(extraire-valeurs bindings)))</span></code></pre></div>
+<p>ou encore (en introduisant directement les corps de fonctions) ⟹</p>
+<div class="sourceCode" id="cb43" style="font-size:130%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb43-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb43-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(<span class="kw">let</span> bindings <span class="op">.</span> body)</span>
+<span id="cb43-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  `( (λ ,(map <span class="kw">car</span>  bindings) ,@body)</span>
+<span id="cb43-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb43-3" aria-hidden="true" tabindex="-1"></a>     ,@(map <span class="kw">cadr</span> bindings)))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="let">Let*</h1>
+<p><strong>Let*</strong> peut aussi être écrit à l’aide d’une macro:</p>
+<div class="sourceCode" id="cb44" style="font-size:130%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb44-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(<span class="kw">let*</span> bindings <span class="op">.</span> body)</span>
+<span id="cb44-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (<span class="op">&lt;=</span> (<span class="kw">length</span> bindings) <span class="dv">1</span>)</span>
+<span id="cb44-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-3" aria-hidden="true" tabindex="-1"></a>      <span class="co">;; Une seule association</span></span>
+<span id="cb44-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-4" aria-hidden="true" tabindex="-1"></a>      `(<span class="kw">let</span> ,bindings</span>
+<span id="cb44-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-5" aria-hidden="true" tabindex="-1"></a>          ,@body)</span>
+<span id="cb44-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-6" aria-hidden="true" tabindex="-1"></a>      <span class="co">;; plusieurs associations</span></span>
+<span id="cb44-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-7" aria-hidden="true" tabindex="-1"></a>      `(<span class="kw">let</span> (,(<span class="kw">car</span> bindings))</span>
+<span id="cb44-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-8" aria-hidden="true" tabindex="-1"></a>         (<span class="kw">let*</span> ,(<span class="kw">cdr</span> bindings)</span>
+<span id="cb44-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb44-9" aria-hidden="true" tabindex="-1"></a>            ,@body))))</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb45-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(<span class="kw">let*</span> ((a <span class="dv">1</span>)) a))</span>
+<span id="cb45-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb45-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((a <span class="dv">1</span>)) a)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb46-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (macro-expand '(<span class="kw">let*</span> ((a <span class="dv">1</span>)</span>
+<span id="cb46-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb46-2" aria-hidden="true" tabindex="-1"></a>                        (b (<span class="op">+</span> a <span class="dv">1</span>))</span>
+<span id="cb46-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb46-3" aria-hidden="true" tabindex="-1"></a>                        (c b))</span>
+<span id="cb46-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb46-4" aria-hidden="true" tabindex="-1"></a>                    (<span class="kw">list</span> a b c)))</span>
+<span id="cb46-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb46-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((a <span class="dv">1</span>))</span>
+<span id="cb46-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let*</span> ((b (<span class="op">+</span> a <span class="dv">1</span>))</span>
+<span id="cb46-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb46-7" aria-hidden="true" tabindex="-1"></a>         (c b))</span>
+<span id="cb46-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb46-8" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">list</span> a b c)))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="letrec-1">Letrec (1)</h1>
+<p><strong>Letrec</strong> doit permettre la définition de fonctions récursives:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb47-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb47-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">letrec</span> ((<span class="kw">pair?</span>   (λ(x) (<span class="kw">if</span> (<span class="op">=</span> x <span class="dv">0</span>) <span class="dv">#t</span> (impair? (<span class="op">-</span> x <span class="dv">1</span>)))))</span>
+<span id="cb47-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb47-2" aria-hidden="true" tabindex="-1"></a>         (impair? (λ(x) (<span class="kw">if</span> (<span class="op">=</span> x <span class="dv">0</span>) <span class="dv">#f</span> (<span class="kw">pair?</span>   (<span class="op">-</span> x <span class="dv">1</span>))))))</span>
+<span id="cb47-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb47-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">pair?</span> <span class="dv">999</span>))</span></code></pre></div>
+<p>peut en fait être réécrit en</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb48-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb48-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((<span class="kw">pair?</span>   <span class="dv">#f</span>)</span>
+<span id="cb48-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb48-2" aria-hidden="true" tabindex="-1"></a>      (impair? <span class="dv">#f</span>))</span>
+<span id="cb48-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">set!</span> <span class="kw">pair?</span>   (λ(x) (<span class="kw">if</span> (<span class="op">=</span> x <span class="dv">0</span>) <span class="dv">#t</span> (impair? (<span class="op">-</span> x <span class="dv">1</span>)))))</span>
+<span id="cb48-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb48-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">set!</span> impair? (λ(x) (<span class="kw">if</span> (<span class="op">=</span> x <span class="dv">0</span>) <span class="dv">#f</span> (<span class="kw">pair?</span>   (<span class="op">-</span> x <span class="dv">1</span>)))))</span>
+<span id="cb48-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb48-6" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">pair?</span> <span class="dv">999</span>))</span></code></pre></div>
+<p><strong>En fait, c’est un peu plus compliqué que cela, mais on se contentera de cette équivalence ici.</strong></p>
+<br><br></div><div class=" slide hidden"><h1 id="letrec-2">Letrec (2)</h1>
+<ul>
+<li><p><strong>Produire les bindings</strong></p>
+<ul>
+<li><code class="sourceCode scheme">(map (λ(x) (<span class="kw">list</span> (<span class="kw">car</span> x) <span class="dv">#f</span>)) bindings)</code><br>
+<br>
+⟹ <code>((pair? #f) (impair? #f))</code></li>
+</ul></li>
+<li><p><strong>Produire les affectations</strong></p>
+<ul>
+<li><code class="sourceCode scheme">(map (λ(x) `(<span class="kw">set!</span> ,@x)) bindings)</code><br>
+<br>
+⟹ <code>( (set! pair? ...) (set! impair? ...))</code></li>
+</ul></li>
+</ul>
+<p>On peut maintenant écrire la macro qui implémente «letrec»</p>
+<div class="sourceCode" id="cb49" style="font-size:130%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb49-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb49-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define-macro</span><span class="fu"> </span>(<span class="kw">letrec</span> bindings <span class="op">.</span> body)</span>
+<span id="cb49-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  `(<span class="kw">let</span> ,(map (λ(x) (<span class="kw">list</span> (<span class="kw">car</span> x) <span class="dv">#f</span>)) bindings)</span>
+<span id="cb49-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb49-3" aria-hidden="true" tabindex="-1"></a>     ,@(map (λ(x) `(<span class="kw">set!</span> ,@x)) bindings)</span>
+<span id="cb49-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours05.html#cb49-4" aria-hidden="true" tabindex="-1"></a>     ,@body))</span></code></pre></div>
+
+    <!-- ========== SLIDE ==========  (pseudo-slide to circumvent a bug in slidy.js)-->
+    <br><br></div><div class="handout hidden">
+
+    </div>
+  
+
+<div class="toolbar" tabindex="0" style="display: block;"><div style="float: right; text-align: right"><span>page 1/27</span></div><div style="text-align: left"><span style="color: rgb(240, 240, 240);">* </span><span class="copyright">Programmation Fonctionnelle — 2020-2021 &nbsp;&nbsp;(Erick Gallesio)</span></div></div></body></html>

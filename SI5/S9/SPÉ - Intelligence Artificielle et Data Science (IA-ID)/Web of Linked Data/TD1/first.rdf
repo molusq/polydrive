@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns0="http://www.polytech.fr/attributes#">
+
+  <rdf:Description rdf:about="http://www.polytech.fr/margot">
+    <rdf:type rdf:resource="http://www.polytech.fr/attributes#Woman"/>
+    <rdf:type rdf:resource="http://www.polytech.fr/attributes#Teacher"/>
+    <ns0:name>Margot</ns0:name>
+    <ns0:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</ns0:age>
+    <ns0:shoe_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</ns0:shoe_size>
+    <ns0:pants_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</ns0:pants_size>
+    <ns0:married_to rdf:resource="http://www.polytech.fr/arthur"/>
+    <ns0:child rdf:resource="http://www.polytech.fr/simon"/>
+    <ns0:child rdf:resource="http://www.polytech.fr/marie"/>
+    <ns0:colleague>
+      <ns0:Woman rdf:about="http://www.polytech.fr/alice">
+        <rdf:type rdf:resource="http://www.polytech.fr/attributes#Teacher"/>
+        <ns0:name>Alice</ns0:name>
+        <ns0:colleague rdf:resource="http://www.polytech.fr/margot"/>
+      </ns0:Woman>
+    </ns0:colleague>
+
+    <ns0:colleague>
+      <ns0:Man rdf:about="http://www.polytech.fr/pierre">
+        <rdf:type rdf:resource="http://www.polytech.fr/attributes#Teacher"/>
+        <ns0:name>Pierre</ns0:name>
+        <ns0:colleague rdf:resource="http://www.polytech.fr/margot"/>
+      </ns0:Man>
+    </ns0:colleague>
+
+    <ns0:parent>
+      <rdf:Description>
+        <ns0:name>Simone</ns0:name>
+      </rdf:Description>
+    </ns0:parent>
+
+  </rdf:Description>
+
+  <ns0:Man rdf:about="http://www.polytech.fr/arthur">
+    <ns0:name>Arthur</ns0:name>
+    <ns0:married_to rdf:resource="http://www.polytech.fr/margot"/>
+    <ns0:child rdf:resource="http://www.polytech.fr/simon"/>
+    <ns0:child rdf:resource="http://www.polytech.fr/marie"/>
+  </ns0:Man>
+
+  <ns0:Man rdf:about="http://www.polytech.fr/simon">
+    <ns0:name>Simon</ns0:name>
+    <ns0:parent rdf:resource="http://www.polytech.fr/margot"/>
+    <ns0:parent rdf:resource="http://www.polytech.fr/arthur"/>
+  </ns0:Man>
+
+  <ns0:Woman rdf:about="http://www.polytech.fr/marie">
+    <ns0:name>Marie</ns0:name>
+    <ns0:parent rdf:resource="http://www.polytech.fr/margot"/>
+    <ns0:parent rdf:resource="http://www.polytech.fr/arthur"/>
+  </ns0:Woman>
+
+</rdf:RDF>

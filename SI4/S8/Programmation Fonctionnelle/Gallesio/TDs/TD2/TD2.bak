@@ -1,0 +1,14 @@
+;;EXERCICE 1
+(display "EXO1")
+
+(car '((a b) c (d e) f))
+;;(car '((1 2 3)))
+;;(car '(x y z))
+;;(cdr '((a b) c (d e) f))
+;;(cdr '((1 2 3)))
+;;(cdr '(x y z))
+;;(car (cdr '((a b) c (d e) f)))
+;;(cdr (car '((a b) c (d e) f)))
+;;(= 'zero 0)
+;;(equal? 'zero 0)
+;;(eq? 'zero 0)

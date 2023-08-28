@@ -1,0 +1,29 @@
+@prefix d:     <http://polytech.fr/humans/data#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+d:T122 a prov:Entity ;
+    prov:wasAttributedTo d:JohnTiwac , d:HAL9000 .
+
+d:T153 a prov:Entity ;
+    prov:wasAttributedTo d:JohnTiwac .
+
+d:T19 a prov:Entity ;
+    prov:wasAttributedTo d:HAL9000 .
+
+d:T47 a prov:Entity .
+
+d:P175 a prov:Collection ;
+    prov:hadMember d:T122, d:T153, d:P175 .
+
+d:P23 a prov:Collection ;
+    prov:hadMember d:T19, d:T47 ;
+    prov:wasAttributedTo d:AliceDuncan .
+
+d:AliceDuncan a prov:Agent .
+
+d:JohnTiwac a prov:Agent ;
+    prov:actedOnBehalfOf d:AliceDuncan .
+
+d:HAL9000 a prov:SoftwareAgent .

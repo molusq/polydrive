@@ -1,0 +1,27 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix a: <http://www.polytech.fr/agent#> .
+@prefix p: <http://polytech.fr/process#> .
+@prefix t: <http://polytech.fr/task#> .
+
+
+<consists_of> a rdf:Property .
+<agent_of> a rdf:Property .
+<manages> a rdf:Property .
+<participates_to> a rdf:Property .
+
+p:P23 <consists_of> (t:T122 t:T153 p:P175) .
+
+p:P175 <consists_of> (t:T19 t:T147) .
+
+a:Alice_Duncan
+    <agent_of> t:T122, t:T153, p:P175 ;
+    <manages> a:John_Tiwac .
+    
+a:John_Tiwac 
+    <agent_of> t:T122, t:T153 .
+    
+a:HAL9000
+    a a:software_agent ;
+    <participates_to> t:T122, t:T19 .

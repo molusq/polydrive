@@ -1,0 +1,25 @@
+Les 2 enseignants (J-Y Tigli et Benjamin Vella) étaient giga sympa, ils ont réécris 2-3 fois le sujet du gros projet pour clarifier des trucs parce qu'on demandait pleins de trucs.
+
+Même si certains (presque tous) cours donnent envie de dormir, J-Y Tigli y met tout son coeur !
+
+Personellement j'ai bien aimé le gros projet. Super cool à réaliser (j'ai eu 16/20).
+Cependant le setup de l'environnement sous Visual Studio (pas VSCode, le GROS Visual Studio) était très lourd, et chiant à effectuer.
+
+En terme de répartition de la moyenne de SOC, on a eu : 
+
+	- Les premiers TD à rendre sur notre github : 25%
+		(ça se fait tranquillement si on bosse, certains sont un peu longs)
+	- Le gros projet "Let's go biking" : 50%
+		( Dév. sous Visual Studio, principalement C# + pleins de trucs sympa liés au setup de web services)
+		(Rendu du code sur notre OneDrive + un oral de exactement 7 minutes pour présenter notre travail (il faut être rapide et organisé))
+	- Exam final : 25%
+		(un giga QCM qui ne devait pas avoir de questions à points négatifs, mais on soupçonne que si 
+		+ un sujet plus ouvert où on doit proposer des solutions)
+
+Maintenant, pk y'a pas grand chose dans l'archive : le lms c'est un peu le bordel, et y'a pas de "corrections" pour les TD, chacun dev à sa façon.
+De plus pour le DS final, faut tout revoir, mais c'est pas très très compliqué.
+
+Cdlt, Alexandre COl
+
+
+

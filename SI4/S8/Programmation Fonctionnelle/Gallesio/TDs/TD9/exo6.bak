@@ -1,0 +1,8 @@
+(require mszlib/trace)
+
+(define (ReversePasEfficace lst)     ;; version non efficace
+  (cond
+    ((null? lst) lst)
+    ((pair? lst) (append (ReversePasEfficace (cdr lst))
+                         (list (car lst))))
+    (else (error "bad list" lst))))

@@ -1,0 +1,104 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix attr: <http://www.polytech.fr/attributes#> .
+@prefix person: <http://www.polytech.fr/person#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+    
+<Male> a rdfs:Class ;
+    rdf:label "male"@en, "mâle"@fr .
+    
+<Female> a rdfs:Class ;
+    rdf:label "female"@en, "femelle"@en .
+    
+<Man> a rdfs:Class ;
+    rdfs:subClassOf <foaf:Person>, <Male> ;
+    rdf:label "man"@en, "homme"@fr ;
+    rdf:comment "a human male"@en, "un mâle humain"@fr .
+    
+<Woman> a rdfs:Class ;
+    rdfs:subClassOf <foaf:Person>, <Female> ;
+    rdf:label "woman"@en, "femme"@fr ;
+    rdf:comment "a human female"@en, "une femelle humaine"@fr .
+    
+<hasParent> a rdf:Property ;
+    rdfs:domain <foaf:Person> .
+ 
+<hasFather> a rdf:Property ;
+    rdfs:subClassOf <hasParent> ;
+    rdfs:range <Man> .
+  
+<hasMother> a rdf:Property ;
+    rdfs:subClassOf <hasParent> ;
+    rdfs:range <Woman> .
+    
+<hasChild> a rdf:Property ;
+    rdfs:domain <foaf:Person> .
+ 
+<hasSon> a rdf:Property ;
+    rdfs:subClassOf <hasChild> ;
+    rdfs:range <Man> .
+  
+<hasDaughter> a rdf:Property ;
+    rdfs:subClassOf <hasChild> ;
+    rdfs:range <Woman> .
+    
+    
+<marriedTo> a rdf:Property ;
+    rdfs:domain <foaf:Person> .
+ 
+<hasHusband> a rdf:Property ;
+    rdfs:subClassOf <marriedTo> ;
+    rdfs:range <Man> .
+  
+<hasWife> a rdf:Property ;
+    rdfs:subClassOf <mariedTo> ;
+    rdfs:range <Woman> .
+    
+<hasColleague> a rdf:Property ;
+    rdfs:domain <foaf:Person> ;
+    rdfs:range <foaf:Person> .
+
+person:margot
+  a <Woman>, attr:Teacher ;
+  foaf:name "Margot" ;
+  attr:age "32"^^xsd:integer ;
+  attr:shoe_size "38"^^xsd:integer ;
+  attr:pants_size "40"^^xsd:integer ;
+  <hasHusband> person:arthur ;
+  <hasSon> person:simon ;
+  <hasDaughter> person:marie ;
+  <hasColleague> person:alice ;
+  <hasColleague> person:pierre ;
+  <hasMother> [attr:name "Simone"] .
+
+person:arthur
+  a <Man> ;
+  foaf:name "Arthur" ;
+  <hasWife> person:margot ;
+  <hasSon> person:simon ;
+  <hasDaughter> person:marie .
+
+person:simon
+  a <Man> ;
+  foaf:name "Simon" ;
+  <hasMother> person:margot ;
+  <hasFather> person:arthur .
+  
+person:marie
+  a <Woman> ;
+  foaf:name "Marie" ;
+  <hasMother> person:margot ;
+  <hasFather> person:arthur .
+
+person:alice
+  a <Woman> ;
+  a attr:Teacher ;
+  foaf:name "Alice" ;
+  <hasColleague> person:margot .
+  
+person:pierre
+  a <Man> ;
+  a attr:Teacher ;
+  foaf:name "Pierre" ;
+  <hasColleague> person:margot .

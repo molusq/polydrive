@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(1) -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="author" content="Erick Gallesio">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="robots" content="none">
+    <meta name="generator" content="Gomd 3.1-beta / Erick Gallesio">
+
+    <!-- Slidy stuff -->
+    <meta name="copyright" content="Programmation Fonctionnelle — 2020-2021   (Erick Gallesio)">
+    
+    <meta name="font-size-adjustment" content="-1">
+    <style type="text/css">
+      body{margin:0;padding:0;width:1e2%;height:1e2%;color:#000;background-color:#fff;font-family:gill sans mt,gill sans,gillsans,sans-serif;font-size:14pt}div.toolbar{position:fixed;z-index:200;top:auto;bottom:0;left:0;right:0;height:1.2em;text-align:right;padding-left:1em;padding-right:1em;font-size:60%;color:red;background-color:#f0f0f0;border-top:solid 1px #b4b4b4}div.toolbar span.copyright{color:#000;margin-left:.5em}div.initial_prompt{position:absolute;z-index:1000;bottom:1.2em;width:1e2%;background-color:rgb(2e2,2e2,2e2);opacity:.35;background-color:rgb(2e2,2e2,2e2,.35);cursor:pointer}div.initial_prompt p.help{text-align:center}div.initial_prompt p.close{text-align:right;font-style:italic}div.slidy_toc{position:absolute;z-index:300;width:60%;max-width:30em;height:30em;overflow:auto;top:auto;right:auto;left:4em;bottom:4em;padding:1em;background:#f0f0f0;border-style:solid;border-width:2px;font-size:60%}div.slidy_toc .toc_heading{text-align:center;width:1e2%;margin:0;margin-bottom:1em;border-bottom-style:solid;border-bottom-color:#b4b4b4;border-bottom-width:1px}div.slide{z-index:20;margin:0;padding-top:0;padding-bottom:0;padding-left:20px;padding-right:20px;border-width:0;clear:both;top:0;bottom:0;left:0;right:0;line-height:120%;background-color:transparent}div.background{display:none}div.handout{margin-left:20px;margin-right:20px}div.slide.titlepage{text-align:center}div.slide.titlepage h1{padding-top:10%;margin-right:0;background:red}div.slide h1{padding-left:0;padding-right:20pt;padding-top:4pt;padding-bottom:4pt;margin-top:0;margin-left:0;margin-right:60pt;margin-bottom:.5em;display:block;font-size:160%;line-height:1.2em;background:transparent}@media screen and (max-device-width:1024px){div.slide{font-size:1e2%}}@media screen and (max-device-width:800px){div.slide{font-size:2e2%}div.slidy_toc{top:1em;left:1em;right:auto;width:80%;font-size:180%}}div.toc-heading{width:1e2%;border-bottom:solid 1px #b4b4b4;margin-bottom:1em;text-align:center}img{image-rendering:optimize-quality}pre{font-size:80%;font-weight:7e2;line-height:120%}li pre{margin-left:0}blockquote{font-style:italic}img{background-color:transparent}p.copyright{font-size:smaller}.center{text-align:center}.footnote{font-size:smaller;margin-left:2em}a img{border-width:0;border-style:none}a:visited{color:navy}a:link{color:navy}a:hover{color:red;text-decoration:underline}a:active{color:red;text-decoration:underline}a{text-decoration:none}.toolbar a:link{color:blue}.toolbar a:visited{color:blue}.toolbar a:active{color:red}.toolbar a:hover{color:red}ul{list-style-type:square}ul ul{list-style-type:disc}ul ul ul{list-style-type:circle}ul ul ul ul{list-style-type:disc}li{margin-left:.5em;margin-top:.5em}li li{font-size:85%;font-style:italic}li li li{font-size:85%;font-style:normal}div dt{margin-left:0;margin-top:1em;margin-bottom:.5em;font-weight:7e2}div dd{margin-left:2em;margin-bottom:.5em}p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table{margin-left:1em;margin-right:1em}p.subhead{font-weight:7e2;margin-top:2em}.smaller{font-size:smaller}.bigger{font-size:130%}td,th{padding:.2em}ul{margin:.5em 1.5em;padding:0}ol{margin:.5em 1.5em;padding:0}ul{list-style-type:square}ul ul{list-style-type:disc}ul ul ul{list-style-type:circle}ul ul ul ul{list-style-type:disc}ul li{list-style:square;margin:.1em 0 .6em;padding:0;line-height:140%}ol li{margin:.1em 0 .6em 1.5em;padding:0;line-height:140%;list-style-type:decimal}li ul li{font-size:85%;font-style:italic;list-style-type:disc;background:transparent;padding:0}li li ul li{font-size:85%;font-style:normal;list-style-type:circle;background:transparent;padding:0}li li li ul li{list-style-type:disc;background:transparent;padding:0}li ol li{list-style-type:decimal}li li ol li{list-style-type:decimal}ol.outline li:hover{cursor:pointer}ol.outline li.nofold:hover{cursor:default}ul.outline li:hover{cursor:pointer}ul.outline li.nofold:hover{cursor:default}ol.outline{list-style:decimal}ol.outline ol{list-style-type:lower-alpha}ol.outline li.nofold{padding:0 0 0 20px;background:transparent url(../graphics/nofold-dim.gif) no-repeat 0 .5em}ol.outline li.unfolded{padding:0 0 0 20px;background:transparent url(../graphics/fold-dim.gif) no-repeat 0 .5em}ol.outline li.folded{padding:0 0 0 20px;background:transparent url(../graphics/unfold-dim.gif) no-repeat 0 .5em}ol.outline li.unfolded:hover{padding:0 0 0 20px;background:transparent url(../graphics/fold.gif) no-repeat 0 .5em}ol.outline li.folded:hover{padding:0 0 0 20px;background:transparent url(../graphics/unfold.gif) no-repeat 0 .5em}ul.outline li.nofold{padding:0 0 0 20px;background:transparent url(../graphics/nofold-dim.gif) no-repeat 0 .5em}ul.outline li.unfolded{padding:0 0 0 20px;background:transparent url(../graphics/fold-dim.gif) no-repeat 0 .5em}ul.outline li.folded{padding:0 0 0 20px;background:transparent url(../graphics/unfold-dim.gif) no-repeat 0 .5em}ul.outline li.unfolded:hover{padding:0 0 0 20px;background:transparent url(../graphics/fold.gif) no-repeat 0 .5em}ul.outline li.folded:hover{padding:0 0 0 20px;background:transparent url(../graphics/unfold.gif) no-repeat 0 .5em}a.titleslide{font-weight:7e2;font-style:italic}img.hidden{display:none;visibility:hidden}div.initial_prompt{display:none;visibility:hidden}div.slide{visibility:visible;position:inherit}div.handout{border-top-style:solid;border-top-width:thin;border-top-color:#000}@media screen{.hidden{display:none;visibility:visible}div.slide.hidden{display:block;visibility:visible}div.handout.hidden{display:block;visibility:visible}div.background{display:none;visibility:hidden}body.single_slide div.initial_prompt{display:block;visibility:visible}body.single_slide div.background{display:block;visibility:visible}body.single_slide div.background.hidden{display:none;visibility:hidden}body.single_slide .invisible{visibility:hidden}body.single_slide .hidden{display:none;visibility:hidden}body.single_slide div.slide{position:absolute}body.single_slide div.handout{display:none;visibility:hidden}}@media print{.hidden{display:block;visibility:visible}div.slide pre{font-size:60%;padding-left:.5em}div.toolbar{display:none;visibility:hidden}div.slidy_toc{display:none;visibility:hidden}div.background{display:none;visibility:hidden}div.slide{page-break-before:always}div.slide.first-slide{page-break-before:avoid}}    </style>
+    <script>
+      var w3c_slidy={ns_pos:(typeof window.pageYOffset!='undefined'),khtml:((navigator.userAgent).indexOf("KHTML")>=0?true:false),opera:((navigator.userAgent).indexOf("Opera")>=0?true:false),ipad:((navigator.userAgent).indexOf("iPad")>=0?true:false),iphone:((navigator.userAgent).indexOf("iPhone")>=0?true:false),android:((navigator.userAgent).indexOf("Android")>=0?true:false),ie:(typeof document.all!="undefined"&&!this.opera),ie6:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 6")!=-1),ie7:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 7")!=-1),ie8:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 8")!=-1),ie9:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 9")!=-1),last_tap:0,prev_tap:0,start_x:0,start_y:0,delta_x:0,delta_y:0,is_xhtml:/xml/.test(document.contentType),slide_number:0,slide_number_element:null,slides:[],notes:[],backgrounds:[],observers:[],toolbar:null,title:null,last_shown:null,eos:null,toc:null,outline:null,selected_text_len:0,view_all:0,want_toolbar:true,mouse_click_enabled:false,scroll_hack:0,disable_slide_click:false,lang:"en",help_anchor:null,help_page:"http://www.w3.org/Talks/Tools/Slidy2/help/help.html",help_text:"Navigate with mouse click, space bar, Cursor Left/Right, "+"or Pg Up and Pg Dn. Use S and B to change font size.",size_index:0,size_adjustment:0,sizes:new Array("10pt","12pt","14pt","16pt","18pt","20pt","22pt","24pt","26pt","28pt","30pt","32pt"),last_width:0,last_height:0,objects:[],set_up:function(){var init=function(){w3c_slidy.init();};if(typeof window.addEventListener!="undefined")
+window.addEventListener("load",init,false);else
+window.attachEvent("onload",init);},hide_slides:function(){if(document.body&&!w3c_slidy.initialized)
+document.body.style.visibility="hidden";else
+setTimeout(w3c_slidy.hide_slides,50);},ie_hack:function(){window.resizeBy(0,-1);window.resizeBy(0,1);},init:function(){document.body.style.visibility="visible";this.init_localization();this.add_toolbar();this.wrap_implicit_slides();this.collect_slides();this.collect_notes();this.collect_backgrounds();this.objects=document.body.getElementsByTagName("object");this.patch_anchors();this.slide_number=this.find_slide_number(location.href);window.offscreenbuffering=true;this.size_adjustment=this.find_size_adjust();this.time_left=this.find_duration();this.hide_image_toolbar();this.init_outliner();this.title=document.title;this.keyboardless=(this.ipad||this.iphone||this.android);if(this.keyboardless)
+{w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden")
+this.want_toolbar=0;}
+this.is_xhtml=(document.body.tagName=="BODY"?false:true);if(this.slides.length>0)
+{var slide=this.slides[this.slide_number];if(this.slide_number>0)
+{this.set_visibility_all_incremental("visible");this.last_shown=this.previous_incremental_item(null);this.set_eos_status(true);}
+else
+{this.last_shown=null;this.set_visibility_all_incremental("hidden");this.set_eos_status(!this.next_incremental_item(this.last_shown));}
+this.set_location();this.add_class(this.slides[0],"first-slide");w3c_slidy.show_slide(slide);}
+this.toc=this.table_of_contents();if(!this.keyboardless)
+{this.add_listener(document.body,"click",this.mouse_button_click);this.add_listener(document.body,"mousedown",this.mouse_button_down);}
+this.add_listener(document,"keydown",this.key_down);this.add_listener(document,"keypress",this.key_press);this.add_listener(window,"resize",this.resized);this.add_listener(window,"scroll",this.scrolled);this.add_listener(window,"unload",this.unloaded);this.add_listener(document,"gesturechange",function()
+{return false;});this.attach_touch_handers(this.slides);this.single_slide_view();this.resized();if(this.ie7)
+setTimeout(w3c_slidy.ie_hack,100);this.show_toolbar();setInterval(function(){w3c_slidy.check_location();},200);w3c_slidy.initialized=true;},table_of_contents:function(){var toc=this.create_element("div");this.add_class(toc,"slidy_toc hidden");var heading=this.create_element("div");this.add_class(heading,"toc-heading");heading.innerHTML=this.localize("Table of Contents");toc.appendChild(heading);var previous=null;for(var i=0;i<this.slides.length;++i)
+{var title=this.has_class(this.slides[i],"title");var num=document.createTextNode((i+1)+". ");toc.appendChild(num);var a=this.create_element("a");a.setAttribute("href","#("+(i+1)+")");if(title)
+this.add_class(a,"titleslide");var name=document.createTextNode(this.slide_name(i));a.appendChild(name);a.onclick=w3c_slidy.toc_click;a.onkeydown=w3c_slidy.toc_key_down;a.previous=previous;if(previous)
+previous.next=a;toc.appendChild(a);if(i==0)
+toc.first=a;if(i<this.slides.length-1)
+{var br=this.create_element("br");toc.appendChild(br);}
+previous=a;}
+toc.focus=function(){if(this.first)
+this.first.focus();}
+toc.onmouseup=w3c_slidy.mouse_button_up;toc.onclick=function(e){e||(e=window.event);if(w3c_slidy.selected_text_len<=0)
+w3c_slidy.hide_table_of_contents(true);w3c_slidy.stop_propagation(e);if(e.cancel!=undefined)
+e.cancel=true;if(e.returnValue!=undefined)
+e.returnValue=false;return false;};document.body.insertBefore(toc,document.body.firstChild);return toc;},is_shown_toc:function(){return!w3c_slidy.has_class(w3c_slidy.toc,"hidden");},show_table_of_contents:function(){w3c_slidy.remove_class(w3c_slidy.toc,"hidden");var toc=w3c_slidy.toc;toc.focus();if(w3c_slidy.ie7&&w3c_slidy.slide_number==0)
+setTimeout(w3c_slidy.ie_hack,100);},hide_table_of_contents:function(focus){w3c_slidy.add_class(w3c_slidy.toc,"hidden");if(focus&&!w3c_slidy.opera&&!w3c_slidy.has_class(w3c_slidy.toc,"hidden"))
+w3c_slidy.set_focus();},toggle_table_of_contents:function(){if(w3c_slidy.is_shown_toc())
+w3c_slidy.hide_table_of_contents(true);else
+w3c_slidy.show_table_of_contents();},toc_click:function(e){if(!e)
+e=window.event;var target=w3c_slidy.get_target(e);if(target&&target.nodeType==1)
+{var uri=target.getAttribute("href");if(uri)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.find_slide_number(uri);slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_location();w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.show_slide(slide);try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}}}
+w3c_slidy.hide_table_of_contents(true);if(w3c_slidy.ie7)w3c_slidy.ie_hack();w3c_slidy.stop_propagation(e);return w3c_slidy.cancel(e);},toc_key_down:function(event){var key;if(!event)
+var event=window.event;if(window.event)
+key=window.event.keyCode;else if(event.which)
+key=event.which;else
+return true;if(!key)
+return true;if(event.ctrlKey||event.altKey)
+return true;if(key==13)
+{var uri=this.getAttribute("href");if(uri)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.find_slide_number(uri);slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_location();w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.show_slide(slide);try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}}
+w3c_slidy.hide_table_of_contents(true);if(self.ie7)
+w3c_slidy.ie_hack();return w3c_slidy.cancel(event);}
+if(key==40&&this.next)
+{this.next.focus();return w3c_slidy.cancel(event);}
+if(key==38&&this.previous)
+{this.previous.focus();return w3c_slidy.cancel(event);}
+return true;},touchstart:function(e)
+{this.prev_tap=this.last_tap;this.last_tap=(new Date).getTime();var tap_delay=this.last_tap-this.prev_tap;if(tap_delay<=200)
+{}
+var touch=e.touches[0];this.pageX=touch.pageX;this.pageY=touch.pageY;this.screenX=touch.screenX;this.screenY=touch.screenY;this.clientX=touch.clientX;this.clientY=touch.clientY;this.delta_x=this.delta_y=0;},touchmove:function(e)
+{if(e.touches.length>1)
+return;e.preventDefault();var touch=e.touches[0];this.delta_x=touch.pageX-this.pageX;this.delta_y=touch.pageY-this.pageY;},touchend:function(e)
+{if(e.touches.length>1)
+return;var delay=(new Date).getTime()-this.last_tap;var dx=this.delta_x;var dy=this.delta_y;var abs_dx=Math.abs(dx);var abs_dy=Math.abs(dy);if(delay<500&&(abs_dx>100||abs_dy>100))
+{if(abs_dx>0.5*abs_dy)
+{e.preventDefault();if(dx<0)
+w3c_slidy.next_slide(true);else
+w3c_slidy.previous_slide(true);}
+else if(abs_dy>2*abs_dx)
+{e.preventDefault();w3c_slidy.toggle_table_of_contents();}}},before_print:function(){this.show_all_slides();this.hide_toolbar();alert("before print");},after_print:function(){if(!this.view_all)
+{this.single_slide_view();this.show_toolbar();}
+alert("after print");},print_slides:function(){this.before_print();window.print();this.after_print();},toggle_view:function(){if(this.view_all)
+{this.single_slide_view();this.show_toolbar();this.view_all=0;}
+else
+{this.show_all_slides();this.hide_toolbar();this.view_all=1;}},show_all_slides:function(){this.remove_class(document.body,"single_slide");this.set_visibility_all_incremental("visible");},single_slide_view:function(){this.add_class(document.body,"single_slide");this.set_visibility_all_incremental("visible");this.last_shown=this.previous_incremental_item(null);},hide_image_toolbar:function(){if(!this.ns_pos)
+{var images=document.getElementsByTagName("IMG");for(var i=0;i<images.length;++i)
+images[i].setAttribute("galleryimg","no");}},unloaded:function(e){},is_KHTML:function(){var agent=navigator.userAgent;return(agent.indexOf("KHTML")>=0?true:false);},slide_name:function(index){var name=null;var slide=this.slides[index];var heading=this.find_heading(slide);if(heading)
+name=this.extract_text(heading);if(!name)
+name=this.title+"("+(index+1)+")";name.replace(/&/g,"&amp;");name.replace(/</g,"&lt;");name.replace(/>/g,"&gt;");return name;},find_heading:function(node){if(!node||node.nodeType!=1)
+return null;if(node.nodeName=="H1"||node.nodeName=="h1")
+return node;var child=node.firstChild;while(child)
+{node=this.find_heading(child);if(node)
+return node;child=child.nextSibling;}
+return null;},extract_text:function(node){if(!node)
+return"";if(node.nodeType==3)
+return node.nodeValue;if(node.nodeType==1)
+{node=node.firstChild;var text="";while(node)
+{text=text+this.extract_text(node);node=node.nextSibling;}
+return text;}
+return"";},find_copyright:function(){var name,content;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="copyright")
+return content;}
+return null;},find_size_adjust:function(){var name,content,offset;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="font-size-adjustment")
+return 1*content;}
+return 1;},find_duration:function(){var name,content,offset;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="duration")
+return 60000*content;}
+return null;},replace_by_non_breaking_space:function(str){for(var i=0;i<str.length;++i)
+str[i]=160;},init_outliner:function(){var items=document.getElementsByTagName("li");for(var i=0;i<items.length;++i)
+{var target=items[i];if(!this.has_class(target.parentNode,"outline"))
+continue;target.onclick=this.outline_click;if(this.foldable(target))
+{target.foldable=true;target.onfocus=function(){w3c_slidy.outline=this;};target.onblur=function(){w3c_slidy.outline=null;};if(!target.getAttribute("tabindex"))
+target.setAttribute("tabindex","0");if(this.has_class(target,"expand"))
+this.unfold(target);else
+this.fold(target);}
+else
+{this.add_class(target,"nofold");target.visible=true;target.foldable=false;}}},foldable:function(item){if(!item||item.nodeType!=1)
+return false;var node=item.firstChild;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+return true;node=node.nextSibling;}
+return false;},fold:function(item){if(item)
+{this.remove_class(item,"unfolded");this.add_class(item,"folded");}
+var node=item?item.firstChild:null;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+{w3c_slidy.add_class(node,"hidden");}
+node=node.nextSibling;}
+item.visible=false;},unfold:function(item){if(item)
+{this.add_class(item,"unfolded");this.remove_class(item,"folded");}
+var node=item?item.firstChild:null;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+{w3c_slidy.remove_class(node,"hidden");}
+node=node.nextSibling;}
+item.visible=true;},outline_click:function(e){if(!e)
+e=window.event;var rightclick=false;var target=w3c_slidy.get_target(e);while(target&&target.visible==undefined)
+target=target.parentNode;if(!target)
+return true;if(e.which)
+rightclick=(e.which==3);else if(e.button)
+rightclick=(e.button==2);if(!rightclick&&target.visible!=undefined)
+{if(target.foldable)
+{if(target.visible)
+w3c_slidy.fold(target);else
+w3c_slidy.unfold(target);}
+w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;}
+return false;},add_toolbar:function(){var counter,page;this.toolbar=this.create_element("div");this.toolbar.setAttribute("class","toolbar");if(this.ns_pos||!this.ie6)
+{var right=this.create_element("div");right.setAttribute("style","float: right; text-align: right");counter=this.create_element("span")
+counter.innerHTML=this.localize("slide")+" n/m";right.appendChild(counter);this.toolbar.appendChild(right);var left=this.create_element("div");left.setAttribute("style","text-align: left");this.eos=this.create_element("span");this.eos.innerHTML="* ";left.appendChild(this.eos);var copyright=this.find_copyright();if(copyright)
+{var span=this.create_element("span");span.className="copyright";span.innerHTML=copyright;left.appendChild(span);}
+this.toolbar.setAttribute("tabindex","0");this.toolbar.appendChild(left);}
+else
+{this.toolbar.style.position=(this.ie7?"fixed":"absolute");this.toolbar.style.zIndex="200";this.toolbar.style.width="99.9%";this.toolbar.style.height="1.2em";this.toolbar.style.top="auto";this.toolbar.style.bottom="0";this.toolbar.style.left="0";this.toolbar.style.right="0";this.toolbar.style.textAlign="left";this.toolbar.style.fontSize="60%";this.toolbar.style.color="red";this.toolbar.borderWidth=0;this.toolbar.className="toolbar";this.toolbar.style.background="rgb(240,240,240)";var sp=this.create_element("span");sp.innerHTML="&nbsp;&nbsp;*&nbsp;";this.toolbar.appendChild(sp);this.eos=sp;var help=this.create_element("a");help.setAttribute("href",this.help_page);help.setAttribute("title",this.localize(this.help_text));help.innerHTML=this.localize("help?");this.toolbar.appendChild(help);this.help_anchor=help;var gap1=document.createTextNode(" ");this.toolbar.appendChild(gap1);var contents=this.create_element("a");contents.setAttribute("href","javascript:toggleTableOfContents()");contents.setAttribute("title",this.localize("table of contents".localize));contents.innerHTML=this.localize("contents?");this.toolbar.appendChild(contents);var gap2=document.createTextNode(" ");this.toolbar.appendChild(gap2);var copyright=this.find_copyright();if(copyright)
+{var span=this.create_element("span");span.innerHTML=copyright;span.style.color="black";span.style.marginLeft="0.5em";this.toolbar.appendChild(span);}
+counter=this.create_element("div")
+counter.style.position="absolute";counter.style.width="auto";counter.style.height="1.2em";counter.style.top="auto";counter.style.bottom=0;counter.style.right="0";counter.style.textAlign="right";counter.style.color="red";counter.style.background="rgb(240,240,240)";counter.innerHTML=this.localize("slide")+" n/m";this.toolbar.appendChild(counter);}
+this.toolbar.onclick=function(e){if(!e)
+e=window.event;var target=e.target;if(!target&&e.srcElement)
+target=e.srcElement;if(target&&target.nodeType==3)
+target=target.parentNode;w3c_slidy.stop_propagation(e);if(target&&target.nodeName.toLowerCase()!="a")
+w3c_slidy.mouse_button_click(e);};this.slide_number_element=counter;this.set_eos_status(false);document.body.appendChild(this.toolbar);},wrap_implicit_slides:function(){var i,heading,node,next,div;var headings=document.getElementsByTagName("h1");if(!headings)
+return;for(i=0;i<headings.length;++i)
+{heading=headings[i];if(heading.parentNode!=document.body)
+continue;node=heading.nextSibling;div=document.createElement("div");this.add_class(div,"slide");document.body.replaceChild(div,heading);div.appendChild(heading);while(node)
+{if(node.nodeType==1)
+{if(node.nodeName=="H1"||node.nodeName=="h1")
+break;if(node.nodeName=="DIV"||node.nodeName=="div")
+{if(this.has_class(node,"slide"))
+break;if(this.has_class(node,"handout"))
+break;}}
+next=node.nextSibling;node=document.body.removeChild(node);div.appendChild(node);node=next;}}},attach_touch_handers:function(slides)
+{var i,slide;for(i=0;i<slides.length;++i)
+{slide=slides[i];this.add_listener(slide,"touchstart",this.touchstart);this.add_listener(slide,"touchmove",this.touchmove);this.add_listener(slide,"touchend",this.touchend);}},collect_slides:function(){var slides=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"slide"))
+{slides[slides.length]=div;this.add_class(div,"hidden");var node1=document.createElement("br");div.appendChild(node1);var node2=document.createElement("br");div.appendChild(node2);}
+else if(this.has_class(div,"background"))
+{div.style.display="block";}}
+this.slides=slides;},collect_notes:function(){var notes=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"handout"))
+{notes[notes.length]=div;this.add_class(div,"hidden");}}
+this.notes=notes;},collect_backgrounds:function(){var backgrounds=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"background"))
+{backgrounds[backgrounds.length]=div;this.add_class(div,"hidden");}}
+this.backgrounds=backgrounds;},patch_anchors:function(){var self=w3c_slidy;var handler=function(event){if(self.page_address(this.href)==self.page_address(location.href))
+{var newslidenum=self.find_slide_number(this.href);if(newslidenum!=self.slide_number)
+{var slide=self.slides[self.slide_number];self.hide_slide(slide);self.slide_number=newslidenum;slide=self.slides[self.slide_number];self.show_slide(slide);self.set_location();}}
+else
+w3c_slidy.stop_propagation(event);this.blur();self.disable_slide_click=true;};var anchors=document.body.getElementsByTagName("a");for(var i=0;i<anchors.length;++i)
+{if(window.addEventListener)
+anchors[i].addEventListener("click",handler,false);else
+anchors[i].attachEvent("onclick",handler);}},show_slide_number:function(){var timer=w3c_slidy.get_timer();w3c_slidy.slide_number_element.innerHTML=timer+w3c_slidy.localize("slide")+" "+
+(w3c_slidy.slide_number+1)+"/"+w3c_slidy.slides.length;},check_location:function(){var hash=location.hash;if(w3c_slidy.slide_number>0&&(hash==""||hash=="#"))
+w3c_slidy.goto_slide(0);else if(hash.length>2&&hash!="#("+(w3c_slidy.slide_number+1)+")")
+{var num=parseInt(location.hash.substr(2));if(!isNaN(num))
+w3c_slidy.goto_slide(num-1);}
+if(w3c_slidy.time_left&&w3c_slidy.slide_number>0)
+{w3c_slidy.show_slide_number();if(w3c_slidy.time_left>0)
+w3c_slidy.time_left-=200;}},get_timer:function(){var timer="";if(w3c_slidy.time_left)
+{var mins,secs;secs=Math.floor(w3c_slidy.time_left/1000);mins=Math.floor(secs/60);secs=secs%60;timer=(mins?mins+"m":"")+secs+"s ";}
+return timer;},set_location:function(){var uri=w3c_slidy.page_address(location.href);var hash="#("+(w3c_slidy.slide_number+1)+")";if(w3c_slidy.slide_number>=0)
+uri=uri+hash;if(typeof(history.pushState)!="undefined")
+{document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";history.pushState(0,document.title,hash);w3c_slidy.show_slide_number();w3c_slidy.notify_observers();return;}
+if(uri!=location.href)
+location.href=uri;if(this.khtml)
+hash="("+(w3c_slidy.slide_number+1)+")";if(!this.ie&&location.hash!=hash&&location.hash!="")
+location.hash=hash;document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";w3c_slidy.show_slide_number();w3c_slidy.notify_observers();},notify_observers:function()
+{var slide=this.slides[this.slide_number];for(var i=0;i<this.observers.length;++i)
+this.observers[i](this.slide_number+1,this.find_heading(slide).innerText,location.href);},add_observer:function(observer)
+{for(var i=0;i<this.observers.length;++i)
+{if(observer==this.observers[i])
+return;}
+this.observers.push(observer);},remove_observer:function(o)
+{for(var i=0;i<this.observers.length;++i)
+{if(observer==this.observers[i])
+{this.observers.splice(i,1);break;}}},page_address:function(uri){var i=uri.indexOf("#");if(i<0)
+i=uri.indexOf("%23");if(i<0)
+return uri;return uri.substr(0,i);},on_frame_loaded:function(hash){location.hash=hash;var uri=w3c_slidy.page_address(location.href);location.href=uri+hash;},push_hash:function(hash){},find_slide_number:function(uri){var i=uri.indexOf("#");if(i<0)
+return 0;var anchor=unescape(uri.substr(i+1));var target=document.getElementById(anchor);if(!target)
+{var re=/((d)+)/;if(anchor.match(re))
+{var num=parseInt(anchor.substring(1,anchor.length-1));if(num>this.slides.length)
+num=1;if(--num<0)
+num=0;return num;}
+re=/[(d)+]/;if(anchor.match(re))
+{var num=parseInt(anchor.substring(1,anchor.length-1));if(num>this.slides.length)
+num=1;if(--num<0)
+num=0;return num;}
+return 0;}
+while(true)
+{if(target.nodeName.toLowerCase()=="div"&&this.has_class(target,"slide"))
+{break;}
+target=target.parentNode;if(!target)
+{return 0;}};for(i=0;i<slides.length;++i)
+{if(slides[i]==target)
+return i;}
+return 0;},previous_slide:function(incremental){if(!w3c_slidy.view_all)
+{var slide;if((incremental||w3c_slidy.slide_number==0)&&w3c_slidy.last_shown!=null)
+{w3c_slidy.last_shown=w3c_slidy.hide_previous_item(w3c_slidy.last_shown);w3c_slidy.set_eos_status(false);}
+else if(w3c_slidy.slide_number>0)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slide_number-1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);w3c_slidy.set_eos_status(true);w3c_slidy.show_slide(slide);}
+w3c_slidy.set_location();if(!w3c_slidy.ns_pos)
+w3c_slidy.refresh_toolbar(200);}},next_slide:function(incremental){if(!w3c_slidy.view_all)
+{var slide,last=w3c_slidy.last_shown;if(incremental||w3c_slidy.slide_number==w3c_slidy.slides.length-1)
+w3c_slidy.last_shown=w3c_slidy.reveal_next_item(w3c_slidy.last_shown);if((!incremental||w3c_slidy.last_shown==null)&&w3c_slidy.slide_number<w3c_slidy.slides.length-1)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slide_number+1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.show_slide(slide);}
+else if(!w3c_slidy.last_shown)
+{if(last&&incremental)
+w3c_slidy.last_shown=last;}
+w3c_slidy.set_location();w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));if(!w3c_slidy.ns_pos)
+w3c_slidy.refresh_toolbar(200);}},first_slide:function(){if(!w3c_slidy.view_all)
+{var slide;if(w3c_slidy.slide_number!=0)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=0;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.show_slide(slide);}
+w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.set_location();}},last_slide:function(){if(!w3c_slidy.view_all)
+{var slide;w3c_slidy.last_shown=null;if(w3c_slidy.last_shown==null&&w3c_slidy.slide_number<w3c_slidy.slides.length-1)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slides.length-1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);w3c_slidy.show_slide(slide);}
+else
+{w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);}
+w3c_slidy.set_eos_status(true);w3c_slidy.set_location();}},set_eos_status:function(state){if(this.eos)
+this.eos.style.color=(state?"rgb(240,240,240)":"red");},goto_slide:function(num){var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=num;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";w3c_slidy.show_slide(slide);w3c_slidy.show_slide_number();},show_slide:function(slide){this.sync_background(slide);this.remove_class(slide,"hidden");setTimeout("window.scrollTo(0,0);",1);},hide_slide:function(slide){this.add_class(slide,"hidden");},set_focus:function(element)
+{if(element)
+element.focus();else
+{w3c_slidy.help_anchor.focus();setTimeout(function(){w3c_slidy.help_anchor.blur();},1);}},sync_background:function(slide){var background;var bgColor;if(slide.currentStyle)
+bgColor=slide.currentStyle["backgroundColor"];else if(document.defaultView)
+{var styles=document.defaultView.getComputedStyle(slide,null);if(styles)
+bgColor=styles.getPropertyValue("background-color");else
+{bgColor="transparent";}}
+else
+bgColor=="transparent";if(bgColor=="transparent"||bgColor.indexOf("rgba")>=0||bgColor.indexOf("opacity")>=0)
+{var slideClass=this.get_class_list(slide);for(var i=0;i<this.backgrounds.length;i++)
+{background=this.backgrounds[i];var bgClass=this.get_class_list(background);if(this.matching_background(slideClass,bgClass))
+this.remove_class(background,"hidden");else
+this.add_class(background,"hidden");}}
+else
+this.hide_backgrounds();},hide_backgrounds:function(){for(var i=0;i<this.backgrounds.length;i++)
+{background=this.backgrounds[i];this.add_class(background,"hidden");}},matching_background:function(slideClass,bgClass){var i,count,pattern,result;pattern=/w+/g;result=bgClass.match(pattern);for(i=count=0;i<result.length;i++)
+{if(result[i]=="hidden")
+continue;if(result[i]=="background")
+continue;++count;}
+if(count==0)
+return true;result=slideClass.match(pattern);for(i=count=0;i<result.length;i++)
+{if(result[i]=="hidden")
+continue;if(this.has_token(bgClass,result[i]))
+return true;}
+return false;},resized:function(){var width=0;if(typeof(window.innerWidth)=='number')
+width=window.innerWidth;else if(document.documentElement&&document.documentElement.clientWidth)
+width=document.documentElement.clientWidth;else if(document.body&&document.body.clientWidth)
+width=document.body.clientWidth;var height=0;if(typeof(window.innerHeight)=='number')
+height=window.innerHeight;else if(document.documentElement&&document.documentElement.clientHeight)
+height=document.documentElement.clientHeight;else if(document.body&&document.body.clientHeight)
+height=document.body.clientHeight;if(height&&(width/height>1.05*1024/768))
+{width=height*1024.0/768;}
+if(width!=w3c_slidy.last_width||height!=w3c_slidy.last_height)
+{if(width>=1100)
+w3c_slidy.size_index=5;else if(width>=1000)
+w3c_slidy.size_index=4;else if(width>=800)
+w3c_slidy.size_index=3;else if(width>=600)
+w3c_slidy.size_index=2;else if(width)
+w3c_slidy.size_index=0;if(0<=w3c_slidy.size_index+w3c_slidy.size_adjustment&&w3c_slidy.size_index+w3c_slidy.size_adjustment<w3c_slidy.sizes.length)
+w3c_slidy.size_index=w3c_slidy.size_index+w3c_slidy.size_adjustment;w3c_slidy.adjust_object_dimensions(width,height);if(document.body.style.fontSize!=w3c_slidy.sizes[w3c_slidy.size_index])
+{document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];}
+w3c_slidy.last_width=width;w3c_slidy.last_height=height;if(w3c_slidy.ns_pos)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);}
+w3c_slidy.refresh_toolbar(200);}},scrolled:function(){if(w3c_slidy.toolbar&&!w3c_slidy.ns_pos&&!w3c_slidy.ie7)
+{w3c_slidy.hack_offset=w3c_slidy.scroll_x_offset();w3c_slidy.toolbar.style.display="none";if(w3c_slidy.scrollhack==0&&!w3c_slidy.view_all)
+{setTimeout(function(){w3c_slidy.show_toolbar();},1000);w3c_slidy.scrollhack=1;}}},hide_toolbar:function(){w3c_slidy.add_class(w3c_slidy.toolbar,"hidden");window.focus();},refresh_toolbar:function(interval){if(!w3c_slidy.ns_pos&&!w3c_slidy.ie7)
+{w3c_slidy.hide_toolbar();setTimeout(function(){w3c_slidy.show_toolbar();},interval);}},show_toolbar:function(){if(w3c_slidy.want_toolbar)
+{w3c_slidy.toolbar.style.display="block";if(!w3c_slidy.ns_pos)
+{var xoffset=w3c_slidy.scroll_x_offset();w3c_slidy.toolbar.style.left=xoffset;w3c_slidy.toolbar.style.right=xoffset;w3c_slidy.toolbar.style.bottom=0;}
+w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden");}
+w3c_slidy.scrollhack=0;try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}},toggle_toolbar:function(){if(!w3c_slidy.view_all)
+{if(w3c_slidy.has_class(w3c_slidy.toolbar,"hidden"))
+{w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden")
+w3c_slidy.want_toolbar=1;}
+else
+{w3c_slidy.add_class(w3c_slidy.toolbar,"hidden")
+w3c_slidy.want_toolbar=0;}}},scroll_x_offset:function(){if(window.pageXOffset)
+return self.pageXOffset;if(document.documentElement&&document.documentElement.scrollLeft)
+return document.documentElement.scrollLeft;if(document.body)
+return document.body.scrollLeft;return 0;},scroll_y_offset:function(){if(window.pageYOffset)
+return self.pageYOffset;if(document.documentElement&&document.documentElement.scrollTop)
+return document.documentElement.scrollTop;if(document.body)
+return document.body.scrollTop;return 0;},optimize_font_size:function(){var slide=w3c_slidy.slides[w3c_slidy.slide_number];var dh=slide.scrollHeight;var wh=getWindowHeight();var u=100*dh/wh;alert("window utilization = "+u+"% (doc "
++dh+" win "+wh+")");},get_doc_height:function(doc){if(!doc)
+doc=document;if(doc&&doc.body&&doc.body.offsetHeight)
+return doc.body.offsetHeight;if(doc&&doc.body&&doc.body.scrollHeight)
+return doc.body.scrollHeight;alert("couldn't determine document height");},get_window_height:function(){if(typeof(window.innerHeight)=='number')
+return window.innerHeight;if(document.documentElement&&document.documentElement.clientHeight)
+return document.documentElement.clientHeight;if(document.body&&document.body.clientHeight)
+return document.body.clientHeight;},document_height:function(){var sh,oh;sh=document.body.scrollHeight;oh=document.body.offsetHeight;if(sh&&oh)
+{return(sh>oh?sh:oh);}
+return 0;},smaller:function(){if(w3c_slidy.size_index>0)
+{--w3c_slidy.size_index;}
+w3c_slidy.toolbar.style.display="none";document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);setTimeout(function(){w3c_slidy.show_toolbar();},50);},bigger:function(){if(w3c_slidy.size_index<w3c_slidy.sizes.length-1)
+{++w3c_slidy.size_index;}
+w3c_slidy.toolbar.style.display="none";document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);setTimeout(function(){w3c_slidy.show_toolbar();},50);},adjust_object_dimensions:function(width,height){for(var i=0;i<w3c_slidy.objects.length;i++)
+{var obj=this.objects[i];var mimeType=obj.getAttribute("type");if(mimeType=="image/svg+xml"||mimeType=="application/x-shockwave-flash")
+{if(!obj.initialWidth)
+obj.initialWidth=obj.getAttribute("width");if(!obj.initialHeight)
+obj.initialHeight=obj.getAttribute("height");if(obj.initialWidth&&obj.initialWidth.charAt(obj.initialWidth.length-1)=="%")
+{var w=parseInt(obj.initialWidth.slice(0,obj.initialWidth.length-1));var newW=width*(w/100.0);obj.setAttribute("width",newW);}
+if(obj.initialHeight&&obj.initialHeight.charAt(obj.initialHeight.length-1)=="%")
+{var h=parseInt(obj.initialHeight.slice(0,obj.initialHeight.length-1));var newH=height*(h/100.0);obj.setAttribute("height",newH);}}}},key_press:function(event){if(!event)
+event=window.event;if(!w3c_slidy.key_wanted)
+return w3c_slidy.cancel(event);return true;},key_down:function(event){var key,target,tag;w3c_slidy.key_wanted=true;if(!event)
+event=window.event;if(window.event)
+{key=window.event.keyCode;target=window.event.srcElement;}
+else if(event.which)
+{key=event.which;target=event.target;}
+else
+return true;if(!key)
+return true;if(!w3c_slidy.slidy_chrome(target)&&w3c_slidy.special_element(target))
+return true;if(event.ctrlKey||event.altKey||event.metaKey)
+return true;if(w3c_slidy.is_shown_toc()&&key!=9&&key!=16&&key!=38&&key!=40)
+{w3c_slidy.hide_table_of_contents(true);if(key==27||key==84||key==67)
+return w3c_slidy.cancel(event);}
+if(key==34)
+{if(w3c_slidy.view_all)
+return true;w3c_slidy.next_slide(false);return w3c_slidy.cancel(event);}
+else if(key==33)
+{if(w3c_slidy.view_all)
+return true;w3c_slidy.previous_slide(false);return w3c_slidy.cancel(event);}
+else if(key==32)
+{w3c_slidy.next_slide(true);return w3c_slidy.cancel(event);}
+else if(key==37)
+{w3c_slidy.previous_slide(!event.shiftKey);return w3c_slidy.cancel(event);}
+else if(key==36)
+{w3c_slidy.first_slide();return w3c_slidy.cancel(event);}
+else if(key==35)
+{w3c_slidy.last_slide();return w3c_slidy.cancel(event);}
+else if(key==39)
+{w3c_slidy.next_slide(!event.shiftKey);return w3c_slidy.cancel(event);}
+else if(key==13)
+{if(w3c_slidy.outline)
+{if(w3c_slidy.outline.visible)
+w3c_slidy.fold(w3c_slidy.outline);else
+w3c_slidy.unfold(w3c_slidy.outline);return w3c_slidy.cancel(event);}}
+else if(key==188)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==190)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==189||key==109)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==187||key==191||key==107)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==83)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==66)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==90)
+{w3c_slidy.last_slide();return w3c_slidy.cancel(event);}
+else if(key==70)
+{w3c_slidy.toggle_toolbar();return w3c_slidy.cancel(event);}
+else if(key==65)
+{w3c_slidy.toggle_view();return w3c_slidy.cancel(event);}
+else if(key==75)
+{w3c_slidy.mouse_click_enabled=!w3c_slidy.mouse_click_enabled;var alert_msg=(w3c_slidy.mouse_click_enabled?"enabled":"disabled")+" mouse click advance";alert(w3c_slidy.localize(alert_msg));return w3c_slidy.cancel(event);}
+else if(key==84||key==67)
+{if(w3c_slidy.toc)
+w3c_slidy.toggle_table_of_contents();return w3c_slidy.cancel(event);}
+else if(key==72)
+{window.location=w3c_slidy.help_page;return w3c_slidy.cancel(event);}
+return true;},create_element:function(name){if(this.xhtml&&(typeof document.createElementNS!='undefined'))
+return document.createElementNS("http://www.w3.org/1999/xhtml",name)
+return document.createElement(name);},get_element_style:function(elem,IEStyleProp,CSSStyleProp){if(elem.currentStyle)
+{return elem.currentStyle[IEStyleProp];}
+else if(window.getComputedStyle)
+{var compStyle=window.getComputedStyle(elem,"");return compStyle.getPropertyValue(CSSStyleProp);}
+return"";},has_token:function(str,token){if(str)
+{var pattern=/w+/g;var result=str.match(pattern);for(var i=0;i<result.length;i++)
+{if(result[i]==token)
+return true;}}
+return false;},get_class_list:function(element){if(typeof element.className!='undefined')
+return element.className;return element.getAttribute("class");},has_class:function(element,name){if(element.nodeType!=1)
+return false;var regexp=new RegExp("(^| )"+name+"W*");if(typeof element.className!='undefined')
+return regexp.test(element.className);return regexp.test(element.getAttribute("class"));},remove_class:function(element,name){var regexp=new RegExp("(^| )"+name+"W*");var clsval="";if(typeof element.className!='undefined')
+{clsval=element.className;if(clsval)
+{clsval=clsval.replace(regexp,"");element.className=clsval;}}
+else
+{clsval=element.getAttribute("class");if(clsval)
+{clsval=clsval.replace(regexp,"");element.setAttribute("class",clsval);}}},add_class:function(element,name){if(!this.has_class(element,name))
+{if(typeof element.className!='undefined')
+element.className+=" "+name;else
+{var clsval=element.getAttribute("class");clsval=clsval?clsval+" "+name:name;element.setAttribute("class",clsval);}}},incremental_elements:null,okay_for_incremental:function(name){if(!this.incremental_elements)
+{var inclist=new Array();inclist["p"]=true;inclist["pre"]=true;inclist["li"]=true;inclist["blockquote"]=true;inclist["dt"]=true;inclist["dd"]=true;inclist["h2"]=true;inclist["h3"]=true;inclist["h4"]=true;inclist["h5"]=true;inclist["h6"]=true;inclist["span"]=true;inclist["address"]=true;inclist["table"]=true;inclist["tr"]=true;inclist["th"]=true;inclist["td"]=true;inclist["img"]=true;inclist["object"]=true;this.incremental_elements=inclist;}
+return this.incremental_elements[name.toLowerCase()];},next_incremental_item:function(node){var br=this.is_xhtml?"br":"BR";var slide=w3c_slidy.slides[w3c_slidy.slide_number];for(;;)
+{node=w3c_slidy.next_node(slide,node);if(node==null||node.parentNode==null)
+break;if(node.nodeType==1)
+{if(node.nodeName==br)
+continue;if(w3c_slidy.has_class(node,"incremental")&&w3c_slidy.okay_for_incremental(node.nodeName))
+return node;if(w3c_slidy.has_class(node.parentNode,"incremental")&&!w3c_slidy.has_class(node,"non-incremental"))
+return node;}}
+return node;},previous_incremental_item:function(node){var br=this.is_xhtml?"br":"BR";var slide=w3c_slidy.slides[w3c_slidy.slide_number];for(;;)
+{node=w3c_slidy.previous_node(slide,node);if(node==null||node.parentNode==null)
+break;if(node.nodeType==1)
+{if(node.nodeName==br)
+continue;if(w3c_slidy.has_class(node,"incremental")&&w3c_slidy.okay_for_incremental(node.nodeName))
+return node;if(w3c_slidy.has_class(node.parentNode,"incremental")&&!w3c_slidy.has_class(node,"non-incremental"))
+return node;}}
+return node;},set_visibility_all_incremental:function(value){var node=this.next_incremental_item(null);if(value=="hidden")
+{while(node)
+{w3c_slidy.add_class(node,"invisible");node=w3c_slidy.next_incremental_item(node);}}
+else
+{while(node)
+{w3c_slidy.remove_class(node,"invisible");node=w3c_slidy.next_incremental_item(node);}}},reveal_next_item:function(node){node=w3c_slidy.next_incremental_item(node);if(node&&node.nodeType==1)
+w3c_slidy.remove_class(node,"invisible");return node;},hide_previous_item:function(node){if(node&&node.nodeType==1)
+w3c_slidy.add_class(node,"invisible");return this.previous_incremental_item(node);},next_node:function(root,node){if(node==null)
+return root.firstChild;if(node.firstChild)
+return node.firstChild;if(node.nextSibling)
+return node.nextSibling;for(;;)
+{node=node.parentNode;if(!node||node==root)
+break;if(node&&node.nextSibling)
+return node.nextSibling;}
+return null;},previous_node:function(root,node){if(node==null)
+{node=root.lastChild;if(node)
+{while(node.lastChild)
+node=node.lastChild;}
+return node;}
+if(node.previousSibling)
+{node=node.previousSibling;while(node.lastChild)
+node=node.lastChild;return node;}
+if(node.parentNode!=root)
+return node.parentNode;return null;},previous_sibling_element:function(el){el=el.previousSibling;while(el&&el.nodeType!=1)
+el=el.previousSibling;return el;},next_sibling_element:function(el){el=el.nextSibling;while(el&&el.nodeType!=1)
+el=el.nextSibling;return el;},first_child_element:function(el){var node;for(node=el.firstChild;node;node=node.nextSibling)
+{if(node.nodeType==1)
+break;}
+return node;},first_tag:function(element,tag){var node;if(!this.is_xhtml)
+tag=tag.toUpperCase();for(node=element.firstChild;node;node=node.nextSibling)
+{if(node.nodeType==1&&node.nodeName==tag)
+break;}
+return node;},hide_selection:function(){if(window.getSelection)
+{var selection=window.getSelection();if(selection.rangeCount>0)
+{var range=selection.getRangeAt(0);range.collapse(false);}}
+else
+{var textRange=document.selection.createRange();textRange.collapse(false);}},get_selected_text:function(){try
+{if(window.getSelection)
+return window.getSelection().toString();if(document.getSelection)
+return document.getSelection().toString();if(document.selection)
+return document.selection.createRange().text;}
+catch(e)
+{}
+return"";},mouse_button_up:function(e){w3c_slidy.selected_text_len=w3c_slidy.get_selected_text().length;},mouse_button_down:function(e){w3c_slidy.selected_text_len=w3c_slidy.get_selected_text().length;w3c_slidy.mouse_x=e.clientX;w3c_slidy.mouse_y=e.clientY;},mouse_button_click:function(e){if(!e)
+var e=window.event;if(Math.abs(e.clientX-w3c_slidy.mouse_x)+
+Math.abs(e.clientY-w3c_slidy.mouse_y)>10)
+return true;if(w3c_slidy.selected_text_len>0)
+return true;var rightclick=false;var leftclick=false;var middleclick=false;var target;if(!e)
+var e=window.event;if(e.target)
+target=e.target;else if(e.srcElement)
+target=e.srcElement;if(target.nodeType==3)
+target=target.parentNode;if(e.which)
+{leftclick=(e.which==1);middleclick=(e.which==2);rightclick=(e.which==3);}
+else if(e.button)
+{if(e.button==4)
+middleclick=true;rightclick=(e.button==2);}
+else
+leftclick=true;if(w3c_slidy.selected_text_len>0)
+{w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;return false;}
+w3c_slidy.hide_table_of_contents(false);var tag=target.nodeName.toLowerCase();if(w3c_slidy.mouse_click_enabled&&leftclick&&!w3c_slidy.special_element(target)&&!target.onclick)
+{w3c_slidy.next_slide(true);w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;return false;}
+return true;},special_element:function(element){if(this.has_class(element,"non-interactive"))
+return false;var tag=element.nodeName.toLowerCase();return element.onkeydown||element.onclick||tag=="a"||tag=="embed"||tag=="object"||tag=="video"||tag=="audio"||tag=="svg"||tag=="canvas"||tag=="input"||tag=="textarea"||tag=="select"||tag=="option";},slidy_chrome:function(el){while(el)
+{if(el==w3c_slidy.toc||el==w3c_slidy.toolbar||w3c_slidy.has_class(el,"outline"))
+return true;el=el.parentNode;}
+return false;},get_key:function(e)
+{var key;if(typeof window.event!="undefined")
+key=window.event.keyCode;else if(e.which)
+key=e.which;return key;},get_target:function(e){var target;if(!e)
+e=window.event;if(e.target)
+target=e.target;else if(e.srcElement)
+target=e.srcElement;if(target.nodeType!=1)
+target=target.parentNode;return target;},is_block:function(elem){var tag=elem.nodeName.toLowerCase();return tag=="ol"||tag=="ul"||tag=="p"||tag=="dl"||tag=="li"||tag=="table"||tag=="pre"||tag=="h1"||tag=="h2"||tag=="h3"||tag=="h4"||tag=="h5"||tag=="h6"||tag=="blockquote"||tag=="address";},add_listener:function(element,event,handler){if(window.addEventListener)
+element.addEventListener(event,handler,false);else
+element.attachEvent("on"+event,handler);},stop_propagation:function(event){event=event?event:window.event;event.cancelBubble=true;if(event.stopPropagation)
+event.stopPropagation();return true;},cancel:function(event){if(event)
+{event.cancel=true;event.returnValue=false;if(event.preventDefault)
+event.preventDefault();}
+w3c_slidy.key_wanted=false;return false;},strings_es:{"slide":"pág.","help?":"Ayuda","contents?":"Índice","table of contents":"tabla de contenidos","Table of Contents":"Tabla de Contenidos","restart presentation":"Reiniciar presentación","restart?":"Inicio"},help_es:"Utilice el ratón, barra espaciadora, teclas Izda/Dcha, "+"o Re pág y Av pág. Use S y B para cambiar el tamaño de fuente.",strings_ca:{"slide":"pàg..","help?":"Ajuda","contents?":"Índex","table of contents":"taula de continguts","Table of Contents":"Taula de Continguts","restart presentation":"Reiniciar presentació","restart?":"Inici"},help_ca:"Utilitzi el ratolí, barra espaiadora, tecles Esq./Dta. "+"o Re pàg y Av pàg. Usi S i B per canviar grandària de font.",strings_cs:{"slide":"snímek","help?":"nápověda","contents?":"obsah","table of contents":"obsah prezentace","Table of Contents":"Obsah prezentace","restart presentation":"znovu spustit prezentaci","restart?":"restart"},help_cs:"Prezentaci můžete procházet pomocí kliknutí myši, mezerníku, "+"šipek vlevo a vpravo nebo kláves PageUp a PageDown. Písmo se "+"dá zvětšit a zmenšit pomocí kláves B a S.",strings_nl:{"slide":"pagina","help?":"Help?","contents?":"Inhoud?","table of contents":"inhoudsopgave","Table of Contents":"Inhoudsopgave","restart presentation":"herstart presentatie","restart?":"Herstart?"},help_nl:"Navigeer d.m.v. het muis, spatiebar, Links/Rechts toetsen, "+"of PgUp en PgDn. Gebruik S en B om de karaktergrootte te veranderen.",strings_de:{"slide":"Seite","help?":"Hilfe","contents?":"Übersicht","table of contents":"Inhaltsverzeichnis","Table of Contents":"Inhaltsverzeichnis","restart presentation":"Präsentation neu starten","restart?":"Neustart"},help_de:"Benutzen Sie die Maus, Leerschlag, die Cursortasten links/rechts oder "+"Page up/Page Down zum Wechseln der Seiten und S und B für die Schriftgrösse.",strings_pl:{"slide":"slajd","help?":"pomoc?","contents?":"spis treści?","table of contents":"spis treści","Table of Contents":"Spis Treści","restart presentation":"Restartuj prezentację","restart?":"restart?"},help_pl:"Zmieniaj slajdy klikając myszą, naciskając spację, strzałki lewo/prawo"+"lub PgUp / PgDn. Użyj klawiszy S i B, aby zmienić rozmiar czczionki.",strings_fr:{"slide":"page","help?":"Aide","contents?":"Index","table of contents":"table des matières","Table of Contents":"Table des matières","restart presentation":"Recommencer l'exposé","restart?":"Début"},help_fr:"Naviguez avec la souris, la barre d'espace, les flèches "+"gauche/droite ou les touches Pg Up, Pg Dn. Utilisez "+"les touches S et B pour modifier la taille de la police.",strings_hu:{"slide":"oldal","help?":"segítség","contents?":"tartalom","table of contents":"tartalomjegyzék","Table of Contents":"Tartalomjegyzék","restart presentation":"bemutató újraindítása","restart?":"újraindítás"},help_hu:"Az oldalak közti lépkedéshez kattintson az egérrel, vagy "+"használja a szóköz, a bal, vagy a jobb nyíl, illetve a Page Down, "+"Page Up billentyűket. Az S és a B billentyűkkel változtathatja "+"a szöveg méretét.",strings_it:{"slide":"pag.","help?":"Aiuto","contents?":"Indice","table of contents":"indice","Table of Contents":"Indice","restart presentation":"Ricominciare la presentazione","restart?":"Inizio"},help_it:"Navigare con mouse, barra spazio, frecce sinistra/destra o "+"PgUp e PgDn. Usare S e B per cambiare la dimensione dei caratteri.",strings_el:{"slide":"σελίδα","help?":"βοήθεια;","contents?":"περιεχόμενα;","table of contents":"πίνακας περιεχομένων","Table of Contents":"Πίνακας Περιεχομένων","restart presentation":"επανεκκίνηση παρουσίασης","restart?":"επανεκκίνηση;"},help_el:"Πλοηγηθείτε με το κλίκ του ποντικιού, το space, τα βέλη αριστερά/δεξιά, "+"ή Page Up και Page Down. Χρησιμοποιήστε τα πλήκτρα S και B για να αλλάξετε "+"το μέγεθος της γραμματοσειράς.",strings_ja:{"slide":"スライド","help?":"ヘルプ","contents?":"目次","table of contents":"目次を表示","Table of Contents":"目次","restart presentation":"最初から再生","restart?":"最初から"},help_ja:"マウス左クリック ・ スペース ・ 左右キー "+"または Page Up ・ Page Downで操作， S ・ Bでフォントサイズ変更",strings_zh:{"slide":"幻灯片","help?":"帮助?","contents?":"内容?","table of contents":"目录","Table of Contents":"目录","restart presentation":"重新启动展示","restart?":"重新启动?"},help_zh:"用鼠标点击, 空格条, 左右箭头, Pg Up 和 Pg Dn 导航. "+"用 S, B 改变字体大小.",strings_ru:{"slide":"слайд","help?":"помощь?","contents?":"содержание?","table of contents":"оглавление","Table of Contents":"Оглавление","restart presentation":"перезапустить презентацию","restart?":"перезапуск?"},help_ru:"Перемещайтесь кликая мышкой, используя клавишу пробел, стрелки"+"влево/вправо или Pg Up и Pg Dn. Клавиши S и B меняют размер шрифта.",strings_sv:{"slide":"sida","help?":"hjälp","contents?":"innehåll","table of contents":"innehållsförteckning","Table of Contents":"Innehållsförteckning","restart presentation":"visa presentationen från början","restart?":"börja om"},help_sv:"Bläddra med ett klick med vänstra musknappen, mellanslagstangenten, "+"vänster- och högerpiltangenterna eller tangenterna Pg Up, Pg Dn. "+"Använd tangenterna S och B för att ändra textens storlek.",strings:{},localize:function(src){if(src=="")
+return src;var s,lookup=w3c_slidy.strings[w3c_slidy.lang];if(lookup)
+{s=lookup[src];if(s)
+return s;}
+var lg=w3c_slidy.lang.split("-");if(lg.length>1)
+{lookup=w3c_slidy.strings[lg[0]];if(lookup)
+{s=lookup[src];if(s)
+return s;}}
+return src;},init_localization:function(){var i18n=w3c_slidy;var help_text=w3c_slidy.help_text;this.strings={"es":this.strings_es,"ca":this.strings_ca,"cs":this.strings_cs,"nl":this.strings_nl,"de":this.strings_de,"pl":this.strings_pl,"fr":this.strings_fr,"hu":this.strings_hu,"it":this.strings_it,"el":this.strings_el,"jp":this.strings_ja,"zh":this.strings_zh,"ru":this.strings_ru,"sv":this.strings_sv},i18n.strings_es[help_text]=i18n.help_es;i18n.strings_ca[help_text]=i18n.help_ca;i18n.strings_cs[help_text]=i18n.help_cs;i18n.strings_nl[help_text]=i18n.help_nl;i18n.strings_de[help_text]=i18n.help_de;i18n.strings_pl[help_text]=i18n.help_pl;i18n.strings_fr[help_text]=i18n.help_fr;i18n.strings_hu[help_text]=i18n.help_hu;i18n.strings_it[help_text]=i18n.help_it;i18n.strings_el[help_text]=i18n.help_el;i18n.strings_ja[help_text]=i18n.help_ja;i18n.strings_zh[help_text]=i18n.help_zh;i18n.strings_ru[help_text]=i18n.help_ru;i18n.strings_sv[help_text]=i18n.help_sv;w3c_slidy.lang=document.body.parentNode.getAttribute("lang");if(!w3c_slidy.lang)
+w3c_slidy.lang=document.body.parentNode.getAttribute("xml:lang");if(!w3c_slidy.lang)
+w3c_slidy.lang="en";}};w3c_slidy.set_up();setTimeout(w3c_slidy.hide_slides,50);    </script>
+
+    
+    <!-- CSS -->
+        <link rel="stylesheet" href="./Outils Logiques (1)_files/font-awesome.min.css" data-external="1">
+            <style type="text/css">
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          color: #aaaaaa;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+      div.sourceCode
+        {  background-color: #f8f8f8; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span.al { color: #ef2929; } /* Alert */
+      code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+      code span.at { color: #c4a000; } /* Attribute */
+      code span.bn { color: #0000cf; } /* BaseN */
+      code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #4e9a06; } /* Char */
+      code span.cn { color: #000000; } /* Constant */
+      code span.co { color: #8f5902; font-style: italic; } /* Comment */
+      code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+      code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+      code span.dt { color: #204a87; } /* DataType */
+      code span.dv { color: #0000cf; } /* DecVal */
+      code span.er { color: #a40000; font-weight: bold; } /* Error */
+      code span.ex { } /* Extension */
+      code span.fl { color: #0000cf; } /* Float */
+      code span.fu { color: #000000; } /* Function */
+      code span.im { } /* Import */
+      code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+      code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+      code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+      code span.ot { color: #8f5902; } /* Other */
+      code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+      code span.sc { color: #000000; } /* SpecialChar */
+      code span.ss { color: #4e9a06; } /* SpecialString */
+      code span.st { color: #4e9a06; } /* String */
+      code span.va { color: #000000; } /* Variable */
+      code span.vs { color: #4e9a06; } /* VerbatimString */
+      code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <!-- Local CSS -->
+    <style type="text/css">
+body{color:#444}div.slide h1{color:#333;font-size:220%;font-family:helvetica,sans-serif;border-bottom:5px solid #ddd}div.slide h2{color:#333;font-size:180%;font-family:helvetica,sans-serif}div.slide.title{background:#0071b5;color:#fff}div.slide.title h1,div.slide.title h2,div.slide.title h3{color:#fff;margin-left:0}div.slide.title h1{padding-top:20%;border:0}div.slide.title h2{}div.slide.title h3{font-size:90%}ul,ol{padding-left:2em}ul ul{padding-left:1em}p{padding-left:0}code{font:droid sans mono,monaco,monospace;background-color:#ddd}pre code{border-radius:8px;box-shadow:8px 8px 12px #ddd;padding:10px;display:block}.Cblue{color:#5af}.center{text-align:center;margin:0 auto}@media print{body{font-size:16pt}div.handout{visibility:none}div.slide.title{background:#fff}div.slide.title h1,div.slide.title h2,div.slide.title h3{color:#ba0d20;margin-left:0}pre{font-size:1e2%;font-weight:400;line-height:120%}}    </style>
+
+        <link rel="stylesheet" href="data:text/css,%2Emybox%7Bmargin%3A0%205%25%3Bbox%2Dshadow%3A8px%208px%2012px%20%23aaa%3Bborder%2Dradius%3A8px%3Bbackground%3A%23ccc%7Dtable%7Bborder%2Dcollapse%3Acollapse%7D%2Eborderedtable%20th%2C%2Eborderedtable%20td%7Bborder%3A2px%20solid%20%23000%3Bpadding%3A1px%2030px%7D%2Eborderedtable%20th%7Bbackground%3A%23b5d6e9%7D%2Ered%7Bcolor%3Ared%3Bfont%2Dsize%3A120%25%7Dfigcaption%7Bcolor%3A%23999%3Bfont%2Dsize%3A80%25%7Ddiv%2EsourceCode%7Bmargin%3A1em%7D%2Euser%20code%7Bbackground%3A%23f9ff9a%7D%2Einternal%20code%7Bbackground%3A%23aff%7D">
+    
+
+    <title>Outils Logiques (1)</title>
+  </head>
+
+  <!-- ====================================================================== -->
+
+  <body class=" single_slide" style="visibility: visible; font-size: 18pt;"><div class=" slidy_toc hidden"><div class=" toc-heading">Table des matières</div>1. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(1)" class=" titleslide">Programmation Fonctionnelle</a><br>2. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(2)">Introduction (1)</a><br>3. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(3)">Introduction (2)</a><br>4. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(4)">Valeur sémantique d’une formule (1)</a><br>5. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(5)">Valeur sémantique d’une formule (2)</a><br>6. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(6)">Valeur sémantique d’une formule (3)</a><br>7. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(7)">Valeur sémantique d’une formule (4)</a><br>8. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(8)">Tautologie</a><br>9. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(9)">Prédicat tautology? (1)</a><br>10. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(10)">Prédicat tautology? (2)</a><br>11. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(11)">Équivalence de formules logiques</a><br>12. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(12)">Forme clausale</a><br>13. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(13)">Mise sous forme clausale: étape 1</a><br>14. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(14)">Mise sous forme clausale: étape 2 (1)</a><br>15. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(15)">Mise sous forme clausale: étape 2 (2)</a><br>16. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(16)">Mise sous forme clausale: étape 3</a><br>17. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(17)">Mise sous forme clausale: fin</a><br>18. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(18)">Circuits numériques (1)</a><br>19. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(19)">Circuits numériques (2)</a><br>20. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(20)">Évaluation partielle (1)</a><br>21. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(21)">Évaluation partielle (2)</a><br>22. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(22)">Évaluation partielle (3)</a><br>23. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#(23)">Retour sur tautology?</a></div>
+    <!-- Powerpoint like headers  -->
+    <!--
+    <div class="background">
+      <img id="head-icon" alt="Polytech logo"
+           src="http://www.polytechnice.fr/jahia/webdav/site/polytech/shared/PUBLIC/charte_graphique/LOGOTYPE_POLYTECH/POLYTECH_RVB.jpg"
+           width="100px"/>
+      <object id="head-logo" title="W3C logo" type="image/svg+xml"
+              data="http://www.w3.org/Talks/Tools/Slidy2/graphics/w3c-logo-white.svg">
+        <img src="http://www.w3.org/Talks/Tools/Slidy2/graphics/w3c-logo-white.gif"
+             alt="W3C logo" id="head-logo-fallback" />
+      </object>
+    </div>
+    -->
+
+
+    <!-- First slide -->
+    <div class="slide title first-slide">
+      <h1>Programmation Fonctionnelle</h1>
+      <h2>Outils Logiques</h2>
+      <h3 style="font-variant: small-caps;">Calcul propositionnel</h3>
+      <h3>SI4 — 2020-2021</h3>
+      <br><br>Erick Gallesio
+    <br><br></div>
+
+<p></p>
+<div class=" slide hidden"><h1 id="introduction-1">Introduction (1)</h1>
+<p>En Lisp/Scheme la construction d’outils logiques est assez facile:</p>
+<ul>
+<li>principalement des manipulations symboliques
+<ul>
+<li>simplifications</li>
+<li>calcul statique</li>
+<li>…</li>
+</ul></li>
+</ul>
+<p>Nous allons ici construire des petits outils pemettant</p>
+<ul>
+<li>de calculer la valeur de formules logiques</li>
+<li>de manipuler des formules de façon formelle</li>
+<li>de calculer partiellement la valeur d’une formule logique</li>
+</ul>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="introduction-2">Introduction (2)</h1>
+<p>Soit la phrase:</p>
+<blockquote>
+<p>Je sais que mes clés sont dans ma poche <strong>ou</strong> dans mon sac<br>
+<strong>et</strong> je ne les trouve <strong>pas</strong> dans ma poche<br>
+<strong>donc</strong> elles sont dans mon sac.</p>
+</blockquote>
+<p>Ce qui peut se réécrire dans la formule suivante:</p>
+<blockquote>
+<p><span class="red">((p ∨ s) ∧ (¬ p)) ⟹ s</span></p>
+</blockquote>
+<p>Cette formule sera représenté en Scheme par la s-expression</p>
+<pre class="alertindent"><code>(=&gt; (&amp;&amp; (|| p s)
+        (~ p))
+    s)</code></pre>
+<p>L’intérêt de cette formulation:</p>
+<ul>
+<li>elle correspond à l’ADT de la formule logique précédente</li>
+<li>elle sera facilement manipulable en Scheme</li>
+</ul>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="valeur-sémantique-dune-formule-1">Valeur sémantique d’une formule (1)</h1>
+<p>On veut pouvoir donner une valeur de vérité à la formule précédente en fonction des valeurs des variables qui la composent.</p>
+<p><strong>Tables des opérateurs précédents:</strong></p>
+<div class="borderedtable">
+<table>
+<thead>
+<tr class="header">
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">¬ a</th>
+<th align="center">a ∨ b</th>
+<th align="center">a ∧ b</th>
+<th align="center">a ⟹ b</th>
+<th align="center">a ⟺ b</th>
+<th align="center">⊤</th>
+<th align="center">⊥</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>On peut maintenant définir les <strong>fonctions sémantiques</strong> associées aux opérateurs logiques:</p>
+<ul>
+<li><strong>¬ a :</strong> &nbsp;&nbsp;&nbsp;&nbsp;1-a</li>
+<li><strong>a ∨ b :</strong> &nbsp;max(a, b)</li>
+<li><strong>a ∧ b :</strong> &nbsp;min(a, b)</li>
+<li><strong>a ⟹ b :</strong> max(1-a, b)</li>
+<li><strong>a ⟺ b :</strong> max(1-a, b)</li>
+<li><strong>⊤ :</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</li>
+<li><strong>⊥ :</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="valeur-sémantique-dune-formule-2">Valeur sémantique d’une formule (2)</h1>
+<p>A partir des fonctions sémantiques précédentes, on peut construire <code>semfunc</code> qui renvoie la fonction sémantique associée à un connecteur:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb2-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(semfunc connector)</span>
+<span id="cb2-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">case</span> connector</span>
+<span id="cb2-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    ((F)   (λ () <span class="dv">0</span>))</span>
+<span id="cb2-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    ((T)   (λ () <span class="dv">1</span>))</span>
+<span id="cb2-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    ((~)   (λ (a) (<span class="op">-</span> <span class="dv">1</span> a)))</span>
+<span id="cb2-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    ((&amp;&amp;)  <span class="kw">min</span>)</span>
+<span id="cb2-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    ((||)  <span class="kw">max</span>)</span>
+<span id="cb2-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-8" aria-hidden="true" tabindex="-1"></a>    ((<span class="op">=&gt;</span>)  (λ (a b) (<span class="kw">max</span> (<span class="op">-</span> <span class="dv">1</span> a) b)))</span>
+<span id="cb2-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-9" aria-hidden="true" tabindex="-1"></a>    ((&lt;=&gt;) (λ (a b) (<span class="op">-</span> <span class="dv">1</span> (<span class="kw">abs</span> (<span class="op">-</span> a b)))))</span>
+<span id="cb2-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb2-10" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span> (<span class="kw">error</span> <span class="st">"No function associated to ~S</span><span class="ch">\n</span><span class="st">"</span> connector))))</span></code></pre></div>
+<p>On veut pouvoir calculer la valeur d’une formule pour une <strong>valuation</strong> particulière de ses variables.</p>
+<p>La valuation des variables est représente par une <em>A-list</em>.</p>
+<br><br></div><div class=" slide hidden"><h1 id="valeur-sémantique-dune-formule-3">Valeur sémantique d’une formule (3)</h1>
+<p>Soit la valuation suivante</p>
+<ul>
+<li>a vaut 0,</li>
+<li>b vaut 1,</li>
+<li>c vaut 0.</li>
+</ul>
+<p>On représente cette valuation par la <em>A-list</em> <code>((a . 1) (b . 1) (c . 0))</code></p>
+<p><br> La fonction <code>value-of</code> calcule la valeur d’une formule logique pour une valuation donnée.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(value-of form vals)</span>
+<span id="cb3-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb3-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-3" aria-hidden="true" tabindex="-1"></a>     ((var? form)  (<span class="kw">cdr</span> (<span class="kw">assq</span> form vals)))      <span class="co">; une var =&gt; sa valeur</span></span>
+<span id="cb3-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-4" aria-hidden="true" tabindex="-1"></a>     ((<span class="kw">eq?</span> form 'T) <span class="dv">1</span>)                          <span class="co">; faux =&gt; 0</span></span>
+<span id="cb3-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-5" aria-hidden="true" tabindex="-1"></a>     ((<span class="kw">eq?</span> form 'F) <span class="dv">0</span>)                          <span class="co">; vrai =&gt; 1</span></span>
+<span id="cb3-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-6" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">else</span>                                      <span class="co">; (connecteur t1 [t2])</span></span>
+<span id="cb3-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-7" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">let</span> ((fct (semfunc (<span class="kw">car</span> form))))</span>
+<span id="cb3-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-8" aria-hidden="true" tabindex="-1"></a>        (apply fct</span>
+<span id="cb3-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-9" aria-hidden="true" tabindex="-1"></a>               (map (<span class="kw">lambda</span> (x) (value-of x vals))</span>
+<span id="cb3-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb3-10" aria-hidden="true" tabindex="-1"></a>                    (<span class="kw">cdr</span> form)))))))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb4-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (value-of '(<span class="op">=&gt;</span> (&amp;&amp; (|| p s) (~ p)) s)     '((p <span class="op">.</span> <span class="dv">0</span>) (s <span class="op">.</span> <span class="dv">1</span>)))</span>
+<span id="cb4-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb4-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (value-of '(<span class="op">=&gt;</span> (|| a b) F)                '((a <span class="op">.</span> <span class="dv">0</span>) (b <span class="op">.</span> <span class="dv">1</span>)))</span>
+<span id="cb4-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span></code></pre></div>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="valeur-sémantique-dune-formule-4">Valeur sémantique d’une formule (4)</h1>
+<p><strong>Fonction utilitaires</strong></p>
+<ul>
+<li>Les variables sont codées comme des symboles =&gt; on peut écrire le prédicat var? qui teste si v est une variable</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb5-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb5-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(var? v)</span>
+<span id="cb5-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">and</span> (<span class="kw">symbol?</span> v)                             <span class="co">; c'est un symbole</span></span>
+<span id="cb5-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb5-3" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">not</span> (<span class="kw">memq</span> v '(&amp; | <span class="op">=&gt;</span> &lt;=&gt; ~ T F)))))      <span class="co">; mais pas &amp;, |,  …</span></span></code></pre></div>
+<ul>
+<li>On peut aussi extraire les variables d’une formule</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb6-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb6-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(vars-of form)</span>
+<span id="cb6-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb6-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb6-3" aria-hidden="true" tabindex="-1"></a>    ((var? form)    (<span class="kw">list</span> form))</span>
+<span id="cb6-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb6-4" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">pair?</span> form)   (list-&gt;set (apply <span class="kw">append</span>   <span class="co">;(connector [t1 [t2]])</span></span>
+<span id="cb6-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb6-5" aria-hidden="true" tabindex="-1"></a>                                      (map vars-of (<span class="kw">cdr</span> form)))))</span>
+<span id="cb6-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span>           '())))</span></code></pre></div>
+<p><strong>Exemples:</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb7-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (vars-of '(<span class="op">=&gt;</span> (&amp;&amp; (|| p s) (~ p)) s))</span>
+<span id="cb7-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb7-2" aria-hidden="true" tabindex="-1"></a>(s p)</span>
+<span id="cb7-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (vars-of '(<span class="op">=&gt;</span> (|| a b) F))</span>
+<span id="cb7-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb7-4" aria-hidden="true" tabindex="-1"></a>(a b)</span>
+<span id="cb7-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (vars-of 'F)</span>
+<span id="cb7-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb7-6" aria-hidden="true" tabindex="-1"></a>()</span></code></pre></div>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="tautologie">Tautologie</h1>
+<p>Une <strong>tautologie</strong> est une formule qui <strong>vaut toujours 1</strong> quelque soit la valuation utilisée.</p>
+<dl>
+<dt><strong>Remarque:</strong></dt>
+<dd>Si une formule comporte n variables, il y a 2<sup>n</sup> valuations possibles.
+</dd>
+</dl>
+<p>Par exemple,</p>
+<ul>
+<li>x ∨ ¬x</li>
+<li>(a ∨ b) ∧ ¬ a ⇒ b</li>
+</ul>
+<p>Par ailleurs,</p>
+<ul>
+<li>une formule dont la valeur logique est 0 quelque soit la valuation employée est une <strong>antilogie</strong>.</li>
+<li>une formule pour qui il existe une valuation qui lui donne la valeur 1 est dite <strong>satifaisable</strong>.</li>
+</ul>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="prédicat-tautology-1">Prédicat tautology? (1)</h1>
+<p>On veut écrire le prédicat <code>tautology?</code> qui permet de savoir si une formule est un tautologie.</p>
+<p>Le principe est simple:</p>
+<ul>
+<li>on produit toutes les valuations possibles.</li>
+<li>si un des valuations permet d’obtenir 0, la formule n’est pas un tautologie</li>
+</ul>
+<p><strong><em>Construction des valuations</em></strong></p>
+<ul>
+<li>Si la formule comporte <em>n</em> variables =&gt; produire une liste de <em>n</em> 0:<br>
+<code>(make-list n 0)</code></li>
+<li>La fonction <code>next-values</code> permet d’obtenir la liste de valeurs suivante</li>
+<li>Si N est cette valeur et V l’ensemble des valeurs, la valuation est<br>
+<code>(map  cons V N)</code></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb8-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (next-values '(<span class="dv">0</span> <span class="dv">0</span> <span class="dv">1</span>))</span>
+<span id="cb8-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb8-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span>)</span>
+<span id="cb8-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (next-values '(<span class="dv">1</span> <span class="dv">0</span> <span class="dv">1</span>))</span>
+<span id="cb8-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb8-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span> <span class="dv">1</span> <span class="dv">1</span>)</span></code></pre></div>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="prédicat-tautology-2">Prédicat tautology? (2)</h1>
+<div class="sourceCode" id="cb9"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb9-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(next-values vals)</span>
+<span id="cb9-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb9-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb9-3" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">null?</span> vals)       '())</span>
+<span id="cb9-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb9-4" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">zero?</span> (<span class="kw">car</span> vals)) (<span class="kw">cons</span> <span class="dv">1</span> (<span class="kw">cdr</span> vals)))</span>
+<span id="cb9-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span>               (<span class="kw">cons</span> <span class="dv">0</span> (next-values (<span class="kw">cdr</span> vals))))))</span></code></pre></div>
+<p>Pour <code>tautology?</code> on boucle sur toutes les valuations en essayant de trouver une valeur de formule égale à 0.</p>
+<dl>
+<dt>Rappel:</dt>
+<dd>Si une formule comporte n variables, il y a 2<sup>n</sup> valuations possibles ⟹ pas praticable quand on a beaucoup de variables.
+</dd>
+</dl>
+<div class="sourceCode" id="cb10"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb10-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(tautology? form)</span>
+<span id="cb10-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let*</span> ((vars   (vars-of form))</span>
+<span id="cb10-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-3" aria-hidden="true" tabindex="-1"></a>         (nbvars (<span class="kw">length</span> vars))</span>
+<span id="cb10-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-4" aria-hidden="true" tabindex="-1"></a>         (init   (make-list nbvars <span class="dv">0</span>)))</span>
+<span id="cb10-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-6" aria-hidden="true" tabindex="-1"></a>    (<span class="ex">define</span><span class="fu"> </span>(try v)</span>
+<span id="cb10-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-7" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">and</span> (<span class="op">=</span> (value-of form (map <span class="kw">cons</span> vars v)) <span class="dv">1</span>)</span>
+<span id="cb10-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-8" aria-hidden="true" tabindex="-1"></a>         (<span class="kw">let</span> ((next (next-values v)))</span>
+<span id="cb10-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-9" aria-hidden="true" tabindex="-1"></a>           (<span class="kw">or</span> (<span class="kw">equal?</span> next init)       <span class="co">;;; On a testé toutes les valuations</span></span>
+<span id="cb10-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-10" aria-hidden="true" tabindex="-1"></a>              (try next)))))</span>
+<span id="cb10-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb10-11" aria-hidden="true" tabindex="-1"></a>    (try init)))</span></code></pre></div>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="équivalence-de-formules-logiques">Équivalence de formules logiques</h1>
+<p>Si deux formules <strong>φ<sub>1</sub></strong> et <strong>φ<sub>2</sub></strong> prennent les mêmes valeurs pour toutes les valuations, on dit que les formules sont <strong>équivalentes</strong> et on le note</p>
+<blockquote>
+<p><strong>φ<sub>1</sub> ≡ φ<sub>2</sub></strong></p>
+</blockquote>
+<p><br> Certaines équivalences connues:</p>
+<ul>
+<li>x ∨ x ≡ x</li>
+<li>x ∨ x ≡ x</li>
+<li>x ∧ ⊥ ≡ ⊥</li>
+<li>…</li>
+</ul>
+<p>On peut aussi exprimer un connecteur en fonction d’autres.</p>
+<ul>
+<li>x ∨ y &nbsp;≡ &nbsp;¬x ⇒ y</li>
+<li>x ∧ y &nbsp;≡ &nbsp;¬(x ⇒ ¬y)</li>
+</ul>
+<p>⟹ on peut éliminer partout les connecteurs <strong>∨</strong> ou <strong>∧</strong>.</p>
+<br><br></div><div class=" slide hidden"><h1 id="forme-clausale">Forme clausale</h1>
+<ul>
+<li><dl>
+<dt><strong>Litteral</strong></dt>
+<dd>soit une variable soit la négation d’une variable
+</dd>
+</dl></li>
+<li><dl>
+<dt><strong>Clause:</strong></dt>
+<dd>disjonction de clauses <code>(a ∨ b ∨ ¬c)</code>
+</dd>
+</dl></li>
+<li><dl>
+<dt><strong>Forme clausale:</strong></dt>
+<dd>conjonction de clauses: <code>(¬ a ∨ b) ∧ (b ∨ ¬c) ∧ d</code>
+</dd>
+</dl></li>
+</ul>
+<p>On veut pouvoir mettre toute formule propositionnelle sous forme clausale.<br>
+La transformation se fait en 3 étapes:</p>
+<ol style="list-style-type: decimal">
+<li>Élimination des connecteurs <strong>⇒ ⇔ ⊤ et ⊥</strong></li>
+<li>Insertion de <strong>¬</strong> dans les formules</li>
+<li>Utilisation de la distributivité pour entrer les <strong>∨</strong> dans les <strong>∧</strong></li>
+</ol>
+<br><br></div><div class=" slide hidden"><h1 id="mise-sous-forme-clausale-étape-1">Mise sous forme clausale: étape 1</h1>
+<p><strong>Élimination des connecteurs ⇒ ⇔ ⊤ et ⊥</strong></p>
+<ul>
+<li>x ⇒ y ≡ ¬x ∨ y</li>
+<li>x ⇔ y ≡ (¬x ∨ y) ∧ (x ∨ ¬y)</li>
+<li>⊤ ≡ x ∨ ¬x</li>
+<li>⊥ ≡ x ∧ ¬x</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb11-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(remove-connector form)</span>
+<span id="cb11-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb11-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-3" aria-hidden="true" tabindex="-1"></a>    ((var? form)    form)</span>
+<span id="cb11-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-4" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">eq?</span> form 'T) '(|| x (~ x)))</span>
+<span id="cb11-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">eq?</span> form 'F) '(&amp;&amp; x (~ x)))</span>
+<span id="cb11-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-6" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">memq</span> (<span class="kw">car</span> form) '(<span class="op">=&gt;</span> &lt;=&gt;))</span>
+<span id="cb11-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-7" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">let</span> ((connect (<span class="kw">car</span> form))</span>
+<span id="cb11-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-8" aria-hidden="true" tabindex="-1"></a>           (op1     (remove-connector (<span class="kw">cadr</span> form)))</span>
+<span id="cb11-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-9" aria-hidden="true" tabindex="-1"></a>           (op2     (remove-connector (<span class="kw">if</span> (<span class="kw">null?</span> (<span class="kw">cddr</span> form)) '() (<span class="kw">caddr</span> form)))))</span>
+<span id="cb11-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-10" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">if</span> (<span class="kw">eq?</span> connect '=&gt;)</span>
+<span id="cb11-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-11" aria-hidden="true" tabindex="-1"></a>           `(|| (~ ,op1) ,op2)</span>
+<span id="cb11-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-12" aria-hidden="true" tabindex="-1"></a>           `(&amp;&amp; (|| (~ ,op1) ,op2)</span>
+<span id="cb11-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-13" aria-hidden="true" tabindex="-1"></a>                (|| (~ ,op2) ,op1)))))</span>
+<span id="cb11-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb11-14" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span> form)))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb12-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (remove-connector '(<span class="op">=&gt;</span> (&amp;&amp; (|| p s) (~ p)) s))     <span class="co">;; (p ∨ s) ∧ ¬p ⟹ s</span></span>
+<span id="cb12-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb12-2" aria-hidden="true" tabindex="-1"></a>(|| (~ (&amp;&amp; (|| p s) (~ p))) s)                       <span class="co">;; ¬((p ∨ s) ∧ ¬p) ∨ s</span></span>
+<span id="cb12-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (remove-connector '(<span class="op">=&gt;</span> (|| a b) F))                <span class="co">;; a ∨ b ⟹ ⊥</span></span>
+<span id="cb12-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb12-4" aria-hidden="true" tabindex="-1"></a>(|| (~ (|| a b)) (&amp;&amp; x (~ x)))                       <span class="co">;; ¬(a ∨ b) ∨ (x ∧ ¬x)</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="mise-sous-forme-clausale-étape-2-1">Mise sous forme clausale: étape 2 (1)</h1>
+<p><strong>Insertion de la négation dans les formules</strong></p>
+<p>On entre le <strong>¬</strong> dans les formules pour qu’elles ne portent que sur des variables</p>
+<ul>
+<li>¬¬x ≡ x</li>
+<li>¬(x ∧ y) ≡ (¬x ∨ ¬y)</li>
+<li>¬(x ∨ y) ≡ (¬x ∧ ¬y)</li>
+</ul>
+<dl>
+<dt><strong>Rappel:</strong></dt>
+<dd>un <strong>literal</strong> est soit une variable soit la négation d’une variable
+</dd>
+</dl>
+<div class="sourceCode" id="cb13"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb13-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb13-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(literal? form)</span>
+<span id="cb13-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">or</span> (var? form)</span>
+<span id="cb13-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb13-3" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">and</span> (<span class="kw">pair?</span> form)</span>
+<span id="cb13-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb13-4" aria-hidden="true" tabindex="-1"></a>           (<span class="kw">eq?</span> (<span class="kw">car</span> form) '~)</span>
+<span id="cb13-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb13-5" aria-hidden="true" tabindex="-1"></a>           (var? (<span class="kw">cadr</span> form)))))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="mise-sous-forme-clausale-étape-2-2">Mise sous forme clausale: étape 2 (2)</h1>
+<div class="sourceCode" id="cb14"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb14-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(insert-not form)</span>
+<span id="cb14-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb14-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-3" aria-hidden="true" tabindex="-1"></a>    ((literal? form)</span>
+<span id="cb14-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-4" aria-hidden="true" tabindex="-1"></a>     form)</span>
+<span id="cb14-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-5" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">eq?</span> (<span class="kw">car</span> form) '~)</span>
+<span id="cb14-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-6" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">let*</span> ((op (<span class="kw">cadr</span> form))</span>
+<span id="cb14-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-7" aria-hidden="true" tabindex="-1"></a>            (connect (<span class="kw">car</span> op))</span>
+<span id="cb14-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-8" aria-hidden="true" tabindex="-1"></a>            (op1     (<span class="kw">cadr</span> op))</span>
+<span id="cb14-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-9" aria-hidden="true" tabindex="-1"></a>            (op2     (<span class="kw">if</span> (<span class="kw">null?</span> (<span class="kw">cddr</span> op)) '() (<span class="kw">caddr</span> op))))</span>
+<span id="cb14-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-10" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">case</span> connect</span>
+<span id="cb14-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-11" aria-hidden="true" tabindex="-1"></a>         ((~)  (insert-not op1))</span>
+<span id="cb14-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-12" aria-hidden="true" tabindex="-1"></a>         ((&amp;&amp;) `(|| ,(insert-not (<span class="kw">list</span> '~ op1)) ,(insert-not (<span class="kw">list</span> '~ op2))))</span>
+<span id="cb14-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-13" aria-hidden="true" tabindex="-1"></a>         ((||) `(&amp;&amp; ,(insert-not (<span class="kw">list</span> '~ op1)) ,(insert-not (<span class="kw">list</span> '~ op2)))))))</span>
+<span id="cb14-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-14" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span>      <span class="co">;; We are sure the form is (connector t1 t2)</span></span>
+<span id="cb14-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb14-15" aria-hidden="true" tabindex="-1"></a>     `(,(<span class="kw">car</span> form) ,(insert-not (<span class="kw">cadr</span> form))  ,(insert-not (<span class="kw">caddr</span> form))))))</span></code></pre></div>
+<p><strong>Exemples:</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb15-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (insert-not '(~ (~ (~ a))))                   <span class="co">;; ¬¬¬a</span></span>
+<span id="cb15-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb15-2" aria-hidden="true" tabindex="-1"></a>(~ a)                                           <span class="co">;; ¬a</span></span>
+<span id="cb15-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (insert-not '(|| (~ (&amp;&amp; (|| p s) (~ p))) s))  <span class="co">;; ¬((p ∨ s) ∧ ¬p) ∨ s</span></span>
+<span id="cb15-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb15-4" aria-hidden="true" tabindex="-1"></a>(|| (|| (&amp;&amp; (~ p) (~ s)) p) s)                  <span class="co">;; (¬p ∧ ¬s) ∨ p ∨ s</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="mise-sous-forme-clausale-étape-3">Mise sous forme clausale: étape 3</h1>
+<p><strong>Utilisation de la distributivité pour entrer les ‘∨’ dans les ‘∧’</strong></p>
+<ul>
+<li>x ∨ (y ∧ z) ≡ (x ∨ y) ∧ (x ∨ z)</li>
+<li>(y ∨ z) ∧ x ≡ (y ∨ x) ∧ (z ∨ x)</li>
+</ul>
+<p>Pour simplifier l’écriture des formes clausales on écrit la forme</p>
+<pre class="alertindent"><code>(a1 ∨ a2 ∨ ... ∨ an) ∧ ... ∧ (z1 ∨ z2 ∨ ... ∨ zm)</code></pre>
+<p>on les code sous la forme <code>((a1 ... an) ... (z1 ... zm))</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode scheme w3-small"><code class="sourceCode scheme"><span id="cb17-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(distribute form)</span>
+<span id="cb17-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (literal? form)</span>
+<span id="cb17-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-3" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">list</span> (<span class="kw">list</span> form))</span>
+<span id="cb17-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-4" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">let</span> ((op1   (<span class="kw">cadr</span> form))</span>
+<span id="cb17-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-5" aria-hidden="true" tabindex="-1"></a>            (op2   (<span class="kw">if</span> (<span class="kw">null?</span> (<span class="kw">cddr</span> form)) '() (<span class="kw">caddr</span> form))))</span>
+<span id="cb17-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-6" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">case</span> (<span class="kw">car</span> form)</span>
+<span id="cb17-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-7" aria-hidden="true" tabindex="-1"></a>          ((&amp;&amp;) (<span class="kw">append</span> (distribute op1)</span>
+<span id="cb17-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-8" aria-hidden="true" tabindex="-1"></a>                        (distribute op2)))</span>
+<span id="cb17-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-9" aria-hidden="true" tabindex="-1"></a>          ((||) (apply <span class="kw">append</span> (map (<span class="kw">lambda</span> (x)</span>
+<span id="cb17-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-10" aria-hidden="true" tabindex="-1"></a>                                     (map (<span class="kw">lambda</span> (y) (<span class="kw">append</span> x y))</span>
+<span id="cb17-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-11" aria-hidden="true" tabindex="-1"></a>                                          (distribute op1))</span>
+<span id="cb17-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb17-12" aria-hidden="true" tabindex="-1"></a>                                     (distribute op2)))))))))</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode scheme w3-small"><code class="sourceCode scheme"><span id="cb18-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (distribute '(|| (&amp;&amp; a b) (&amp;&amp; c d)))    <span class="co">;; (a ∧ b) ∨ (c ∧ d)</span></span>
+<span id="cb18-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb18-2" aria-hidden="true" tabindex="-1"></a>((c a) (c b) (d a) (d b))                 <span class="co">;; (c ∨ a) ∧ (c ∨ b) ∧ (d ∨ a) ∧ (d ∨ b)</span></span>
+<span id="cb18-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (distribute '(|| (|| (&amp;&amp; (~ p) (~ s)) p) s)) <span class="co">;; (¬p ∧ ¬s) ∨ p ∨ s</span></span>
+<span id="cb18-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb18-5" aria-hidden="true" tabindex="-1"></a>((s p (~ p)) (s p (~ s)))                      <span class="co">;; (s ∨ p ∨ ¬p) ∧ (s ∨ p ∨ ¬s)</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="mise-sous-forme-clausale-fin">Mise sous forme clausale: fin</h1>
+<p>Finalement, la mise sous forme clausale d’une formule logique quelconque:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb19-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(clausal-form form)</span>
+<span id="cb19-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  (distribute (insert-not (remove-connector form))))</span></code></pre></div>
+<p><strong>Exemples:</strong></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb20-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (clausal-form '(<span class="op">=&gt;</span> (&amp;&amp; (|| p s) (~ p)) s))   <span class="co">;; ((p ∨ s) ∧ (¬ p)) ⟹ s</span></span>
+<span id="cb20-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb20-2" aria-hidden="true" tabindex="-1"></a>((s p (~ p)) (s p (~ s)))                      <span class="co">;; (s ∨ p ∨ ¬p) ∧ (s ∨ p ∨ ¬s)</span></span>
+<span id="cb20-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (clausal-form  '(<span class="op">=&gt;</span> (&amp;&amp; a b) (|| a (~ b))))  <span class="co">;; a ∧ b ⟹ a ∨ ¬ b</span></span>
+<span id="cb20-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb20-4" aria-hidden="true" tabindex="-1"></a>(((~ b) a (~ b) (~ a)))                        <span class="co">;; ¬b ∧ a ∧ ¬b ∧ ¬a (soit ¬b ∧ a)</span></span></code></pre></div>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="circuits-numériques-1">Circuits numériques (1)</h1>
+<p>On peut utiliser le calcul booléen pour calculer sur des circuits numériques.</p>
+<p>Deux nouveaux opérateurs logiques <strong>⊼</strong> (nand) et <strong>⊻</strong> (xor)</p>
+<center>
+<div class="borderedtable">
+<table>
+<thead>
+<tr class="header">
+<th>a</th>
+<th>b</th>
+<th align="center">a ⊼ b</th>
+<th align="center">a ⊻ b</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<p><img width="30%" src="data:image/png;base64,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"></p>
+<p><strong>Additionneur 1 bit</strong> <br> <img width="40%" src="data:image/png;base64,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"></p>
+</center>
+<p></p>
+<br><br></div><div class=" slide hidden"><h1 id="circuits-numériques-2">Circuits numériques (2)</h1>
+<p>Sur le schéma de l’additionneur 1 bit<br></p>
+<p><img width="30%" src="data:image/png;base64,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"></p>
+<p>on voit que:</p>
+<ul>
+<li><p><strong>S = (a ⊻ b) ⊻ Cin</strong></p></li>
+<li><p><strong>Cout = ((a ⊻ b) ∧ Cin) ∨ (a ∧ b)</strong></p>
+</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>On verra en TD comment prouver que ce circuit est correct.</li>
+<li>On sent que la mise à l’échelle va être difficile.</li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="évaluation-partielle-1">Évaluation partielle (1)</h1>
+<dl>
+<dt><strong>Idée:</strong></dt>
+<dd>Pour éviter de tout calculer, on va essayer de trouver une équivalence formelle si une variable est fixée.
+</dd>
+</dl>
+<p>Soit la formule suivante:</p>
+<pre class="alertindent"><code>V = a ∨ (b ⟹ ¬(c ⟹ ¬a))</code></pre>
+<p>On a 3 variables; on va essayer de trouver une formule équivalente avec</p>
+<ul>
+<li>a = 1 puis a = 0</li>
+<li>b = 1 puis b = 0</li>
+<li>c = 1 puis c = 0</li>
+</ul>
+<p><br> On va représenter la formule logique comme un arbre de décision pour chacune des variables de la formule (méthode de Shannon).</p>
+<br><br></div><div class=" slide hidden"><h1 id="évaluation-partielle-2">Évaluation partielle (2)</h1>
+<center>
+<img src="data:image/png;base64,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" width="30%">
+</center>
+<ul>
+<li>On fixe a:
+<ul>
+<li>si a = 0 alors <strong>V = ¬b</strong> &nbsp; &nbsp; (car (b ⟹ ¬(c ⟹ 1) ≡ (b ⟹ 0) ≡ ¬b)</li>
+<li>si a = 1 alors <strong>V = 1</strong> &nbsp; &nbsp; &nbsp; ∀ b et c</li>
+</ul></li>
+<li>On fixe b:
+<ul>
+<li>si b = 0 alors <strong>V = 1</strong></li>
+<li>si b = 1 alors <strong>V = 0</strong></li>
+</ul></li>
+<li><strong>Inutile de prendre en compte la valeur de <em>c</em> pour calculer la valeur de cette formule</strong></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="évaluation-partielle-3">Évaluation partielle (3)</h1>
+<p>On peut écrire facilement une fonction qui évalue partiellement une formule:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb22-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(partial-eval form var val)</span>
+<span id="cb22-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb22-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-3" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">integer?</span> form) form)</span>
+<span id="cb22-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-4" aria-hidden="true" tabindex="-1"></a>    ((var? form)     (<span class="kw">if</span> (<span class="kw">eq?</span> form var) val form))</span>
+<span id="cb22-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-5" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span>            (<span class="kw">let</span> ((connect (<span class="kw">car</span> form))</span>
+<span id="cb22-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-6" aria-hidden="true" tabindex="-1"></a>                           (op1 (partial-eval (<span class="kw">cadr</span> form) var val))</span>
+<span id="cb22-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-7" aria-hidden="true" tabindex="-1"></a>                           (op2 (<span class="kw">if</span> (<span class="kw">not</span> (<span class="kw">null?</span> (<span class="kw">cddr</span> form)))</span>
+<span id="cb22-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-8" aria-hidden="true" tabindex="-1"></a>                                    (partial-eval (<span class="kw">caddr</span> form) var val)</span>
+<span id="cb22-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-9" aria-hidden="true" tabindex="-1"></a>                                    '())))</span>
+<span id="cb22-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-10" aria-hidden="true" tabindex="-1"></a>                       <span class="co">;; appliquer toutes les simplifications possible suivant valeur de connect</span></span>
+<span id="cb22-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb22-11" aria-hidden="true" tabindex="-1"></a>                       <span class="op">...</span>))))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb23-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (partial-eval '(|| a (<span class="op">=&gt;</span> b (~ (<span class="op">=&gt;</span> c (~ a)))))   'a <span class="dv">0</span>)  <span class="co">;; a ∨ (b ⟹ ¬(c ⟹ ¬a))</span></span>
+<span id="cb23-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb23-2" aria-hidden="true" tabindex="-1"></a>(~ b)                                                    <span class="co">;; ¬b</span></span>
+<span id="cb23-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (partial-eval '(|| a (<span class="op">=&gt;</span> b (~ (<span class="op">=&gt;</span> c (~ a)))))   'a <span class="dv">1</span>)  <span class="co">;; a ∨ (b ⟹ ¬(c ⟹ ¬a))</span></span>
+<span id="cb23-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>                                                        <span class="co">;; ⊤</span></span></code></pre></div>
+<dl>
+<dt><strong>Idée:</strong></dt>
+<dd>Utiliser l’évaluation partielle pour éviter les évaluations de formules exhaustives.
+</dd>
+</dl>
+<br><br></div><div class=" slide hidden"><h1 id="retour-sur-tautology">Retour sur tautology?</h1>
+<p>On va réécrire <code>tautology?</code> en utilisant de l’évaluation partielle.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb24-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(new-tautology? form)</span>
+<span id="cb24-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  (<span class="ex">define</span><span class="fu"> </span>(partial-tautology?  form vars)</span>
+<span id="cb24-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">cond</span></span>
+<span id="cb24-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-5" aria-hidden="true" tabindex="-1"></a>      ((<span class="kw">null?</span> vars)    <span class="dv">#f</span>)</span>
+<span id="cb24-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-6" aria-hidden="true" tabindex="-1"></a>      ((<span class="kw">integer?</span> form) (<span class="kw">eq?</span> form <span class="dv">1</span>))</span>
+<span id="cb24-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-7" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">else</span>            (<span class="kw">and</span> (partial-tautology? (partial-eval form (<span class="kw">car</span> vars) <span class="dv">0</span>)</span>
+<span id="cb24-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-8" aria-hidden="true" tabindex="-1"></a>                                                (<span class="kw">cdr</span> vars))</span>
+<span id="cb24-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-9" aria-hidden="true" tabindex="-1"></a>                            (partial-tautology? (partial-eval form (<span class="kw">car</span> vars) <span class="dv">1</span>)</span>
+<span id="cb24-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-10" aria-hidden="true" tabindex="-1"></a>                                                (<span class="kw">cdr</span> vars))))))</span>
+<span id="cb24-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours10.html#cb24-12" aria-hidden="true" tabindex="-1"></a>  (partial-tautology? form (vars-of form)))</span></code></pre></div>
+<p>Ce type de méthode d’évaluation est utilisé pour traiter des expressions avec de nombreuses variables.</p>
+<p>Voir:</p>
+<ul>
+<li>BDD</li>
+<li>Model Checking</li>
+</ul>
+
+    <!-- ========== SLIDE ==========  (pseudo-slide to circumvent a bug in slidy.js)-->
+    <br><br></div><div class="handout hidden">
+
+    </div>
+  
+
+<div class="toolbar" tabindex="0" style="display: block;"><div style="float: right; text-align: right"><span>page 1/23</span></div><div style="text-align: left"><span style="color: rgb(240, 240, 240);">* </span><span class="copyright">Programmation Fonctionnelle — 2020-2021 &nbsp;&nbsp;(Erick Gallesio)</span></div></div></body></html>

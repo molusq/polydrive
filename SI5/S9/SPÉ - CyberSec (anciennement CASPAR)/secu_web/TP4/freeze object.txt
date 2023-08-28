@@ -1,0 +1,1 @@
+utiliser const + Object.freeze (et fonction anonyme)

@@ -1,0 +1,2 @@
+Efficacité max = 1
+Si on met 2* plus de processeurs avec efficacité = 1 ==> on va 2* plus vite

@@ -1,0 +1,11 @@
+Sites emplois remote:
+* https://remotive.com/
+* Grafana Labs: https://boards.greenhouse.io/grafanalabs/jobs/4711711004
+* GitLab: https://boards.greenhouse.io/gitlabcrm/jobs/6060351002?t=b2f2be562us
+
+Simulateur salaire GitLab (plus public depuis 2020):
+https://web.archive.org/web/20200724000032/https://about.gitlab.com/handbook/total-rewards/compensation/compensation-calculator/calculator/
+
+Slides et présentation Google InAppBilling:
+* https://www.securingapps.com/blog/AbusingAndroidInAppBilling_INS18.pdf 
+* https://www.youtube.com/watch?v=r30tEGf25zk

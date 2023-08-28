@@ -1,0 +1,2 @@
+Architecture systolique
+P-RAM = synchrones

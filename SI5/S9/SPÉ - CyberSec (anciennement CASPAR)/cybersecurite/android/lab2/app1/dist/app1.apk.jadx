@@ -1,0 +1,75 @@
+{
+  "projectVersion": 1,
+  "files": [
+    "app1.apk"
+  ],
+  "treeExpansions": [
+    [
+      "sg.vantagepoint",
+      "Source code",
+      "app1.apk"
+    ],
+    [
+      "a",
+      "sg.vantagepoint",
+      "Source code",
+      "app1.apk"
+    ],
+    [
+      "uncrackable1",
+      "sg.vantagepoint",
+      "Source code",
+      "app1.apk"
+    ]
+  ],
+  "codeData": {
+    "comments": [],
+    "renames": []
+  },
+  "openTabs": [
+    {
+      "type": "class",
+      "tabPath": "sg.vantagepoint.a.c",
+      "subPath": "java",
+      "caret": 125,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "class",
+      "tabPath": "sg.vantagepoint.a.b",
+      "subPath": "java",
+      "caret": 110,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "class",
+      "tabPath": "sg.vantagepoint.a.a",
+      "subPath": "java",
+      "caret": 177,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "class",
+      "tabPath": "sg.vantagepoint.uncrackable1.a",
+      "subPath": "java",
+      "caret": 443,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "activeTab": 3,
+  "cacheDir": "app1.apk.cache",
+  "enableLiveReload": false,
+  "searchHistory": []
+}

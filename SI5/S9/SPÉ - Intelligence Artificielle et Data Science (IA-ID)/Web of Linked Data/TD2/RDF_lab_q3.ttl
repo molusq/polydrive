@@ -1,0 +1,53 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://ns.inria.fr/humans/schema#> .
+@prefix d: <http://ns.inria.fr/humans/data#> .
+
+d:tim_berners_lee
+  :inventor_of d:the_web ;
+  :graduated_from d:queens_college ;
+  :professor_at d:mit ;
+  :received_award d:turing_award_2016 ;
+  :received_award d:queen_elizabeth_prize_2013 .
+
+d:turing_award_2016
+  a d:turing_award ;
+  :year "2016"^^xsd::integer ;
+  :awarded_by d:acm ;
+  :in d:usa .
+
+d:turing_award a d:award .
+
+d:queen_elizabeth_prize_2013
+  a d:queen_elizabeth_prize ;
+  :year "2013"^^xsd::integer ;
+  :awarded_by d:queen_of_uk ;
+  :in d:uk .
+
+d:queen_elizabeth_prize a d:award .
+  
+d:the_web
+    :invented_by d:tim_berners_lee .
+
+d:queens_college
+	a :university ;
+	:in d:oxford .
+
+d:mit
+	a :university ;
+	:in d:cambridge .
+
+d:cambridge
+	a :city ;
+	:in d:usa .
+
+d:oxford
+	a d:city ;
+	:in d:uk .
+
+d:usa 
+  a :country .
+
+d:uk 
+  a :country .

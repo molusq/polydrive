@@ -1,0 +1,49 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix attr: <http://www.polytech.fr/attributes#> .
+@prefix person: <http://www.polytech.fr/> .
+
+person:margot
+  a attr:Woman ;
+  a attr:Teacher ;
+  attr:name "Margot" ;
+  attr:age "32"^^xsd:integer ;
+  attr:shoe_size "38"^^xsd:integer ;
+  attr:pants_size "40"^^xsd:integer ;
+  attr:married_to person:arthur ;
+  attr:child person:simon ;
+  attr:child person:marie ;
+  attr:colleague person:alice ;
+  attr:colleague person:pierre ;
+  attr:parent [attr:name "Simone"] .
+
+person:arthur
+  a attr:Man ;
+  attr:name "Arthur" ;
+  attr:married_to person:margot ;
+  attr:child person:simon ;
+  attr:child person:marie .
+
+person:simon
+  a attr:Man ;
+  attr:name "Simon" ;
+  attr:parent person:margot ;
+  attr:parent person:arthur .
+  
+person:marie
+  a attr:Woman ;
+  attr:name "Marie" ;
+  attr:parent person:margot ;
+  attr:parent person:arthur .
+
+person:alice
+  a attr:Woman ;
+  a attr:Teacher ;
+  attr:name "Alice" ;
+  attr:colleague person:margot .
+  
+person:pierre
+  a attr:Man ;
+  a attr:Teacher ;
+  attr:name "Pierre" ;
+  attr:colleague person:margot .

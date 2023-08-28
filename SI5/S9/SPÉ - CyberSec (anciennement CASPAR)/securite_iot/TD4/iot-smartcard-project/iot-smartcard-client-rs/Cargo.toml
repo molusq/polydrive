@@ -1,0 +1,16 @@
+[package]
+name = "iot-smartcard-client-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+apdu = "0.3.0"
+pcsc = "2.7.0"
+anyhow = "1.0.66"
+thiserror = "1.0.37"
+hex = "0.4"
+num-bigint = { version = "0.4" }
+ibig = "0.3.6"
+mod_exp = "1.0.1"

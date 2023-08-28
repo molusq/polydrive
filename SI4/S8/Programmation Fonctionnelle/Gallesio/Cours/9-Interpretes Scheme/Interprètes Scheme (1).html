@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(1) -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="author" content="Erick Gallesio">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="robots" content="none">
+    <meta name="generator" content="Gomd 3.1-beta / Erick Gallesio">
+
+    <!-- Slidy stuff -->
+    <meta name="copyright" content="Programmation Fonctionnelle — 2020-2021   (Erick Gallesio)">
+    
+    <meta name="font-size-adjustment" content="-1">
+    <style type="text/css">
+      body{margin:0;padding:0;width:1e2%;height:1e2%;color:#000;background-color:#fff;font-family:gill sans mt,gill sans,gillsans,sans-serif;font-size:14pt}div.toolbar{position:fixed;z-index:200;top:auto;bottom:0;left:0;right:0;height:1.2em;text-align:right;padding-left:1em;padding-right:1em;font-size:60%;color:red;background-color:#f0f0f0;border-top:solid 1px #b4b4b4}div.toolbar span.copyright{color:#000;margin-left:.5em}div.initial_prompt{position:absolute;z-index:1000;bottom:1.2em;width:1e2%;background-color:rgb(2e2,2e2,2e2);opacity:.35;background-color:rgb(2e2,2e2,2e2,.35);cursor:pointer}div.initial_prompt p.help{text-align:center}div.initial_prompt p.close{text-align:right;font-style:italic}div.slidy_toc{position:absolute;z-index:300;width:60%;max-width:30em;height:30em;overflow:auto;top:auto;right:auto;left:4em;bottom:4em;padding:1em;background:#f0f0f0;border-style:solid;border-width:2px;font-size:60%}div.slidy_toc .toc_heading{text-align:center;width:1e2%;margin:0;margin-bottom:1em;border-bottom-style:solid;border-bottom-color:#b4b4b4;border-bottom-width:1px}div.slide{z-index:20;margin:0;padding-top:0;padding-bottom:0;padding-left:20px;padding-right:20px;border-width:0;clear:both;top:0;bottom:0;left:0;right:0;line-height:120%;background-color:transparent}div.background{display:none}div.handout{margin-left:20px;margin-right:20px}div.slide.titlepage{text-align:center}div.slide.titlepage h1{padding-top:10%;margin-right:0;background:red}div.slide h1{padding-left:0;padding-right:20pt;padding-top:4pt;padding-bottom:4pt;margin-top:0;margin-left:0;margin-right:60pt;margin-bottom:.5em;display:block;font-size:160%;line-height:1.2em;background:transparent}@media screen and (max-device-width:1024px){div.slide{font-size:1e2%}}@media screen and (max-device-width:800px){div.slide{font-size:2e2%}div.slidy_toc{top:1em;left:1em;right:auto;width:80%;font-size:180%}}div.toc-heading{width:1e2%;border-bottom:solid 1px #b4b4b4;margin-bottom:1em;text-align:center}img{image-rendering:optimize-quality}pre{font-size:80%;font-weight:7e2;line-height:120%}li pre{margin-left:0}blockquote{font-style:italic}img{background-color:transparent}p.copyright{font-size:smaller}.center{text-align:center}.footnote{font-size:smaller;margin-left:2em}a img{border-width:0;border-style:none}a:visited{color:navy}a:link{color:navy}a:hover{color:red;text-decoration:underline}a:active{color:red;text-decoration:underline}a{text-decoration:none}.toolbar a:link{color:blue}.toolbar a:visited{color:blue}.toolbar a:active{color:red}.toolbar a:hover{color:red}ul{list-style-type:square}ul ul{list-style-type:disc}ul ul ul{list-style-type:circle}ul ul ul ul{list-style-type:disc}li{margin-left:.5em;margin-top:.5em}li li{font-size:85%;font-style:italic}li li li{font-size:85%;font-style:normal}div dt{margin-left:0;margin-top:1em;margin-bottom:.5em;font-weight:7e2}div dd{margin-left:2em;margin-bottom:.5em}p,pre,ul,ol,blockquote,h2,h3,h4,h5,h6,dl,table{margin-left:1em;margin-right:1em}p.subhead{font-weight:7e2;margin-top:2em}.smaller{font-size:smaller}.bigger{font-size:130%}td,th{padding:.2em}ul{margin:.5em 1.5em;padding:0}ol{margin:.5em 1.5em;padding:0}ul{list-style-type:square}ul ul{list-style-type:disc}ul ul ul{list-style-type:circle}ul ul ul ul{list-style-type:disc}ul li{list-style:square;margin:.1em 0 .6em;padding:0;line-height:140%}ol li{margin:.1em 0 .6em 1.5em;padding:0;line-height:140%;list-style-type:decimal}li ul li{font-size:85%;font-style:italic;list-style-type:disc;background:transparent;padding:0}li li ul li{font-size:85%;font-style:normal;list-style-type:circle;background:transparent;padding:0}li li li ul li{list-style-type:disc;background:transparent;padding:0}li ol li{list-style-type:decimal}li li ol li{list-style-type:decimal}ol.outline li:hover{cursor:pointer}ol.outline li.nofold:hover{cursor:default}ul.outline li:hover{cursor:pointer}ul.outline li.nofold:hover{cursor:default}ol.outline{list-style:decimal}ol.outline ol{list-style-type:lower-alpha}ol.outline li.nofold{padding:0 0 0 20px;background:transparent url(../graphics/nofold-dim.gif) no-repeat 0 .5em}ol.outline li.unfolded{padding:0 0 0 20px;background:transparent url(../graphics/fold-dim.gif) no-repeat 0 .5em}ol.outline li.folded{padding:0 0 0 20px;background:transparent url(../graphics/unfold-dim.gif) no-repeat 0 .5em}ol.outline li.unfolded:hover{padding:0 0 0 20px;background:transparent url(../graphics/fold.gif) no-repeat 0 .5em}ol.outline li.folded:hover{padding:0 0 0 20px;background:transparent url(../graphics/unfold.gif) no-repeat 0 .5em}ul.outline li.nofold{padding:0 0 0 20px;background:transparent url(../graphics/nofold-dim.gif) no-repeat 0 .5em}ul.outline li.unfolded{padding:0 0 0 20px;background:transparent url(../graphics/fold-dim.gif) no-repeat 0 .5em}ul.outline li.folded{padding:0 0 0 20px;background:transparent url(../graphics/unfold-dim.gif) no-repeat 0 .5em}ul.outline li.unfolded:hover{padding:0 0 0 20px;background:transparent url(../graphics/fold.gif) no-repeat 0 .5em}ul.outline li.folded:hover{padding:0 0 0 20px;background:transparent url(../graphics/unfold.gif) no-repeat 0 .5em}a.titleslide{font-weight:7e2;font-style:italic}img.hidden{display:none;visibility:hidden}div.initial_prompt{display:none;visibility:hidden}div.slide{visibility:visible;position:inherit}div.handout{border-top-style:solid;border-top-width:thin;border-top-color:#000}@media screen{.hidden{display:none;visibility:visible}div.slide.hidden{display:block;visibility:visible}div.handout.hidden{display:block;visibility:visible}div.background{display:none;visibility:hidden}body.single_slide div.initial_prompt{display:block;visibility:visible}body.single_slide div.background{display:block;visibility:visible}body.single_slide div.background.hidden{display:none;visibility:hidden}body.single_slide .invisible{visibility:hidden}body.single_slide .hidden{display:none;visibility:hidden}body.single_slide div.slide{position:absolute}body.single_slide div.handout{display:none;visibility:hidden}}@media print{.hidden{display:block;visibility:visible}div.slide pre{font-size:60%;padding-left:.5em}div.toolbar{display:none;visibility:hidden}div.slidy_toc{display:none;visibility:hidden}div.background{display:none;visibility:hidden}div.slide{page-break-before:always}div.slide.first-slide{page-break-before:avoid}}    </style>
+    <script>
+      var w3c_slidy={ns_pos:(typeof window.pageYOffset!='undefined'),khtml:((navigator.userAgent).indexOf("KHTML")>=0?true:false),opera:((navigator.userAgent).indexOf("Opera")>=0?true:false),ipad:((navigator.userAgent).indexOf("iPad")>=0?true:false),iphone:((navigator.userAgent).indexOf("iPhone")>=0?true:false),android:((navigator.userAgent).indexOf("Android")>=0?true:false),ie:(typeof document.all!="undefined"&&!this.opera),ie6:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 6")!=-1),ie7:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 7")!=-1),ie8:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 8")!=-1),ie9:(!this.ns_pos&&navigator.userAgent.indexOf("MSIE 9")!=-1),last_tap:0,prev_tap:0,start_x:0,start_y:0,delta_x:0,delta_y:0,is_xhtml:/xml/.test(document.contentType),slide_number:0,slide_number_element:null,slides:[],notes:[],backgrounds:[],observers:[],toolbar:null,title:null,last_shown:null,eos:null,toc:null,outline:null,selected_text_len:0,view_all:0,want_toolbar:true,mouse_click_enabled:false,scroll_hack:0,disable_slide_click:false,lang:"en",help_anchor:null,help_page:"http://www.w3.org/Talks/Tools/Slidy2/help/help.html",help_text:"Navigate with mouse click, space bar, Cursor Left/Right, "+"or Pg Up and Pg Dn. Use S and B to change font size.",size_index:0,size_adjustment:0,sizes:new Array("10pt","12pt","14pt","16pt","18pt","20pt","22pt","24pt","26pt","28pt","30pt","32pt"),last_width:0,last_height:0,objects:[],set_up:function(){var init=function(){w3c_slidy.init();};if(typeof window.addEventListener!="undefined")
+window.addEventListener("load",init,false);else
+window.attachEvent("onload",init);},hide_slides:function(){if(document.body&&!w3c_slidy.initialized)
+document.body.style.visibility="hidden";else
+setTimeout(w3c_slidy.hide_slides,50);},ie_hack:function(){window.resizeBy(0,-1);window.resizeBy(0,1);},init:function(){document.body.style.visibility="visible";this.init_localization();this.add_toolbar();this.wrap_implicit_slides();this.collect_slides();this.collect_notes();this.collect_backgrounds();this.objects=document.body.getElementsByTagName("object");this.patch_anchors();this.slide_number=this.find_slide_number(location.href);window.offscreenbuffering=true;this.size_adjustment=this.find_size_adjust();this.time_left=this.find_duration();this.hide_image_toolbar();this.init_outliner();this.title=document.title;this.keyboardless=(this.ipad||this.iphone||this.android);if(this.keyboardless)
+{w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden")
+this.want_toolbar=0;}
+this.is_xhtml=(document.body.tagName=="BODY"?false:true);if(this.slides.length>0)
+{var slide=this.slides[this.slide_number];if(this.slide_number>0)
+{this.set_visibility_all_incremental("visible");this.last_shown=this.previous_incremental_item(null);this.set_eos_status(true);}
+else
+{this.last_shown=null;this.set_visibility_all_incremental("hidden");this.set_eos_status(!this.next_incremental_item(this.last_shown));}
+this.set_location();this.add_class(this.slides[0],"first-slide");w3c_slidy.show_slide(slide);}
+this.toc=this.table_of_contents();if(!this.keyboardless)
+{this.add_listener(document.body,"click",this.mouse_button_click);this.add_listener(document.body,"mousedown",this.mouse_button_down);}
+this.add_listener(document,"keydown",this.key_down);this.add_listener(document,"keypress",this.key_press);this.add_listener(window,"resize",this.resized);this.add_listener(window,"scroll",this.scrolled);this.add_listener(window,"unload",this.unloaded);this.add_listener(document,"gesturechange",function()
+{return false;});this.attach_touch_handers(this.slides);this.single_slide_view();this.resized();if(this.ie7)
+setTimeout(w3c_slidy.ie_hack,100);this.show_toolbar();setInterval(function(){w3c_slidy.check_location();},200);w3c_slidy.initialized=true;},table_of_contents:function(){var toc=this.create_element("div");this.add_class(toc,"slidy_toc hidden");var heading=this.create_element("div");this.add_class(heading,"toc-heading");heading.innerHTML=this.localize("Table of Contents");toc.appendChild(heading);var previous=null;for(var i=0;i<this.slides.length;++i)
+{var title=this.has_class(this.slides[i],"title");var num=document.createTextNode((i+1)+". ");toc.appendChild(num);var a=this.create_element("a");a.setAttribute("href","#("+(i+1)+")");if(title)
+this.add_class(a,"titleslide");var name=document.createTextNode(this.slide_name(i));a.appendChild(name);a.onclick=w3c_slidy.toc_click;a.onkeydown=w3c_slidy.toc_key_down;a.previous=previous;if(previous)
+previous.next=a;toc.appendChild(a);if(i==0)
+toc.first=a;if(i<this.slides.length-1)
+{var br=this.create_element("br");toc.appendChild(br);}
+previous=a;}
+toc.focus=function(){if(this.first)
+this.first.focus();}
+toc.onmouseup=w3c_slidy.mouse_button_up;toc.onclick=function(e){e||(e=window.event);if(w3c_slidy.selected_text_len<=0)
+w3c_slidy.hide_table_of_contents(true);w3c_slidy.stop_propagation(e);if(e.cancel!=undefined)
+e.cancel=true;if(e.returnValue!=undefined)
+e.returnValue=false;return false;};document.body.insertBefore(toc,document.body.firstChild);return toc;},is_shown_toc:function(){return!w3c_slidy.has_class(w3c_slidy.toc,"hidden");},show_table_of_contents:function(){w3c_slidy.remove_class(w3c_slidy.toc,"hidden");var toc=w3c_slidy.toc;toc.focus();if(w3c_slidy.ie7&&w3c_slidy.slide_number==0)
+setTimeout(w3c_slidy.ie_hack,100);},hide_table_of_contents:function(focus){w3c_slidy.add_class(w3c_slidy.toc,"hidden");if(focus&&!w3c_slidy.opera&&!w3c_slidy.has_class(w3c_slidy.toc,"hidden"))
+w3c_slidy.set_focus();},toggle_table_of_contents:function(){if(w3c_slidy.is_shown_toc())
+w3c_slidy.hide_table_of_contents(true);else
+w3c_slidy.show_table_of_contents();},toc_click:function(e){if(!e)
+e=window.event;var target=w3c_slidy.get_target(e);if(target&&target.nodeType==1)
+{var uri=target.getAttribute("href");if(uri)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.find_slide_number(uri);slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_location();w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.show_slide(slide);try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}}}
+w3c_slidy.hide_table_of_contents(true);if(w3c_slidy.ie7)w3c_slidy.ie_hack();w3c_slidy.stop_propagation(e);return w3c_slidy.cancel(e);},toc_key_down:function(event){var key;if(!event)
+var event=window.event;if(window.event)
+key=window.event.keyCode;else if(event.which)
+key=event.which;else
+return true;if(!key)
+return true;if(event.ctrlKey||event.altKey)
+return true;if(key==13)
+{var uri=this.getAttribute("href");if(uri)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.find_slide_number(uri);slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_location();w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.show_slide(slide);try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}}
+w3c_slidy.hide_table_of_contents(true);if(self.ie7)
+w3c_slidy.ie_hack();return w3c_slidy.cancel(event);}
+if(key==40&&this.next)
+{this.next.focus();return w3c_slidy.cancel(event);}
+if(key==38&&this.previous)
+{this.previous.focus();return w3c_slidy.cancel(event);}
+return true;},touchstart:function(e)
+{this.prev_tap=this.last_tap;this.last_tap=(new Date).getTime();var tap_delay=this.last_tap-this.prev_tap;if(tap_delay<=200)
+{}
+var touch=e.touches[0];this.pageX=touch.pageX;this.pageY=touch.pageY;this.screenX=touch.screenX;this.screenY=touch.screenY;this.clientX=touch.clientX;this.clientY=touch.clientY;this.delta_x=this.delta_y=0;},touchmove:function(e)
+{if(e.touches.length>1)
+return;e.preventDefault();var touch=e.touches[0];this.delta_x=touch.pageX-this.pageX;this.delta_y=touch.pageY-this.pageY;},touchend:function(e)
+{if(e.touches.length>1)
+return;var delay=(new Date).getTime()-this.last_tap;var dx=this.delta_x;var dy=this.delta_y;var abs_dx=Math.abs(dx);var abs_dy=Math.abs(dy);if(delay<500&&(abs_dx>100||abs_dy>100))
+{if(abs_dx>0.5*abs_dy)
+{e.preventDefault();if(dx<0)
+w3c_slidy.next_slide(true);else
+w3c_slidy.previous_slide(true);}
+else if(abs_dy>2*abs_dx)
+{e.preventDefault();w3c_slidy.toggle_table_of_contents();}}},before_print:function(){this.show_all_slides();this.hide_toolbar();alert("before print");},after_print:function(){if(!this.view_all)
+{this.single_slide_view();this.show_toolbar();}
+alert("after print");},print_slides:function(){this.before_print();window.print();this.after_print();},toggle_view:function(){if(this.view_all)
+{this.single_slide_view();this.show_toolbar();this.view_all=0;}
+else
+{this.show_all_slides();this.hide_toolbar();this.view_all=1;}},show_all_slides:function(){this.remove_class(document.body,"single_slide");this.set_visibility_all_incremental("visible");},single_slide_view:function(){this.add_class(document.body,"single_slide");this.set_visibility_all_incremental("visible");this.last_shown=this.previous_incremental_item(null);},hide_image_toolbar:function(){if(!this.ns_pos)
+{var images=document.getElementsByTagName("IMG");for(var i=0;i<images.length;++i)
+images[i].setAttribute("galleryimg","no");}},unloaded:function(e){},is_KHTML:function(){var agent=navigator.userAgent;return(agent.indexOf("KHTML")>=0?true:false);},slide_name:function(index){var name=null;var slide=this.slides[index];var heading=this.find_heading(slide);if(heading)
+name=this.extract_text(heading);if(!name)
+name=this.title+"("+(index+1)+")";name.replace(/&/g,"&amp;");name.replace(/</g,"&lt;");name.replace(/>/g,"&gt;");return name;},find_heading:function(node){if(!node||node.nodeType!=1)
+return null;if(node.nodeName=="H1"||node.nodeName=="h1")
+return node;var child=node.firstChild;while(child)
+{node=this.find_heading(child);if(node)
+return node;child=child.nextSibling;}
+return null;},extract_text:function(node){if(!node)
+return"";if(node.nodeType==3)
+return node.nodeValue;if(node.nodeType==1)
+{node=node.firstChild;var text="";while(node)
+{text=text+this.extract_text(node);node=node.nextSibling;}
+return text;}
+return"";},find_copyright:function(){var name,content;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="copyright")
+return content;}
+return null;},find_size_adjust:function(){var name,content,offset;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="font-size-adjustment")
+return 1*content;}
+return 1;},find_duration:function(){var name,content,offset;var meta=document.getElementsByTagName("meta");for(var i=0;i<meta.length;++i)
+{name=meta[i].getAttribute("name");content=meta[i].getAttribute("content");if(name=="duration")
+return 60000*content;}
+return null;},replace_by_non_breaking_space:function(str){for(var i=0;i<str.length;++i)
+str[i]=160;},init_outliner:function(){var items=document.getElementsByTagName("li");for(var i=0;i<items.length;++i)
+{var target=items[i];if(!this.has_class(target.parentNode,"outline"))
+continue;target.onclick=this.outline_click;if(this.foldable(target))
+{target.foldable=true;target.onfocus=function(){w3c_slidy.outline=this;};target.onblur=function(){w3c_slidy.outline=null;};if(!target.getAttribute("tabindex"))
+target.setAttribute("tabindex","0");if(this.has_class(target,"expand"))
+this.unfold(target);else
+this.fold(target);}
+else
+{this.add_class(target,"nofold");target.visible=true;target.foldable=false;}}},foldable:function(item){if(!item||item.nodeType!=1)
+return false;var node=item.firstChild;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+return true;node=node.nextSibling;}
+return false;},fold:function(item){if(item)
+{this.remove_class(item,"unfolded");this.add_class(item,"folded");}
+var node=item?item.firstChild:null;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+{w3c_slidy.add_class(node,"hidden");}
+node=node.nextSibling;}
+item.visible=false;},unfold:function(item){if(item)
+{this.add_class(item,"unfolded");this.remove_class(item,"folded");}
+var node=item?item.firstChild:null;while(node)
+{if(node.nodeType==1&&this.is_block(node))
+{w3c_slidy.remove_class(node,"hidden");}
+node=node.nextSibling;}
+item.visible=true;},outline_click:function(e){if(!e)
+e=window.event;var rightclick=false;var target=w3c_slidy.get_target(e);while(target&&target.visible==undefined)
+target=target.parentNode;if(!target)
+return true;if(e.which)
+rightclick=(e.which==3);else if(e.button)
+rightclick=(e.button==2);if(!rightclick&&target.visible!=undefined)
+{if(target.foldable)
+{if(target.visible)
+w3c_slidy.fold(target);else
+w3c_slidy.unfold(target);}
+w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;}
+return false;},add_toolbar:function(){var counter,page;this.toolbar=this.create_element("div");this.toolbar.setAttribute("class","toolbar");if(this.ns_pos||!this.ie6)
+{var right=this.create_element("div");right.setAttribute("style","float: right; text-align: right");counter=this.create_element("span")
+counter.innerHTML=this.localize("slide")+" n/m";right.appendChild(counter);this.toolbar.appendChild(right);var left=this.create_element("div");left.setAttribute("style","text-align: left");this.eos=this.create_element("span");this.eos.innerHTML="* ";left.appendChild(this.eos);var copyright=this.find_copyright();if(copyright)
+{var span=this.create_element("span");span.className="copyright";span.innerHTML=copyright;left.appendChild(span);}
+this.toolbar.setAttribute("tabindex","0");this.toolbar.appendChild(left);}
+else
+{this.toolbar.style.position=(this.ie7?"fixed":"absolute");this.toolbar.style.zIndex="200";this.toolbar.style.width="99.9%";this.toolbar.style.height="1.2em";this.toolbar.style.top="auto";this.toolbar.style.bottom="0";this.toolbar.style.left="0";this.toolbar.style.right="0";this.toolbar.style.textAlign="left";this.toolbar.style.fontSize="60%";this.toolbar.style.color="red";this.toolbar.borderWidth=0;this.toolbar.className="toolbar";this.toolbar.style.background="rgb(240,240,240)";var sp=this.create_element("span");sp.innerHTML="&nbsp;&nbsp;*&nbsp;";this.toolbar.appendChild(sp);this.eos=sp;var help=this.create_element("a");help.setAttribute("href",this.help_page);help.setAttribute("title",this.localize(this.help_text));help.innerHTML=this.localize("help?");this.toolbar.appendChild(help);this.help_anchor=help;var gap1=document.createTextNode(" ");this.toolbar.appendChild(gap1);var contents=this.create_element("a");contents.setAttribute("href","javascript:toggleTableOfContents()");contents.setAttribute("title",this.localize("table of contents".localize));contents.innerHTML=this.localize("contents?");this.toolbar.appendChild(contents);var gap2=document.createTextNode(" ");this.toolbar.appendChild(gap2);var copyright=this.find_copyright();if(copyright)
+{var span=this.create_element("span");span.innerHTML=copyright;span.style.color="black";span.style.marginLeft="0.5em";this.toolbar.appendChild(span);}
+counter=this.create_element("div")
+counter.style.position="absolute";counter.style.width="auto";counter.style.height="1.2em";counter.style.top="auto";counter.style.bottom=0;counter.style.right="0";counter.style.textAlign="right";counter.style.color="red";counter.style.background="rgb(240,240,240)";counter.innerHTML=this.localize("slide")+" n/m";this.toolbar.appendChild(counter);}
+this.toolbar.onclick=function(e){if(!e)
+e=window.event;var target=e.target;if(!target&&e.srcElement)
+target=e.srcElement;if(target&&target.nodeType==3)
+target=target.parentNode;w3c_slidy.stop_propagation(e);if(target&&target.nodeName.toLowerCase()!="a")
+w3c_slidy.mouse_button_click(e);};this.slide_number_element=counter;this.set_eos_status(false);document.body.appendChild(this.toolbar);},wrap_implicit_slides:function(){var i,heading,node,next,div;var headings=document.getElementsByTagName("h1");if(!headings)
+return;for(i=0;i<headings.length;++i)
+{heading=headings[i];if(heading.parentNode!=document.body)
+continue;node=heading.nextSibling;div=document.createElement("div");this.add_class(div,"slide");document.body.replaceChild(div,heading);div.appendChild(heading);while(node)
+{if(node.nodeType==1)
+{if(node.nodeName=="H1"||node.nodeName=="h1")
+break;if(node.nodeName=="DIV"||node.nodeName=="div")
+{if(this.has_class(node,"slide"))
+break;if(this.has_class(node,"handout"))
+break;}}
+next=node.nextSibling;node=document.body.removeChild(node);div.appendChild(node);node=next;}}},attach_touch_handers:function(slides)
+{var i,slide;for(i=0;i<slides.length;++i)
+{slide=slides[i];this.add_listener(slide,"touchstart",this.touchstart);this.add_listener(slide,"touchmove",this.touchmove);this.add_listener(slide,"touchend",this.touchend);}},collect_slides:function(){var slides=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"slide"))
+{slides[slides.length]=div;this.add_class(div,"hidden");var node1=document.createElement("br");div.appendChild(node1);var node2=document.createElement("br");div.appendChild(node2);}
+else if(this.has_class(div,"background"))
+{div.style.display="block";}}
+this.slides=slides;},collect_notes:function(){var notes=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"handout"))
+{notes[notes.length]=div;this.add_class(div,"hidden");}}
+this.notes=notes;},collect_backgrounds:function(){var backgrounds=new Array();var divs=document.body.getElementsByTagName("div");for(var i=0;i<divs.length;++i)
+{div=divs.item(i);if(this.has_class(div,"background"))
+{backgrounds[backgrounds.length]=div;this.add_class(div,"hidden");}}
+this.backgrounds=backgrounds;},patch_anchors:function(){var self=w3c_slidy;var handler=function(event){if(self.page_address(this.href)==self.page_address(location.href))
+{var newslidenum=self.find_slide_number(this.href);if(newslidenum!=self.slide_number)
+{var slide=self.slides[self.slide_number];self.hide_slide(slide);self.slide_number=newslidenum;slide=self.slides[self.slide_number];self.show_slide(slide);self.set_location();}}
+else
+w3c_slidy.stop_propagation(event);this.blur();self.disable_slide_click=true;};var anchors=document.body.getElementsByTagName("a");for(var i=0;i<anchors.length;++i)
+{if(window.addEventListener)
+anchors[i].addEventListener("click",handler,false);else
+anchors[i].attachEvent("onclick",handler);}},show_slide_number:function(){var timer=w3c_slidy.get_timer();w3c_slidy.slide_number_element.innerHTML=timer+w3c_slidy.localize("slide")+" "+
+(w3c_slidy.slide_number+1)+"/"+w3c_slidy.slides.length;},check_location:function(){var hash=location.hash;if(w3c_slidy.slide_number>0&&(hash==""||hash=="#"))
+w3c_slidy.goto_slide(0);else if(hash.length>2&&hash!="#("+(w3c_slidy.slide_number+1)+")")
+{var num=parseInt(location.hash.substr(2));if(!isNaN(num))
+w3c_slidy.goto_slide(num-1);}
+if(w3c_slidy.time_left&&w3c_slidy.slide_number>0)
+{w3c_slidy.show_slide_number();if(w3c_slidy.time_left>0)
+w3c_slidy.time_left-=200;}},get_timer:function(){var timer="";if(w3c_slidy.time_left)
+{var mins,secs;secs=Math.floor(w3c_slidy.time_left/1000);mins=Math.floor(secs/60);secs=secs%60;timer=(mins?mins+"m":"")+secs+"s ";}
+return timer;},set_location:function(){var uri=w3c_slidy.page_address(location.href);var hash="#("+(w3c_slidy.slide_number+1)+")";if(w3c_slidy.slide_number>=0)
+uri=uri+hash;if(typeof(history.pushState)!="undefined")
+{document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";history.pushState(0,document.title,hash);w3c_slidy.show_slide_number();w3c_slidy.notify_observers();return;}
+if(uri!=location.href)
+location.href=uri;if(this.khtml)
+hash="("+(w3c_slidy.slide_number+1)+")";if(!this.ie&&location.hash!=hash&&location.hash!="")
+location.hash=hash;document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";w3c_slidy.show_slide_number();w3c_slidy.notify_observers();},notify_observers:function()
+{var slide=this.slides[this.slide_number];for(var i=0;i<this.observers.length;++i)
+this.observers[i](this.slide_number+1,this.find_heading(slide).innerText,location.href);},add_observer:function(observer)
+{for(var i=0;i<this.observers.length;++i)
+{if(observer==this.observers[i])
+return;}
+this.observers.push(observer);},remove_observer:function(o)
+{for(var i=0;i<this.observers.length;++i)
+{if(observer==this.observers[i])
+{this.observers.splice(i,1);break;}}},page_address:function(uri){var i=uri.indexOf("#");if(i<0)
+i=uri.indexOf("%23");if(i<0)
+return uri;return uri.substr(0,i);},on_frame_loaded:function(hash){location.hash=hash;var uri=w3c_slidy.page_address(location.href);location.href=uri+hash;},push_hash:function(hash){},find_slide_number:function(uri){var i=uri.indexOf("#");if(i<0)
+return 0;var anchor=unescape(uri.substr(i+1));var target=document.getElementById(anchor);if(!target)
+{var re=/((d)+)/;if(anchor.match(re))
+{var num=parseInt(anchor.substring(1,anchor.length-1));if(num>this.slides.length)
+num=1;if(--num<0)
+num=0;return num;}
+re=/[(d)+]/;if(anchor.match(re))
+{var num=parseInt(anchor.substring(1,anchor.length-1));if(num>this.slides.length)
+num=1;if(--num<0)
+num=0;return num;}
+return 0;}
+while(true)
+{if(target.nodeName.toLowerCase()=="div"&&this.has_class(target,"slide"))
+{break;}
+target=target.parentNode;if(!target)
+{return 0;}};for(i=0;i<slides.length;++i)
+{if(slides[i]==target)
+return i;}
+return 0;},previous_slide:function(incremental){if(!w3c_slidy.view_all)
+{var slide;if((incremental||w3c_slidy.slide_number==0)&&w3c_slidy.last_shown!=null)
+{w3c_slidy.last_shown=w3c_slidy.hide_previous_item(w3c_slidy.last_shown);w3c_slidy.set_eos_status(false);}
+else if(w3c_slidy.slide_number>0)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slide_number-1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);w3c_slidy.set_eos_status(true);w3c_slidy.show_slide(slide);}
+w3c_slidy.set_location();if(!w3c_slidy.ns_pos)
+w3c_slidy.refresh_toolbar(200);}},next_slide:function(incremental){if(!w3c_slidy.view_all)
+{var slide,last=w3c_slidy.last_shown;if(incremental||w3c_slidy.slide_number==w3c_slidy.slides.length-1)
+w3c_slidy.last_shown=w3c_slidy.reveal_next_item(w3c_slidy.last_shown);if((!incremental||w3c_slidy.last_shown==null)&&w3c_slidy.slide_number<w3c_slidy.slides.length-1)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slide_number+1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.show_slide(slide);}
+else if(!w3c_slidy.last_shown)
+{if(last&&incremental)
+w3c_slidy.last_shown=last;}
+w3c_slidy.set_location();w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));if(!w3c_slidy.ns_pos)
+w3c_slidy.refresh_toolbar(200);}},first_slide:function(){if(!w3c_slidy.view_all)
+{var slide;if(w3c_slidy.slide_number!=0)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=0;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.show_slide(slide);}
+w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));w3c_slidy.set_location();}},last_slide:function(){if(!w3c_slidy.view_all)
+{var slide;w3c_slidy.last_shown=null;if(w3c_slidy.last_shown==null&&w3c_slidy.slide_number<w3c_slidy.slides.length-1)
+{slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=w3c_slidy.slides.length-1;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);w3c_slidy.show_slide(slide);}
+else
+{w3c_slidy.set_visibility_all_incremental("visible");w3c_slidy.last_shown=w3c_slidy.previous_incremental_item(null);}
+w3c_slidy.set_eos_status(true);w3c_slidy.set_location();}},set_eos_status:function(state){if(this.eos)
+this.eos.style.color=(state?"rgb(240,240,240)":"red");},goto_slide:function(num){var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.slide_number=num;slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.last_shown=null;w3c_slidy.set_visibility_all_incremental("hidden");w3c_slidy.set_eos_status(!w3c_slidy.next_incremental_item(w3c_slidy.last_shown));document.title=w3c_slidy.title+" ("+(w3c_slidy.slide_number+1)+")";w3c_slidy.show_slide(slide);w3c_slidy.show_slide_number();},show_slide:function(slide){this.sync_background(slide);this.remove_class(slide,"hidden");setTimeout("window.scrollTo(0,0);",1);},hide_slide:function(slide){this.add_class(slide,"hidden");},set_focus:function(element)
+{if(element)
+element.focus();else
+{w3c_slidy.help_anchor.focus();setTimeout(function(){w3c_slidy.help_anchor.blur();},1);}},sync_background:function(slide){var background;var bgColor;if(slide.currentStyle)
+bgColor=slide.currentStyle["backgroundColor"];else if(document.defaultView)
+{var styles=document.defaultView.getComputedStyle(slide,null);if(styles)
+bgColor=styles.getPropertyValue("background-color");else
+{bgColor="transparent";}}
+else
+bgColor=="transparent";if(bgColor=="transparent"||bgColor.indexOf("rgba")>=0||bgColor.indexOf("opacity")>=0)
+{var slideClass=this.get_class_list(slide);for(var i=0;i<this.backgrounds.length;i++)
+{background=this.backgrounds[i];var bgClass=this.get_class_list(background);if(this.matching_background(slideClass,bgClass))
+this.remove_class(background,"hidden");else
+this.add_class(background,"hidden");}}
+else
+this.hide_backgrounds();},hide_backgrounds:function(){for(var i=0;i<this.backgrounds.length;i++)
+{background=this.backgrounds[i];this.add_class(background,"hidden");}},matching_background:function(slideClass,bgClass){var i,count,pattern,result;pattern=/w+/g;result=bgClass.match(pattern);for(i=count=0;i<result.length;i++)
+{if(result[i]=="hidden")
+continue;if(result[i]=="background")
+continue;++count;}
+if(count==0)
+return true;result=slideClass.match(pattern);for(i=count=0;i<result.length;i++)
+{if(result[i]=="hidden")
+continue;if(this.has_token(bgClass,result[i]))
+return true;}
+return false;},resized:function(){var width=0;if(typeof(window.innerWidth)=='number')
+width=window.innerWidth;else if(document.documentElement&&document.documentElement.clientWidth)
+width=document.documentElement.clientWidth;else if(document.body&&document.body.clientWidth)
+width=document.body.clientWidth;var height=0;if(typeof(window.innerHeight)=='number')
+height=window.innerHeight;else if(document.documentElement&&document.documentElement.clientHeight)
+height=document.documentElement.clientHeight;else if(document.body&&document.body.clientHeight)
+height=document.body.clientHeight;if(height&&(width/height>1.05*1024/768))
+{width=height*1024.0/768;}
+if(width!=w3c_slidy.last_width||height!=w3c_slidy.last_height)
+{if(width>=1100)
+w3c_slidy.size_index=5;else if(width>=1000)
+w3c_slidy.size_index=4;else if(width>=800)
+w3c_slidy.size_index=3;else if(width>=600)
+w3c_slidy.size_index=2;else if(width)
+w3c_slidy.size_index=0;if(0<=w3c_slidy.size_index+w3c_slidy.size_adjustment&&w3c_slidy.size_index+w3c_slidy.size_adjustment<w3c_slidy.sizes.length)
+w3c_slidy.size_index=w3c_slidy.size_index+w3c_slidy.size_adjustment;w3c_slidy.adjust_object_dimensions(width,height);if(document.body.style.fontSize!=w3c_slidy.sizes[w3c_slidy.size_index])
+{document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];}
+w3c_slidy.last_width=width;w3c_slidy.last_height=height;if(w3c_slidy.ns_pos)
+{var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);}
+w3c_slidy.refresh_toolbar(200);}},scrolled:function(){if(w3c_slidy.toolbar&&!w3c_slidy.ns_pos&&!w3c_slidy.ie7)
+{w3c_slidy.hack_offset=w3c_slidy.scroll_x_offset();w3c_slidy.toolbar.style.display="none";if(w3c_slidy.scrollhack==0&&!w3c_slidy.view_all)
+{setTimeout(function(){w3c_slidy.show_toolbar();},1000);w3c_slidy.scrollhack=1;}}},hide_toolbar:function(){w3c_slidy.add_class(w3c_slidy.toolbar,"hidden");window.focus();},refresh_toolbar:function(interval){if(!w3c_slidy.ns_pos&&!w3c_slidy.ie7)
+{w3c_slidy.hide_toolbar();setTimeout(function(){w3c_slidy.show_toolbar();},interval);}},show_toolbar:function(){if(w3c_slidy.want_toolbar)
+{w3c_slidy.toolbar.style.display="block";if(!w3c_slidy.ns_pos)
+{var xoffset=w3c_slidy.scroll_x_offset();w3c_slidy.toolbar.style.left=xoffset;w3c_slidy.toolbar.style.right=xoffset;w3c_slidy.toolbar.style.bottom=0;}
+w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden");}
+w3c_slidy.scrollhack=0;try
+{if(!w3c_slidy.opera)
+w3c_slidy.set_focus();}
+catch(e)
+{}},toggle_toolbar:function(){if(!w3c_slidy.view_all)
+{if(w3c_slidy.has_class(w3c_slidy.toolbar,"hidden"))
+{w3c_slidy.remove_class(w3c_slidy.toolbar,"hidden")
+w3c_slidy.want_toolbar=1;}
+else
+{w3c_slidy.add_class(w3c_slidy.toolbar,"hidden")
+w3c_slidy.want_toolbar=0;}}},scroll_x_offset:function(){if(window.pageXOffset)
+return self.pageXOffset;if(document.documentElement&&document.documentElement.scrollLeft)
+return document.documentElement.scrollLeft;if(document.body)
+return document.body.scrollLeft;return 0;},scroll_y_offset:function(){if(window.pageYOffset)
+return self.pageYOffset;if(document.documentElement&&document.documentElement.scrollTop)
+return document.documentElement.scrollTop;if(document.body)
+return document.body.scrollTop;return 0;},optimize_font_size:function(){var slide=w3c_slidy.slides[w3c_slidy.slide_number];var dh=slide.scrollHeight;var wh=getWindowHeight();var u=100*dh/wh;alert("window utilization = "+u+"% (doc "
++dh+" win "+wh+")");},get_doc_height:function(doc){if(!doc)
+doc=document;if(doc&&doc.body&&doc.body.offsetHeight)
+return doc.body.offsetHeight;if(doc&&doc.body&&doc.body.scrollHeight)
+return doc.body.scrollHeight;alert("couldn't determine document height");},get_window_height:function(){if(typeof(window.innerHeight)=='number')
+return window.innerHeight;if(document.documentElement&&document.documentElement.clientHeight)
+return document.documentElement.clientHeight;if(document.body&&document.body.clientHeight)
+return document.body.clientHeight;},document_height:function(){var sh,oh;sh=document.body.scrollHeight;oh=document.body.offsetHeight;if(sh&&oh)
+{return(sh>oh?sh:oh);}
+return 0;},smaller:function(){if(w3c_slidy.size_index>0)
+{--w3c_slidy.size_index;}
+w3c_slidy.toolbar.style.display="none";document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);setTimeout(function(){w3c_slidy.show_toolbar();},50);},bigger:function(){if(w3c_slidy.size_index<w3c_slidy.sizes.length-1)
+{++w3c_slidy.size_index;}
+w3c_slidy.toolbar.style.display="none";document.body.style.fontSize=w3c_slidy.sizes[w3c_slidy.size_index];var slide=w3c_slidy.slides[w3c_slidy.slide_number];w3c_slidy.hide_slide(slide);w3c_slidy.show_slide(slide);setTimeout(function(){w3c_slidy.show_toolbar();},50);},adjust_object_dimensions:function(width,height){for(var i=0;i<w3c_slidy.objects.length;i++)
+{var obj=this.objects[i];var mimeType=obj.getAttribute("type");if(mimeType=="image/svg+xml"||mimeType=="application/x-shockwave-flash")
+{if(!obj.initialWidth)
+obj.initialWidth=obj.getAttribute("width");if(!obj.initialHeight)
+obj.initialHeight=obj.getAttribute("height");if(obj.initialWidth&&obj.initialWidth.charAt(obj.initialWidth.length-1)=="%")
+{var w=parseInt(obj.initialWidth.slice(0,obj.initialWidth.length-1));var newW=width*(w/100.0);obj.setAttribute("width",newW);}
+if(obj.initialHeight&&obj.initialHeight.charAt(obj.initialHeight.length-1)=="%")
+{var h=parseInt(obj.initialHeight.slice(0,obj.initialHeight.length-1));var newH=height*(h/100.0);obj.setAttribute("height",newH);}}}},key_press:function(event){if(!event)
+event=window.event;if(!w3c_slidy.key_wanted)
+return w3c_slidy.cancel(event);return true;},key_down:function(event){var key,target,tag;w3c_slidy.key_wanted=true;if(!event)
+event=window.event;if(window.event)
+{key=window.event.keyCode;target=window.event.srcElement;}
+else if(event.which)
+{key=event.which;target=event.target;}
+else
+return true;if(!key)
+return true;if(!w3c_slidy.slidy_chrome(target)&&w3c_slidy.special_element(target))
+return true;if(event.ctrlKey||event.altKey||event.metaKey)
+return true;if(w3c_slidy.is_shown_toc()&&key!=9&&key!=16&&key!=38&&key!=40)
+{w3c_slidy.hide_table_of_contents(true);if(key==27||key==84||key==67)
+return w3c_slidy.cancel(event);}
+if(key==34)
+{if(w3c_slidy.view_all)
+return true;w3c_slidy.next_slide(false);return w3c_slidy.cancel(event);}
+else if(key==33)
+{if(w3c_slidy.view_all)
+return true;w3c_slidy.previous_slide(false);return w3c_slidy.cancel(event);}
+else if(key==32)
+{w3c_slidy.next_slide(true);return w3c_slidy.cancel(event);}
+else if(key==37)
+{w3c_slidy.previous_slide(!event.shiftKey);return w3c_slidy.cancel(event);}
+else if(key==36)
+{w3c_slidy.first_slide();return w3c_slidy.cancel(event);}
+else if(key==35)
+{w3c_slidy.last_slide();return w3c_slidy.cancel(event);}
+else if(key==39)
+{w3c_slidy.next_slide(!event.shiftKey);return w3c_slidy.cancel(event);}
+else if(key==13)
+{if(w3c_slidy.outline)
+{if(w3c_slidy.outline.visible)
+w3c_slidy.fold(w3c_slidy.outline);else
+w3c_slidy.unfold(w3c_slidy.outline);return w3c_slidy.cancel(event);}}
+else if(key==188)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==190)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==189||key==109)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==187||key==191||key==107)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==83)
+{w3c_slidy.smaller();return w3c_slidy.cancel(event);}
+else if(key==66)
+{w3c_slidy.bigger();return w3c_slidy.cancel(event);}
+else if(key==90)
+{w3c_slidy.last_slide();return w3c_slidy.cancel(event);}
+else if(key==70)
+{w3c_slidy.toggle_toolbar();return w3c_slidy.cancel(event);}
+else if(key==65)
+{w3c_slidy.toggle_view();return w3c_slidy.cancel(event);}
+else if(key==75)
+{w3c_slidy.mouse_click_enabled=!w3c_slidy.mouse_click_enabled;var alert_msg=(w3c_slidy.mouse_click_enabled?"enabled":"disabled")+" mouse click advance";alert(w3c_slidy.localize(alert_msg));return w3c_slidy.cancel(event);}
+else if(key==84||key==67)
+{if(w3c_slidy.toc)
+w3c_slidy.toggle_table_of_contents();return w3c_slidy.cancel(event);}
+else if(key==72)
+{window.location=w3c_slidy.help_page;return w3c_slidy.cancel(event);}
+return true;},create_element:function(name){if(this.xhtml&&(typeof document.createElementNS!='undefined'))
+return document.createElementNS("http://www.w3.org/1999/xhtml",name)
+return document.createElement(name);},get_element_style:function(elem,IEStyleProp,CSSStyleProp){if(elem.currentStyle)
+{return elem.currentStyle[IEStyleProp];}
+else if(window.getComputedStyle)
+{var compStyle=window.getComputedStyle(elem,"");return compStyle.getPropertyValue(CSSStyleProp);}
+return"";},has_token:function(str,token){if(str)
+{var pattern=/w+/g;var result=str.match(pattern);for(var i=0;i<result.length;i++)
+{if(result[i]==token)
+return true;}}
+return false;},get_class_list:function(element){if(typeof element.className!='undefined')
+return element.className;return element.getAttribute("class");},has_class:function(element,name){if(element.nodeType!=1)
+return false;var regexp=new RegExp("(^| )"+name+"W*");if(typeof element.className!='undefined')
+return regexp.test(element.className);return regexp.test(element.getAttribute("class"));},remove_class:function(element,name){var regexp=new RegExp("(^| )"+name+"W*");var clsval="";if(typeof element.className!='undefined')
+{clsval=element.className;if(clsval)
+{clsval=clsval.replace(regexp,"");element.className=clsval;}}
+else
+{clsval=element.getAttribute("class");if(clsval)
+{clsval=clsval.replace(regexp,"");element.setAttribute("class",clsval);}}},add_class:function(element,name){if(!this.has_class(element,name))
+{if(typeof element.className!='undefined')
+element.className+=" "+name;else
+{var clsval=element.getAttribute("class");clsval=clsval?clsval+" "+name:name;element.setAttribute("class",clsval);}}},incremental_elements:null,okay_for_incremental:function(name){if(!this.incremental_elements)
+{var inclist=new Array();inclist["p"]=true;inclist["pre"]=true;inclist["li"]=true;inclist["blockquote"]=true;inclist["dt"]=true;inclist["dd"]=true;inclist["h2"]=true;inclist["h3"]=true;inclist["h4"]=true;inclist["h5"]=true;inclist["h6"]=true;inclist["span"]=true;inclist["address"]=true;inclist["table"]=true;inclist["tr"]=true;inclist["th"]=true;inclist["td"]=true;inclist["img"]=true;inclist["object"]=true;this.incremental_elements=inclist;}
+return this.incremental_elements[name.toLowerCase()];},next_incremental_item:function(node){var br=this.is_xhtml?"br":"BR";var slide=w3c_slidy.slides[w3c_slidy.slide_number];for(;;)
+{node=w3c_slidy.next_node(slide,node);if(node==null||node.parentNode==null)
+break;if(node.nodeType==1)
+{if(node.nodeName==br)
+continue;if(w3c_slidy.has_class(node,"incremental")&&w3c_slidy.okay_for_incremental(node.nodeName))
+return node;if(w3c_slidy.has_class(node.parentNode,"incremental")&&!w3c_slidy.has_class(node,"non-incremental"))
+return node;}}
+return node;},previous_incremental_item:function(node){var br=this.is_xhtml?"br":"BR";var slide=w3c_slidy.slides[w3c_slidy.slide_number];for(;;)
+{node=w3c_slidy.previous_node(slide,node);if(node==null||node.parentNode==null)
+break;if(node.nodeType==1)
+{if(node.nodeName==br)
+continue;if(w3c_slidy.has_class(node,"incremental")&&w3c_slidy.okay_for_incremental(node.nodeName))
+return node;if(w3c_slidy.has_class(node.parentNode,"incremental")&&!w3c_slidy.has_class(node,"non-incremental"))
+return node;}}
+return node;},set_visibility_all_incremental:function(value){var node=this.next_incremental_item(null);if(value=="hidden")
+{while(node)
+{w3c_slidy.add_class(node,"invisible");node=w3c_slidy.next_incremental_item(node);}}
+else
+{while(node)
+{w3c_slidy.remove_class(node,"invisible");node=w3c_slidy.next_incremental_item(node);}}},reveal_next_item:function(node){node=w3c_slidy.next_incremental_item(node);if(node&&node.nodeType==1)
+w3c_slidy.remove_class(node,"invisible");return node;},hide_previous_item:function(node){if(node&&node.nodeType==1)
+w3c_slidy.add_class(node,"invisible");return this.previous_incremental_item(node);},next_node:function(root,node){if(node==null)
+return root.firstChild;if(node.firstChild)
+return node.firstChild;if(node.nextSibling)
+return node.nextSibling;for(;;)
+{node=node.parentNode;if(!node||node==root)
+break;if(node&&node.nextSibling)
+return node.nextSibling;}
+return null;},previous_node:function(root,node){if(node==null)
+{node=root.lastChild;if(node)
+{while(node.lastChild)
+node=node.lastChild;}
+return node;}
+if(node.previousSibling)
+{node=node.previousSibling;while(node.lastChild)
+node=node.lastChild;return node;}
+if(node.parentNode!=root)
+return node.parentNode;return null;},previous_sibling_element:function(el){el=el.previousSibling;while(el&&el.nodeType!=1)
+el=el.previousSibling;return el;},next_sibling_element:function(el){el=el.nextSibling;while(el&&el.nodeType!=1)
+el=el.nextSibling;return el;},first_child_element:function(el){var node;for(node=el.firstChild;node;node=node.nextSibling)
+{if(node.nodeType==1)
+break;}
+return node;},first_tag:function(element,tag){var node;if(!this.is_xhtml)
+tag=tag.toUpperCase();for(node=element.firstChild;node;node=node.nextSibling)
+{if(node.nodeType==1&&node.nodeName==tag)
+break;}
+return node;},hide_selection:function(){if(window.getSelection)
+{var selection=window.getSelection();if(selection.rangeCount>0)
+{var range=selection.getRangeAt(0);range.collapse(false);}}
+else
+{var textRange=document.selection.createRange();textRange.collapse(false);}},get_selected_text:function(){try
+{if(window.getSelection)
+return window.getSelection().toString();if(document.getSelection)
+return document.getSelection().toString();if(document.selection)
+return document.selection.createRange().text;}
+catch(e)
+{}
+return"";},mouse_button_up:function(e){w3c_slidy.selected_text_len=w3c_slidy.get_selected_text().length;},mouse_button_down:function(e){w3c_slidy.selected_text_len=w3c_slidy.get_selected_text().length;w3c_slidy.mouse_x=e.clientX;w3c_slidy.mouse_y=e.clientY;},mouse_button_click:function(e){if(!e)
+var e=window.event;if(Math.abs(e.clientX-w3c_slidy.mouse_x)+
+Math.abs(e.clientY-w3c_slidy.mouse_y)>10)
+return true;if(w3c_slidy.selected_text_len>0)
+return true;var rightclick=false;var leftclick=false;var middleclick=false;var target;if(!e)
+var e=window.event;if(e.target)
+target=e.target;else if(e.srcElement)
+target=e.srcElement;if(target.nodeType==3)
+target=target.parentNode;if(e.which)
+{leftclick=(e.which==1);middleclick=(e.which==2);rightclick=(e.which==3);}
+else if(e.button)
+{if(e.button==4)
+middleclick=true;rightclick=(e.button==2);}
+else
+leftclick=true;if(w3c_slidy.selected_text_len>0)
+{w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;return false;}
+w3c_slidy.hide_table_of_contents(false);var tag=target.nodeName.toLowerCase();if(w3c_slidy.mouse_click_enabled&&leftclick&&!w3c_slidy.special_element(target)&&!target.onclick)
+{w3c_slidy.next_slide(true);w3c_slidy.stop_propagation(e);e.cancel=true;e.returnValue=false;return false;}
+return true;},special_element:function(element){if(this.has_class(element,"non-interactive"))
+return false;var tag=element.nodeName.toLowerCase();return element.onkeydown||element.onclick||tag=="a"||tag=="embed"||tag=="object"||tag=="video"||tag=="audio"||tag=="svg"||tag=="canvas"||tag=="input"||tag=="textarea"||tag=="select"||tag=="option";},slidy_chrome:function(el){while(el)
+{if(el==w3c_slidy.toc||el==w3c_slidy.toolbar||w3c_slidy.has_class(el,"outline"))
+return true;el=el.parentNode;}
+return false;},get_key:function(e)
+{var key;if(typeof window.event!="undefined")
+key=window.event.keyCode;else if(e.which)
+key=e.which;return key;},get_target:function(e){var target;if(!e)
+e=window.event;if(e.target)
+target=e.target;else if(e.srcElement)
+target=e.srcElement;if(target.nodeType!=1)
+target=target.parentNode;return target;},is_block:function(elem){var tag=elem.nodeName.toLowerCase();return tag=="ol"||tag=="ul"||tag=="p"||tag=="dl"||tag=="li"||tag=="table"||tag=="pre"||tag=="h1"||tag=="h2"||tag=="h3"||tag=="h4"||tag=="h5"||tag=="h6"||tag=="blockquote"||tag=="address";},add_listener:function(element,event,handler){if(window.addEventListener)
+element.addEventListener(event,handler,false);else
+element.attachEvent("on"+event,handler);},stop_propagation:function(event){event=event?event:window.event;event.cancelBubble=true;if(event.stopPropagation)
+event.stopPropagation();return true;},cancel:function(event){if(event)
+{event.cancel=true;event.returnValue=false;if(event.preventDefault)
+event.preventDefault();}
+w3c_slidy.key_wanted=false;return false;},strings_es:{"slide":"pág.","help?":"Ayuda","contents?":"Índice","table of contents":"tabla de contenidos","Table of Contents":"Tabla de Contenidos","restart presentation":"Reiniciar presentación","restart?":"Inicio"},help_es:"Utilice el ratón, barra espaciadora, teclas Izda/Dcha, "+"o Re pág y Av pág. Use S y B para cambiar el tamaño de fuente.",strings_ca:{"slide":"pàg..","help?":"Ajuda","contents?":"Índex","table of contents":"taula de continguts","Table of Contents":"Taula de Continguts","restart presentation":"Reiniciar presentació","restart?":"Inici"},help_ca:"Utilitzi el ratolí, barra espaiadora, tecles Esq./Dta. "+"o Re pàg y Av pàg. Usi S i B per canviar grandària de font.",strings_cs:{"slide":"snímek","help?":"nápověda","contents?":"obsah","table of contents":"obsah prezentace","Table of Contents":"Obsah prezentace","restart presentation":"znovu spustit prezentaci","restart?":"restart"},help_cs:"Prezentaci můžete procházet pomocí kliknutí myši, mezerníku, "+"šipek vlevo a vpravo nebo kláves PageUp a PageDown. Písmo se "+"dá zvětšit a zmenšit pomocí kláves B a S.",strings_nl:{"slide":"pagina","help?":"Help?","contents?":"Inhoud?","table of contents":"inhoudsopgave","Table of Contents":"Inhoudsopgave","restart presentation":"herstart presentatie","restart?":"Herstart?"},help_nl:"Navigeer d.m.v. het muis, spatiebar, Links/Rechts toetsen, "+"of PgUp en PgDn. Gebruik S en B om de karaktergrootte te veranderen.",strings_de:{"slide":"Seite","help?":"Hilfe","contents?":"Übersicht","table of contents":"Inhaltsverzeichnis","Table of Contents":"Inhaltsverzeichnis","restart presentation":"Präsentation neu starten","restart?":"Neustart"},help_de:"Benutzen Sie die Maus, Leerschlag, die Cursortasten links/rechts oder "+"Page up/Page Down zum Wechseln der Seiten und S und B für die Schriftgrösse.",strings_pl:{"slide":"slajd","help?":"pomoc?","contents?":"spis treści?","table of contents":"spis treści","Table of Contents":"Spis Treści","restart presentation":"Restartuj prezentację","restart?":"restart?"},help_pl:"Zmieniaj slajdy klikając myszą, naciskając spację, strzałki lewo/prawo"+"lub PgUp / PgDn. Użyj klawiszy S i B, aby zmienić rozmiar czczionki.",strings_fr:{"slide":"page","help?":"Aide","contents?":"Index","table of contents":"table des matières","Table of Contents":"Table des matières","restart presentation":"Recommencer l'exposé","restart?":"Début"},help_fr:"Naviguez avec la souris, la barre d'espace, les flèches "+"gauche/droite ou les touches Pg Up, Pg Dn. Utilisez "+"les touches S et B pour modifier la taille de la police.",strings_hu:{"slide":"oldal","help?":"segítség","contents?":"tartalom","table of contents":"tartalomjegyzék","Table of Contents":"Tartalomjegyzék","restart presentation":"bemutató újraindítása","restart?":"újraindítás"},help_hu:"Az oldalak közti lépkedéshez kattintson az egérrel, vagy "+"használja a szóköz, a bal, vagy a jobb nyíl, illetve a Page Down, "+"Page Up billentyűket. Az S és a B billentyűkkel változtathatja "+"a szöveg méretét.",strings_it:{"slide":"pag.","help?":"Aiuto","contents?":"Indice","table of contents":"indice","Table of Contents":"Indice","restart presentation":"Ricominciare la presentazione","restart?":"Inizio"},help_it:"Navigare con mouse, barra spazio, frecce sinistra/destra o "+"PgUp e PgDn. Usare S e B per cambiare la dimensione dei caratteri.",strings_el:{"slide":"σελίδα","help?":"βοήθεια;","contents?":"περιεχόμενα;","table of contents":"πίνακας περιεχομένων","Table of Contents":"Πίνακας Περιεχομένων","restart presentation":"επανεκκίνηση παρουσίασης","restart?":"επανεκκίνηση;"},help_el:"Πλοηγηθείτε με το κλίκ του ποντικιού, το space, τα βέλη αριστερά/δεξιά, "+"ή Page Up και Page Down. Χρησιμοποιήστε τα πλήκτρα S και B για να αλλάξετε "+"το μέγεθος της γραμματοσειράς.",strings_ja:{"slide":"スライド","help?":"ヘルプ","contents?":"目次","table of contents":"目次を表示","Table of Contents":"目次","restart presentation":"最初から再生","restart?":"最初から"},help_ja:"マウス左クリック ・ スペース ・ 左右キー "+"または Page Up ・ Page Downで操作， S ・ Bでフォントサイズ変更",strings_zh:{"slide":"幻灯片","help?":"帮助?","contents?":"内容?","table of contents":"目录","Table of Contents":"目录","restart presentation":"重新启动展示","restart?":"重新启动?"},help_zh:"用鼠标点击, 空格条, 左右箭头, Pg Up 和 Pg Dn 导航. "+"用 S, B 改变字体大小.",strings_ru:{"slide":"слайд","help?":"помощь?","contents?":"содержание?","table of contents":"оглавление","Table of Contents":"Оглавление","restart presentation":"перезапустить презентацию","restart?":"перезапуск?"},help_ru:"Перемещайтесь кликая мышкой, используя клавишу пробел, стрелки"+"влево/вправо или Pg Up и Pg Dn. Клавиши S и B меняют размер шрифта.",strings_sv:{"slide":"sida","help?":"hjälp","contents?":"innehåll","table of contents":"innehållsförteckning","Table of Contents":"Innehållsförteckning","restart presentation":"visa presentationen från början","restart?":"börja om"},help_sv:"Bläddra med ett klick med vänstra musknappen, mellanslagstangenten, "+"vänster- och högerpiltangenterna eller tangenterna Pg Up, Pg Dn. "+"Använd tangenterna S och B för att ändra textens storlek.",strings:{},localize:function(src){if(src=="")
+return src;var s,lookup=w3c_slidy.strings[w3c_slidy.lang];if(lookup)
+{s=lookup[src];if(s)
+return s;}
+var lg=w3c_slidy.lang.split("-");if(lg.length>1)
+{lookup=w3c_slidy.strings[lg[0]];if(lookup)
+{s=lookup[src];if(s)
+return s;}}
+return src;},init_localization:function(){var i18n=w3c_slidy;var help_text=w3c_slidy.help_text;this.strings={"es":this.strings_es,"ca":this.strings_ca,"cs":this.strings_cs,"nl":this.strings_nl,"de":this.strings_de,"pl":this.strings_pl,"fr":this.strings_fr,"hu":this.strings_hu,"it":this.strings_it,"el":this.strings_el,"jp":this.strings_ja,"zh":this.strings_zh,"ru":this.strings_ru,"sv":this.strings_sv},i18n.strings_es[help_text]=i18n.help_es;i18n.strings_ca[help_text]=i18n.help_ca;i18n.strings_cs[help_text]=i18n.help_cs;i18n.strings_nl[help_text]=i18n.help_nl;i18n.strings_de[help_text]=i18n.help_de;i18n.strings_pl[help_text]=i18n.help_pl;i18n.strings_fr[help_text]=i18n.help_fr;i18n.strings_hu[help_text]=i18n.help_hu;i18n.strings_it[help_text]=i18n.help_it;i18n.strings_el[help_text]=i18n.help_el;i18n.strings_ja[help_text]=i18n.help_ja;i18n.strings_zh[help_text]=i18n.help_zh;i18n.strings_ru[help_text]=i18n.help_ru;i18n.strings_sv[help_text]=i18n.help_sv;w3c_slidy.lang=document.body.parentNode.getAttribute("lang");if(!w3c_slidy.lang)
+w3c_slidy.lang=document.body.parentNode.getAttribute("xml:lang");if(!w3c_slidy.lang)
+w3c_slidy.lang="en";}};w3c_slidy.set_up();setTimeout(w3c_slidy.hide_slides,50);    </script>
+
+    
+    <!-- CSS -->
+        <link rel="stylesheet" href="./Interprètes Scheme (1)_files/font-awesome.min.css" data-external="1">
+            <style type="text/css">
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          color: #aaaaaa;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+      div.sourceCode
+        {  background-color: #f8f8f8; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span.al { color: #ef2929; } /* Alert */
+      code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+      code span.at { color: #c4a000; } /* Attribute */
+      code span.bn { color: #0000cf; } /* BaseN */
+      code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #4e9a06; } /* Char */
+      code span.cn { color: #000000; } /* Constant */
+      code span.co { color: #8f5902; font-style: italic; } /* Comment */
+      code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+      code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+      code span.dt { color: #204a87; } /* DataType */
+      code span.dv { color: #0000cf; } /* DecVal */
+      code span.er { color: #a40000; font-weight: bold; } /* Error */
+      code span.ex { } /* Extension */
+      code span.fl { color: #0000cf; } /* Float */
+      code span.fu { color: #000000; } /* Function */
+      code span.im { } /* Import */
+      code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+      code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+      code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+      code span.ot { color: #8f5902; } /* Other */
+      code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+      code span.sc { color: #000000; } /* SpecialChar */
+      code span.ss { color: #4e9a06; } /* SpecialString */
+      code span.st { color: #4e9a06; } /* String */
+      code span.va { color: #000000; } /* Variable */
+      code span.vs { color: #4e9a06; } /* VerbatimString */
+      code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+        <!-- Local CSS -->
+    <style type="text/css">
+body{color:#444}div.slide h1{color:#333;font-size:220%;font-family:helvetica,sans-serif;border-bottom:5px solid #ddd}div.slide h2{color:#333;font-size:180%;font-family:helvetica,sans-serif}div.slide.title{background:#0071b5;color:#fff}div.slide.title h1,div.slide.title h2,div.slide.title h3{color:#fff;margin-left:0}div.slide.title h1{padding-top:20%;border:0}div.slide.title h2{}div.slide.title h3{font-size:90%}ul,ol{padding-left:2em}ul ul{padding-left:1em}p{padding-left:0}code{font:droid sans mono,monaco,monospace;background-color:#ddd}pre code{border-radius:8px;box-shadow:8px 8px 12px #ddd;padding:10px;display:block}.Cblue{color:#5af}.center{text-align:center;margin:0 auto}@media print{body{font-size:16pt}div.handout{visibility:none}div.slide.title{background:#fff}div.slide.title h1,div.slide.title h2,div.slide.title h3{color:#ba0d20;margin-left:0}pre{font-size:1e2%;font-weight:400;line-height:120%}}    </style>
+
+        <link rel="stylesheet" href="data:text/css,%2Emybox%7Bmargin%3A0%205%25%3Bbox%2Dshadow%3A8px%208px%2012px%20%23aaa%3Bborder%2Dradius%3A8px%3Bbackground%3A%23ccc%7Dtable%7Bborder%2Dcollapse%3Acollapse%7D%2Eborderedtable%20th%2C%2Eborderedtable%20td%7Bborder%3A2px%20solid%20%23000%3Bpadding%3A1px%2030px%7D%2Eborderedtable%20th%7Bbackground%3A%23b5d6e9%7D%2Ered%7Bcolor%3Ared%3Bfont%2Dsize%3A120%25%7Dfigcaption%7Bcolor%3A%23999%3Bfont%2Dsize%3A80%25%7Ddiv%2EsourceCode%7Bmargin%3A1em%7D%2Euser%20code%7Bbackground%3A%23f9ff9a%7D%2Einternal%20code%7Bbackground%3A%23aff%7D">
+    
+
+    <title>Interprètes Scheme (1)</title>
+  </head>
+
+  <!-- ====================================================================== -->
+
+  <body class=" single_slide" style="visibility: visible; font-size: 18pt;"><div class=" slidy_toc hidden"><div class=" toc-heading">Table des matières</div>1. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(1)" class=" titleslide">Programmation Fonctionnelle</a><br>2. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(2)">Interprète Scheme (1)</a><br>3. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(3)">Interprète Scheme (2)</a><br>4. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(4)" class=" titleslide">Représentation de l’environnement</a><br>5. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(5)">Notion d’environnement</a><br>6. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(6)">Représentation de l’environnement</a><br>7. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(7)">Environnement global</a><br>8. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(8)">Recherche dans l’environnement</a><br>9. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(9)">Modification de l’environnement</a><br>10. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(10)" class=" titleslide">Interprétation directe</a><br>11. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(11)">Évaluation</a><br>12. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(12)">Évaluation des formes spéciales (1)</a><br>13. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(13)">Évaluation des formes spéciales (2)</a><br>14. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(14)">Évaluation des formes spéciales (3)</a><br>15. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(15)">Appels de fonctions, macros …</a><br>16. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(16)">evaluate-list &amp; funcall</a><br>17. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(17)">Environnement d’une fermeture (1)</a><br>18. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(18)">Environnement d’une fermeture (2)</a><br>19. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(19)">Environnement d’une fermeture (3)</a><br>20. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(20)">macro-expand</a><br>21. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(21)">Fonctions vs macros</a><br>22. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(22)">L’interprète</a><br>23. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(23)" class=" titleslide">Continuation Passing Style</a><br>24. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(24)">Mode CPS</a><br>25. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(25)">Fonction prod</a><br>26. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(26)">Fonction prod en mode mode CPS</a><br>27. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(27)">Comparaison prod et kprod</a><br>28. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(28)">Un autre exemple</a><br>29. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(29)">Autre version de prod / kprod (1)</a><br>30. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(30)">Autre version de prod / kprod (2)</a><br>31. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(31)" class=" titleslide">Interprète en mode CPS</a><br>32. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(32)">Interprète CPS</a><br>33. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(33)">Fonction evaluate en CPS</a><br>34. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(34)">Fonction evaluate-list</a><br>35. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(35)">begin en CPS</a><br>36. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(36)">define/set! en CPS</a><br>37. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(37)">Principe de l’implémentation de call/cc</a><br>38. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(38)">Implémentation de call/cc (1)</a><br>39. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(39)">Implémentation de call/cc (2)</a><br>40. <a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#(40)">L’interprète CPS</a></div>
+    <!-- Powerpoint like headers  -->
+    <!--
+    <div class="background">
+      <img id="head-icon" alt="Polytech logo"
+           src="http://www.polytechnice.fr/jahia/webdav/site/polytech/shared/PUBLIC/charte_graphique/LOGOTYPE_POLYTECH/POLYTECH_RVB.jpg"
+           width="100px"/>
+      <object id="head-logo" title="W3C logo" type="image/svg+xml"
+              data="http://www.w3.org/Talks/Tools/Slidy2/graphics/w3c-logo-white.svg">
+        <img src="http://www.w3.org/Talks/Tools/Slidy2/graphics/w3c-logo-white.gif"
+             alt="W3C logo" id="head-logo-fallback" />
+      </object>
+    </div>
+    -->
+
+
+    <!-- First slide -->
+    <div class="slide title first-slide">
+      <h1>Programmation Fonctionnelle</h1>
+      <h2>Interprètes Scheme</h2>
+      <h3 style="font-variant: small-caps;">(aka Scheme en Scheme)</h3>
+      <h3>SI4 — 2020-2021</h3>
+      <br><br>Erick Gallesio
+    <br><br></div>
+
+<div class=" slide hidden"><h1 id="interprète-scheme-1">Interprète Scheme (1)</h1>
+<p>On veut construire un interprète pour un sous-ensemble de Scheme (<em>Mini-Scheme</em>).</p>
+<p>Cet interprète disposera de</p>
+<ul>
+<li>Constantes
+<ul>
+<li>nombres (entiers, réels, …)</li>
+<li>booléens,</li>
+<li>listes</li>
+<li>….</li>
+</ul></li>
+<li>Primitives:
+<ul>
+<li><strong>+, -, *, /, &lt;, &gt;, &lt;=, &gt;=, =</strong></li>
+<li><strong>cons, car, cdr, null?, append, list, read, print</strong></li>
+</ul></li>
+<li>Formes spéciales:
+<ul>
+<li><strong>if, quote, lambda, define, set!, macro</strong></li>
+</ul></li>
+<li>primitive <code>call/cc</code></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="interprète-scheme-2">Interprète Scheme (2)</h1>
+<p>Au cœur d’un interprète Scheme on a le <strong>REPL</strong> (Read-Eval-Print Loop).</p>
+<p>En gros:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> Loop ()</span>
+<span id="cb1-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb1-2" aria-hidden="true" tabindex="-1"></a>    (printf <span class="st">"&gt; "</span>)                   <span class="co">;; afficher un prompt</span></span>
+<span id="cb1-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb1-3" aria-hidden="true" tabindex="-1"></a>    (printf <span class="st">"~S</span><span class="ch">\n</span><span class="st">"</span> (<span class="kw">eval</span> (<span class="kw">read</span>)))   <span class="co">;; lire — évaluer -- afficher</span></span>
+<span id="cb1-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb1-4" aria-hidden="true" tabindex="-1"></a>    (Loop))                         <span class="co">;; reboucler</span></span></code></pre></div>
+<ul>
+<li><p>Comme notre interprète est écrit en Scheme, on peut utiliser les fonctions d’E/S du système (càd <code>read</code> et <code>print</code>).</p></li>
+<li><p>On va se concentrer sur l’écriture de la fonction <code>eval</code></p></li>
+</ul>
+<hr>
+<p>En fait, on va utiliser deux techniques d’implémentation</p>
+<ul>
+<li><p><strong>Interprétation directe:</strong> technique «naturelle» de construction de la fonction d’évaluation.<br>
+⟹ difficile d’implémenter <code>callc/cc</code></p></li>
+<li><p><strong>Interprétation en mode CPS</strong>: technique basée sur le passage de continuation (CPS).<br>
+⟹ implémentation facile de <code>call/cc</code>.</p></li>
+</ul>
+<br><br></div><div id="représentation-de-lenvironnement" class="slide title hidden">
+<h1>Représentation de l’environnement</h1>
+<p>(représentation utilisée dans les deux implémentations de l’interprète)</p>
+<br><br></div>
+<div class=" slide hidden"><h1 id="notion-denvironnement">Notion d’environnement</h1>
+<ul>
+<li><p>La valeur d’une variable dépend du contexte dans lequel elle est employée</p></li>
+<li><p>L’<strong>environnement</strong> représente l’association variable / valeur</p></li>
+<li><p>Considérons le code suivant:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode scheme user"><code class="sourceCode scheme"><span id="cb2-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> x </span><span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb2-2" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> n </span><span class="dv">2</span>)</span>
+<span id="cb2-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb2-4" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((x <span class="dv">3</span>))</span>
+<span id="cb2-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb2-5" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((y <span class="dv">4</span>))</span>
+<span id="cb2-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    (<span class="op">+</span> x y n)))</span></code></pre></div></li>
+<li><p>L’environnement correspondant:</p></li>
+</ul>
+<center>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZ4AAADXCAYAAAAqXDcfAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABkYSURBVHic7d17fFTVvffx35rZM5lcISEJCSQhkAQxXAoqIIIXpFKttZ7DsVRaa1vaWmmVah+13mq9PLb1Uq8t9cLhiIJQsSqKlWptwXoekAqiIiAQErkkgYTcJ8lc9l7nD6AP5WjUJHvNTPJ5v155vTJ7hlm/ZMj+7r322msprbUAQF+mlMryeb0fRGw7L9a19ITfsjrD0Wgg1nX0hN+ytlhJPt/74Wh0TKyL6Ykkn68zFIkk9Idheb21UdserbVuiHUtJiilir0ez7u242TEupaesLzeUNS2k2JdR0+k+P2rg6HQebGuw2W5EdvOW37VVTuy09OjsS6mO17etGnA/S+/PPSxH/5w14jc3HCs6+mODbt2pdy4bNkYKxyNjvnlnDlVk0pL22NdVHfsPnjQ/6PHHy+94d//ff+MsWObY11Pd9S3tFgXP/DASBHJFZF+ETwiUiwiqX+55ZatsS6ku363enXu8xs2ZD93zTXbM1JSnFjX0x2rN2/O+O3q1eNjXYcpU0aODBZlZ0diXUd3fFhTkyQickpJSfuE4uLOWNfTHR3hsEdExBIRGVtU1Dlj7Ni22JbUPVlVVQERkRPy8ztnjBmTkD/Dnvp6X6xriBGdqJ+ZiMgLb701UETk9PLyYHZamh3rerqjorY2SY7sBwBTPLEuAADQvxA8AACjCB4AgFEEDwDAKIIHAGAUwQMAMIrgAQAYRfAAAIzixjEAcU8p5dNaJ+SMA/EsYtvq79u2pb6xbVva5qqqlEg06nn+2msr/Jbl6iSeBM9n8Mvnnx/839u3p39vxoy6WZMmJeS0PL1JKWWJiK2ZYbbXRGxb/WnTpvR1O3ak7Tt0yJ+WnGyfWlbW9u0zz2xUSsW6vHjgU0qtFZE/i8iTWuvKWBfUF/xj167kGbffXu63LJ3s99vN7e2W7TgVbrfralfbV++6q+SnixcPPX77w6tXZ592882jWjs7476rb/3OnSm3rVhR+Kd33sn6cP/+hJ4MshcpEfmbUupOpdQJsS6mL6g8eND/b/fcM+qJtWtzt+3fn/zcW28N+u6CBWWn3XzzqHA02u+TR2vdLiLPicitIlKhlHpDKfU9pVRcTTLb0NbmnX7bbSNvf/bZf5kF+6WNGzMm3XjjqHU7dqTEqraPU5afH/7Lz3++tXnx4rfnTJ1aZ6pdV3f8RdnZoUdfey2vpaPjX9r53erVeSl+v50eCMT1xIq248hljz46fM60acY+kERwpMtjiYjcKCLblVLrlVLzlFKZMS4tYeVnZkY23X33e7WPPbZ54113bTu4cOHm/3vxxR+t37kz4/6XX86JdX1xYoGINMvhA5/TRWShiNQqpZ5WSn1JKeWNaXUikpWWZn99ypRDtz37bOHqzZvTRUSqGxutuQsWlJQOHtw5ZeTIuJqMOScjIzpj7Ni2gM9ntPfC1eD50Ze+VNcRiXifWLMm6+i2dTt2pHxYXZ0y9+yz435nfudzz+WFo1E1/7zzDsa6lji0WERqjnw/WQ7vFGqUUs8qpS440h1nVEc4rM69887Sa556asix2/++bVvqpBtvHPXKkR1BPEoPBJzjZxyeN3NmvUcp+bC6OqGX/OgtR8563j9uc7KIzBGR1SKyRyl1t1JqtPHijnH5zJmHLpo8uf47CxaU1DY1WRc/8EDJoPT0yMLLL98Ty7riiavBU15QEJpcWtry1Btv/POIbeFf/5qdk5ERnj1lSlxfK9lZU+O/a+XKoQ/PnVvl83q5lnGcI2c9G4/bnCQi/yEiL4pItVLqAaXUBFM1Jfv9eu7ZZ9fdv2pVwbI33xwoItIUDHq/+fDDJYPS0qLnjR/faqqW3vDEmjVZjtZyztixLS43pZRSAxPhS0S6uv4wRESuFZEtSqm3lVLzlVLZLv/uPtaiefM+ykhOjk647roxGysq0p65+updKUlJcd3DY5LrR6XfnT697vLHHy/Zum9fUll+fviFDRsGzZk6tc6K8535Dx59tPjc8eMbzxk3ru39PXuMHXEqpfwiElf9wF3Y3cVzOSLyExH5iVLqfRF5UkSWaq1ruvg3PTZ7ypTmv23ZUjNv4cIRp44cueWqJ54o1FqrpfPnJ8TF6Oc2bBjw5Nq1g97fsye1rqXFf9OsWXsvcvkgTWudIiKNbrYRAycf+bpXKfUrEXnGZOOpgYDzf77ylZrLH3+85BvTph0cN2xYQq6f4xbXg+dbZ5zRcO2SJcMefe21nCkjR7Y1BoO+eTNnxnU32+Ovv561qbIyfdv9978Xg+bnisjvY9Cum8aKyD0i8mul1IMicr2bjT00d+6+9Tt3pp92883lh1pbfa/fcsvWrARZLydq2xKKRDytHR1eJaIHpqZGLY/H1YM0JdIhIjPdbKMXXSOHz6o/Ta2ILJXDI+DeU0qNcres4xpvarJ+sWJF4cj8/PZn1q3LmTt9en2irnnmBteDJ9nv17MmTap/Zt267O3V1YFTSkpaRhcWhtxut7taOjo81y9dOmzezJk1ST6fU9/a6m0KBr0ih1fPO9TW5h3k7k7sORHZ7OL796bLReTbn+F19SKyTA7vBN4WEXFziLDP69U3zZq1/2v33XfCuePHN5x+4olB1xrrZbOnTGmePWVKs+04suDVV7PnL1o0wnYc9bMLL3TvOqNSjtZ6vWvv34uUUlldPN0hIivl8Nn1q1rrmBxsaK3l6/ffPyLZ53P+8etfb73koYeGX/Lww6Xv3nPPltwBAxJy2e3eZuQC8I9mzqx7Ys2avNqmpqyH5s7tqnsm5g42N1sNbW2+u1euLLh75cqCY5+7449/LPrVCy8URpYt+4db7WutD4pIQgxmUEpd18XTYRFZJYd3An8yefNfS0eH57olS4aNzM9vf/Xdd7NWrFs34Gtxfk3xeF6PR64899z6B19+Of+FDRuyXA2eBKGU8snhs+djaRH5uxz+f7ZCa+329bBPddPy5fnrd+4csObWWz/ISE52nrziiqqx11wzZvb994/42y9+sYP7sgwFz8TS0o6xRUXBigMHAt8+88wGE212V8GgQZG//PznW4/dVlVX5//+I4+UXvbFL9ZcPHVqXNdvijr81zP+Y55aL4d3An/QWsfkd/Wthx8e3h4Ked67996t1z711NDLHnus5JSSki3Dc3PDsainu8LRqGpub7fi/XqoQd8RkaODBXbJ4f9nS+LpZtLVmzen371yZcFts2fvOTp0emBqqr3kyit3ffGOO8pvXr48/845c1y9zvl5PfnGG5kiIhUHDgRERJ5+881Mn2XpU0aMaC8vKHCld8pI8LSHQp7qxkb/rEmTDmUkJ8f1yI6Az6eP74s9OrigOCcnNH306ITptnHZRSIy/Mj3H4nIUyLylNZ6R+xKErn3pZdyVm3alLXq+uu35w4YEH3kssv2vHXddekX/eY3Jet/+cvt8TpC8fkNGzIitq3+beLEFr9l6aq6Ov+9L76YW9/a6ps1eXJ9rOuLtSODbn4kIo/K4S7b/xfjkj7WuePHt0aXL/9fPSJnlpcH3ewp6Ylv//a3Zcc+/v4jj5SKiNw2e/aeWy66qNaNNl0PHttx5NYVK/IOtbb65p933gG324P7lFIeEfmpiPyXHD7qXBsP0+es37kz5aZly4b95Lzzqo8OnU72+/Xyq67addrNN4+Zv2hRwe9/8IO9sa7z47xTWZlyxx//WOTxeHR2enqkrqXFr7WWaaNGNd936aX7Y11fHLBE5FStddxeH05U+plnNphu09XgWfj661nXLllS3BQMWpefc07NxNLSDjfbc8vYoqLOWHw4ccwnIjOO3NAXN04tK2sPPf3028dvH19c3Nm+ZMn/2h5Pbv/612tnn3Za07odO1JqGhv9GSkp9vji4vazyss5w5Z/3jyKPsLV4DmzvLztt3PnVo4tKupgHHvfwVGnO8YUFnaOKSzk7wR9nqvBU5afHy7Lz0+oC7oAAHfF/ezQAIC+heABABhF8AAAjCJ4AABGETwAAKMIHgCAUQQPAMAo48sTA0CsNAWD3pSkpJhP79QdHaGQR0Skpb3dW9/ampD77tbOTo/IkeAJRaOq/cgPlWhCkYhHRCRs2wn7M3Qe+Rn6o0T9zEREolorEZHOUMjT7vMl5M4sEo32lzn6vZbXq79w7bXjYl1IT/gtS8669dbRsa6jJ/yWZSvL662L2nZM1iXvLT7LciLRaMLuwEREPB5Pp+M4I9xeGjpeKKXGKKU2a629sa6lJzxKaedIACWqZL9/c3soNCHWdbjpyAqk2565+uqq7IyMhFyM7eVNmzJ+89JLuf95+eV7hg8enJAzwvxj167kny1dOtSK2vZoERkS64J6IhKNRuTwxJUJy3Gchv4SOiIiWustSqmRIpIR61p6wtE6LCL+WNfREx3h8EexrsGUyWVljUXZ2cYWJexN2/bvVyKSO2HEiKYJxcUJOadfsLMzQ0TESqQVL9G3aK3jejVaAO5I6O4pAEDiIXgAAEYRPAAAowgeAIBRBA8AwCiCBwBgFMEDADCK4AEAGJWQE80BAHpGay2r3303/W9btqRXNzT4i3JyQt+YNq1xTGGh67MiEDwA0A999/e/H7Z4zZrBORkZ4fzMzPAf1q3LuefFFwvuvuSSqqvPP7/OzbYJHgDohyaOGBH85rRpW88ZN65NRKSmsdE669ZbR12/dGnxnKlTG/MGDnRtMlWCBwB60a+efz53WE5OuCwvL7R47dpBNU1N/gsnTmy89IwzGmNd27F+fO659cc+zs/MjF48dWr97c8+W7Rx9+7k8086qdWttgkeAOhFC//618EDU1KiVXV1gQnFxW0f7NuX+txbb2X7PJ4dc6ZNa4p1fV2J2LYSETlhyJCQm+0QPADQy96pqkp/79573xtTWNgZtW2V/b3vTVi0Zk1OPAdPUzDofXLt2tzJZWUtpXl5rq73w3BqAOhlI/Pz24+ODrO8Xn3S8OFte+vrk2JdV1e+s2DBsKZg0Hryiisq3W6L4AGAXjamsDB47ONB6emRjnA4bve3P128eOifNm0atHT+/J0j8/Nd7WYToasNAHqd5U2cFd3vXrky98FXXhny+A9/WHHhxIktJtqM2wQGALjrkVdfHXTDsmXDfnPppVVzp09vMNUuZzwA0A89/eabA69YtGjEVV/+cvUlp5/eUN/a+s/TtLRAwAn4fNqttgkeAOiHFr7+eq7tOOq+VauG3rdq1dBjn7vnW9+qvOaCC1ybvYDgAYBe9J/z5u3OSk21j91206xZNY3B4MFY1fRx7vrmN/ceaG6u/bjnxhYVdbjZNsEDAL3orPLy4PHbxhcXuz7x5uc1sbS0Q0RcDZhPwuACAIBRBA8AwCiCBwBgFMEDADCK4AEAGEXwAACMIngAAEYRPAAAowgeAIBRzFwAoN94r6oqubqx0RfrOrpjb329X0Tkg717k0ORSEKeNOysrfWLiCitXZuAFADiglJqtNfj2WI7TqxL6RGf1ysR2/70F8Yxv2XZnPEA6A9s23Hkxeuuq8gZMCAa62K648W33x7wq+efz1ty5ZWVpXl54VjX0x3rduxIuXrx4kKCB0C/8YXi4pai7OxIrOvojk2VlZaISHlhYeuEOJx09LOoa2nRIgwuAAAYRvAAAIwieACgHwvbHmW6Ta7xAEA/UdmaHPioLSlQ3R5I2tvmDRzo8CcFo37L54k6OYFwqCAl0lmQFgkNSQ2FThzY1m4pcWXYM8EDAH1cZWtyYPmu7LyqYEqKJR2OI4e0rRu1kgZHpCkUtlPV/rYsX217ln9TfZayJceT7uuM/MfwxgOn5ja39HY9BA8A9FGHQj7r2d3ZuZvqMwZ61B5b63WhqG50RESO7V878r3tOCKOiGjxqZbwSdbiD8cV/KU6o+PiEXW1pRmdvbZMNsEDAH3Quw1pqY9syy9S0qK181LYUfvtz3oxR0lEi34rYqtt0X2tp/rveXfE8C8OOVT3tZL6ut6ojeABgD6mpt3vf3z74ELHed8W/VZEqe7N2KB0i9byaljr4d7Xa76Uk58aCU/La27uaX2MagOAPqTd9noe3jq0yHZqtOj1kcOdZz2jVKXtOOsjSytyh1S2BgI9fT+CBwD6CK1FHvkgr6C5s8Oyndci0sWgtL319UmvbNyY9VnfW8nmqHZ22b/bOrSoJezx9qROggcA+oh3G9JSdzanpEX0KxEl4S6HQkdtW3WEw58rA7ReG2mPtnpW7c3N7kmdBA8AuGDOgw8W/+DRR4tMtvlm7YBMUftspZtcmobblqjzvr2hLnWglu7fd8rgAgBwQX1Liy8UiRhdw2B7cyDNdiqinxQJlQcOBEKRiBIRaWxr8zlaq+379iUffX5w5sBIZmpal7N3K6fS7oie4atqTQoMT+/s1mSlBA8A9AEdttcTcSyPkoZP7GKrPHAg0NrR4RURcRxHOY4jH+7fn3L0eZ9lBT8teER1aK8KOQfb/T6CBwBiqK6lxVrw5z//89rHR/X1SUmWpW9bsSLv6LafXnDBwfRAwJVusKaQ1xIR0dKuP+mM5+xx45qOfl954EDgnd270y6cPPnQ521LSYduiljdXsmV4AGAXnCwudn70Cuv5B993NbZaYmIPnbb92fMOORW8AxIsqMiIkqSlUjQ5aWlk9UAf2e3F9QjeACgF4wuLAwdWrTonaOPz7njjrL05GT7uWuu2W2i/RSv7fiU7YTUQOXR9a61o8WvbJ3kyQ2Eu70KKqPaAKCPKBvQEbRkxGe6xyY7IyNyUklJ2+dtQ6kRniRPxB6W0RH6/BUeRvAAQB9xel5zo1bDPFrSPnWsc3pysl2cm/u5Bgdo8YjHM9p7Sk6w2dvV3amfgq42AHDB/C9/+YDP63X5Wsu/mpAdbBuWGur4qP28gGO/EFIS6dX393im+pK8mfKVoo961JfHGQ8AuOCCk09uOXf8+FaTbSrRcsWY6r0ZVprtVWf5e/fdyy0l5da8UdV7MpOi3R5YIELwAECfku6z7R+X1+7xeIZ7RJ3cK71aWg3xKs8030UjDtacMLCjx+vyEDwA0McMS+8MXVp2YJ9HTvF5PLP8onK7ta/XkqKUZ7pPyVf9p+U2N8wY0tTYG/VxjQcA+qDJuS2thWmhXX/YnTP4w6ZZ6SK7bEevjyhp+9TrTlq84lETLK9nvJXlt8OzS/btH5cVDPZWbQQPAPRRQ1JC4avH7Nu7tTE1ZXlFQd7Bzm8EPNLiOPqQ1tLgaN2gRZq1UqlK60ylVJbHUoPEUQM9SV5xvjqssWZ6fmOT6v4Ato9F8ABAH1eeGWy/7eTg7i1Naal725KS9rflBPa15wcOhQL+iOPxeLSWAYFQuCAtGhySEg4NTanvHJfVGky2tCuzLBA8ANAPKCUyNrMtODaz7V+6zBpDlpXuj9pWb5/WdIHgAYB+rKdDo7uDUW0AAKMIHgCAUQQPAMAoggcAYBSDCwD0G7sPHvR3hEIJecBd19zsExHZU1fnT/H7jU4+2luqGxt9IiJK64SsHwA+M6XUWMvr3SRaJ/TBtkcp7ehPXNk6ISilGhP6QwCAz+hkv2U5Xzv1VPeW5jRBKS0JHDxb9u5N/mDv3jqCB0C/MCA5uf2JH//YyDLU+Hi3rViR98G+fU5C9nUCABIXwQMAMIrgAQAYRfAAAIwieAAARhE8AACjCB4AgFEEDwDAKIIHAGAUwQMAMIrgAQAYRfAAAIwieAAARhE8AACjCB4AgFEEDwDAKIIHAGAUwQMAMIrgAQAYRfAAAIwieAAARhE8AACjCB4AgFEEDwDAKIIHAGAUwQMAMIrgAQAYRfAAAIwieAAARhE8AACjCB4AgFEEDwDAKIIHAGAUwQMAMIrgAQAYRfAAAIwieAAARhE8AACjCB4AgFEEDwDAKIIHAGAUwQMAMIrgAQAYRfAAAIwieAAARhE8ABBHPqyuTpp4ww0nznnwweKuXnfXypW5E2+44cTFa9dmdvW6GbffXjbxhhtObA+F4mZ/b8W6AADA/9fW2el5u6IiPdjZ2WVQVNTWJr1dUZG+79Chhq5e9/bu3ekt7e2WrXXvFtoDcZOAAID+geABABhF8AAAjCJ4AABGMbgAAOLIyCFDQi/97GfbB6Sk2F297qrzzz/41VNOaR5dWNjZ1etWXH31jnA06knx+53erbT7CB4AiCPpgYDzlZNPbvm015UXFITKCwpCn/a6mV/4QlvvVNZ76GoDABhF8AAAjCJ4AABGETwAAKMIHgCAUQQPAMAoggcAYBTBAwAwiuABABhF8AAAjCJ4AABGETwAAKMIHgCAUQQPAMAoggcAYBTBAwAwiuABABhF8AAAjCJ4AABGETwAAKMIHgCAUQQPAMAoggcAYBTBAwAwiuABABhF8AAAjCJ4AABGETwAAKMIHgCAUQQPAMAoggcAYBTBAwAwiuABABhF8AAAjCJ4AABGETwAAKMIHgCAUQQPAMAoggcAYBTBAwAwiuABABhF8AAAjCJ4AABGETwAAKMIHgCAUQQPAMAoggcAYBTBAwAwiuABABhlxboAADAhFI1aqzZuzIh1Hf1ZxYEDSSLSrrTWsa4FAFyllJrkUepNR2tfrGvp7wJ+/5L/AdxTS7ij4ALtAAAAAElFTkSuQmCC">
+</center>
+<br><br></div><div class=" slide hidden"><h1 id="représentation-de-lenvironnement-1">Représentation de l’environnement</h1>
+<ul>
+<li>Les blocs de liaisons sont représentés par des <em>hash-tables</em>.</li>
+<li>L’environnement est donc une liste de <em>hash-tables</em></li>
+</ul>
+<p>Soit le code</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scheme user"><code class="sourceCode scheme"><span id="cb3-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> x </span><span class="dv">1</span>)</span>
+<span id="cb3-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb3-2" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> n </span><span class="dv">2</span>)</span>
+<span id="cb3-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb3-4" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((x <span class="dv">3</span>))</span>
+<span id="cb3-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((y <span class="dv">4</span>))</span>
+<span id="cb3-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb3-6" aria-hidden="true" tabindex="-1"></a>    (<span class="op">+</span> x y n)))</span></code></pre></div>
+<p>L’environnement est:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb4-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">;;                    { ... } représente une hash table</span></span>
+<span id="cb4-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb4-2" aria-hidden="true" tabindex="-1"></a>( <span class="op">{</span>(y <span class="op">.</span> <span class="dv">4</span>)<span class="op">}</span></span>
+<span id="cb4-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span>(x <span class="op">.</span> <span class="dv">3</span>)<span class="op">}</span></span>
+<span id="cb4-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span>(x <span class="op">.</span> <span class="dv">1</span>) (n <span class="op">.</span> <span class="dv">2</span>) (<span class="op">+</span> <span class="op">.</span> <span class="st">#&lt;primitive</span><span class="ot"> +</span><span class="st">&gt;) ...}</span></span>
+<span id="cb4-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="environnement-global">Environnement global</h1>
+<p><strong>Construction de l’environnement global</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb5-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb5-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> *global-env*</span></span>
+<span id="cb5-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">list</span></span>
+<span id="cb5-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb5-3" aria-hidden="true" tabindex="-1"></a>   (make-hash `((<span class="op">+</span>      <span class="op">.</span> ,+)</span>
+<span id="cb5-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb5-4" aria-hidden="true" tabindex="-1"></a>                (<span class="op">-</span>      <span class="op">.</span> ,-)</span>
+<span id="cb5-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb5-5" aria-hidden="true" tabindex="-1"></a>                (<span class="op">*</span>      <span class="op">.</span> ,*)</span>
+<span id="cb5-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb5-6" aria-hidden="true" tabindex="-1"></a>                <span class="op">...</span></span>
+<span id="cb5-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb5-7" aria-hidden="true" tabindex="-1"></a>                (<span class="kw">list</span>   <span class="op">.</span> ,(λ l l))</span>
+<span id="cb5-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb5-8" aria-hidden="true" tabindex="-1"></a>                (print  <span class="op">.</span> ,(λ l (<span class="kw">for-each</span> <span class="kw">display</span> l) (<span class="kw">newline</span>)))))))</span></code></pre></div>
+<p>La forme</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb6-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb6-1" aria-hidden="true" tabindex="-1"></a>(make-hash '((a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">2</span>) (c <span class="op">.</span> <span class="dv">3</span>)))</span></code></pre></div>
+<p>permet de créer une «hash-table».</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb7-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> (a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">2</span>) (c <span class="op">.</span> <span class="dv">3</span>) <span class="op">}</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="recherche-dans-lenvironnement">Recherche dans l’environnement</h1>
+<p><strong>Recherche dans l’environnement</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb8-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> *absent* </span>(<span class="kw">list</span> 'absent))    <span class="co">;; unique si test avec eq?</span></span>
+<span id="cb8-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-3" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(find-binding var env)</span>
+<span id="cb8-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (<span class="kw">null?</span> env)</span>
+<span id="cb8-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-5" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">error</span> <span class="st">"undefined variable:"</span> var)</span>
+<span id="cb8-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="co">;; env is a pair</span></span>
+<span id="cb8-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-7" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">let</span> ((val (hash-ref (<span class="kw">car</span> env) var *absent*)))</span>
+<span id="cb8-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-8" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">if</span> (<span class="kw">eq?</span> val *absent*)</span>
+<span id="cb8-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-9" aria-hidden="true" tabindex="-1"></a>            (find-binding var (<span class="kw">cdr</span> env))</span>
+<span id="cb8-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb8-10" aria-hidden="true" tabindex="-1"></a>            val))))</span></code></pre></div>
+<p>On utilise <code>hash-ref</code> pour chercher dans une «hash-table»</p>
+<div class="sourceCode" id="cb9" style="font-size:80%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb9-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="ex">define</span><span class="fu"> h </span>(make-hash '((a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">2</span>) (c <span class="op">.</span> <span class="dv">3</span>))))</span>
+<span id="cb9-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> h</span>
+<span id="cb9-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> (a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">2</span>) (c <span class="op">.</span> <span class="dv">3</span>) <span class="op">}</span></span>
+<span id="cb9-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (hash-ref h 'b *absent*)</span>
+<span id="cb9-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="dv">2</span></span>
+<span id="cb9-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (hash-ref h 'd *absent*)</span>
+<span id="cb9-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (absent)                   <span class="co">;; la valuer de *absent*</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="modification-de-lenvironnement">Modification de l’environnement</h1>
+<p><strong>Definition / Affectation</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb10-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(set-binding! var val the-env err?)</span>
+<span id="cb10-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; err? indicates if an absent binding is an error</span></span>
+<span id="cb10-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> Loop ((env the-env))</span>
+<span id="cb10-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">if</span> (<span class="kw">pair?</span> env)</span>
+<span id="cb10-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-5" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">let</span> ((old (hash-ref (<span class="kw">car</span> env) var *absent*)))</span>
+<span id="cb10-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-6" aria-hidden="true" tabindex="-1"></a>          (<span class="kw">if</span> (<span class="kw">and</span> (<span class="kw">eq?</span> old *absent*) err?)</span>
+<span id="cb10-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-7" aria-hidden="true" tabindex="-1"></a>              <span class="co">;; continue the search in embedding env</span></span>
+<span id="cb10-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-8" aria-hidden="true" tabindex="-1"></a>              (Loop (<span class="kw">cdr</span> env))</span>
+<span id="cb10-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-9" aria-hidden="true" tabindex="-1"></a>              <span class="co">;; replace current binding or define var</span></span>
+<span id="cb10-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-10" aria-hidden="true" tabindex="-1"></a>              (hash-set! (<span class="kw">car</span> env) var val)))</span>
+<span id="cb10-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">;; no more hash table</span></span>
+<span id="cb10-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-12" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">if</span> err?</span>
+<span id="cb10-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">;; var didn't exist ⟹ error</span></span>
+<span id="cb10-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-14" aria-hidden="true" tabindex="-1"></a>            (<span class="kw">error</span> <span class="st">"undefined variable:"</span> var)</span>
+<span id="cb10-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-15" aria-hidden="true" tabindex="-1"></a>            <span class="co">;; Define a new binding in the OUTERMOST env</span></span>
+<span id="cb10-16"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb10-16" aria-hidden="true" tabindex="-1"></a>            (hash-set! (<span class="kw">car</span> the-env) var val)))))</span></code></pre></div>
+<p>On utilise <code>hash-set!</code> pour changer une association variable/valeur:</p>
+<div class="sourceCode" id="cb11" style="font-size:80%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb11-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> h</span>
+<span id="cb11-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> (a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">2</span>) (c <span class="op">.</span> <span class="dv">3</span>) <span class="op">}</span></span>
+<span id="cb11-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (hash-set! h 'b <span class="dv">20</span>)</span>
+<span id="cb11-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (hash-set! h 'd <span class="dv">4</span>)</span>
+<span id="cb11-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> h</span>
+<span id="cb11-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span> (a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">20</span>) (c <span class="op">.</span> <span class="dv">3</span>) (d <span class="op">.</span> <span class="dv">4</span>) <span class="op">}</span></span></code></pre></div>
+<p></p>
+<br><br></div><div id="interprétation-directe" class="slide title hidden">
+<h1>Interprétation directe</h1>
+<br><br></div>
+<p></p>
+<div class=" slide hidden"><h1 id="évaluation">Évaluation</h1>
+<p>Dans notre sytème, la fonction d’évaluation s’appelle <strong>evaluate</strong>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb12-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(evaluate expr env)</span>
+<span id="cb12-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb12-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-3" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">symbol?</span> expr)</span>
+<span id="cb12-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">;; C'est une variable</span></span>
+<span id="cb12-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-5" aria-hidden="true" tabindex="-1"></a>        (find-binding expr env)</span>
+<span id="cb12-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-7" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">pair?</span>   expr)</span>
+<span id="cb12-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">;; Soit c'est une forme spéciale</span></span>
+<span id="cb12-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">;; Soit c'est un appel</span></span>
+<span id="cb12-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">;;    - primitive, ou</span></span>
+<span id="cb12-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">;;    - fonction utilisateur, ou</span></span>
+<span id="cb12-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="co">;;    - macro</span></span>
+<span id="cb12-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">...</span>)</span>
+<span id="cb12-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-15" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span></span>
+<span id="cb12-16"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">;; C'est une constante. La renvoyer</span></span>
+<span id="cb12-17"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb12-17" aria-hidden="true" tabindex="-1"></a>        expr)))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="évaluation-des-formes-spéciales-1">Évaluation des formes spéciales (1)</h1>
+<p><strong>Algorithme général</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb13-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">case</span> (<span class="kw">car</span> expr)</span>
+<span id="cb13-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; Formes spéciales</span></span>
+<span id="cb13-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  ((<span class="kw">quote</span>)  (<span class="kw">cadr</span> expr))</span>
+<span id="cb13-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  ((<span class="kw">begin</span>)  (evaluate-compound (<span class="kw">cdr</span> expr) env))</span>
+<span id="cb13-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  ((<span class="kw">set!</span>)   (set-binding! (<span class="kw">cadr</span> expr) (evaluate (<span class="kw">caddr</span> expr) env) env <span class="dv">#t</span>))</span>
+<span id="cb13-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  ((<span class="ex">define</span><span class="fu">) </span>(set-binding! (<span class="kw">cadr</span> expr) (evaluate (<span class="kw">caddr</span> expr) env) env <span class="dv">#f</span>))</span>
+<span id="cb13-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  ((<span class="kw">if</span>)     (<span class="kw">if</span> (evaluate (<span class="kw">cadr</span> expr) env)</span>
+<span id="cb13-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-8" aria-hidden="true" tabindex="-1"></a>                (evaluate (<span class="kw">caddr</span> expr) env)</span>
+<span id="cb13-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-9" aria-hidden="true" tabindex="-1"></a>                (evaluate (<span class="kw">cadddr</span> expr) env)))</span>
+<span id="cb13-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-10" aria-hidden="true" tabindex="-1"></a>  ((<span class="kw">lambda</span>) (make-closure (<span class="kw">cadr</span> expr) (<span class="kw">cddr</span> expr) env))      <span class="co">;; (λ (x y) …)</span></span>
+<span id="cb13-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  ((macro)  (make-macro   (<span class="kw">cadr</span> expr) (<span class="kw">cddr</span> expr) env))      <span class="co">;; (macro (x y) …)</span></span>
+<span id="cb13-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">else</span></span>
+<span id="cb13-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-13" aria-hidden="true" tabindex="-1"></a>            <span class="co">;; Appel de fonction, macro, primitive ....</span></span>
+<span id="cb13-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb13-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="évaluation-des-formes-spéciales-2">Évaluation des formes spéciales (2)</h1>
+<dl>
+<dt><strong>Fermetures</strong>:</dt>
+<dd>En Scheme, une fonction capture son environnement au moment de sa création.
+</dd>
+</dl>
+<ul>
+<li><p>Par conséquent, une fermeture nécessite de sauvegarder le code <strong>ET</strong> l’environnement de création</p></li>
+<li><p>L’environnement sera utilisé lorsqu’on appelera la fermeture</p></li>
+<li><p>Représentation interne:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb14-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb14-1" aria-hidden="true" tabindex="-1"></a>(*closure* &lt;args&gt; &lt;body&gt; &lt;env&gt;)</span></code></pre></div></li>
+</ul>
+<dl>
+<dt><strong>Macros</strong>:</dt>
+<dd>Les macros que l’on va implémenter ici sont le macros <strong>à la Lisp</strong> (pas d’hygiène).
+</dd>
+</dl>
+<ul>
+<li><p>On sauvegarde aussi l’environnement (on s’en servira à la macro-expansion)</p></li>
+<li><p>Représentation interne:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb15-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb15-1" aria-hidden="true" tabindex="-1"></a>(*macro* &lt;args&gt; &lt;body&gt; &lt;env&gt;)</span></code></pre></div></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="évaluation-des-formes-spéciales-3">Évaluation des formes spéciales (3)</h1>
+<p><strong>Fermetures</strong></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb16-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb16-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(make-closure args body env)</span>
+<span id="cb16-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">list</span> '*closure* args body env))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb17-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(closure? obj)</span>
+<span id="cb17-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">and</span> (<span class="kw">pair?</span> obj)                    <span class="co">;; on pourrait utiliser la technique</span></span>
+<span id="cb17-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb17-3" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">eq?</span> (<span class="kw">car</span> obj) '*closure*)))   <span class="co">;; précedente pour assurer l'unicité</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb18-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb18-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> closure-args </span><span class="kw">cadr</span>)            <span class="co">;; 2ème de la liste</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb19-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> closure-body </span><span class="kw">caddr</span>)           <span class="co">;; 3ème de la liste</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb20-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb20-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> closure-env  </span><span class="kw">cadddr</span>)          <span class="co">;; 4ème de la liste</span></span></code></pre></div>
+<dl>
+<dt><strong>Macros</strong></dt>
+<dd><p>En gros, c’est la même chose.</p>
+</dd>
+</dl>
+<br><br></div><div class=" slide hidden"><h1 id="appels-de-fonctions-macros">Appels de fonctions, macros …</h1>
+<p>L’algorithme général</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb21-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">case</span> (<span class="kw">car</span> expr)</span>
+<span id="cb21-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; Formes spéciales</span></span>
+<span id="cb21-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  ((<span class="kw">quote</span>)  (<span class="kw">cadr</span> expr))        <span class="co">;; cf transparents précédents</span></span>
+<span id="cb21-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">...</span></span>
+<span id="cb21-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">else</span></span>
+<span id="cb21-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-8" aria-hidden="true" tabindex="-1"></a>   <span class="co">;; Appel de fonction, macro, primitive ....</span></span>
+<span id="cb21-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-9" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">let</span> ((select (evaluate (<span class="kw">car</span> expr) env)))</span>
+<span id="cb21-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-10" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">if</span> (macro? select)</span>
+<span id="cb21-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-11" aria-hidden="true" tabindex="-1"></a>         (evaluate (macro-expand select (<span class="kw">cdr</span> expr))</span>
+<span id="cb21-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-12" aria-hidden="true" tabindex="-1"></a>                   env)</span>
+<span id="cb21-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-13" aria-hidden="true" tabindex="-1"></a>         (funcall select</span>
+<span id="cb21-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-14" aria-hidden="true" tabindex="-1"></a>                  (evaluate-list (<span class="kw">cdr</span> expr) env)</span>
+<span id="cb21-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb21-15" aria-hidden="true" tabindex="-1"></a>                  env)))))</span></code></pre></div>
+<ul>
+<li>Pour les macros, on <strong>macro-expanse</strong> puis on evalue la forme obtenue
+<ul>
+<li>En Scheme standard, les macros ne sont pas dans le même espace de noms. (i.e.&nbsp;on peut faire <code>(define set! 10)</code> sans «casser» <code>set!</code>)</li>
+</ul></li>
+<li><strong>funcall</strong> se charge des appels de primitives <strong>et</strong> de fermetures</li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="evaluate-list-funcall">evaluate-list &amp; funcall</h1>
+<div class="sourceCode" id="cb22"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb22-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb22-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(evaluate-list lst env)</span>
+<span id="cb22-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  (map (λ (x) (evaluate x env)) lst))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb23-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb23-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(funcall func args env)</span>
+<span id="cb23-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (closure? func)</span>
+<span id="cb23-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb23-3" aria-hidden="true" tabindex="-1"></a>      (evaluate-compound (closure-body func)</span>
+<span id="cb23-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb23-4" aria-hidden="true" tabindex="-1"></a>                         (extend-env (closure-args func)</span>
+<span id="cb23-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb23-5" aria-hidden="true" tabindex="-1"></a>                                     args</span>
+<span id="cb23-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb23-6" aria-hidden="true" tabindex="-1"></a>                                     (closure-env func)))</span>
+<span id="cb23-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb23-7" aria-hidden="true" tabindex="-1"></a>      <span class="co">;; primitive call (+, -, car …)</span></span>
+<span id="cb23-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb23-8" aria-hidden="true" tabindex="-1"></a>      (apply func args)))</span></code></pre></div>
+<p><strong>evaluate-compound</strong> évalue toutes les expressions d’une liste dans un environnement donné.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb24-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb24-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(evaluate-compound l env)</span>
+<span id="cb24-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; Evaluer toutes les expressions de la liste l dans l'environnement env</span></span>
+<span id="cb24-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (<span class="kw">null?</span> (<span class="kw">cdr</span> l))</span>
+<span id="cb24-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb24-4" aria-hidden="true" tabindex="-1"></a>      (evaluate (<span class="kw">car</span> l) env)</span>
+<span id="cb24-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb24-5" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">begin</span></span>
+<span id="cb24-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb24-6" aria-hidden="true" tabindex="-1"></a>         (evaluate (<span class="kw">car</span> l) env)</span>
+<span id="cb24-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb24-7" aria-hidden="true" tabindex="-1"></a>         (evaluate-compound (<span class="kw">cdr</span> l) env))))</span></code></pre></div>
+<p><strong>Remarque:</strong> cette version de <code>evaluate-compound</code> est bien récursive terminale.</p>
+<br><br></div><div class=" slide hidden"><h1 id="environnement-dune-fermeture-1">Environnement d’une fermeture (1)</h1>
+<p>Soit la fonction</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode scheme user"><code class="sourceCode scheme"><span id="cb25-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb25-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> f</span></span>
+<span id="cb25-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((x <span class="dv">1</span>))</span>
+<span id="cb25-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb25-3" aria-hidden="true" tabindex="-1"></a>    (λ (n m) (<span class="op">+</span> n m x))))</span></code></pre></div>
+<p>L’environnement à la création de la fermeture f est:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb26-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb26-1" aria-hidden="true" tabindex="-1"></a>( <span class="op">{</span>(x <span class="op">.</span> <span class="dv">1</span>)<span class="op">}</span></span>
+<span id="cb26-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span>&lt;EnvironnementGlobal&gt;} )</span></code></pre></div>
+<p>Au moment de l’appel</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode scheme user"><code class="sourceCode scheme"><span id="cb27-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb27-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((x <span class="dv">12</span>))</span>
+<span id="cb27-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  (f x <span class="dv">42</span>))</span></code></pre></div>
+<p>L’environnement courant doit devenir</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb28-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb28-1" aria-hidden="true" tabindex="-1"></a>(  <span class="op">{</span>(n <span class="op">.</span> <span class="dv">12</span>) (m <span class="op">.</span> <span class="dv">42</span>)<span class="op">}</span></span>
+<span id="cb28-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb28-2" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span>(x <span class="op">.</span> <span class="dv">1</span>)<span class="op">}</span></span>
+<span id="cb28-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb28-3" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span>&lt;EnvironnementGlobal&gt;} )</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="environnement-dune-fermeture-2">Environnement d’une fermeture (2)</h1>
+<p>En Scheme, on peut avoir des fonctions à nombre variable de paramètres</p>
+<p>Soit <code>foo</code>, définie comme</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode scheme user"><code class="sourceCode scheme"><span id="cb29-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(foo a <span class="op">.</span> lst)</span>
+<span id="cb29-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb29-2" aria-hidden="true" tabindex="-1"></a>   (<span class="kw">list</span> lst a))</span></code></pre></div>
+<p>Le «morceau» d’environnement qu’il faudra construire au moment de l’appel de</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode scheme user"><code class="sourceCode scheme"><span id="cb30-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb30-1" aria-hidden="true" tabindex="-1"></a>(foo <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>)</span></code></pre></div>
+<p>sera</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb31-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span>(a <span class="op">.</span> <span class="dv">1</span>) (lst <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>)<span class="op">}</span>           <span class="co">;; identique à ((a . 1) (lst . (2 3 4)))</span></span></code></pre></div>
+<p>La fonction <strong>extend-env</strong> construit l’environnement d’appel.</p>
+<br><br></div><div class=" slide hidden"><h1 id="environnement-dune-fermeture-3">Environnement d’une fermeture (3)</h1>
+<div class="sourceCode" id="cb32"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb32-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(extend-env vars vals env)</span>
+<span id="cb32-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">letrec</span> ((bind (λ (vars vals res)</span>
+<span id="cb32-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-3" aria-hidden="true" tabindex="-1"></a>                   (<span class="kw">cond</span></span>
+<span id="cb32-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-4" aria-hidden="true" tabindex="-1"></a>                     ((<span class="kw">symbol?</span> vars)    (<span class="kw">cons</span> (<span class="kw">cons</span> vars vals) res))</span>
+<span id="cb32-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-5" aria-hidden="true" tabindex="-1"></a>                     ((<span class="kw">and</span> (<span class="kw">null?</span> vars)</span>
+<span id="cb32-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-6" aria-hidden="true" tabindex="-1"></a>                           (<span class="kw">null?</span> vals)) res)</span>
+<span id="cb32-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-7" aria-hidden="true" tabindex="-1"></a>                     ((<span class="kw">null?</span> vars)      (<span class="kw">error</span> <span class="st">"too many arguments:"</span> vals))</span>
+<span id="cb32-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-8" aria-hidden="true" tabindex="-1"></a>                     ((<span class="kw">null?</span> vals)      (<span class="kw">error</span> <span class="st">"argument missing:"</span> vars))</span>
+<span id="cb32-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-9" aria-hidden="true" tabindex="-1"></a>                     (<span class="kw">else</span>              (bind (<span class="kw">cdr</span> vars)</span>
+<span id="cb32-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-10" aria-hidden="true" tabindex="-1"></a>                                              (<span class="kw">cdr</span> vals)</span>
+<span id="cb32-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-11" aria-hidden="true" tabindex="-1"></a>                                              (<span class="kw">cons</span> (<span class="kw">cons</span> (<span class="kw">car</span> vars) (<span class="kw">car</span> vals))</span>
+<span id="cb32-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-12" aria-hidden="true" tabindex="-1"></a>                                                    res)))))))</span>
+<span id="cb32-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-13" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">cons</span> (make-hash (bind vars vals '()))</span>
+<span id="cb32-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb32-14" aria-hidden="true" tabindex="-1"></a>          env)))</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb33-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (extend-env '(a b) '(<span class="dv">1</span> <span class="dv">2</span>)         '(<span class="op">{</span>&lt;glob&gt;})) ⟹ (<span class="op">{</span>(a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">2</span>)<span class="op">}</span>         <span class="op">{</span>&lt;glob&gt;})</span>
+<span id="cb33-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (extend-env '(a b <span class="op">.</span> l) '(<span class="dv">1</span> <span class="dv">2</span>)     '(<span class="op">{</span>&lt;glob&gt;})) ⟹ (<span class="op">{</span>(a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">2</span>) (l)<span class="op">}</span>     <span class="op">{</span>&lt;glob&gt;})</span>
+<span id="cb33-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (extend-env '(a b <span class="op">.</span> l) '(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>) '(<span class="op">{</span>&lt;glob&gt;})) ⟹ (<span class="op">{</span>(a <span class="op">.</span> <span class="dv">1</span>) (b <span class="op">.</span> <span class="dv">2</span>) (l <span class="dv">3</span> <span class="dv">4</span>)<span class="op">}</span> <span class="op">{</span>&lt;glob&gt;})</span></code></pre></div>
+<p><strong>Rappels</strong>:</p>
+<ul>
+<li><code>(l)</code> ≡ <code>(l . ())</code></li>
+<li><code>(l 3 4)</code> est ≡ <code>(l . ( 3 4))</code></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="macro-expand">macro-expand</h1>
+<div class="sourceCode" id="cb34"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb34-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb34-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(macro-expand macro args)</span>
+<span id="cb34-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  (evaluate-compound (macro-body macro)</span>
+<span id="cb34-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb34-3" aria-hidden="true" tabindex="-1"></a>                     (extend-env (macro-args macro)</span>
+<span id="cb34-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb34-4" aria-hidden="true" tabindex="-1"></a>                                 args</span>
+<span id="cb34-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb34-5" aria-hidden="true" tabindex="-1"></a>                                 (macro-env macro))))</span></code></pre></div>
+<p>On a besoin que de l’environnement de la macro (environnement courant inutile ici)</p>
+<p>Soit le code utilisateur</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode scheme user"><code class="sourceCode scheme"><span id="cb35-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb35-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> incr</span></span>
+<span id="cb35-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  (macro (v val)</span>
+<span id="cb35-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb35-3" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">list</span> 'set! v (<span class="kw">list</span> '+ v val))))</span></code></pre></div>
+<p>On a</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb36-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb36-1" aria-hidden="true" tabindex="-1"></a>(evaluate '(incr foo (<span class="op">+</span> x <span class="dv">2</span>)) env)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb37-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb37-1" aria-hidden="true" tabindex="-1"></a>⟹ (evaluate (macro-expand incr '(foo (<span class="op">+</span> x <span class="dv">2</span>))) env)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb38-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb38-1" aria-hidden="true" tabindex="-1"></a>⟹ (evaluate '(<span class="kw">set!</span> foo (<span class="op">+</span> foo (<span class="op">+</span> x <span class="dv">2</span>))) env)</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="fonctions-vs-macros">Fonctions vs macros</h1>
+<p>Dans la fonction <code>evaluate</code> on avait <em>(slide 15)</em>:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb39-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb39-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> ((select (evaluate (<span class="kw">car</span> expr) env)))</span>
+<span id="cb39-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb39-2" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">if</span> (macro? select)</span>
+<span id="cb39-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb39-3" aria-hidden="true" tabindex="-1"></a>         (evaluate (macro-expand select (<span class="kw">cdr</span> expr))</span>
+<span id="cb39-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb39-4" aria-hidden="true" tabindex="-1"></a>                   env)</span>
+<span id="cb39-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb39-5" aria-hidden="true" tabindex="-1"></a>         (funcall select</span>
+<span id="cb39-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb39-6" aria-hidden="true" tabindex="-1"></a>                  (evaluate-list (<span class="kw">cdr</span> expr) env)</span>
+<span id="cb39-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb39-7" aria-hidden="true" tabindex="-1"></a>                  env)))</span></code></pre></div>
+<ul>
+<li>dans une macro, les arguments (qui sont dans <code>(cdr expr)</code>) ne sont pas évalués
+<ul>
+<li>tout se passe comme si on valuait les paramètres avec <strong>le «code» des expressions</strong> de l’utilisateur.</li>
+</ul></li>
+<li>dans une fonction, on évalue au préalable les arguments (avec <code>evaluate-list</code>) des expressions avant l’appel.
+<ul>
+<li>tout se passe comme si on valuait les paramètres avec <strong>la valeur des expressions</strong> de l’utilisateur.</li>
+</ul></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="linterprète">L’interprète</h1>
+<p>L’interprète est facile à implémenter:</p>
+<ul>
+<li>Initialisation de l’environnement</li>
+<li>REPL</li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb40-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(interp)</span>
+<span id="cb40-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; Initialization: banner, environment, ...</span></span>
+<span id="cb40-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  (init-interpreter)</span>
+<span id="cb40-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; REPL</span></span>
+<span id="cb40-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-6" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> Loop ()</span>
+<span id="cb40-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-7" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">display</span> <span class="st">"Mini-Scheme&gt; "</span>)</span>
+<span id="cb40-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-8" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">let</span> ((expr (<span class="kw">read</span>)))</span>
+<span id="cb40-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-9" aria-hidden="true" tabindex="-1"></a>      (unless (<span class="kw">eof-object?</span> expr)</span>
+<span id="cb40-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-10" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">let</span> ((res (evaluate expr *global-env*)))</span>
+<span id="cb40-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-11" aria-hidden="true" tabindex="-1"></a>          (unless (<span class="kw">eq?</span> res (void))</span>
+<span id="cb40-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-12" aria-hidden="true" tabindex="-1"></a>            (<span class="kw">write</span> res)</span>
+<span id="cb40-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-13" aria-hidden="true" tabindex="-1"></a>            (<span class="kw">newline</span>)))</span>
+<span id="cb40-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-14" aria-hidden="true" tabindex="-1"></a>        (Loop))))</span>
+<span id="cb40-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-16"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb40-16" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">display</span> <span class="st">"Bye</span><span class="ch">\n</span><span class="st">"</span>))</span></code></pre></div>
+<ul>
+<li><code>(void)</code> valeur renvoyée par les fonctions sans résultat (define, set!, if sans else, …)</li>
+</ul>
+<p></p>
+<br><br></div><div id="continuation-passing-style" class="slide title hidden">
+<h1>Continuation Passing Style</h1>
+<br><br></div>
+<p></p>
+<div class=" slide hidden"><h1 id="mode-cps">Mode CPS</h1>
+<ul>
+<li><em>Continuation Passing Style</em> (<strong>CPS</strong>) est un mode programmation où les fonctions que l’on construit prennent un paramètre supplémentaire qui est une <em>continuation</em>.</li>
+<li>Au lieu de retourner un résultat, la fonction «passe» une valeur à la continuation qu’elle a en paramètre</li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb41-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb41-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(foo a b)</span>
+<span id="cb41-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">list</span> a b))</span>
+<span id="cb41-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb41-4" aria-hidden="true" tabindex="-1"></a>(foo <span class="dv">1</span> <span class="dv">2</span>)                           <span class="co">; ⟹ (1 2)</span></span>
+<span id="cb41-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb41-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">reverse</span> (foo <span class="dv">3</span> <span class="dv">4</span>))                 <span class="co">; ⟹ (4 3)</span></span></code></pre></div>
+<p>Version CPS de la fonction <code>foo</code></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb42-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb42-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(kfoo a b k)</span>
+<span id="cb42-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb42-2" aria-hidden="true" tabindex="-1"></a>  (k (<span class="kw">list</span> a b)))</span>
+<span id="cb42-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb42-4" aria-hidden="true" tabindex="-1"></a>(kfoo <span class="dv">1</span> <span class="dv">2</span> (λ (x) x))           <span class="co">; ⟹ (1 2)</span></span>
+<span id="cb42-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb42-5" aria-hidden="true" tabindex="-1"></a>(kfoo <span class="dv">3</span> <span class="dv">4</span> <span class="kw">reverse</span>)             <span class="co">; ⟹ (4 3)</span></span></code></pre></div>
+<center>
+<div style="width: 80%; border: 2px solid red;">
+<p>En mode CPS, le <strong>retour</strong> d’une fonction est donc toujours un <strong>appel</strong> de fonction.</p>
+</div>
+</center>
+<br><br></div><div class=" slide hidden"><h1 id="fonction-prod">Fonction prod</h1>
+<p>Soit la fonction <code>prod</code> calculant le produit des élements d’une liste:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb43-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb43-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(prod l)</span>
+<span id="cb43-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (<span class="kw">null?</span> l)</span>
+<span id="cb43-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb43-3" aria-hidden="true" tabindex="-1"></a>      <span class="dv">1</span></span>
+<span id="cb43-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb43-4" aria-hidden="true" tabindex="-1"></a>      (<span class="op">*</span> (<span class="kw">car</span> l) (prod (<span class="kw">cdr</span> l)))))</span></code></pre></div>
+<p>Trace de <code>prod</code> et <code>*</code> sur l’appel <strong>(prod ’(10 20 30))</strong></p>
+<pre class="sheme internal"><code>.. -&gt; prod with args = ((10 20 30))
+.... -&gt; prod with args = ((20 30))
+...... -&gt; prod with args = ((30))
+........ -&gt; prod with args = (())
+........ &lt;- prod returns 1
+........ -&gt; * with args = (30 1)
+........ &lt;- * returns 30
+...... &lt;- prod returns 30
+...... -&gt; * with args = (20 30)
+...... &lt;- * returns 600
+.... &lt;- prod returns 600
+.... -&gt; * with args = (10 600)
+.... &lt;- * returns 6000
+.. &lt;- prod returns 6000</code></pre>
+<br><br></div><div class=" slide hidden"><h1 id="fonction-prod-en-mode-mode-cps">Fonction prod en mode mode CPS</h1>
+<p><strong>Version CPS de prod</strong></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb45-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb45-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(kprod l k)</span>
+<span id="cb45-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (<span class="kw">null?</span> l)</span>
+<span id="cb45-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb45-3" aria-hidden="true" tabindex="-1"></a>      (k <span class="dv">1</span>)</span>
+<span id="cb45-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb45-4" aria-hidden="true" tabindex="-1"></a>      (kprod (<span class="kw">cdr</span> l)</span>
+<span id="cb45-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb45-5" aria-hidden="true" tabindex="-1"></a>             (λ (v) (k (<span class="op">*</span> (<span class="kw">car</span> l) v))))))</span></code></pre></div>
+<p>Trace de <code>kprod</code> et <code>*</code> sur l’appel <strong>(kprod ’(10 20 30))</strong></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb46-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (kprod '(<span class="dv">10</span> <span class="dv">20</span> <span class="dv">30</span>) (λ (x) x))</span>
+<span id="cb46-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-2" aria-hidden="true" tabindex="-1"></a>.. -&gt; kprod with args <span class="op">=</span> ((<span class="dv">10</span> <span class="dv">20</span> <span class="dv">30</span>) <span class="st">#&lt;closure</span><span class="ot"> 81b0980</span><span class="st">&gt;)</span></span>
+<span id="cb46-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="st">.... -&gt; kprod with args = ((20 30) #&lt;closure</span><span class="ot"> 81b0880</span><span class="st">&gt;)</span></span>
+<span id="cb46-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="st">...... -&gt; kprod with args = ((30) #&lt;closure</span><span class="ot"> 81b0780</span><span class="st">&gt;)</span></span>
+<span id="cb46-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="st">........ -&gt; kprod with args = (() #&lt;closure</span><span class="ot"> 81b0680</span><span class="st">&gt;)</span></span>
+<span id="cb46-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="st">.......... -&gt; * with args = (30 1)</span></span>
+<span id="cb46-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="st">.......... &lt;-</span><span class="ot"> * returns 30</span></span>
+<span id="cb46-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="ot">.......... -</span><span class="st">&gt; * with args = (20 30)</span></span>
+<span id="cb46-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="st">.......... &lt;-</span><span class="ot"> * returns 600</span></span>
+<span id="cb46-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="ot">.......... -</span><span class="st">&gt; * with args = (10 600)</span></span>
+<span id="cb46-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="st">.......... &lt;-</span><span class="ot"> * returns 6000</span></span>
+<span id="cb46-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="ot">........ &lt;- kprod returns 6000</span></span>
+<span id="cb46-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="ot">...... &lt;- kprod returns 6000</span></span>
+<span id="cb46-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-14" aria-hidden="true" tabindex="-1"></a><span class="ot">.... &lt;- kprod returns 6000</span></span>
+<span id="cb46-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="ot">.. &lt;- kprod returns 6000</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="comparaison-prod-et-kprod">Comparaison prod et kprod</h1>
+<div class="sourceCode" id="cb47" style="font-size:60%"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb47-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-1" aria-hidden="true" tabindex="-1"></a>.. -&gt; prod with args <span class="op">=</span> ((<span class="dv">10</span> <span class="dv">20</span> <span class="dv">30</span>))</span>
+<span id="cb47-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-2" aria-hidden="true" tabindex="-1"></a>.... -&gt; prod with args <span class="op">=</span> ((<span class="dv">20</span> <span class="dv">30</span>))</span>
+<span id="cb47-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-3" aria-hidden="true" tabindex="-1"></a>...... -&gt; prod with args <span class="op">=</span> ((<span class="dv">30</span>))</span>
+<span id="cb47-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-4" aria-hidden="true" tabindex="-1"></a>........ -&gt; prod with args <span class="op">=</span> (())</span>
+<span id="cb47-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-5" aria-hidden="true" tabindex="-1"></a>........ &lt;- prod returns <span class="dv">1</span></span>
+<span id="cb47-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-6" aria-hidden="true" tabindex="-1"></a>........ -&gt; <span class="op">*</span> with args <span class="op">=</span> (<span class="dv">30</span> <span class="dv">1</span>)</span>
+<span id="cb47-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-7" aria-hidden="true" tabindex="-1"></a>........ &lt;- <span class="op">*</span> returns <span class="dv">30</span></span>
+<span id="cb47-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-8" aria-hidden="true" tabindex="-1"></a>...... &lt;- prod returns <span class="dv">30</span></span>
+<span id="cb47-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-9" aria-hidden="true" tabindex="-1"></a>...... -&gt; <span class="op">*</span> with args <span class="op">=</span> (<span class="dv">20</span> <span class="dv">30</span>)</span>
+<span id="cb47-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-10" aria-hidden="true" tabindex="-1"></a>...... &lt;- <span class="op">*</span> returns <span class="dv">600</span></span>
+<span id="cb47-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-11" aria-hidden="true" tabindex="-1"></a>.... &lt;- prod returns <span class="dv">600</span></span>
+<span id="cb47-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-12" aria-hidden="true" tabindex="-1"></a>.... -&gt; <span class="op">*</span> with args <span class="op">=</span> (<span class="dv">10</span> <span class="dv">600</span>)</span>
+<span id="cb47-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-13" aria-hidden="true" tabindex="-1"></a>.... &lt;- <span class="op">*</span> returns <span class="dv">6000</span></span>
+<span id="cb47-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb47-14" aria-hidden="true" tabindex="-1"></a>.. &lt;- prod returns <span class="dv">6000</span></span></code></pre></div>
+<div class="sourceCode" id="cb48" style="font-size:60%"><pre class="sourceCode scheme internal"><code class="sourceCode scheme"><span id="cb48-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (kprod '(<span class="dv">10</span> <span class="dv">20</span> <span class="dv">30</span>) (λ (x) x))</span>
+<span id="cb48-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-2" aria-hidden="true" tabindex="-1"></a>.. -&gt; kprod with args <span class="op">=</span> ((<span class="dv">10</span> <span class="dv">20</span> <span class="dv">30</span>) <span class="st">#&lt;closure</span><span class="ot"> 81b0980</span><span class="st">&gt;)</span></span>
+<span id="cb48-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="st">.... -&gt; kprod with args = ((20 30) #&lt;closure</span><span class="ot"> 81b0880</span><span class="st">&gt;)</span></span>
+<span id="cb48-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="st">...... -&gt; kprod with args = ((30) #&lt;closure</span><span class="ot"> 81b0780</span><span class="st">&gt;)</span></span>
+<span id="cb48-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="st">........ -&gt; kprod with args = (() #&lt;closure</span><span class="ot"> 81b0680</span><span class="st">&gt;)</span></span>
+<span id="cb48-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="st">.......... -&gt; * with args = (30 1)</span></span>
+<span id="cb48-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="st">.......... &lt;-</span><span class="ot"> * returns 30</span></span>
+<span id="cb48-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="ot">.......... -</span><span class="st">&gt; * with args = (20 30)</span></span>
+<span id="cb48-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="st">.......... &lt;-</span><span class="ot"> * returns 600</span></span>
+<span id="cb48-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-10" aria-hidden="true" tabindex="-1"></a><span class="ot">.......... -</span><span class="st">&gt; * with args = (10 600)</span></span>
+<span id="cb48-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="st">.......... &lt;-</span><span class="ot"> * returns 6000</span></span>
+<span id="cb48-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-12" aria-hidden="true" tabindex="-1"></a><span class="ot">........ &lt;- kprod returns 6000</span></span>
+<span id="cb48-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="ot">...... &lt;- kprod returns 6000</span></span>
+<span id="cb48-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-14" aria-hidden="true" tabindex="-1"></a><span class="ot">.... &lt;- kprod returns 6000</span></span>
+<span id="cb48-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb48-15" aria-hidden="true" tabindex="-1"></a><span class="ot">.. &lt;- kprod returns 6000</span></span></code></pre></div>
+<ul>
+<li>Dans <code>prod</code> les produits sont mêlés avec les appels récursifs sur la liste</li>
+<li>Dans <code>kprod</code> tous les produits sont différés à la fin des récursions</li>
+<li><code>kprod</code> est récursive terminale alors que <code>prod</code> ne l’est pas
+<ul>
+<li><code>prod</code> consomme de la pile</li>
+<li><code>kprod</code> n’en consomme pas</li>
+</ul></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="un-autre-exemple">Un autre exemple</h1>
+<p>Parfois, il peut être utile de gérer plusieurs continuations explicitement. Par exemple:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb49-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(integer-divide x y success failure)</span>
+<span id="cb49-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (<span class="op">=</span> y <span class="dv">0</span>)</span>
+<span id="cb49-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-3" aria-hidden="true" tabindex="-1"></a>      (failure <span class="st">"divide by zero"</span>)</span>
+<span id="cb49-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-4" aria-hidden="true" tabindex="-1"></a>      (success (<span class="kw">quotient</span> x y) (<span class="kw">remainder</span> x y))))</span>
+<span id="cb49-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (integer-divide <span class="dv">10</span> <span class="dv">3</span> <span class="kw">list</span> <span class="kw">error</span>)</span>
+<span id="cb49-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-7" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span> <span class="dv">1</span>)</span>
+<span id="cb49-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (integer-divide <span class="dv">10</span> <span class="dv">0</span> <span class="kw">list</span> <span class="kw">error</span>)</span>
+<span id="cb49-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-9" aria-hidden="true" tabindex="-1"></a>Error: divide by zero</span>
+<span id="cb49-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-10" aria-hidden="true" tabindex="-1"></a>                                  <span class="co">;; on peut même ignorer l'erreur</span></span>
+<span id="cb49-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (integer-divide <span class="dv">10</span> <span class="dv">0</span> <span class="kw">list</span> void) <span class="co">;; car (void "divide...") ne fait rien</span></span></code></pre></div>
+<p>Ici on a</p>
+<ul>
+<li>une fonction continuation en cas de succès</li>
+<li>une fonction à appeler en cas d’erreur.</li>
+</ul>
+<p>On verra des exemples d’utilisation de ce mécanisme plus tard.</p>
+<br><br></div><div class=" slide hidden"><h1 id="autre-version-de-prod-kprod-1">Autre version de prod / kprod (1)</h1>
+<p>On veut faire une version qui arrête de parcourir la liste si on rencontre la valeur nulle.</p>
+<p>Si on rencontre 0 on peut renvoyer 0 sans regarder les éléments suivants.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb50-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(prod2 l)</span>
+<span id="cb50-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">call/cc</span> (λ (return)</span>
+<span id="cb50-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-3" aria-hidden="true" tabindex="-1"></a>             (<span class="kw">let</span> Loop ((ls l))</span>
+<span id="cb50-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-4" aria-hidden="true" tabindex="-1"></a>               (<span class="kw">cond</span></span>
+<span id="cb50-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-5" aria-hidden="true" tabindex="-1"></a>                 ((<span class="kw">null?</span> ls)                <span class="co">;; Fin de liste. Résultat 1</span></span>
+<span id="cb50-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-6" aria-hidden="true" tabindex="-1"></a>                      <span class="dv">1</span>)</span>
+<span id="cb50-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-7" aria-hidden="true" tabindex="-1"></a>                 ((<span class="op">=</span> (<span class="kw">car</span> ls) <span class="dv">0</span>)            <span class="co">;; 0: arrêter et renvoyer 0</span></span>
+<span id="cb50-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-8" aria-hidden="true" tabindex="-1"></a>                     (return <span class="dv">0</span>))</span>
+<span id="cb50-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-9" aria-hidden="true" tabindex="-1"></a>                 (<span class="kw">else</span>                       <span class="co">;; faire le produit</span></span>
+<span id="cb50-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-10" aria-hidden="true" tabindex="-1"></a>                     (<span class="op">*</span> (<span class="kw">car</span> ls)</span>
+<span id="cb50-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb50-11" aria-hidden="true" tabindex="-1"></a>                        (Loop (<span class="kw">cdr</span> ls)))))))))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="autre-version-de-prod-kprod-2">Autre version de prod / kprod (2)</h1>
+<p>La version précédente (avec <strong>call/cc</strong>) peut être aussi écrite en mode CPS (sans <strong>call/cc</strong>).</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb51-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(kprod2 l k)</span>
+<span id="cb51-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> ((exit k))</span>
+<span id="cb51-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-3" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">let</span> Loop ((ls l)</span>
+<span id="cb51-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-4" aria-hidden="true" tabindex="-1"></a>               (k  k))                    <span class="co">;; ≡ (k exit)</span></span>
+<span id="cb51-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-5" aria-hidden="true" tabindex="-1"></a>      (<span class="kw">cond</span></span>
+<span id="cb51-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-6" aria-hidden="true" tabindex="-1"></a>        ((<span class="kw">null?</span> ls)      (k <span class="dv">1</span>))</span>
+<span id="cb51-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-7" aria-hidden="true" tabindex="-1"></a>        ((<span class="op">=</span> (<span class="kw">car</span> ls) <span class="dv">0</span>)  (exit <span class="dv">0</span>))        <span class="co">;; ⟸ RETOUR immédiat</span></span>
+<span id="cb51-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-8" aria-hidden="true" tabindex="-1"></a>        (<span class="kw">else</span>            (Loop (<span class="kw">cdr</span> ls)</span>
+<span id="cb51-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-9" aria-hidden="true" tabindex="-1"></a>                               (λ (x)</span>
+<span id="cb51-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb51-10" aria-hidden="true" tabindex="-1"></a>                                 (k (<span class="op">*</span> (<span class="kw">car</span> ls) x)))))))))</span></code></pre></div>
+<p>Si on affiche <code>ls</code> dans <code>Loop</code></p>
+<div class="sourceCode" id="cb52" style="font-size: 80%"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb52-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (kprod2 '(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span>) (λ (v) v))</span>
+<span id="cb52-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span>)</span>
+<span id="cb52-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-3" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span>)</span>
+<span id="cb52-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span>)</span>
+<span id="cb52-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">4</span> <span class="dv">5</span>)</span>
+<span id="cb52-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-6" aria-hidden="true" tabindex="-1"></a>(<span class="dv">5</span>)</span>
+<span id="cb52-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-7" aria-hidden="true" tabindex="-1"></a>()</span>
+<span id="cb52-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="dv">120</span></span>
+<span id="cb52-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (kprod2 '(<span class="dv">1</span> <span class="dv">0</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span>) (λ (v) v))</span>
+<span id="cb52-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-11" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span> <span class="dv">0</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span>)</span>
+<span id="cb52-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-12" aria-hidden="true" tabindex="-1"></a>(<span class="dv">0</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span>)</span>
+<span id="cb52-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span></code></pre></div>
+<p>C’est ce type de technique que nous allons utiliser dans notre <strong>interprète CPS</strong>.</p>
+<br><br></div><div id="interprète-en-mode-cps" class="slide title hidden">
+<h1>Interprète en mode CPS</h1>
+<br><br></div>
+<div class=" slide hidden"><h1 id="interprète-cps">Interprète CPS</h1>
+<ul>
+<li><p>Le code de l’interprète CPS assez semblable à l’interprète direct</p>
+<ul>
+<li>Structure générale identique</li>
+<li>Gestion des environnements identique</li>
+<li>Représentations des fonctions et macro identiques</li>
+</ul></li>
+<li><p>La principale modification est dans la fonction <code>evaluate</code></p>
+<ul>
+<li>un paramètre supplémentaire: la continuation <code>k</code> à appeler</li>
+</ul></li>
+<li><p>L’implémentation de <strong>call/cc</strong> sera simple</p>
+<ul>
+<li>elle serait compliquée avec l’interprète direct:
+<ul>
+<li>déterminer la pile d’exécution en cours</li>
+<li>sauvegarde et restauration de pile</li>
+<li>…</li>
+</ul></li>
+</ul></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="fonction-evaluate-en-cps">Fonction evaluate en CPS</h1>
+<p>Principale fonction modifiée <em>vs</em> implémentation précédente:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb53-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(evaluate expr env k)</span>
+<span id="cb53-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb53-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-3" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">symbol?</span> expr)</span>
+<span id="cb53-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-4" aria-hidden="true" tabindex="-1"></a>     (k (find-binding expr env)))</span>
+<span id="cb53-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-5" aria-hidden="true" tabindex="-1"></a>    ((<span class="kw">pair?</span>   expr)</span>
+<span id="cb53-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-6" aria-hidden="true" tabindex="-1"></a>     (<span class="kw">case</span> (<span class="kw">car</span> expr)</span>
+<span id="cb53-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-7" aria-hidden="true" tabindex="-1"></a>       ((<span class="kw">quote</span>)  (k (<span class="kw">cadr</span> expr)))</span>
+<span id="cb53-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-8" aria-hidden="true" tabindex="-1"></a>       ((<span class="kw">begin</span>)  <span class="op">...</span>)</span>
+<span id="cb53-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-9" aria-hidden="true" tabindex="-1"></a>       ((<span class="kw">set!</span>)   <span class="op">...</span>)</span>
+<span id="cb53-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-10" aria-hidden="true" tabindex="-1"></a>       ((<span class="ex">define</span><span class="fu">) ...</span>)</span>
+<span id="cb53-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-11" aria-hidden="true" tabindex="-1"></a>       ((<span class="kw">if</span>)     (evaluate (<span class="kw">cadr</span> expr)</span>
+<span id="cb53-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-12" aria-hidden="true" tabindex="-1"></a>                           env</span>
+<span id="cb53-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-13" aria-hidden="true" tabindex="-1"></a>                           (λ (v)</span>
+<span id="cb53-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-14" aria-hidden="true" tabindex="-1"></a>                             (evaluate (<span class="kw">if</span> v (<span class="kw">caddr</span> expr) (<span class="kw">cadddr</span> expr))</span>
+<span id="cb53-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-15" aria-hidden="true" tabindex="-1"></a>                                       env</span>
+<span id="cb53-16"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-16" aria-hidden="true" tabindex="-1"></a>                                       k))))</span>
+<span id="cb53-17"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-17" aria-hidden="true" tabindex="-1"></a>       ((<span class="kw">call/cc</span>) <span class="op">...</span>) <span class="co">;; discutable car ce n'est pas une forme spéciale.</span></span>
+<span id="cb53-18"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-18" aria-hidden="true" tabindex="-1"></a>       ((<span class="kw">lambda</span>)  (k (make-closure (<span class="kw">cadr</span> expr) (<span class="kw">cddr</span> expr) env)))</span>
+<span id="cb53-19"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-19" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">else</span>      (evaluate-list expr</span>
+<span id="cb53-20"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-20" aria-hidden="true" tabindex="-1"></a>                                 env</span>
+<span id="cb53-21"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-21" aria-hidden="true" tabindex="-1"></a>                                 (λ (v) (funcall (<span class="kw">car</span> v) (<span class="kw">cdr</span> v) env k))))))</span>
+<span id="cb53-22"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb53-22" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span> (k expr))))</span></code></pre></div>
+<p><strong>Note:</strong> Pour simplifier, pas de macro ici.</p>
+<br><br></div><div class=" slide hidden"><h1 id="fonction-evaluate-list">Fonction evaluate-list</h1>
+<ul>
+<li>Cette fonction prend une liste et renvoie une liste où tous les éléments ont été évalués.</li>
+<li>Lorsque <code>evaluate-list</code> est appelée son premier élément contient la fonction (non évaluée à appeler).</li>
+<li><em>Rappel</em>: on a pas de macro ici.</li>
+</ul>
+<p><strong>Contexte:</strong></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb54-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb54-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(evaluate expr env k)</span>
+<span id="cb54-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>              <span class="co">;; expr is (f e1 e2 e3 ...)</span></span>
+<span id="cb54-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb54-3" aria-hidden="true" tabindex="-1"></a>          (<span class="kw">else</span>      (evaluate-list expr</span>
+<span id="cb54-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb54-4" aria-hidden="true" tabindex="-1"></a>                                 env</span>
+<span id="cb54-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb54-5" aria-hidden="true" tabindex="-1"></a>                                 (λ (v) (funcall (<span class="kw">car</span> v) (<span class="kw">cdr</span> v) env k))))))</span>
+<span id="cb54-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span></code></pre></div>
+<p><strong>Implémentation</strong>:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb55-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(evaluate-list exps env k)</span>
+<span id="cb55-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">if</span> (<span class="kw">null?</span> exps)</span>
+<span id="cb55-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-3" aria-hidden="true" tabindex="-1"></a>      (k '())</span>
+<span id="cb55-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-4" aria-hidden="true" tabindex="-1"></a>      (evaluate (<span class="kw">car</span> exps)</span>
+<span id="cb55-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-5" aria-hidden="true" tabindex="-1"></a>                env</span>
+<span id="cb55-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-6" aria-hidden="true" tabindex="-1"></a>                (λ (arg1)</span>
+<span id="cb55-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-7" aria-hidden="true" tabindex="-1"></a>                  (evaluate-list (<span class="kw">cdr</span> exps)</span>
+<span id="cb55-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-8" aria-hidden="true" tabindex="-1"></a>                                 env</span>
+<span id="cb55-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-9" aria-hidden="true" tabindex="-1"></a>                                 (λ (args) </span>
+<span id="cb55-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb55-10" aria-hidden="true" tabindex="-1"></a>                                   (k (<span class="kw">cons</span> arg1 args))))))))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="begin-en-cps">begin en CPS</h1>
+<ul>
+<li>La forme <code>(begin e1 e2 .. en)</code> doit évaluer toutes les expressions de la liste et passer la dernière à la continuation courante <code>k</code>.</li>
+</ul>
+<p><strong>Contexte:</strong></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb56-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb56-1" aria-hidden="true" tabindex="-1"></a>       <span class="op">...</span></span>
+<span id="cb56-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb56-2" aria-hidden="true" tabindex="-1"></a>       ((<span class="kw">begin</span>) (evaluate-compound (<span class="kw">cdr</span> expr) env k))</span>
+<span id="cb56-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb56-3" aria-hidden="true" tabindex="-1"></a>       ....</span></code></pre></div>
+<p><strong>Implémentation:</strong></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb57-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb57-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(evaluate-compound l env k)</span>
+<span id="cb57-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; Evaluate in environment env the expressions of l</span></span>
+<span id="cb57-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb57-3" aria-hidden="true" tabindex="-1"></a>  (evaluate (<span class="kw">car</span> l)</span>
+<span id="cb57-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb57-4" aria-hidden="true" tabindex="-1"></a>            env</span>
+<span id="cb57-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb57-5" aria-hidden="true" tabindex="-1"></a>            (λ (val)</span>
+<span id="cb57-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb57-6" aria-hidden="true" tabindex="-1"></a>              (<span class="kw">if</span> (<span class="kw">null?</span> (<span class="kw">cdr</span> l))</span>
+<span id="cb57-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb57-7" aria-hidden="true" tabindex="-1"></a>                  (k val)    <span class="co">;; give val to the continuation</span></span>
+<span id="cb57-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb57-8" aria-hidden="true" tabindex="-1"></a>                  (evaluate-compound (<span class="kw">cdr</span> l) env k)))))</span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="defineset-en-cps">define/set! en CPS</h1>
+<p><strong>Contexte / Implémentation:</strong></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb58-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb58-1" aria-hidden="true" tabindex="-1"></a>           <span class="op">...</span></span>
+<span id="cb58-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb58-2" aria-hidden="true" tabindex="-1"></a>           ((<span class="kw">set!</span>)   (evaluate (<span class="kw">caddr</span> expr)</span>
+<span id="cb58-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb58-3" aria-hidden="true" tabindex="-1"></a>                               env</span>
+<span id="cb58-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb58-4" aria-hidden="true" tabindex="-1"></a>                               (λ (v) (k (set-binding! (<span class="kw">cadr</span> expr) v env <span class="dv">#t</span>)))))</span>
+<span id="cb58-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb58-5" aria-hidden="true" tabindex="-1"></a>           ((<span class="ex">define</span><span class="fu">) </span>(evaluate (<span class="kw">caddr</span> expr)</span>
+<span id="cb58-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb58-6" aria-hidden="true" tabindex="-1"></a>                               env</span>
+<span id="cb58-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb58-7" aria-hidden="true" tabindex="-1"></a>                               (λ (v) (k (set-binding! (<span class="kw">cadr</span> expr) v env <span class="dv">#f</span>)))))</span>
+<span id="cb58-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb58-8" aria-hidden="true" tabindex="-1"></a>           <span class="op">...</span></span></code></pre></div>
+<ul>
+<li>Les deux formes remplacent l’association courante</li>
+<li>Seul <code>define</code> peut créer une nouvelle association
+<ul>
+<li>la valeur <code>#f</code> permet de ne pas déclencher une erreur si association non existante</li>
+</ul></li>
+</ul>
+<br><br></div><div class=" slide hidden"><h1 id="principe-de-limplémentation-de-callcc">Principe de l’implémentation de call/cc</h1>
+<p>Pour implémenter <strong>call/cc</strong>, on a besoin de savoir faire deux choses:</p>
+<ul>
+<li>Créer un objet de type continuation</li>
+<li>Étendre <strong>funcall</strong> pour savoir appeler une continuation.</li>
+</ul>
+<p><span style="color:blue;"><strong>Création d’une continuation</strong></span></p>
+<ul>
+<li>on capture la continuation courante au moment de l’appel à <strong>call/cc</strong> dans un objet de type continuation (grace à make-continuation)</li>
+<li>cet objet est passé en paramètre à la fonction argument de <strong>call/cc</strong></li>
+</ul>
+<p><span style="color:blue;"><strong>Extension de funcall</strong></span></p>
+<p>Si <strong>funcall</strong> «tombe» sur un appel de continuation</p>
+<ul>
+<li>il évalue son argument et</li>
+<li>il appelle la continuation stockée dans l’objet (celle au moment du <strong>call/cc</strong> plutôt que la continuation courante).
+<pre></pre></li>
+</ul>
+
+<center>
+<strong>That’s all folks</strong>
+</center>
+<br><br></div><div class=" slide hidden"><h1 id="implémentation-de-callcc-1">Implémentation de call/cc (1)</h1>
+<p><span style="color:blue;"><strong>Création d’une continuation</strong></span></p>
+<p>On se définit:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb59-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb59-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(make-continuation k)</span>
+<span id="cb59-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">list</span> '*continuation* k))</span>
+<span id="cb59-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb59-4" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(continuation? obj)</span>
+<span id="cb59-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb59-5" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">and</span> (<span class="kw">pair?</span> obj)</span>
+<span id="cb59-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb59-6" aria-hidden="true" tabindex="-1"></a>       (<span class="kw">eq?</span> (<span class="kw">car</span> obj) '*continuation*)))</span>
+<span id="cb59-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb59-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb59-8" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> continuation-value </span><span class="kw">cadr</span>)</span></code></pre></div>
+<p>La création de la continuation se fait dans la fonction <strong>evaluate</strong>:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb60-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-1" aria-hidden="true" tabindex="-1"></a>          <span class="op">...</span></span>
+<span id="cb60-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-2" aria-hidden="true" tabindex="-1"></a>          ((<span class="kw">call/cc</span>) <span class="co">;; Simulate call: ( (λ(kont) ...) (make-continuation k))</span></span>
+<span id="cb60-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-3" aria-hidden="true" tabindex="-1"></a>                      (evaluate (<span class="kw">cadr</span> expr)</span>
+<span id="cb60-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-4" aria-hidden="true" tabindex="-1"></a>                                env</span>
+<span id="cb60-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-5" aria-hidden="true" tabindex="-1"></a>                                (λ (v) (funcall v </span>
+<span id="cb60-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-6" aria-hidden="true" tabindex="-1"></a>                                                (<span class="kw">list</span> (make-continuation k))</span>
+<span id="cb60-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-7" aria-hidden="true" tabindex="-1"></a>                                                env </span>
+<span id="cb60-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-8" aria-hidden="true" tabindex="-1"></a>                                                k))))</span>
+<span id="cb60-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb60-9" aria-hidden="true" tabindex="-1"></a>           <span class="op">...</span></span></code></pre></div>
+<br><br></div><div class=" slide hidden"><h1 id="implémentation-de-callcc-2">Implémentation de call/cc (2)</h1>
+<p><span style="color:blue;"><strong>Extension de funcall</strong></span></p>
+<p>La version CPS de la fonction CPS est simplement:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb61-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(funcall func l env k)</span>
+<span id="cb61-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cond</span></span>
+<span id="cb61-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-3" aria-hidden="true" tabindex="-1"></a>    ((closure? func)</span>
+<span id="cb61-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">;; Appel d'une fermeture</span></span>
+<span id="cb61-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-5" aria-hidden="true" tabindex="-1"></a>        (evaluate-compound (closure-body func)</span>
+<span id="cb61-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-6" aria-hidden="true" tabindex="-1"></a>                           (extend-env (closure-args func)</span>
+<span id="cb61-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-7" aria-hidden="true" tabindex="-1"></a>                                       l</span>
+<span id="cb61-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-8" aria-hidden="true" tabindex="-1"></a>                                       (closure-env func))</span>
+<span id="cb61-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-9" aria-hidden="true" tabindex="-1"></a>                           k))</span>
+<span id="cb61-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-10" aria-hidden="true" tabindex="-1"></a>    ((continuation? func)</span>
+<span id="cb61-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">;; Appel d'une continuation</span></span>
+<span id="cb61-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-12" aria-hidden="true" tabindex="-1"></a>        (apply (continuation-value func) l))</span>
+<span id="cb61-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-13" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">else</span></span>
+<span id="cb61-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">;; Appel d'une primitive </span></span>
+<span id="cb61-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb61-15" aria-hidden="true" tabindex="-1"></a>        (k (apply func l)))))</span></code></pre></div>
+<p>Donc, si <code>funcall</code> rencontre une continuation:</p>
+<ol style="list-style-type: decimal">
+<li>on récupère la continuation capturée lors de <strong>call/cc</strong> (avec <code>continuation-value</code>)</li>
+<li>appel de cette continuation avec les paramètres de l’utilisateur (ils sont dans <code>l</code>)</li>
+</ol>
+<br><br></div><div class=" slide hidden"><h1 id="linterprète-cps">L’interprète CPS</h1>
+<div class="sourceCode" id="cb62"><pre class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb62-1"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> </span>(interp)</span>
+<span id="cb62-2"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; Initialization: banner, environment, ...</span></span>
+<span id="cb62-3"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-3" aria-hidden="true" tabindex="-1"></a>  (init-interpreter)</span>
+<span id="cb62-4"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">;; REPL</span></span>
+<span id="cb62-6"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-6" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">let</span> Loop ()</span>
+<span id="cb62-7"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-7" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">display</span> <span class="st">"Mini-Scheme&gt; "</span>)</span>
+<span id="cb62-8"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-8" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">let</span> ((expr (<span class="kw">read</span>)))</span>
+<span id="cb62-9"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-9" aria-hidden="true" tabindex="-1"></a>      (unless (<span class="kw">eof-object?</span> expr)</span>
+<span id="cb62-10"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-10" aria-hidden="true" tabindex="-1"></a>        (evaluate expr</span>
+<span id="cb62-11"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-11" aria-hidden="true" tabindex="-1"></a>                  *global-env*</span>
+<span id="cb62-12"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-12" aria-hidden="true" tabindex="-1"></a>                  (λ (v)</span>
+<span id="cb62-13"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-13" aria-hidden="true" tabindex="-1"></a>                    (unless (<span class="kw">eq?</span> v (void))</span>
+<span id="cb62-14"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-14" aria-hidden="true" tabindex="-1"></a>                      (<span class="kw">write</span> v)</span>
+<span id="cb62-15"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-15" aria-hidden="true" tabindex="-1"></a>                      (<span class="kw">newline</span>))))</span>
+<span id="cb62-16"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-16" aria-hidden="true" tabindex="-1"></a>        (Loop))))</span>
+<span id="cb62-17"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-18"><a href="http://users.polytech.unice.fr/~eg/ProgFonc/Cours/cours09.html#cb62-18" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">display</span> <span class="st">"Bye</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
+
+    <!-- ========== SLIDE ==========  (pseudo-slide to circumvent a bug in slidy.js)-->
+    <br><br></div><div class="handout hidden">
+
+    </div>
+  
+
+<div class="toolbar" tabindex="0" style="display: block;"><div style="float: right; text-align: right"><span>page 1/40</span></div><div style="text-align: left"><span style="color: rgb(240, 240, 240);">* </span><span class="copyright">Programmation Fonctionnelle — 2020-2021 &nbsp;&nbsp;(Erick Gallesio)</span></div></div></body></html>

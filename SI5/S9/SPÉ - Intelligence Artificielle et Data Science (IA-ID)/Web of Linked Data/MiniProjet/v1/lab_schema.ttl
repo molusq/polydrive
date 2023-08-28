@@ -1,0 +1,45 @@
+@prefix :     <http://polytech.fr/humans/schema#> . 
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:Process a rdfs:Class ;
+    rdfs:label "process"@en, "processus"@fr .
+
+:Task a rdfs:Class ;
+    rdfs:label "task"@en, "tâche"@fr .
+
+:Agent a rdfs:Class ;
+    rdfs:label "agent"@en, "agent"@fr .
+
+:SoftwareAgent a rdfs:Class ; 
+    rdf:subClassOf :Agent;
+    rdfs:label "software agent"@en, "agent logiciel"@fr .
+
+:consistof a rdf:Property ;
+    rdfs:label "consists of"@en, "consiste en"@fr ;
+    rdfs:comment "the composition of the process' instructions"@en,
+        "la composition des instructions d'un processus"@fr ;
+    rdfs:domain :Process ;
+    rdfs:range rdf:List .
+
+:agentof a rdf:Property ;
+    rdfs:label "agent of"@en, "agent de"@fr ;
+    rdfs:comment "the tasks of which the agent is responsible"@en, 
+        "les tâches dont l'agent est responsable"@fr ;
+    rdfs:domain :Agent ;
+    rdfs:range rdf:Bag .
+
+:participatesto a rdf:Property ;
+    rdfs:label "participates to"@en, "paritcipe à"@fr ;
+    rdfs:comment "the task to which the agent participates"@en, 
+        "les tâches auxquelles l'agent participe"@fr ;
+    rdfs:domain :Agent ; 
+    rdfs:range rdf:Bag .
+
+:managerof a rdf:Property ;
+    rdfs:label "manager of"@en, "manager de"@fr ;
+    rdfs:comment "the agent which is managed"@en, 
+        "l'agent managé"@fr ;
+    rdfs:domain :Agent ; 
+    rdfs:range :Agent .
+
